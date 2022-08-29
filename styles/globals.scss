@@ -1,0 +1,16 @@
+@import "public/fonts/namu/style.scss";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-image: url("/icons/dottBackground.svg");
+  background-color: #181818;
+}
+* {
+  box-sizing: border-box;
+}
+
