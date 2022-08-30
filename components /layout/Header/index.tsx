@@ -35,31 +35,31 @@ export default Header;
 const Wrap = styled.div`
   position: fixed;
   top: 0;
-  left: 0;
   z-index: 100;
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 12px 4vw;
-  height: 60px;
+  padding: 12px 6vw;
+  height: 8vh;
   background-image: url("/icons/dottBackground.svg");
   background-color: #181818;
   border-bottom: 1px solid #801515;
 `;
 
 const Logo = styled.img`
-  width: 160px;
-  height: 16px;
+  width: auto;
+  height: 2vh;
   cursor: pointer;
 `;
 const Button = styled.button`
-  width: 110px;
-  height: 30px;
+  width: 12vw;
+  height: 4vh;
   color: #ffffff;
+  font-size: 2vh;
   border: 1px solid #ffffff;
   background: inherit;
-  border-radius: 12px;
+  border-radius: 24px;
   cursor: pointer;
   &:hover {
     background: #b11212;
@@ -73,14 +73,14 @@ const MenuWrap = styled.div`
 `;
 const HintWrap = styled.div``;
 const Hint = styled.div<HintProps>`
-  padding: 6px;
+  padding: 1vh 1vw;
   position: absolute;
-  top: 64px;
+  top: 8vh;
   display: ${({ isHint }: HintProps) => (isHint ? "block" : "none")};
   font-family: "namu-1750";
-  width: 275px;
+  width: 20vw;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 1.6vh;
   color: #909090;
   background-image: url("/icons/dottBackground.svg");
   background-color: #181818;
@@ -95,7 +95,7 @@ const TextMenu = styled.span`
   color: #b0b0b0;
   font-family: "namu-pro";
   font-weight: 400;
-  font-size: 16px;
+  font-size: 2vh;
   margin-left: 6vw;
   cursor: pointer;
   &:hover {

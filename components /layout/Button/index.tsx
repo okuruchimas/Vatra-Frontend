@@ -15,12 +15,12 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-right: 5vw;
+  padding-right: 1vw;
 `;
 const Text = styled.div`
   font-family: "namu-1400";
   font-weight: 100;
-  font-size: 20px;
+  font-size: 2vh;
   text-transform: uppercase;
 
   color: #ffffff;

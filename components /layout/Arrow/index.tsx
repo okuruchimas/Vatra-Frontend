@@ -41,6 +41,6 @@ const Circle = styled.div`
   border-radius: 50%;
   border: 2px solid #ffffff;
   position: relative;
-  left: 50px;
+  left: 44px;
   bottom: 28px;
 `;
