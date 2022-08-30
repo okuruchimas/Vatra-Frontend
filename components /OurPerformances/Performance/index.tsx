@@ -14,8 +14,9 @@ const Performance = (performance: Props) => {
     <Wrap>
       <LeftBlock>
         <Img src={performance.imgUrl} />
-        <Title>"{performance.title}"</Title>
-        <DateText>{performance.date}</DateText>
+        <Title>
+          "{performance.title}"<br /> <DateText>{performance.date}</DateText>
+        </Title>
       </LeftBlock>
       <RightBlock>
         <Description>{performance.description}</Description>
@@ -40,23 +41,30 @@ const Wrap = styled.div`
 `;
 
 const LeftBlock = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   width: 60%;
+  padding-right: 4vw;
 `;
 
 const Img = styled.img`
-  width: 36vw;
+  width: 32vw;
+  border-radius: 16px;
+  margin-left: auto;
 `;
 
 const Title = styled.span`
+  position: absolute;
   font-family: "namu-1910";
   font-size: 6vh;
   width: 36vw;
 `;
 
 const DateText = styled.span`
+  position: absolute;
+  padding-top: 2vh;
   font-family: "namu-1750";
   font-size: 8vh;
 `;
