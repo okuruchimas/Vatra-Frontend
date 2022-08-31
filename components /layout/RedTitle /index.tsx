@@ -6,28 +6,27 @@ type Props = {
 const RedTitle = ({ textBefore, textAfter }: Props) => {
   return (
     <Wrap>
-      <Text>{textBefore}</Text> <Circle /> <Text>{textAfter}</Text>
+      {textBefore}
+      <Circle> &#11044; </Circle>
+      {textAfter}
     </Wrap>
   );
 };
 
 export default RedTitle;
 
-const Wrap = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
-const Text = styled.span`
+const Wrap = styled.span`
+  max-width: 60vw;
   text-transform: uppercase;
   font-family: "namu-1400";
   font-size: 10vh;
   color: #b11212;
 `;
-const Circle = styled.div`
-  height: 32px;
-  width: 32px;
-  margin: 16px 24px 0;
-  border-radius: 50%;
-  background: #b11212;
+
+const Circle = styled(Wrap)`
+  max-width: min-content;
+  font-family: initial;
+  font-size: 4vh;
+  position: relative;
+  bottom: 2vh;
 `;

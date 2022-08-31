@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import Greeting from "../../Greeting";
 import OurPerformances from "../../OurPerformances";
 import PhotoSlider from "../../PhotoSlider";
+import StorySlider from "../../StorySlider";
 
 const Sections = () => {
   return (
@@ -9,6 +10,7 @@ const Sections = () => {
       <Greeting />
       <OurPerformances />
       <PhotoSlider />
+      <StorySlider />
     </Wrap>
   );
 };
