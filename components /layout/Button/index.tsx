@@ -16,6 +16,20 @@ const Wrap = styled.div`
   flex-direction: row;
   align-items: center;
   padding-right: 1vw;
+  cursor: pointer;
+
+  &:hover {
+    img:first-of-type {
+      transition: left 0.4s ease;
+      left: 12px;
+    }
+    div:first-of-type {
+      opacity: 0.4;
+    }
+    span:last-of-type {
+      background: #b11212;
+    }
+  }
 `;
 const Text = styled.div`
   font-family: "namu-1400";

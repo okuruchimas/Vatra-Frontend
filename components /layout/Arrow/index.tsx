@@ -20,22 +20,13 @@ const ArrowR = styled.img`
 `;
 
 const Wrap = styled.div`
-  cursor: pointer;
   width: 80px;
   height: 60px;
   padding: 20px 0;
-  &:hover {
-    img:first-of-type {
-      transition: left 0.4s ease;
-      left: 12px;
-    }
-    div:last-of-type {
-      background: #b11212;
-    }
-  }
 `;
 
-const Circle = styled.div`
+const Circle = styled.span`
+  display: block;
   height: 50px;
   width: 50px;
   border-radius: 50%;
