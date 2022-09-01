@@ -4,11 +4,39 @@ const Bubbles = () => {
   return (
     <Wrap>
       <Title>наші цінності</Title>
-      <BubbleWrap>
-        <Stage>
-          <Circle />
-        </Stage>
-      </BubbleWrap>
+      <BubblesWrap>
+        <Rotate>
+          <BubbleWrap>
+            <Bubble>
+              <TextSpan1 />
+            </Bubble>
+          </BubbleWrap>
+          <BubbleWrap>
+            <Bubble>
+              <TextSpan2 />
+            </Bubble>
+          </BubbleWrap>
+        </Rotate>
+        <SecondRotate>
+          <BubbleWrap>
+            <Bubble>
+              <TextSpan3 />
+            </Bubble>
+          </BubbleWrap>
+          <BubbleWrap>
+            <Bubble>
+              <TextSpan4 />
+            </Bubble>
+          </BubbleWrap>
+        </SecondRotate>
+        <ThirdRotate>
+          <BubbleWrap>
+            <Bubble>
+              <TextSpan5 />
+            </Bubble>
+          </BubbleWrap>
+        </ThirdRotate>
+      </BubblesWrap>
     </Wrap>
   );
 };
@@ -30,41 +58,31 @@ const Title = styled.span`
   margin-bottom: 4vh;
 `;
 
-const BubbleWrap = styled.div`
-  width: 100%;
+const BubblesWrap = styled.div`
+  width: 100vw;
+  padding: 6vw 8vw;
+  min-height: 72vw;
+  overflow: hidden;
 `;
 
-const Stage = styled.section`
+const BubbleWrap = styled.section`
   width: 300px;
   height: 300px;
   display: inline-block;
   margin: 20px;
-  -webkit-perspective: 1200px;
-  -moz-perspective: 1200px;
-  -ms-perspective: 1200px;
-  -o-perspective: 1200px;
   perspective: 1200px;
-  -webkit-perspective-origin: 50% 50%;
-  -moz-perspective-origin: 50% 50%;
-  -ms-perspective-origin: 50% 50%;
-  -o-perspective-origin: 50% 50%;
+  z-index: 1;
   perspective-origin: 50% 50%;
 `;
 
-const Circle = styled.figure`
+const Bubble = styled.figure`
   display: inline-block;
   width: 100%;
   height: 100%;
   border-radius: 100%;
   position: relative;
-
-  //background: radial-gradient(
-  //  circle at bottom,
-  //  #81e8f6,
-  //  #76deef 10%,
-  //  #055194 80%,
-  //  #062745 100%
-  //);
+  opacity: 0.4;
+  margin: 0;
 
   background: radial-gradient(
     circle at 50% 55%,
@@ -73,26 +91,14 @@ const Circle = styled.figure`
     rgba(225, 238, 255, 0.8) 60%,
     rgba(43, 130, 255, 0.4)
   );
-  -webkit-animation: bubble-anim 2s ease-out infinite;
   animation: bubble-anim 2s ease-out infinite;
   &:before {
     content: "";
     position: absolute;
     top: 1%;
     left: 5%;
-    //width: 90%;
-    //height: 90%;
     border-radius: 100%;
-    //background: radial-gradient(
-    //  circle at top,
-    //  white,
-    //  rgba(255, 255, 255, 0) 58%
-    //);
-    //-webkit-filter: blur(5px);
-    //filter: blur(5px);
     z-index: 2;
-
-    -webkit-filter: blur(0);
     filter: blur(0);
     height: 80%;
     width: 40%;
@@ -105,23 +111,18 @@ const Circle = styled.figure`
       rgba(255, 255, 255, 0) 60%,
       rgba(255, 255, 255, 0) 100%
     );
-    -webkit-transform: translateX(131%) translateY(58%) rotateZ(168deg)
-      rotateX(10deg);
     transform: translateX(131%) translateY(58%) rotateZ(168deg) rotateX(10deg);
   }
   &:after {
     content: "";
     position: absolute;
-    //display: none;
     top: 5%;
     left: 10%;
     width: 80%;
     height: 80%;
     border-radius: 100%;
-    -webkit-filter: blur(1px);
     filter: blur(1px);
     z-index: 2;
-    -webkit-transform: rotateZ(-30deg);
     transform: rotateZ(-30deg);
 
     display: block;
@@ -137,47 +138,137 @@ const Circle = styled.figure`
 
   @keyframes bubble-anim {
     0% {
-      -webkit-transform: scale(1);
       transform: scale(1);
     }
 
     20% {
-      -webkit-transform: scaleY(0.95) scaleX(1.05);
       transform: scaleY(0.95) scaleX(1.05);
     }
 
     48% {
-      -webkit-transform: scaleY(1.1) scaleX(0.9);
       transform: scaleY(1.1) scaleX(0.9);
     }
 
     68% {
-      -webkit-transform: scaleY(0.98) scaleX(1.02);
       transform: scaleY(0.98) scaleX(1.02);
     }
 
     80% {
-      -webkit-transform: scaleY(1.02) scaleX(0.98);
       transform: scaleY(1.02) scaleX(0.98);
     }
 
     97%,
     100% {
-      -webkit-transform: scale(1);
       transform: scale(1);
     }
   }
 `;
-const Shadow = styled.span`
+
+const RotateDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  width: 80%;
+`;
+
+const Rotate = styled(RotateDiv)`
+  top: 24vh;
+  margin-left: auto;
+  animation: rotate-bubble-offset 20s linear infinite;
+
+  @keyframes rotate-bubble-offset {
+    0% {
+      transform: rotateZ(-0.14turn);
+    }
+    50% {
+      transform: rotateZ(0.12turn);
+    }
+    100% {
+      transform: rotateZ(-0.14turn);
+    }
+  }
+`;
+
+const SecondRotate = styled(RotateDiv)`
+  top: 0;
+  animation: rotate 16s linear infinite;
+
+  @keyframes rotate {
+    0% {
+      transform: rotateZ(0.12turn);
+    }
+    50% {
+      transform: rotateZ(-0.16turn);
+    }
+
+    100% {
+      transform: rotateZ(0.12turn);
+    }
+  }
+`;
+
+const ThirdRotate = styled(RotateDiv)`
+  bottom: 28vh;
+  left: 16vw;
+  margin-left: auto;
+
+  animation: rotate-bubble 14s linear infinite;
+
+  @keyframes rotate-bubble {
+    0% {
+      transform: rotateZ(-0.12turn);
+    }
+    50% {
+      transform: rotateZ(0.12turn);
+    }
+
+    100% {
+      transform: rotateZ(-0.12turn);
+    }
+  }
+`;
+
+const TextSpan = styled.span`
+  margin: 30%;
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0.1) 40%,
-    rgba(0, 0, 0, 0) 50%
-  );
-  transform: rotateX(90deg) translateZ(-150px);
-  z-index: 2;
+
+  &:before {
+    font-family: "namu-pro";
+    font-size: 2vh;
+    width: 280px;
+    position: absolute;
+    text-align: center;
+    top: 36px;
+    left: -80px;
+    color: black;
+
+    text-shadow: 0 15px 5px rgba(0, 0, 0, 0.1),
+      10px 20px 5px rgba(0, 0, 0, 0.05), -10px 20px 5px rgba(0, 0, 0, 0.05);
+  }
+`;
+const TextSpan1 = styled(TextSpan)`
+  &:before {
+    content: "Актуальність";
+  }
+`;
+const TextSpan2 = styled(TextSpan)`
+  &:before {
+    content: "Підтримка та розвиток";
+  }
+`;
+const TextSpan3 = styled(TextSpan)`
+  &:before {
+    content: "Мультидисциплінарність";
+  }
+`;
+const TextSpan4 = styled(TextSpan)`
+  &:before {
+    content: "Любов і свобода самовираження";
+  }
+`;
+const TextSpan5 = styled(TextSpan)`
+  &:before {
+    content: "Повага до свого корІння";
+  }
 `;
