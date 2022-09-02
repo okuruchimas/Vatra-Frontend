@@ -173,7 +173,7 @@ const RotateDiv = styled.div`
 `;
 
 const Rotate = styled(RotateDiv)`
-  top: 24vh;
+  top: 54vh;
   margin-left: auto;
   animation: rotate-bubble-offset 20s linear infinite;
 
