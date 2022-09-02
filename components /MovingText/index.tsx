@@ -4,31 +4,25 @@ import BigTitle from "../layout/BigTitle";
 const MovingText = () => {
   return (
     <SliderWrap>
-      <SliderTrack>
+      <SliderTrackWhite>
         <BigTitle textBefore="Theatre" textAfter="varta " isGray />
         <BigTitle textBefore="Theatre" textAfter="varta " isGray />
         <BigTitle textBefore="Theatre" textAfter="varta " isGray />
         <BigTitle textBefore="Theatre" textAfter="varta " isGray />
-        <BigTitle textBefore="Theatre" textAfter="varta " isGray />
-        <BigTitle textBefore="Theatre" textAfter="varta " isGray />
-      </SliderTrack>
+      </SliderTrackWhite>
 
-      <SliderTrack2>
+      <SliderTrackRed>
         <BigTitle textBefore="Theatre" textAfter="varta " />
         <BigTitle textBefore="Theatre" textAfter="varta " />
         <BigTitle textBefore="Theatre" textAfter="varta " />
         <BigTitle textBefore="Theatre" textAfter="varta " />
-        <BigTitle textBefore="Theatre" textAfter="varta " />
-        <BigTitle textBefore="Theatre" textAfter="varta " />
-      </SliderTrack2>
-      <SliderTrack>
+      </SliderTrackRed>
+      <SliderTrackWhite>
         <BigTitle textBefore="Theatre" textAfter="varta " isGray />
         <BigTitle textBefore="Theatre" textAfter="varta " isGray />
         <BigTitle textBefore="Theatre" textAfter="varta " isGray />
         <BigTitle textBefore="Theatre" textAfter="varta " isGray />
-        <BigTitle textBefore="Theatre" textAfter="varta " isGray />
-        <BigTitle textBefore="Theatre" textAfter="varta " isGray />
-      </SliderTrack>
+      </SliderTrackWhite>
     </SliderWrap>
   );
 };
@@ -42,31 +36,30 @@ const SliderWrap = styled.div`
 `;
 const SliderTrack = styled.div`
   display: flex;
-  width: calc(40vw * 16);
-  animation: scroll-right-text 12s linear infinite;
+  width: calc(64vw * 4);
+`;
+const SliderTrackWhite = styled(SliderTrack)`
+  animation: text-scroll-right 8s linear infinite;
   span {
     margin: 0 2vw;
   }
-  @keyframes scroll-right-text {
+  @keyframes text-scroll-right {
     0% {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-40vw * 8));
+      transform: translateX(calc(-64vw * 2));
     }
   } ;
 `;
-
-const SliderTrack2 = styled.div`
-  display: flex;
-  width: calc(40vw * 16);
-  animation: scroll-left-text 14s linear infinite;
+const SliderTrackRed = styled(SliderTrack)`
+  animation: text-scroll-left 12s linear infinite;
   span {
     margin: 0 2vw;
   }
-  @keyframes scroll-left-text {
+  @keyframes text-scroll-left {
     0% {
-      transform: translateX(calc(-40vw * 8));
+      transform: translateX(calc(-64vw * 2));
     }
     100% {
       transform: translateX(0);

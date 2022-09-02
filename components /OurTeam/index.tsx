@@ -55,7 +55,7 @@ const OurTeam = () => {
   return (
     <Wrap>
       <BigTitle textBefore="наша" textAfter="команда" />
-      <SliderWrap>
+      <SliderWrapOne>
         {TestArr.map(({ name, role, superPower, url }) => (
           <PersonCard
             key={name}
@@ -74,8 +74,8 @@ const OurTeam = () => {
             url={url}
           />
         ))}
-      </SliderWrap>
-      <SliderWrap1>
+      </SliderWrapOne>
+      <SliderWrapTwo>
         {TestArr.map(({ name, role, superPower, url }) => (
           <PersonCard
             key={url}
@@ -94,7 +94,7 @@ const OurTeam = () => {
             url={url}
           />
         ))}
-      </SliderWrap1>
+      </SliderWrapTwo>
     </Wrap>
   );
 };
@@ -114,8 +114,10 @@ const SliderWrap = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-end;
+  width: calc(32vw * 16);
+`;
+const SliderWrapOne = styled(SliderWrap)`
   padding: 8vh 0;
-  width: calc(36vw * 16);
   animation: photo-scroll-r 24s linear infinite;
   span {
     margin: 0 2vw;
@@ -125,22 +127,18 @@ const SliderWrap = styled.div`
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-36vw * 8));
+      transform: translateX(calc(-32vw * 8));
     }
   } ;
 `;
-const SliderWrap1 = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  width: calc(36vw * 16);
+const SliderWrapTwo = styled(SliderWrap)`
   animation: photo-scroll-l 24s linear infinite;
   span {
     margin: 0 2vw;
   }
   @keyframes photo-scroll-l {
     0% {
-      transform: translateX(calc(-36vw * 6));
+      transform: translateX(calc(-32vw * 8));
     }
     100% {
       transform: translateX(0);

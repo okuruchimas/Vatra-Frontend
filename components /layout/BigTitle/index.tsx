@@ -19,7 +19,7 @@ const BigTitle = ({ textBefore, textAfter, isGray }: Props) => {
 export default BigTitle;
 
 const Wrap = styled.span<{ isGray?: boolean }>`
-  max-width: 64vw;
+  width: 64vw;
   text-transform: uppercase;
   font-family: "namu-1400";
   font-size: 10vh;
