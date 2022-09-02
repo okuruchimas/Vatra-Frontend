@@ -38,10 +38,11 @@ const ArrowWrap = styled.div`
     }
   }
 `;
-export const ArrowDown = styled.img`
+const ArrowDown = styled.img`
   height: 32vh;
   width: 2vw;
   animation: down 3s infinite;
+  z-index: 1;
   @keyframes down {
     0% {
       transform: translate(0);

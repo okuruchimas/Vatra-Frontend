@@ -106,7 +106,7 @@ const Wrap = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: 100vw;
-  padding: 28vh 6vw 0;
+  padding: 6vw;
   overflow: hidden;
 `;
 
@@ -115,17 +115,17 @@ const SliderWrap = styled.div`
   flex-direction: row;
   align-items: flex-end;
   padding: 8vh 0;
-  width: calc(72vw * 6);
-  animation: scroll-r 24s linear infinite;
+  width: calc(36vw * 16);
+  animation: photo-scroll-r 24s linear infinite;
   span {
     margin: 0 2vw;
   }
-  @keyframes scroll-r {
+  @keyframes photo-scroll-r {
     0% {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-72vw * 3));
+      transform: translateX(calc(-36vw * 8));
     }
   } ;
 `;
@@ -133,14 +133,14 @@ const SliderWrap1 = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  width: calc(72vw * 6);
-  animation: scroll 24s linear infinite;
+  width: calc(36vw * 16);
+  animation: photo-scroll-l 24s linear infinite;
   span {
     margin: 0 2vw;
   }
-  @keyframes scroll {
+  @keyframes photo-scroll-l {
     0% {
-      transform: translateX(calc(-72vw * 3));
+      transform: translateX(calc(-36vw * 6));
     }
     100% {
       transform: translateX(0);

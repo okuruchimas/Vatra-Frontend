@@ -26,7 +26,7 @@ const Wrap = styled.div`
   flex-direction: column;
   align-items: flex-start;
   margin: 0 6vw;
-  width: 28vw;
+  width: 20vw;
   span {
     z-index: 1;
     position: relative;
@@ -59,7 +59,7 @@ const Power = styled.span`
 const Photo = styled.img`
   border-radius: 24px;
   height: auto;
-  width: 28vw;
+  width: 20vw;
   position: relative;
   bottom: 12vh;
 `;

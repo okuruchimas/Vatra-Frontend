@@ -35,6 +35,7 @@ const MovingText = () => {
 
 export default MovingText;
 const SliderWrap = styled.div`
+  margin: 22vh;
   position: relative;
   width: 100%;
   overflow: hidden;
