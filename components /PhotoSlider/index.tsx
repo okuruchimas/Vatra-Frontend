@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+
 const TestArr = [
   {
     url: "/icons/slider/slider1.png",
@@ -21,43 +22,38 @@ const TestArr = [
 ];
 const PhotoSlider = () => {
   return (
-    <Wrap>
+    <Slider>
       <SliderTrack>
         {TestArr.map(({ url }) => (
-          <ImgWrap key={url}>
+          <Slide key={url}>
             <Img src={url} loading="lazy" />
-          </ImgWrap>
+          </Slide>
         ))}
         {TestArr.map(({ url }, index) => (
-          <ImgWrap key={index}>
+          <Slide key={index}>
             <Img src={url} loading="lazy" />
-          </ImgWrap>
+          </Slide>
         ))}
       </SliderTrack>
-    </Wrap>
+    </Slider>
   );
 };
 
 export default PhotoSlider;
 
-const Wrap = styled.div`
+const Slider = styled.div`
   position: relative;
   margin: auto;
   width: 100%;
-  display: grid;
-  place-items: center;
-  //display: flex;
-  //flex-direction: row;
-  //align-items: center;
   overflow: hidden;
-  padding: 20vh 0;
+  padding: 40vh 0 20vh;
 `;
 const SliderTrack = styled.div`
+  animation: scroll 24s linear infinite;
   display: flex;
   width: calc(20vw * 12);
-  animation: scroll 16s linear infinite;
   div:nth-of-type(even) {
-    margin-bottom: 12vh;
+    bottom: 12vh;
     transform: rotate(16deg);
   }
   @keyframes scroll {
@@ -67,17 +63,14 @@ const SliderTrack = styled.div`
     100% {
       transform: translateX(calc(-20vw * 6));
     }
-  } ;
+  }
 `;
 
-const ImgWrap = styled.div`
-  display: flex;
-  align-items: center;
-  perspective: 100px;
+const Slide = styled.div`
+  position: relative;
 `;
+
 const Img = styled.img`
   width: 20vw;
-  transition: transform 1s;
-  align-self: flex-end;
   border-radius: 24px;
 `;

@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import RedTitle from "../layout/RedTitle ";
+import BigTitle from "../layout/BigTitle";
 import ImageSlider from "./ImageSlider";
 
 const Test = [
@@ -32,7 +32,7 @@ const Test = [
 const StorySlider = () => {
   return (
     <Wrap>
-      <RedTitle textBefore="як створився театр" textAfter="ватра" />
+      <BigTitle textBefore="як створився театр" textAfter="ватра" />
       <DescriptionWrap>
         <span>
           Ми прийшли на творчу зустріч у Дикий дім. Простір, який із шелтеру для

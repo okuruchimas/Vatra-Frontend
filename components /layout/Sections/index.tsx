@@ -4,6 +4,7 @@ import OurPerformances from "../../OurPerformances";
 import PhotoSlider from "../../PhotoSlider";
 import StorySlider from "../../StorySlider";
 import Bubbles from "../../Bubbles";
+import MovingText from "../../MovingText";
 
 const Sections = () => {
   return (
@@ -13,6 +14,7 @@ const Sections = () => {
       <PhotoSlider />
       <StorySlider />
       <Bubbles />
+      <MovingText />
     </Wrap>
   );
 };

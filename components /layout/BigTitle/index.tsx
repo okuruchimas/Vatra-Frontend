@@ -1,26 +1,29 @@
 import styled from "@emotion/styled";
+
 type Props = {
   textBefore: string;
   textAfter: string;
+  isGray?: boolean;
 };
-const RedTitle = ({ textBefore, textAfter }: Props) => {
+
+const BigTitle = ({ textBefore, textAfter, isGray }: Props) => {
   return (
-    <Wrap>
+    <Wrap isGray={isGray}>
       {textBefore}
-      <Circle> &#11044; </Circle>
+      <Circle isGray={isGray}> &#11044; </Circle>
       {textAfter}
     </Wrap>
   );
 };
 
-export default RedTitle;
+export default BigTitle;
 
-const Wrap = styled.span`
+const Wrap = styled.span<{ isGray?: boolean }>`
   max-width: 60vw;
   text-transform: uppercase;
   font-family: "namu-1400";
   font-size: 10vh;
-  color: #b11212;
+  color: ${({ isGray }) => (isGray ? "#A4A4A4" : "#b11212")}; ;
 `;
 
 const Circle = styled(Wrap)`

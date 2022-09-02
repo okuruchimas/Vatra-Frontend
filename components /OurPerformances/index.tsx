@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import RedTitle from "../layout/RedTitle ";
+import BigTitle from "../layout/BigTitle";
 import Performance from "./Performance";
 
 const TestArr = [
@@ -45,7 +45,7 @@ const TestArr = [
 const OurPerformances = () => {
   return (
     <Wrap>
-      <RedTitle textBefore="Наші" textAfter="вистави" />
+      <BigTitle textBefore="Наші" textAfter="вистави" />
       <Description>
         Зустрівшись під одним дахом, ми зрозуміли, що наші цінности й думки
         збігаються, та через рефлексію створили першу перфомативну виставу.
