@@ -56,7 +56,7 @@ const OurTeam = () => {
     <Wrap>
       <BigTitle textBefore="наша" textAfter="команда" />
       <SliderWrap>
-        {TestArr.reverse().map(({ name, role, superPower, url }) => (
+        {TestArr.map(({ name, role, superPower, url }) => (
           <PersonCard
             name={name}
             role={role}
@@ -64,7 +64,7 @@ const OurTeam = () => {
             url={url}
           />
         ))}
-        {TestArr.reverse().map(({ name, role, superPower, url }) => (
+        {TestArr.map(({ name, role, superPower, url }) => (
           <PersonCard
             name={name}
             role={role}

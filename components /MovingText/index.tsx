@@ -41,31 +41,31 @@ const SliderWrap = styled.div`
 `;
 const SliderTrack = styled.div`
   display: flex;
-  width: calc(72vw * 6);
-  animation: scroll 12s linear infinite;
+  width: calc(40vw * 16);
+  animation: scroll-right-text 12s linear infinite;
   span {
     margin: 0 2vw;
   }
-  @keyframes scroll {
+  @keyframes scroll-right-text {
     0% {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-72vw * 3));
+      transform: translateX(calc(-40vw * 8));
     }
   } ;
 `;
 
 const SliderTrack2 = styled.div`
   display: flex;
-  width: calc(72vw * 6);
-  animation: scroll-left 14s linear infinite;
+  width: calc(40vw * 16);
+  animation: scroll-left-text 14s linear infinite;
   span {
     margin: 0 2vw;
   }
-  @keyframes scroll-left {
+  @keyframes scroll-left-text {
     0% {
-      transform: translateX(calc(-72vw * 3));
+      transform: translateX(calc(-40vw * 8));
     }
     100% {
       transform: translateX(0);
