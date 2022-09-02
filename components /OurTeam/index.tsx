@@ -58,6 +58,7 @@ const OurTeam = () => {
       <SliderWrap>
         {TestArr.map(({ name, role, superPower, url }) => (
           <PersonCard
+            key={name}
             name={name}
             role={role}
             superPower={superPower}
@@ -66,6 +67,7 @@ const OurTeam = () => {
         ))}
         {TestArr.map(({ name, role, superPower, url }) => (
           <PersonCard
+            key={role}
             name={name}
             role={role}
             superPower={superPower}
@@ -76,6 +78,7 @@ const OurTeam = () => {
       <SliderWrap1>
         {TestArr.map(({ name, role, superPower, url }) => (
           <PersonCard
+            key={url}
             name={name}
             role={role}
             superPower={superPower}
@@ -84,6 +87,7 @@ const OurTeam = () => {
         ))}
         {TestArr.map(({ name, role, superPower, url }) => (
           <PersonCard
+            key={name + role}
             name={name}
             role={role}
             superPower={superPower}

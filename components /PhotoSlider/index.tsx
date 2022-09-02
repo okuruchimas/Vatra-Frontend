@@ -49,14 +49,14 @@ const Slider = styled.div`
   padding: 40vh 0 20vh;
 `;
 const SliderTrack = styled.div`
-  animation: scroll 24s linear infinite;
+  animation: photo-scroll 24s linear infinite;
   display: flex;
   width: calc(20vw * 12);
   div:nth-of-type(even) {
     bottom: 12vh;
     transform: rotate(16deg);
   }
-  @keyframes scroll {
+  @keyframes photo-scroll {
     0% {
       transform: translateX(0);
     }
