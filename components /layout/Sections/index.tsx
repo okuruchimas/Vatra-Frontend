@@ -6,6 +6,7 @@ import StorySlider from "../../StorySlider";
 import Bubbles from "../../Bubbles";
 import MovingText from "../../MovingText";
 import OurTeam from "../../OurTeam";
+import JoinUs from "../../JoinUs";
 
 const Sections = () => {
   return (
@@ -17,6 +18,7 @@ const Sections = () => {
       <Bubbles />
       <MovingText />
       <OurTeam />
+      <JoinUs />
     </Wrap>
   );
 };
