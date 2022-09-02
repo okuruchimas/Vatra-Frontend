@@ -38,7 +38,6 @@ const SliderWrap = styled.div`
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 0 0 12vh;
 `;
 const SliderTrack = styled.div`
   display: flex;

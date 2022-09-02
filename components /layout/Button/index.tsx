@@ -36,7 +36,7 @@ const Text = styled.div`
   font-weight: 100;
   font-size: 2vh;
   text-transform: uppercase;
-
+  min-width: max-content;
   color: #ffffff;
   margin-right: 20px;
 `;

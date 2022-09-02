@@ -69,10 +69,10 @@ const Img = styled(CurrentSlide)`
 `;
 
 const PreviousSlide = styled(Img)`
-  left: -26vw;
+  left: -30vw;
 `;
 const NextSlide = styled(Img)`
-  right: -26vw;
+  right: -30vw;
 `;
 
 const Pagination = styled.div`
