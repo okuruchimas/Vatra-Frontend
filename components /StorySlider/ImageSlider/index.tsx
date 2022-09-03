@@ -24,17 +24,10 @@ const ImageSlider = ({ slides }: Props) => {
         style={{ backgroundImage: `url(${slides[nextSlideId].link})` }}
       ></NextSlide>
       <Pagination>
-        {/*{slides.map((slide, slideId) => (*/}
-        {/*  <Dot key={slideId} onClick={() => setCurrentId(slideId)}>*/}
-        {/*    &#183;*/}
-        {/*  </Dot>*/}
-        {/*))}*/}
         <Number onClick={() => setCurrentId(previousSlideId)}>
           {previousSlideId + 1}
         </Number>
-        <CurrentNumber>
-          &#183;&#183;&#183; {currentId + 1} &#183;&#183;&#183;
-        </CurrentNumber>
+        <LoadingLine />
         <Number onClick={() => setCurrentId(nextSlideId)}>
           {nextSlideId + 1}
         </Number>
@@ -73,30 +66,75 @@ const PreviousSlide = styled(Img)`
 `;
 const NextSlide = styled(Img)`
   right: -30vw;
+  //animation: test 0.2s linear;
+  //
+  //@keyframes test {
+  //  0% {
+  //    transform: translateX(0);
+  //  }
+  //  100% {
+  //    transform: translateX(-8vw);
+  //  }
+  //} ;
 `;
 
 const Pagination = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   font-size: 4vh;
 
   padding: 4vh 0;
 `;
-const Dot = styled.div`
-  font-size: 12vh;
-  line-height: 4vh;
-  margin: 0 0.8vw;
-  cursor: pointer;
+const LoadingLine = styled.div`
+  width: 6vw;
+  margin: 0 1vw;
+  height: 4px;
+  border-radius: 24px;
+  background: #bbbbbb;
+
+  &:before {
+    display: block;
+    position: relative;
+    content: "";
+    bottom: 1px;
+    height: 6px;
+    border-radius: 24px;
+    background: #ffffff;
+    //animation: loading-line 3s linear infinite;
+  }
+  @keyframes loading-line {
+    0% {
+      left: 6vw;
+      width: 0;
+    }
+    20% {
+      left: 4.8vw;
+      width: 1.2vw;
+    }
+    40% {
+      left: 3.6vw;
+      width: 2.4vw;
+    }
+    60% {
+      left: 2.4vw;
+      width: 3.6vw;
+    }
+    80% {
+      left: 1.2vw;
+      width: 4.8vw;
+    }
+    100% {
+      left: 0;
+      width: 6vw;
+    }
+  } ;
 `;
-const CurrentNumber = styled.span`
+
+const Number = styled.span`
+  font-family: "namu-1750";
   font-size: 3vh;
   margin: 0 0.4vw;
   align-self: center;
-`;
-const Number = styled(CurrentNumber)`
-  font-size: 2.6vh;
-  margin: 0 0.4vw;
   cursor: pointer;
-  opacity: 0.4;
-  align-self: center;
 `;
