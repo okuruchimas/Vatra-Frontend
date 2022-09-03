@@ -106,7 +106,7 @@ const Wrap = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: 100vw;
-  padding: 12vh 6vw;
+  padding: 14vh 6vw;
   overflow: hidden;
 `;
 

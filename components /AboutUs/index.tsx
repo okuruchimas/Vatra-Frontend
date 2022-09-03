@@ -67,7 +67,7 @@ const Wrap = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: 100vw;
-  padding: 12vh 6vw 0;
+  padding: 14vh 6vw 0;
 `;
 const DescriptionWrap = styled.div`
   padding: 8vh 0 0;

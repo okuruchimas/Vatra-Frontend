@@ -89,7 +89,7 @@ const Pagination = styled.div`
 const LoadingLine = styled.div`
   width: 6vw;
   margin: 0 1vw;
-  height: 4px;
+  height: 1px;
   border-radius: 24px;
   background: #bbbbbb;
 
@@ -98,10 +98,11 @@ const LoadingLine = styled.div`
     position: relative;
     content: "";
     bottom: 1px;
-    height: 6px;
+    height: 3px;
+    width: 0;
     border-radius: 24px;
     background: #ffffff;
-    //animation: loading-line 3s linear infinite;
+    animation: loading-line 3s linear infinite;
   }
   @keyframes loading-line {
     0% {
