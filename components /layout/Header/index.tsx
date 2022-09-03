@@ -11,10 +11,12 @@ const arrMenu: { text: string; to: string }[] = [
 
 const Header = () => {
   const [isHint, setHint] = useState<boolean>(false);
+  // const [click, setClick] = useState<boolean>(false);
+
   return (
     <Wrap>
       <Link to="/" spy={true} smooth={true} offset={50} duration={2000}>
-        <Logo src="/icons/logo.svg" />
+        <LogoVatra src="/icons/logo.svg" />
       </Link>
       <MenuWrap>
         <HintWrap>
@@ -58,14 +60,14 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 12px 6vw;
+  padding: 2vh 6vw;
   height: 8vh;
   background-image: url("/icons/dottBackground.svg");
   background-color: #181818;
   border-bottom: 1px solid #801515;
 `;
 
-const Logo = styled.img`
+export const LogoVatra = styled.img`
   width: auto;
   height: 2vh;
   cursor: pointer;
@@ -109,14 +111,16 @@ const RedText = styled.span`
   color: #801515;
 `;
 
-const TextMenu = styled(Link)`
+const TextMenu = styled(Link)<{ click?: boolean }>`
   color: #b0b0b0;
   font-family: "namu-pro";
   font-weight: 400;
   font-size: 2vh;
   margin-left: 6vw;
   cursor: pointer;
-  &:hover {
+  text-decoration: ${({ click }) => (click ? "underline" : "none")} ;,
+
+&:hover {
     text-decoration: underline;,
   }
 `;

@@ -1,16 +1,16 @@
 import styled from "@emotion/styled";
+import { LogoVatra } from "../Header";
 
 const Footer = () => {
   return (
     <Wrap>
       <SocialShareWrap>
+        <FooterLogo src="/icons/logoGray.svg" />
         <Logo src="/icons/instagram.svg" /> <Text>інстаграм</Text>
-      </SocialShareWrap>
-      <SocialShareWrap>
         <Logo src="/icons/telegram.svg" /> <Text>телеграм</Text>
       </SocialShareWrap>
-      <Text>+380637088181</Text>
-      <Text>lianeso4kaas@gmail.com</Text>
+      <Text>+38 067 378 37 20</Text>
+      <Text>theatre.varta@gmail.com</Text>
     </Wrap>
   );
 };
@@ -22,8 +22,9 @@ const Wrap = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0 4%;
-  height: 60px;
+  width: 100vw;
+  padding: 0 6vw;
+  height: 8vh;
   border-top: 1px solid #ffffff;
 `;
 
@@ -32,7 +33,13 @@ const SocialShareWrap = styled.div`
   flex-direction: row;
   align-items: center;
 `;
-const Logo = styled.img``;
+const Logo = styled.img`
+  margin-left: 4vw;
+`;
+const FooterLogo = styled(LogoVatra)`
+  padding-right: 4vw;
+`;
+
 const Text = styled.span`
   font-family: "namu-pro";
   font-weight: 300;
