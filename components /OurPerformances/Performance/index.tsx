@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import Button from "../../layout/Button";
+import parse from "html-react-parser";
 
 type Props = {
   title: string;
@@ -19,7 +20,7 @@ const Performance = (performance: Props) => {
         </Title>
       </LeftBlock>
       <RightBlock>
-        <Description>{performance.description}</Description>
+        <Description>{parse(performance.description)}</Description>
         <BuyWrap>
           <Type>{performance.type}</Type>
           <Button />
@@ -80,6 +81,9 @@ const Description = styled.span`
   font-family: "namu-1750";
   font-size: 2vh;
   color: #e0e0e0;
+  p {
+    margin: 0 auto 2vh;
+  }
 `;
 
 const BuyWrap = styled.div`
