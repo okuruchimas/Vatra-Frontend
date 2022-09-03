@@ -53,7 +53,7 @@ const TestArr = [
 ];
 const OurTeam = () => {
   return (
-    <Wrap>
+    <Wrap id="team">
       <BigTitle textBefore="наша" textAfter="команда" />
       <SliderWrapOne>
         {TestArr.map(({ name, role, superPower, url }) => (

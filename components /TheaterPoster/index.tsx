@@ -36,9 +36,9 @@ const TestArr = [
   },
 ];
 
-const OurPerformances = () => {
+const TheaterPoster = () => {
   return (
-    <Wrap>
+    <Wrap id="poster">
       <BigTitle textBefore="Наші" textAfter="вистави" />
       <Description>
         Зустрівшись під одним дахом, ми зрозуміли, що наші цінности й думки
@@ -60,7 +60,7 @@ const OurPerformances = () => {
   );
 };
 
-export default OurPerformances;
+export default TheaterPoster;
 
 const Wrap = styled.div`
   display: flex;

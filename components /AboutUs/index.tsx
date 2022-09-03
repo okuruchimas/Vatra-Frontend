@@ -29,9 +29,9 @@ const Test = [
   },
 ];
 
-const StorySlider = () => {
+const AboutUs = () => {
   return (
-    <Wrap>
+    <Wrap id="aboutUs">
       <BigTitle textBefore="як створився театр" textAfter="ватра" />
       <DescriptionWrap>
         <span>
@@ -60,7 +60,7 @@ const StorySlider = () => {
   );
 };
 
-export default StorySlider;
+export default AboutUs;
 
 const Wrap = styled.div`
   display: flex;

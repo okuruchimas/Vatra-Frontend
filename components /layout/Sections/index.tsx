@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import Greeting from "../../Greeting";
-import OurPerformances from "../../OurPerformances";
+import TheaterPoster from "../../TheaterPoster";
 import PhotoSlider from "../../PhotoSlider";
-import StorySlider from "../../StorySlider";
+import AboutUs from "../../AboutUs";
 import Bubbles from "../../Bubbles";
 import MovingText from "../../MovingText";
 import OurTeam from "../../OurTeam";
@@ -10,11 +10,11 @@ import JoinUs from "../../JoinUs";
 
 const Sections = () => {
   return (
-    <Wrap>
+    <Wrap id="/">
       <Greeting />
-      <OurPerformances />
+      <TheaterPoster />
       <PhotoSlider />
-      <StorySlider />
+      <AboutUs />
       <Bubbles />
       <MovingText />
       <OurTeam />

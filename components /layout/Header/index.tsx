@@ -1,13 +1,21 @@
 import styled from "@emotion/styled";
 import { useState } from "react";
+import { Link } from "react-scroll";
 
-const arrMenu: string[] = ["Афіша", "Про Театр", "Команда", "Контакти"];
+const arrMenu: { text: string; to: string }[] = [
+  { text: "Афіша", to: "poster" },
+  { text: "Про Театр", to: "aboutUs" },
+  { text: "Команда", to: "team" },
+  { text: "Контакти", to: "contacts" },
+];
 
 const Header = () => {
   const [isHint, setHint] = useState<boolean>(false);
   return (
     <Wrap>
-      <Logo src="/icons/logo.svg" />
+      <Link to="/" spy={true} smooth={true} offset={50} duration={2000}>
+        <Logo src="/icons/logo.svg" />
+      </Link>
       <MenuWrap>
         <HintWrap>
           <Button
@@ -22,8 +30,18 @@ const Header = () => {
             — надішліть, будь ласка, будь-яку суму.
           </Hint>
         </HintWrap>
-        {arrMenu.map((value: string) => (
-          <TextMenu key={value}>{value}</TextMenu>
+        {arrMenu.map((item, index) => (
+          <TextMenu
+            to={item.to}
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={2000}
+            onClick={() => {}}
+            key={index}
+          >
+            {item.text}
+          </TextMenu>
         ))}
       </MenuWrap>
     </Wrap>
@@ -91,7 +109,7 @@ const RedText = styled.span`
   color: #801515;
 `;
 
-const TextMenu = styled.span`
+const TextMenu = styled(Link)`
   color: #b0b0b0;
   font-family: "namu-pro";
   font-weight: 400;

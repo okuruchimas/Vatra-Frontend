@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 const JoinUs = () => {
   return (
-    <Wrap>
+    <Wrap id="contacts">
       <Title>Приєднуйся до культурного фронту</Title>
       <ArrowWrap>
         <ArrowDown src="/icons/arrowDown.svg" />
