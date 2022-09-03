@@ -66,7 +66,7 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0 6vw;
+  padding: 12vh 6vw 0;
   width: 100%;
 `;
 const Description = styled.span`

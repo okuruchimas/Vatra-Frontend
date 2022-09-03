@@ -65,7 +65,7 @@ const Info = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 20vh 0;
+  padding: 18vh 0 6vh;
 `;
 
 const LeftBlock = styled.div`

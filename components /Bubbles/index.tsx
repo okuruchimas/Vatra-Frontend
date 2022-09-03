@@ -46,6 +46,7 @@ export default Bubbles;
 const Wrap = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 8vh 0 0;
   width: 100vw;
 `;
 const Title = styled.span`

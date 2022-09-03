@@ -19,7 +19,7 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 8vh 0;
+  margin: 6vh 0;
 `;
 const Title = styled.span`
   font-family: "namu-1750";
