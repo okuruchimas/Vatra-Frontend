@@ -64,6 +64,7 @@ const Wrap = styled.div`
   height: 8vh;
   background-image: url("/icons/dottBackground.svg");
   background-color: #181818;
+  animation: background-scroll 200s linear infinite;
   border-bottom: 1px solid #801515;
 `;
 

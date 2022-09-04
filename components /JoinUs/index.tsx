@@ -19,7 +19,7 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 6vh 0;
+  margin: 6vh 0 2vh;
 `;
 const Title = styled.span`
   font-family: "namu-1750";
@@ -56,7 +56,6 @@ const ArrowDown = styled.img`
   }
 `;
 export const Circle = styled.div`
-  display: block;
   height: 80px;
   width: 80px;
   border-radius: 50%;

@@ -7,9 +7,27 @@ body {
 }
 
 body {
+  -moz-background-image: url("/icons/dottBackground.svg");
+  -webkit-background-image: url("/icons/dottBackground.svg");
   background-image: url("/icons/dottBackground.svg");
+
   background-color: #181818;
+
+  -moz-animation: background-scroll 200s linear infinite;
+  -webkit-animation: background-scroll 200s linear infinite;
+  animation: background-scroll 200s linear infinite;
+
+  @keyframes background-scroll {
+    100%{
+      background-position:0px -1000vh;
+    }
+  }
 }
+
+span {
+  z-index: 1;
+}
+
 * {
   box-sizing: border-box;
 }

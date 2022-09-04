@@ -1,15 +1,18 @@
 import styled from "@emotion/styled";
 import VideoPreview from "./VideoPreview";
 import Button from "../layout/Button";
+import { Gradient } from "../layout/Gradient";
 
 const Greeting = () => {
   return (
     <Wrap>
       <Preview src="/icons/varta.svg" />
+      <Gradient size={24} animationTime={16} left={-12} top={60}/>
       <BuySection>
         <LeftText>
           На сторожі Української культури. <br /> Створений під час війни.
         </LeftText>
+        <Gradient size={12} animationTime={16} right={4}/>
         <Button />
       </BuySection>
       <VideoPreview />
@@ -38,10 +41,25 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20vh 6vw 0;
+  padding: 28vh 6vw 0;
   width: 100vw;
-`;
+  
+  // mix-blend-mode: screen;
+  //animation: 44s -27s move-gradient infinite ease-in-out alternate;
+  //&::before {
+  //  animation-duration: 44s;
+  //  animation-delay: -27s;
+  //}
 
+  //@keyframes move-gradient {
+  //  from {
+  //    transform: rotate(0deg) scale(12) translateX(-20px);
+  //  }
+  //  to {
+  //    transform: rotate(360deg) scale(18) translateX(20px);
+  //  }
+  //}
+`;
 const Preview = styled.img`
   width: 96vw;
 `;

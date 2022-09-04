@@ -12,7 +12,7 @@ const Button = () => {
 export default Button;
 
 const Wrap = styled.div`
-  display: flex;
+  display: flex;  
   flex-direction: row;
   align-items: center;
   padding-right: 1vw;
@@ -39,4 +39,5 @@ const Text = styled.div`
   min-width: max-content;
   color: #ffffff;
   margin-right: 20px;
+  z-index: 1;
 `;

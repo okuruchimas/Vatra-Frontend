@@ -21,6 +21,6 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 60px;
   min-height: 100vh;
+  z-index: 4;
 `;
