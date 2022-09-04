@@ -16,7 +16,7 @@ const ArrowR = styled.img`
   left: 0;
   display: block;
   transition: left 0.4s ease;
-  z-index: 10;
+  z-index: 4;
 `;
 
 const Wrap = styled.div`

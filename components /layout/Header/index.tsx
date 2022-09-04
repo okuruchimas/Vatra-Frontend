@@ -11,15 +11,13 @@ const arrMenu: { text: string; to: string }[] = [
 
 const Header = () => {
   const [isHint, setHint] = useState<boolean>(false);
-  // const [click, setClick] = useState<boolean>(false);
 
   return (
     <Wrap>
-      <Link to="/" spy={true} smooth={true} offset={50} duration={2000}>
+      <Link to="/" spy={true} smooth={true} offset={-100} duration={3200} isDynamic>
         <LogoVatra src="/icons/logo.svg" />
       </Link>
-      <MenuWrap>
-        <HintWrap>
+      <Navbar>
           <Button
             onMouseEnter={() => setHint(true)}
             onMouseLeave={() => setHint(false)}
@@ -31,9 +29,8 @@ const Header = () => {
             Тому, якщо маєте бажання і можливість матеріально підтримати акторів
             — надішліть, будь ласка, будь-яку суму.
           </Hint>
-        </HintWrap>
         {arrMenu.map((item, index) => (
-          <TextMenu
+          <ItemList
             to={item.to}
             spy={true}
             smooth={true}
@@ -43,9 +40,9 @@ const Header = () => {
             key={index}
           >
             {item.text}
-          </TextMenu>
+          </ItemList>
         ))}
-      </MenuWrap>
+      </Navbar>
     </Wrap>
   );
 };
@@ -55,7 +52,7 @@ export default Header;
 const Wrap = styled.div`
   position: fixed;
   top: 0;
-  z-index: 100;
+  z-index: 10;
   width: 100vw;
   display: flex;
   flex-direction: row;
@@ -72,6 +69,10 @@ export const LogoVatra = styled.img`
   width: auto;
   height: 2vh;
   cursor: pointer;
+  
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 const Button = styled.button`
   width: 12vw;
@@ -86,13 +87,14 @@ const Button = styled.button`
     background: #b11212;
   }
 `;
-const MenuWrap = styled.div`
+
+const Navbar = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-left: auto;
 `;
-const HintWrap = styled.div``;
+
 const Hint = styled.div<HintProps>`
   padding: 1vh 1vw;
   position: absolute;
@@ -108,22 +110,22 @@ const Hint = styled.div<HintProps>`
   border-radius: 12px;
   border: 1px solid #b0b0b0;
 `;
+
 const RedText = styled.span`
   color: #801515;
 `;
 
-const TextMenu = styled(Link)<{ click?: boolean }>`
+const ItemList = styled(Link)`
   color: #b0b0b0;
   font-family: "namu-pro";
   font-weight: 400;
   font-size: 2vh;
   margin-left: 6vw;
   cursor: pointer;
-  text-decoration: ${({ click }) => (click ? "underline" : "none")} ;,
 
-&:hover {
-    text-decoration: underline;,
-  }
+  &:hover {
+      text-decoration: underline;,
+    }
 `;
 
 type HintProps = { isHint?: boolean };
