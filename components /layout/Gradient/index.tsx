@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 
 export const Gradient = styled.div<GradientProps>`
   position: absolute;
+  z-index: 0;
 
   height: ${({ size }) => (`${size}vw`)};
   width: ${({ size }) => (`${size}vw`)};
@@ -12,10 +13,9 @@ export const Gradient = styled.div<GradientProps>`
   bottom: ${({ bottom }) => (bottom ? `${bottom}vh` : "inherit")};
   
   border-radius: 50%;
+  
   background:linear-gradient(-45deg, #909090,#801515, #89141445, #B11212CC);
   background-size: 400% 400%;
-  z-index: 0;
-  
   -webkit-filter: blur(64px);
   filter: blur(64px);
   opacity: 0.8;
@@ -38,7 +38,7 @@ export const Gradient = styled.div<GradientProps>`
   }
 `;
 
-type GradientProps = {
+export type GradientProps = {
   size: number;
   animationTime: number;
   left?: number;

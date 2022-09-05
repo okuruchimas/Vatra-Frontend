@@ -2,12 +2,15 @@ import styled from "@emotion/styled";
 import VideoPreview from "./VideoPreview";
 import Button from "../layout/Button";
 import { Gradient } from "../layout/Gradient";
+import { BlackGradient } from "../layout/BlackGradients";
 
 const Greeting = () => {
   return (
     <Wrap>
       <Preview src="/icons/varta.svg" />
+
       <Gradient size={24} animationTime={16} left={-12} top={60}/>
+
       <BuySection>
         <LeftText>
           На сторожі Української культури. <br /> Створений під час війни.
@@ -15,22 +18,28 @@ const Greeting = () => {
         <Gradient size={12} animationTime={16} right={4}/>
         <Button />
       </BuySection>
+
       <VideoPreview />
+
       <Info>
+        <BlackGradient turnLeft size={28} animationTime={16}  left={-16} src="/icons/left.svg" />
         <LeftBlock>
           <Title>Що ми робимо?</Title>
           <Subtitle>
             Ми створили театр для підтримки культурного фронту України
           </Subtitle>
         </LeftBlock>
+
         <RightBlock>
           <ArrowDown src="/icons/arrowDown.svg" />
           <Description>
             Увібравши в себе митців із усієї країни, ми просуваємо та творимо
             сучасне українське мистецтво в такий болючий для сердець час.
           </Description>
+          <BlackGradient size={36} animationTime={20}  right={-12} bottom={-52} src="/icons/right.svg"/>
         </RightBlock>
       </Info>
+
     </Wrap>
   );
 };
@@ -95,6 +104,7 @@ const LeftBlock = styled.div`
 `;
 
 const RightBlock = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,7 +112,7 @@ const RightBlock = styled.div`
   padding: 0 12vw;
 `;
 
-const Title = styled.div`
+const Title = styled.span`
   font-family: "namu-1750";
   font-weight: 300;
   font-size: 2vh;
@@ -112,13 +122,13 @@ const Title = styled.div`
   color: #d8d8d8;
 `;
 
-const Subtitle = styled.div`
+const Subtitle = styled.span`
   font-family: "namu-1400";
   font-size: 4vh;
   color: #fefefe;
 `;
 
-const Description = styled.div`
+const Description = styled.span`
   font-family: "namu-1750";
   font-weight: 300;
   font-size: 2vh;
