@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { GradientProps } from "../Gradient";
+import { GradientProps } from "../Gradients";
 
 export const BlackGradient = styled.img<BlackGradientsProps>`
   position: absolute;

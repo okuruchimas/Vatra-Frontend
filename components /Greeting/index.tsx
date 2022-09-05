@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import VideoPreview from "./VideoPreview";
 import Button from "../layout/Button";
-import { Gradient } from "../layout/Gradient";
+import { RedGradient } from "../layout/Gradients";
 import { BlackGradient } from "../layout/BlackGradients";
 
 const Greeting = () => {
@@ -9,13 +9,13 @@ const Greeting = () => {
     <Wrap>
       <Preview src="/icons/varta.svg" />
 
-      <Gradient size={24} animationTime={16} left={-12} top={60}/>
+      <RedGradient size={24} animationTime={12} left={-12} top={60}/>
 
       <BuySection>
         <LeftText>
           На сторожі Української культури. <br /> Створений під час війни.
         </LeftText>
-        <Gradient size={12} animationTime={16} right={4}/>
+        <RedGradient size={12} animationTime={8} right={4}/>
         <Button />
       </BuySection>
 
