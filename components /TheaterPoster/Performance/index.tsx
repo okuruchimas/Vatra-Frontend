@@ -16,7 +16,9 @@ const Performance = (performance: Props) => {
       <LeftBlock>
         <Img src={performance.imgUrl} />
         <Title>
-          "{performance.title}"<br /> <DateText>{performance.date}</DateText>
+          &quot;{performance.title}&quot;
+          <br />
+          <DateText>{performance.date}</DateText>
         </Title>
       </LeftBlock>
       <RightBlock>

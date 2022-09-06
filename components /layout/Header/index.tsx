@@ -14,21 +14,28 @@ const Header = () => {
 
   return (
     <Wrap>
-      <Link to="/" spy={true} smooth={true} offset={-100} duration={3200} isDynamic>
+      <Link
+        to="/"
+        spy={true}
+        smooth={true}
+        offset={-100}
+        duration={3200}
+        isDynamic
+      >
         <LogoVatra src="/icons/logo.svg" />
       </Link>
       <Navbar>
-          <Button
-            onMouseEnter={() => setHint(true)}
-            onMouseLeave={() => setHint(false)}
-          >
-            Donate
-          </Button>
-          <Hint isHint={isHint}>
-            <RedText>Наш театр є незалежним проєктом. </RedText>
-            Тому, якщо маєте бажання і можливість матеріально підтримати акторів
-            — надішліть, будь ласка, будь-яку суму.
-          </Hint>
+        <Button
+          onMouseEnter={() => setHint(true)}
+          onMouseLeave={() => setHint(false)}
+        >
+          Donate
+        </Button>
+        <Hint isHint={isHint}>
+          <RedText>Наш театр є незалежним проєктом. </RedText>
+          Тому, якщо маєте бажання і можливість матеріально підтримати акторів —
+          надішліть, будь ласка, будь-яку суму.
+        </Hint>
         {arrMenu.map((item, index) => (
           <ItemList
             to={item.to}
@@ -69,7 +76,7 @@ export const LogoVatra = styled.img`
   width: auto;
   height: 2vh;
   cursor: pointer;
-  
+
   &:hover {
     opacity: 0.8;
   }

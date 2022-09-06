@@ -9,20 +9,26 @@ const Greeting = () => {
     <Wrap>
       <Preview src="/icons/varta.svg" />
 
-      <RedGradient size={24} animationTime={12} left={-12} top={60}/>
+      <RedGradient size={24} animationTime={12} left={-12} top={60} />
 
       <BuySection>
         <LeftText>
           На сторожі Української культури. <br /> Створений під час війни.
         </LeftText>
-        <RedGradient size={12} animationTime={8} right={4}/>
+        <RedGradient size={12} animationTime={8} right={4} />
         <Button />
       </BuySection>
 
       <VideoPreview />
 
       <Info>
-        <BlackGradient turnLeft size={28} animationTime={16}  left={-16} src="/icons/left.svg" />
+        <BlackGradient
+          turnLeft
+          size={28}
+          animationTime={16}
+          left={-16}
+          src="/icons/left.svg"
+        />
         <LeftBlock>
           <Title>Що ми робимо?</Title>
           <Subtitle>
@@ -36,10 +42,15 @@ const Greeting = () => {
             Увібравши в себе митців із усієї країни, ми просуваємо та творимо
             сучасне українське мистецтво в такий болючий для сердець час.
           </Description>
-          <BlackGradient size={36} animationTime={20}  right={-12} bottom={-52} src="/icons/right.svg"/>
+          <BlackGradient
+            size={40}
+            animationTime={20}
+            right={-20}
+            bottom={-52}
+            src="/icons/right.svg"
+          />
         </RightBlock>
       </Info>
-
     </Wrap>
   );
 };
@@ -52,7 +63,7 @@ const Wrap = styled.div`
   align-items: center;
   padding: 28vh 6vw 0;
   width: 100vw;
-  
+
   // mix-blend-mode: screen;
   //animation: 44s -27s move-gradient infinite ease-in-out alternate;
   //&::before {

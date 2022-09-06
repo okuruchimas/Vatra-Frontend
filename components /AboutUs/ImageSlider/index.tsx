@@ -12,26 +12,23 @@ const ImageSlider = ({ slides }: Props) => {
 
   return (
     <Wrap>
-      <PreviousSlide
-        onClick={() => setCurrentId(previousSlideId)}
-        style={{ backgroundImage: `url(${slides[previousSlideId].link})` }}
-      ></PreviousSlide>
-      <CurrentSlide
-        style={{ backgroundImage: `url(${slides[currentId].link})` }}
-      ></CurrentSlide>
-      <NextSlide
-        onClick={() => setCurrentId(nextSlideId)}
-        style={{ backgroundImage: `url(${slides[nextSlideId].link})` }}
-      ></NextSlide>
-      <Pagination>
-        <Number onClick={() => setCurrentId(previousSlideId)}>
-          {previousSlideId + 1}
-        </Number>
-        <LoadingLine />
-        <Number onClick={() => setCurrentId(nextSlideId)}>
-          {nextSlideId + 1}
-        </Number>
-      </Pagination>
+      <Slider>
+        {slides.map(({ link }, index) => (
+          <TestSpan key={index} index={index + 1}>
+            <ImgTest src={link} />
+          </TestSpan>
+        ))}
+      </Slider>
+
+      {/*<Pagination>*/}
+      {/*  <Number onClick={() => setCurrentId(previousSlideId)}>*/}
+      {/*    {previousSlideId + 1}*/}
+      {/*  </Number>*/}
+      {/*  <LoadingLine />*/}
+      {/*  <Number onClick={() => setCurrentId(nextSlideId)}>*/}
+      {/*    {nextSlideId + 1}*/}
+      {/*  </Number>*/}
+      {/*</Pagination>*/}
     </Wrap>
   );
 };
@@ -39,10 +36,60 @@ const ImageSlider = ({ slides }: Props) => {
 export default ImageSlider;
 
 const Wrap = styled.div`
-  height: 100%;
-  position: relative;
+  margin: 20vh 0;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
   color: #ffffff;
 `;
+
+const Slider = styled.div`
+  position: relative;
+
+  width: 18vw;
+  height: 44vh;
+  transform-style: preserve-3d;
+  animation: rotate-photo 30s linear infinite;
+
+  @keyframes rotate-photo {
+    0% {
+      transform: perspective(2000px) rotateY(0deg);
+    }
+    100% {
+      transform: perspective(2000px) rotateY(360deg);
+    }
+  }
+`;
+const TestSpan = styled.span<{ index: number }>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18vw;
+  height: 44vh;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(${({ index }) => index} * 45deg)) translateZ(40vw);
+
+  &:hover {
+    img {
+      transform: translateY(-50px) scale(1.2);
+    }
+  }
+`;
+const ImgTest = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18vw;
+  height: 44vh;
+  border-radius: 24px;
+  object-fit: cover;
+  transition: 2s;
+  cursor: pointer;
+`;
+
 const CurrentSlide = styled.div`
   width: 100%;
   height: 100%;
@@ -61,31 +108,6 @@ const Img = styled(CurrentSlide)`
   opacity: 0.4;
 `;
 
-const PreviousSlide = styled(Img)`
-  left: -30vw;
-`;
-const NextSlide = styled(Img)`
-  right: -30vw;
-  //animation: test 0.2s linear;
-  //
-  //@keyframes test {
-  //  0% {
-  //    transform: translateX(0);
-  //  }
-  //  100% {
-  //    transform: translateX(-8vw);
-  //  }
-  //} ;
-`;
-
-const Pagination = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 4vh;
-
-  padding: 4vh 0;
-`;
 const LoadingLine = styled.div`
   width: 6vw;
   margin: 0 1vw;

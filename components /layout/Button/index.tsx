@@ -12,7 +12,7 @@ const Button = () => {
 export default Button;
 
 const Wrap = styled.div`
-  display: flex;  
+  display: flex;
   flex-direction: row;
   align-items: center;
   padding-right: 1vw;

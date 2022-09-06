@@ -53,9 +53,8 @@ const AboutUs = () => {
           Міжнародний день театру ми представились Львову.
         </span>
       </DescriptionWrap>
-      <SliderWrap>
-        <ImageSlider slides={Test} />
-      </SliderWrap>
+
+      <ImageSlider slides={Test} />
     </Wrap>
   );
 };
@@ -70,7 +69,7 @@ const Wrap = styled.div`
   padding: 14vh 6vw 0;
 `;
 const DescriptionWrap = styled.div`
-  padding: 8vh 0 0;
+  padding: 6vh 0 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -82,9 +81,4 @@ const DescriptionWrap = styled.div`
   span {
     margin: 2vh 0 0;
   }
-`;
-const SliderWrap = styled.div`
-  height: 60vh;
-  width: 28vw;
-  margin: 16vh auto;
 `;

@@ -1,5 +1,10 @@
 import styled from "@emotion/styled";
-import { BlueGradient, PurpleGradient, SkyGradient, YellowGradient } from "../layout/Gradients";
+import {
+  BlueGradient,
+  PurpleGradient,
+  SkyGradient,
+  YellowGradient,
+} from "../layout/Gradients";
 
 const Bubbles = () => {
   return (
@@ -7,7 +12,7 @@ const Bubbles = () => {
       <BlueGradient size={8} animationTime={6} right={36} top={2} />
       <Title>наші цінності</Title>
       <BubblesWrap>
-        <YellowGradient size={16} animationTime={8} left={-4} top={60}/>
+        <YellowGradient size={16} animationTime={8} left={-4} top={60} />
         <Rotate>
           <BubbleWrap>
             <Bubble>
@@ -20,8 +25,8 @@ const Bubbles = () => {
             </Bubble>
           </BubbleWrap>
         </Rotate>
-        <SkyGradient size={20} animationTime={4} right={24} top={40}/>
-        <PurpleGradient size={24} animationTime={4} left={-8} top={94}/>
+        <SkyGradient size={20} animationTime={4} right={24} top={40} />
+        <PurpleGradient size={24} animationTime={4} left={-8} top={94} />
         <SecondRotate>
           <BubbleWrap>
             <Bubble>
