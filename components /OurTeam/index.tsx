@@ -67,7 +67,7 @@ const OurTeam = () => {
         ))}
         {TestArr.map(({ name, role, superPower, url }) => (
           <PersonCard
-            key={role}
+            key={role + name}
             name={name}
             role={role}
             superPower={superPower}
@@ -85,9 +85,9 @@ const OurTeam = () => {
             url={url}
           />
         ))}
-        {TestArr.map(({ name, role, superPower, url }) => (
+        {TestArr.map(({ name, role, superPower, url }, index) => (
           <PersonCard
-            key={name + role}
+            key={index}
             name={name}
             role={role}
             superPower={superPower}

@@ -12,7 +12,7 @@ const ImageSlider = ({ slides }: Props) => {
 
   return (
     <Wrap>
-      <Slider>
+      <Slider imgLength={slides.length}>
         {slides.map(({ link }, index) => (
           <TestSpan key={index} index={index + 1}>
             <ImgTest src={link} />
@@ -45,13 +45,14 @@ const Wrap = styled.div`
   color: #ffffff;
 `;
 
-const Slider = styled.div`
+const Slider = styled.div<{ imgLength: number }>`
   position: relative;
 
   width: 18vw;
   height: 44vh;
   transform-style: preserve-3d;
-  animation: rotate-photo 30s linear infinite;
+  animation: rotate-photo calc(${({ imgLength }) => imgLength} * 8s) linear
+    infinite;
 
   @keyframes rotate-photo {
     0% {
