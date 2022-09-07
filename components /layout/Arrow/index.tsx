@@ -3,7 +3,8 @@ import styled from "@emotion/styled";
 const Arrow = () => {
   return (
     <Wrap>
-      <ArrowR height="auto" width="76" src="/icons/arrowRight.svg" /> <Circle />
+      <ArrowR height="auto" width="76" src="/icons/arrows/arrowRight.svg" />{" "}
+      <Circle />
     </Wrap>
   );
 };

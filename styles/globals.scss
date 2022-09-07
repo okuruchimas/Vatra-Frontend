@@ -7,19 +7,22 @@ body {
 }
 
 body {
-  -moz-background-image: url("/icons/dottBackground.svg");
-  -webkit-background-image: url("/icons/dottBackground.svg");
-  background-image: url("/icons/dottBackground.svg");
+  -moz-background-image: url("/icons/gradients/dottBackground.svg");
+  -webkit-background-image: url("/icons/gradients/dottBackground.svg");
+  background-image: url("/icons/gradients/dottBackground.svg");
 
   background-color: #181818;
 
-  //-moz-animation: background-scroll 200s linear infinite;
-  //-webkit-animation: background-scroll 200s linear infinite;
-  //animation: background-scroll 200s linear infinite;
+  -moz-animation: background-noise .5s linear infinite;
+  -webkit-animation: background-noise .5s linear infinite;
+  animation: background-noise .5s linear infinite;
 
-  @keyframes background-scroll {
+  @keyframes background-noise {
+    0%{
+      background-position: 0 0;
+    }
     100%{
-      background-position:0px -1000vh;
+      background-position: 100% 100%;
     }
   }
 }

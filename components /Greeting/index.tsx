@@ -7,7 +7,7 @@ import { BlackGradient } from "../layout/BlackGradients";
 const Greeting = () => {
   return (
     <Wrap>
-      <Preview src="/icons/varta.svg" />
+      <Preview src="/icons/logo/varta.svg" />
 
       <RedGradient size={24} animationTime={12} left={-12} top={60} />
 
@@ -27,7 +27,7 @@ const Greeting = () => {
           size={28}
           animationTime={16}
           left={-16}
-          src="/icons/left.svg"
+          src="/icons/gradients/left.svg"
         />
         <LeftBlock>
           <Title>Що ми робимо?</Title>
@@ -37,7 +37,7 @@ const Greeting = () => {
         </LeftBlock>
 
         <RightBlock>
-          <ArrowDown src="/icons/arrowDown.svg" />
+          <ArrowDown src="/icons/arrows/arrowDown.svg" />
           <Description>
             Увібравши в себе митців із усієї країни, ми просуваємо та творимо
             сучасне українське мистецтво в такий болючий для сердець час.
@@ -47,7 +47,7 @@ const Greeting = () => {
             animationTime={20}
             right={-20}
             bottom={-52}
-            src="/icons/right.svg"
+            src="/icons/gradients/right.svg"
           />
         </RightBlock>
       </Info>

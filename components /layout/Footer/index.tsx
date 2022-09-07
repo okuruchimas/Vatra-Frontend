@@ -5,9 +5,9 @@ const Footer = () => {
   return (
     <Wrap>
       <SocialShareWrap>
-        <FooterLogo src="/icons/logoGray.svg" />
-        <Logo src="/icons/instagram.svg" /> <Text>інстаграм</Text>
-        <Logo src="/icons/telegram.svg" /> <Text>телеграм</Text>
+        <FooterLogo src="/icons/logo/logoGray.svg" />
+        <Logo src="/icons/logo/instagram.svg" /> <Text>інстаграм</Text>
+        <Logo src="/icons/logo/telegram.svg" /> <Text>телеграм</Text>
       </SocialShareWrap>
       <Text>+38 067 378 37 20</Text>
       <Text>theatre.varta@gmail.com</Text>

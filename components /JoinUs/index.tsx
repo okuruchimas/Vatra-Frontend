@@ -5,7 +5,7 @@ const JoinUs = () => {
     <Wrap id="contacts">
       <Title>Приєднуйся до культурного фронту</Title>
       <ArrowWrap>
-        <ArrowDown src="/icons/arrowDown.svg" />
+        <ArrowDown src="/icons/arrows/arrowDown.svg" />
         <Circle />
         <BuyText>Купити квиток</BuyText>
       </ArrowWrap>

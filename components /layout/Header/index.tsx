@@ -22,7 +22,7 @@ const Header = () => {
         duration={3200}
         isDynamic
       >
-        <LogoVatra src="/icons/logo.svg" />
+        <LogoVatra src="/icons/logo/logo.svg" />
       </Link>
       <Navbar>
         <Button
@@ -66,9 +66,9 @@ const Wrap = styled.div`
   align-items: center;
   padding: 2vh 6vw;
   height: 8vh;
-  background-image: url("/icons/dottBackground.svg");
+  background-image: url("/icons/gradients/dottBackground.svg");
   background-color: #181818;
-  animation: background-scroll 200s linear infinite;
+  animation: background-noise 0.5s linear infinite;
   border-bottom: 1px solid #801515;
 `;
 
@@ -112,7 +112,7 @@ const Hint = styled.div<HintProps>`
   font-weight: 300;
   font-size: 1.6vh;
   color: #909090;
-  background-image: url("/icons/dottBackground.svg");
+  background-image: url("/icons/gradients/dottBackground.svg");
   background-color: #181818;
   border-radius: 12px;
   border: 1px solid #b0b0b0;
