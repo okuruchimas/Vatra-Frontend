@@ -72,7 +72,7 @@ const Title = styled.span`
 
 const BubblesWrap = styled.div`
   width: 100vw;
-  padding: 6vw 8vw;
+  padding: 2vw 8vw;
   min-height: 72vw;
 `;
 
@@ -180,13 +180,13 @@ const RotateDiv = styled.div`
   flex-direction: row;
   justify-content: space-between;
   position: relative;
-  width: 80%;
+  width: 64vw;
 `;
 
 const Rotate = styled(RotateDiv)`
-  top: 54vh;
+  top: 0;
   margin-left: auto;
-  animation: rotate-bubble-offset 20s linear infinite;
+  //animation: rotate-bubble-offset 20s linear infinite;
 
   @keyframes rotate-bubble-offset {
     0% {
@@ -202,8 +202,8 @@ const Rotate = styled(RotateDiv)`
 `;
 
 const SecondRotate = styled(RotateDiv)`
-  top: 0;
-  animation: rotate 16s linear infinite;
+  top: -16vh;
+  //animation: rotate 16s linear infinite;
 
   @keyframes rotate {
     0% {
@@ -221,10 +221,10 @@ const SecondRotate = styled(RotateDiv)`
 
 const ThirdRotate = styled(RotateDiv)`
   bottom: 28vh;
-  left: 16vw;
+  left: 2vw;
   margin-left: auto;
 
-  animation: rotate-bubble 14s linear infinite;
+  //animation: rotate-bubble 14s linear infinite;
 
   @keyframes rotate-bubble {
     0% {
