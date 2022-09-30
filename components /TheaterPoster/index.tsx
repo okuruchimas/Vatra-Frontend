@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import BigTitle from "../layout/BigTitle";
 import Performance from "./Performance";
 
-const TestArr = [
+export const TestArr = [
   {
     title: "Леся і Андрій зустрічаються у Львові",
     description:
@@ -12,6 +12,7 @@ const TestArr = [
     type: "лялькова вистава в жанрі сучасної казки на 1 дію (50 хвилин)",
     date: "22.04",
     imgUrl: "/icons/img1.png",
+    link: "meting"
   },
   {
     title: "Перший день війни",
@@ -22,6 +23,8 @@ const TestArr = [
     type: "Перфоманс-блуканина на 1 дію (50 хвилин)",
     date: "11.06",
     imgUrl: "/icons/img2.png",
+    link: "first-day"
+
   },
   {
     title: "Як я познайомився з війною і майже вбив путіна",
@@ -33,6 +36,8 @@ const TestArr = [
     date: "22.04",
     imgUrl:
       "https://images.wallpaperscraft.ru/image/single/vodopad_reka_raznotsvetnyj_kamni_96301_1920x1080.jpg",
+    link: "history"
+
   },
 ];
 
@@ -53,6 +58,7 @@ const TheaterPoster = () => {
             type={performance.type}
             date={performance.date}
             imgUrl={performance.imgUrl}
+            link={performance.link}
           />
         ))}
       </PerformancesWrap>

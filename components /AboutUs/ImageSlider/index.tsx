@@ -6,10 +6,6 @@ type Props = {
 };
 
 const ImageSlider = ({ slides }: Props) => {
-  const [currentId, setCurrentId] = useState<number>(0);
-  const previousSlideId = currentId === 0 ? slides.length - 1 : currentId - 1;
-  const nextSlideId = currentId === slides.length - 1 ? 0 : currentId + 1;
-
   return (
     <Wrap>
       <Slider imgLength={slides.length}>
@@ -19,16 +15,6 @@ const ImageSlider = ({ slides }: Props) => {
           </TestSpan>
         ))}
       </Slider>
-
-      {/*<Pagination>*/}
-      {/*  <Number onClick={() => setCurrentId(previousSlideId)}>*/}
-      {/*    {previousSlideId + 1}*/}
-      {/*  </Number>*/}
-      {/*  <LoadingLine />*/}
-      {/*  <Number onClick={() => setCurrentId(nextSlideId)}>*/}
-      {/*    {nextSlideId + 1}*/}
-      {/*  </Number>*/}
-      {/*</Pagination>*/}
     </Wrap>
   );
 };

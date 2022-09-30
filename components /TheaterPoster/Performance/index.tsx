@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import Button from "../../layout/Button";
 import parse from "html-react-parser";
+import { useRouter } from "next/router";
 
 type Props = {
   title: string;
@@ -8,14 +9,18 @@ type Props = {
   type: string;
   date: string;
   imgUrl: string;
+  link: string;
 };
 
 const Performance = (performance: Props) => {
+  const {push} = useRouter();
+
+
   return (
     <Wrap>
       <LeftBlock>
         <Img src={performance.imgUrl} />
-        <Title>
+        <Title onClick={() => push(performance.link)}>
           &quot;{performance.title}&quot;
           <br />
           <DateText>{performance.date}</DateText>
@@ -63,6 +68,11 @@ const Title = styled.span`
   font-family: "namu-1910";
   font-size: 6vh;
   width: 36vw;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
 const DateText = styled.span`

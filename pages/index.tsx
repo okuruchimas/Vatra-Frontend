@@ -1,16 +1,24 @@
 import styled from "@emotion/styled";
-import Header from "../components /layout/Header";
-import Footer from "../components /layout/Footer";
-import Seo from "../components /Seo";
-import Sections from "../components /layout/Sections";
+import Greeting from "../components /Greeting";
+import TheaterPoster from "../components /TheaterPoster";
+import PhotoSlider from "../components /PhotoSlider";
+import AboutUs from "../components /AboutUs";
+import Bubbles from "../components /Bubbles";
+import MovingText from "../components /MovingText";
+import OurTeam from "../components /OurTeam";
+import JoinUs from "../components /JoinUs";
 
 const Home = () => {
   return (
-    <Wrap>
-      <Seo />
-      <Header />
-      <Sections />
-      <Footer />
+    <Wrap id="/">
+      <Greeting />
+      <TheaterPoster />
+      <PhotoSlider />
+      <AboutUs />
+      <Bubbles />
+      <MovingText />
+      <OurTeam />
+      <JoinUs />
     </Wrap>
   );
 };
@@ -20,8 +28,5 @@ export default Home;
 const Wrap = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-  overflow: hidden;
-  z-index: 4;
+  align-items: center;
 `;
