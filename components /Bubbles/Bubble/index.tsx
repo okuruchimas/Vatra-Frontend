@@ -10,18 +10,18 @@ import JoinUs from "../../JoinUs";
 
 type BubbleProps = {
   size: number;
-  text: string;
   left?: number;
   right?: number;
   top?: number;
   bottom?: number;
+  text?: string;
 };
 
 const Bubble = (props: BubbleProps) => {
   return (
-    <Wrap size={props.size}>
+    <Wrap size={props.size} left={props.left} right={props.right} top={props.top} bottom={props.bottom}>
       <BubbleWrap>
-        <TextSpan1 />
+        <BubbleText>{props.text}</BubbleText>
       </BubbleWrap>
     </Wrap>
   );
@@ -29,23 +29,26 @@ const Bubble = (props: BubbleProps) => {
 
 export default Bubble;
 
-const Wrap = styled.section<{ size: number }>`
-  height: ${({ size }) => `${size}px`};
-  width: ${({ size }) => `${size}px`};
+const Wrap = styled.section<BubbleProps>`
+  position: absolute;
+  height: ${({ size }) => `${size}vw`};
+  width: ${({ size }) => `${size}vw`};
+  left: ${({ left }) => (left ? `${left}vw` : "inherit")};
+  right: ${({ right }) => (right ? `${right}vw` : "inherit")};
+  top: ${({ top }) => (top ? `${top}vh` : "inherit")};
+  bottom: ${({ bottom }) => (bottom ? `${bottom}vh` : "inherit")};
   display: inline-block;
-  margin: 20px;
-  perspective: 1200px;
   z-index: 1;
-  perspective-origin: 50% 50%;
 `;
 
 const BubbleWrap = styled.figure`
-  display: inline-block;
+  display: flex;
+  align-items: center;
   width: 100%;
   height: 100%;
   border-radius: 100%;
   position: relative;
-  opacity: 0.4;
+  opacity: 0.42;
   margin: 0;
 
   background: radial-gradient(
@@ -128,46 +131,16 @@ const BubbleWrap = styled.figure`
   }
 `;
 
-const TextSpan = styled.span`
-  margin: 30%;
-  position: absolute;
+const BubbleText = styled.span`
+  padding: 0 0.8vw;
+  font-family: "namu-pro";
+  font-size: 2vh;
+  width: 100%;
+  text-align: center;
+  color: black;
+  z-index: 3;
 
-  &:before {
-    font-family: "namu-pro";
-    font-size: 2vh;
-    width: 280px;
-    position: absolute;
-    text-align: center;
-    top: 36px;
-    left: -80px;
-    color: black;
+  text-shadow: 0 15px 5px rgba(0, 0, 0, 0.1),
+  10px 20px 5px rgba(0, 0, 0, 0.05), -10px 20px 5px rgba(0, 0, 0, 0.05);
+`;
 
-    text-shadow: 0 15px 5px rgba(0, 0, 0, 0.1),
-      10px 20px 5px rgba(0, 0, 0, 0.05), -10px 20px 5px rgba(0, 0, 0, 0.05);
-  }
-`;
-const TextSpan1 = styled(TextSpan)`
-  &:before {
-    content: "Актуальність";
-  }
-`;
-const TextSpan2 = styled(TextSpan)`
-  &:before {
-    content: "Підтримка та розвиток";
-  }
-`;
-const TextSpan3 = styled(TextSpan)`
-  &:before {
-    content: "Мультидисциплінарність";
-  }
-`;
-const TextSpan4 = styled(TextSpan)`
-  &:before {
-    content: "Любов і свобода самовираження";
-  }
-`;
-const TextSpan5 = styled(TextSpan)`
-  &:before {
-    content: "Повага до свого корІння";
-  }
-`;
