@@ -2,8 +2,9 @@ import styled from "@emotion/styled";
 import Button from "../../layout/Button";
 import parse from "html-react-parser";
 import { useRouter } from "next/router";
+import Repertoire from "../../../pages/[id]";
 
-type Props = {
+export type RepertoireProps = {
   title: string;
   description: string;
   type: string;
@@ -12,9 +13,8 @@ type Props = {
   link: string;
 };
 
-const Performance = (performance: Props) => {
+const Performance = (performance: RepertoireProps) => {
   const {push} = useRouter();
-
 
   return (
     <Wrap>

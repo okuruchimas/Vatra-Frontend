@@ -59,6 +59,7 @@ const BubbleWrap = styled.figure`
     rgba(43, 130, 255, 0.4)
   );
   animation: bubble-anim 2s ease-out infinite;
+  
   &:before {
     content: "";
     position: absolute;

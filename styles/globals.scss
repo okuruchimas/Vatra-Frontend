@@ -12,10 +12,11 @@ body {
   background-image: url("/icons/gradients/dottBackground.svg");
 
   background-color: #181818;
+  color: white;
 
-  -moz-animation: background-noise .5s linear infinite;
-  -webkit-animation: background-noise .5s linear infinite;
-  animation: background-noise .5s linear infinite;
+  //-moz-animation: background-noise .5s linear infinite;
+  //-webkit-animation: background-noise .5s linear infinite;
+  //animation: background-noise .5s linear infinite;
 
   @keyframes background-noise {
     0%{
