@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 const VideoPreview = () => {
   return (
     <Wrap>
-      <Video autoPlay playsInline controls loop>
+      <Video autoPlay playsInline controls loop muted>
         <source
           src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"
           type="video/mp4"

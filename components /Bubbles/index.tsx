@@ -17,14 +17,43 @@ const Bubbles = () => {
         <SkyGradient size={20} animationTime={4} right={-4} top={40} />
         <PurpleGradient size={24} animationTime={4} left={-8} top={74} />
 
-        <Bubble size={19.6} top={6} left={28} text="Актуальність" />
-        <Bubble size={18.6} top={2} right={16} text="Підтримка та розвиток" />
+        <Bubble
+          size={19.6}
+          animationTime={5}
+          top={6}
+          left={28}
+          text="Актуальність"
+        />
+        <Bubble
+          size={18.6}
+          animationTime={7}
+          top={2}
+          right={16}
+          text="Підтримка та розвиток"
+        />
 
-        <Bubble size={19.2} top={40} right={28} text="Мультидисциплінарність" />
+        <Bubble
+          size={19.2}
+          animationTime={7.7}
+          top={40}
+          right={28}
+          text="Мультидисциплінарність"
+        />
 
-        <Bubble size={14} top={52} left={34} text="Любов і свобода самовираження" />
-        <Bubble size={16} top={36} left={12} text="Повага до свого коріня" />
-
+        <Bubble
+          size={14}
+          animationTime={8}
+          top={52}
+          left={34}
+          text="Любов і свобода самовираження"
+        />
+        <Bubble
+          size={16}
+          animationTime={8}
+          top={36}
+          left={12}
+          text="Повага до свого коріня"
+        />
       </BubblesWrap>
     </Wrap>
   );

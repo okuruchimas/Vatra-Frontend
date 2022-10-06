@@ -10,6 +10,7 @@ import JoinUs from "../../JoinUs";
 
 type BubbleProps = {
   size: number;
+  animationTime: number;
   left?: number;
   right?: number;
   top?: number;
@@ -19,7 +20,14 @@ type BubbleProps = {
 
 const Bubble = (props: BubbleProps) => {
   return (
-    <Wrap size={props.size} left={props.left} right={props.right} top={props.top} bottom={props.bottom}>
+    <Wrap
+      size={props.size}
+      left={props.left}
+      right={props.right}
+      top={props.top}
+      bottom={props.bottom}
+      animationTime={props.animationTime}
+    >
       <BubbleWrap>
         <BubbleText>{props.text}</BubbleText>
       </BubbleWrap>
@@ -39,6 +47,23 @@ const Wrap = styled.section<BubbleProps>`
   bottom: ${({ bottom }) => (bottom ? `${bottom}vh` : "inherit")};
   display: inline-block;
   z-index: 1;
+
+  // animation
+  -moz-animation: ${({ animationTime }) =>
+    `bubbleMove ${animationTime}s linear infinite`};
+  -webkit-animation: ${({ animationTime }) =>
+    `bubbleMove ${animationTime}s linear infinite`};
+  animation: ${({ animationTime }) =>
+    `bubbleMove ${animationTime}s linear infinite`};
+
+  @keyframes bubbleMove {
+    0% {
+      transform: rotate(0deg) translateX(40px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(40px) rotate(-360deg);
+    }
+  }
 `;
 
 const BubbleWrap = styled.figure`
@@ -58,8 +83,12 @@ const BubbleWrap = styled.figure`
     rgba(225, 238, 255, 0.8) 60%,
     rgba(43, 130, 255, 0.4)
   );
+
+  // animation
+  -moz-animation: bubble-anim 2s ease-out infinite;
+  -webkit-animation: bubble-anim 2s ease-out infinite;
   animation: bubble-anim 2s ease-out infinite;
-  
+
   &:before {
     content: "";
     position: absolute;
@@ -141,7 +170,6 @@ const BubbleText = styled.span`
   color: black;
   z-index: 3;
 
-  text-shadow: 0 15px 5px rgba(0, 0, 0, 0.1),
-  10px 20px 5px rgba(0, 0, 0, 0.05), -10px 20px 5px rgba(0, 0, 0, 0.05);
+  text-shadow: 0 15px 5px rgba(0, 0, 0, 0.1), 10px 20px 5px rgba(0, 0, 0, 0.05),
+    -10px 20px 5px rgba(0, 0, 0, 0.05);
 `;
-
