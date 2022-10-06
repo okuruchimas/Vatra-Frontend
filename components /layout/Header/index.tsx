@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { useState } from "react";
 import { Link } from "react-scroll";
+import { useRouter } from "next/router";
 
 const arrMenu: { text: string; to: string }[] = [
   { text: "Афіша", to: "poster" },
@@ -11,10 +12,12 @@ const arrMenu: { text: string; to: string }[] = [
 
 const Header = () => {
   const [isHint, setHint] = useState<boolean>(false);
+  const { push } = useRouter();
 
   return (
     <Wrap>
       <Link
+        onClick={() => push("/")}
         to="/"
         spy={true}
         smooth={true}
