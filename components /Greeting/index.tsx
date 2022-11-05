@@ -67,7 +67,7 @@ const Preview = styled.img`
   width: 88vw;
 `;
 const BuySection = styled.div`
-  padding: 18vh 0;
+  padding: 16vh 0;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -132,7 +132,7 @@ const Description = styled.span`
 
 const Button = styled(Link)`
   font-family: "namu-1400";
-  width: 16vw;
+  width: 160px;
   text-transform: uppercase;
   text-align: right;
   color: #b11212;
@@ -163,7 +163,7 @@ const ArrowSmall = styled(ArrowDown)`
   height: 8vh;
   margin-left: auto;
   position: relative;
-  left: 6vw;
+  left: 4vw;
   animation: down-small 3s infinite;
   @keyframes down-small {
     0% {

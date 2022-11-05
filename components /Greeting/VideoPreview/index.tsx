@@ -17,9 +17,14 @@ export default VideoPreview;
 const Wrap = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
+  border: 1px solid #fff;
+  border-radius: 12px;
+  width: 92vw;
+  padding: 4vw 0;
 `;
 const Video = styled.video`
-  width: 88vw;
+  width: 84vw;
   height: auto;
   border-radius: 12px;
   outline: none;
