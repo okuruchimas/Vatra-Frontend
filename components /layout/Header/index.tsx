@@ -28,17 +28,6 @@ const Header = () => {
         <LogoVatra src="/icons/logo/logo.svg" />
       </Link>
       <Navbar>
-        <Button
-          onMouseEnter={() => setHint(true)}
-          onMouseLeave={() => setHint(false)}
-        >
-          Donate
-        </Button>
-        <Hint isHint={isHint}>
-          <RedText>Наш театр є незалежним проєктом. </RedText>
-          Тому, якщо маєте бажання і можливість матеріально підтримати акторів —
-          надішліть, будь ласка, будь-яку суму.
-        </Hint>
         {arrMenu.map((item, index) => (
           <ItemList
             to={item.to}
@@ -53,6 +42,18 @@ const Header = () => {
           </ItemList>
         ))}
       </Navbar>
+      <Button
+        onMouseEnter={() => setHint(true)}
+        onMouseLeave={() => setHint(false)}
+      >
+        Donate
+      </Button>
+      <Hint isHint={isHint}>
+        <RedText>Наш театр є незалежним проєктом. </RedText>
+        Тому, якщо маєте бажання і можливість матеріально підтримати акторів —
+        надішліть, будь ласка, будь-яку суму.
+      </Hint>
+      <Lang>EN</Lang>
     </Wrap>
   );
 };
@@ -63,21 +64,22 @@ const Wrap = styled.div`
   position: fixed;
   top: 0;
   z-index: 10;
-  width: 100vw;
+  width: 96vw;
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 2vh 6vw;
+  justify-content: space-between;
+  margin: 0 2vw;
+  padding: 2vh 0;
   height: 8vh;
   background-image: url("/icons/gradients/dottBackground.svg");
   background-color: #181818;
   animation: background-noise 0.5s linear infinite;
-  border-bottom: 1px solid #801515;
+  border-bottom: 1px solid #ffffff;
 `;
 
 export const LogoVatra = styled.img`
   width: auto;
-  height: 2vh;
   cursor: pointer;
 
   &:hover {
@@ -85,12 +87,15 @@ export const LogoVatra = styled.img`
   }
 `;
 const Button = styled.button`
-  width: 12vw;
+  position: fixed;
+  right: 8vw;
+  width: 9vw;
   height: 4vh;
   color: #ffffff;
   font-size: 2vh;
   border: 1px solid #ffffff;
   background: inherit;
+  text-transform: uppercase;
   border-radius: 24px;
   cursor: pointer;
   &:hover {
@@ -102,13 +107,13 @@ const Navbar = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: auto;
 `;
 
 const Hint = styled.div<HintProps>`
   padding: 1vh 1vw;
   position: absolute;
   top: 8vh;
+  right: 0;
   display: ${({ isHint }: HintProps) => (isHint ? "block" : "none")};
   font-family: "namu-1750";
   width: 20vw;
@@ -130,12 +135,18 @@ const ItemList = styled(Link)`
   font-family: "namu-pro";
   font-weight: 400;
   font-size: 2vh;
-  margin-left: 6vw;
+  margin: 0 2vw;
   cursor: pointer;
 
   &:hover {
       text-decoration: underline;,
     }
+`;
+
+const Lang = styled.span`
+  font-family: "namu-pro";
+  font-size: 2vh;
+  text-transform: uppercase;
 `;
 
 type HintProps = { isHint?: boolean };

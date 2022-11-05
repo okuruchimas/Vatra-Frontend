@@ -1,6 +1,11 @@
 import styled from "@emotion/styled";
 import BigTitle from "../layout/BigTitle";
 import PersonCard from "./PersonCard";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectCoverflow, FreeMode } from "swiper";
+import "swiper/css";
+import "swiper/css/free-mode";
+
 const TestArr = [
   {
     name: "Артем Вусик",
@@ -51,50 +56,42 @@ const TestArr = [
     url: "/icons/ourTeam/7.png",
   },
 ];
+
 const OurTeam = () => {
   return (
     <Wrap id="team">
       <BigTitle textBefore="наша" textAfter="команда" />
-      <SliderWrapOne>
-        {TestArr.map(({ name, role, superPower, url }) => (
-          <PersonCard
-            key={name}
-            name={name}
-            role={role}
-            superPower={superPower}
-            url={url}
-          />
-        ))}
-        {TestArr.map(({ name, role, superPower, url }) => (
-          <PersonCard
-            key={role + name}
-            name={name}
-            role={role}
-            superPower={superPower}
-            url={url}
-          />
-        ))}
-      </SliderWrapOne>
-      <SliderWrapTwo>
-        {TestArr.map(({ name, role, superPower, url }) => (
-          <PersonCard
-            key={url}
-            name={name}
-            role={role}
-            superPower={superPower}
-            url={url}
-          />
-        ))}
+
+      <Container
+        freeMode={true}
+        grabCursor
+        modules={[Autoplay, EffectCoverflow, FreeMode]}
+        slidesPerView={3}
+        spaceBetween={60}
+        centeredSlides
+        // effect={"coverflow"}
+        // coverflowEffect={{
+        //   rotate: 16,
+        //   stretch: 0,
+        //   depth: 100,
+        //   modifier: 1,
+        //   slideShadows: false,
+        // }}
+        loop
+        // autoplay={{ delay: 3000, disableOnInteraction: false }}
+      >
         {TestArr.map(({ name, role, superPower, url }, index) => (
-          <PersonCard
-            key={index}
-            name={name}
-            role={role}
-            superPower={superPower}
-            url={url}
-          />
+          <Slide key={index}>
+            <PersonCard
+              key={name}
+              name={name}
+              role={role}
+              superPower={superPower}
+              url={url}
+            />
+          </Slide>
         ))}
-      </SliderWrapTwo>
+      </Container>
     </Wrap>
   );
 };
@@ -110,38 +107,15 @@ const Wrap = styled.div`
   overflow: hidden;
 `;
 
-const SliderWrap = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  width: calc(32vw * 16);
+const Container = styled(Swiper)`
+  width: 100%;
+  padding: 50px 0;
 `;
-const SliderWrapOne = styled(SliderWrap)`
-  padding: 8vh 0;
-  animation: photo-scroll-r 24s linear infinite;
-  span {
-    margin: 0 2vw;
-  }
-  @keyframes photo-scroll-r {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(calc(-32vw * 8));
-    }
-  } ;
-`;
-const SliderWrapTwo = styled(SliderWrap)`
-  animation: photo-scroll-l 24s linear infinite;
-  span {
-    margin: 0 2vw;
-  }
-  @keyframes photo-scroll-l {
-    0% {
-      transform: translateX(calc(-32vw * 8));
-    }
-    100% {
-      transform: translateX(0);
-    }
-  } ;
+
+const Slide = styled(SwiperSlide)`
+  //background-position: center;
+  //background-size: cover;
+  //width: 32vw !important;
+  //height: 300px;
+  //background: #000;
 `;
