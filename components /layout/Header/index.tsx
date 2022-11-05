@@ -19,8 +19,8 @@ const Header = () => {
       <Link
         onClick={() => push("/")}
         to="/"
-        spy={true}
-        smooth={true}
+        spy
+        smooth
         offset={-100}
         duration={3200}
         isDynamic
@@ -64,12 +64,12 @@ const Wrap = styled.div`
   position: fixed;
   top: 0;
   z-index: 10;
-  width: 96vw;
+  width: 92vw;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin: 0 2vw;
+  margin: 0 4vw;
   padding: 2vh 0;
   height: 8vh;
   background-image: url("/icons/gradients/dottBackground.svg");
@@ -79,7 +79,7 @@ const Wrap = styled.div`
 `;
 
 export const LogoVatra = styled.img`
-  width: auto;
+  width: 10vw;
   cursor: pointer;
 
   &:hover {
@@ -91,15 +91,17 @@ const Button = styled.button`
   right: 8vw;
   width: 9vw;
   height: 4vh;
-  color: #ffffff;
+  color: #000000;
   font-size: 2vh;
-  border: 1px solid #ffffff;
-  background: inherit;
+  border: 1px solid #000000;
+  background: #fff;
   text-transform: uppercase;
   border-radius: 24px;
   cursor: pointer;
   &:hover {
-    background: #b11212;
+    background: inherit;
+    color: #fff;
+    border: 1px solid #fff;
   }
 `;
 
@@ -146,7 +148,12 @@ const ItemList = styled(Link)`
 const Lang = styled.span`
   font-family: "namu-pro";
   font-size: 2vh;
-  text-transform: uppercase;
+  text-transform: uppercase
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
 type HintProps = { isHint?: boolean };

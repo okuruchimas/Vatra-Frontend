@@ -1,22 +1,21 @@
 import styled from "@emotion/styled";
 import VideoPreview from "./VideoPreview";
-import Button from "../layout/Button";
-import { RedGradient } from "../layout/Gradients";
 import { BlackGradient } from "../layout/BlackGradients";
+import { Link } from "react-scroll";
 
 const Greeting = () => {
   return (
     <Wrap>
       <Preview src="/icons/logo/varta.svg" />
-
-      <RedGradient size={24} animationTime={12} left={-12} top={60} />
-
       <BuySection>
         <LeftText>
-          На сторожі Української культури. <br /> Створений під час війни.
+          На сторожі Української культури. <br /> Створений під час війни в
+          Україні.
         </LeftText>
-        <RedGradient size={12} animationTime={8} right={4} />
-        <Button />
+        <ArrowSmall src="/icons/arrows/arrowDown.svg" />
+        <Button to="poster" spy smooth offset={60} duration={2000} isDynamic>
+          Дивитись квитки
+        </Button>
       </BuySection>
 
       <VideoPreview />
@@ -61,27 +60,11 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 28vh 6vw 0;
+  padding: 28vh 4vw 0;
   width: 100vw;
-
-  // mix-blend-mode: screen;
-  //animation: 44s -27s move-gradient infinite ease-in-out alternate;
-  //&::before {
-  //  animation-duration: 44s;
-  //  animation-delay: -27s;
-  //}
-
-  //@keyframes move-gradient {
-  //  from {
-  //    transform: rotate(0deg) scale(12) translateX(-20px);
-  //  }
-  //  to {
-  //    transform: rotate(360deg) scale(18) translateX(20px);
-  //  }
-  //}
 `;
 const Preview = styled.img`
-  width: 96vw;
+  width: 88vw;
 `;
 const BuySection = styled.div`
   padding: 18vh 0;
@@ -94,7 +77,7 @@ const BuySection = styled.div`
 const LeftText = styled.span`
   font-family: "namu-pro";
   font-weight: 300;
-  font-size: 3vh;
+  font-size: 2.4vh;
   color: #e1e1e1;
 `;
 
@@ -147,6 +130,19 @@ const Description = styled.span`
   padding-top: 64px;
 `;
 
+const Button = styled(Link)`
+  font-family: "namu-1400";
+  width: 16vw;
+  text-transform: uppercase;
+  text-align: right;
+  color: #b11212;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+
 const ArrowDown = styled.img`
   height: 44vh;
   width: 2vw;
@@ -157,6 +153,24 @@ const ArrowDown = styled.img`
     }
     20% {
       transform: translateY(32px);
+    }
+    40% {
+      transform: translate(0);
+    }
+  }
+`;
+const ArrowSmall = styled(ArrowDown)`
+  height: 8vh;
+  margin-left: auto;
+  position: relative;
+  left: 6vw;
+  animation: down-small 3s infinite;
+  @keyframes down-small {
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translateY(16px);
     }
     40% {
       transform: translate(0);

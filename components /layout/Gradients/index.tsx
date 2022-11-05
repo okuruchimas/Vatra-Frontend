@@ -39,18 +39,6 @@ export const GradientTemplate = styled.div<GradientProps>`
   }
 `;
 
-export const RedGradient = styled(GradientTemplate)`
-  -webkit-filter: blur(64px);
-  filter: blur(64px);
-  background: linear-gradient(
-    -45deg,
-    #803f3fff,
-    #801515ad,
-    #89141445,
-    #b11212cc
-  );
-`;
-
 export const BlueGradient = styled(GradientTemplate)`
   -webkit-filter: blur(68px);
   filter: blur(68px);
