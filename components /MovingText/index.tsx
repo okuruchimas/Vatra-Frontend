@@ -1,28 +1,13 @@
 import styled from "@emotion/styled";
-import BigTitle from "../layout/BigTitle";
+import RedTitle from "../layout/RedTitle";
 
 const MovingText = () => {
   return (
     <SliderWrap>
-      <SliderTrackWhite>
-        <BigTitle textBefore="Theatre" textAfter="varta " isGray />
-        <BigTitle textBefore="Theatre" textAfter="varta " isGray />
-        <BigTitle textBefore="Theatre" textAfter="varta " isGray />
-        <BigTitle textBefore="Theatre" textAfter="varta " isGray />
-      </SliderTrackWhite>
+      <SliderTrackWhite></SliderTrackWhite>
 
-      <SliderTrackRed>
-        <BigTitle textBefore="Theatre" textAfter="varta " />
-        <BigTitle textBefore="Theatre" textAfter="varta " />
-        <BigTitle textBefore="Theatre" textAfter="varta " />
-        <BigTitle textBefore="Theatre" textAfter="varta " />
-      </SliderTrackRed>
-      <SliderTrackWhite>
-        <BigTitle textBefore="Theatre" textAfter="varta " isGray />
-        <BigTitle textBefore="Theatre" textAfter="varta " isGray />
-        <BigTitle textBefore="Theatre" textAfter="varta " isGray />
-        <BigTitle textBefore="Theatre" textAfter="varta " isGray />
-      </SliderTrackWhite>
+      <SliderTrackRed></SliderTrackRed>
+      <SliderTrackWhite></SliderTrackWhite>
     </SliderWrap>
   );
 };

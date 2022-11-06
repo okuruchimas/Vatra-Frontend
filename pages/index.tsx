@@ -12,8 +12,8 @@ const Home = () => {
   return (
     <Wrap id="/">
       <Greeting />
-      <TheaterPoster />
       <PhotoSlider />
+      <TheaterPoster />
       <AboutUs />
       <Bubbles />
       <MovingText />

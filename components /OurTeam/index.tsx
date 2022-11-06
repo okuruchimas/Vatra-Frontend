@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import BigTitle from "../layout/BigTitle";
+import RedTitle from "../layout/RedTitle";
 import PersonCard from "./PersonCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectCoverflow, FreeMode } from "swiper";
@@ -60,7 +60,7 @@ const TestArr = [
 const OurTeam = () => {
   return (
     <Wrap id="team">
-      <BigTitle textBefore="наша" textAfter="команда" />
+      <RedTitle text="наша" />
 
       <Container
         freeMode={true}

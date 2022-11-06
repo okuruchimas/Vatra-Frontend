@@ -13,7 +13,7 @@ const Greeting = () => {
           Україні.
         </LeftText>
         <ArrowSmall src="/icons/arrows/arrowDown.svg" />
-        <Button to="poster" spy smooth offset={60} duration={2000} isDynamic>
+        <Button to="poster" spy smooth offset={20} duration={2000} isDynamic>
           Дивитись квитки
         </Button>
       </BuySection>
@@ -23,15 +23,16 @@ const Greeting = () => {
       <Info>
         <BlackGradient
           turnLeft
-          size={28}
+          size={24}
           animationTime={16}
           left={-16}
+          top={60}
           src="/icons/gradients/left.svg"
         />
         <LeftBlock>
-          <Title>Що ми робимо?</Title>
           <Subtitle>
-            Ми створили театр для підтримки культурного фронту України
+            Ми створили незалежний театр для підтримки та розвитку культурного
+            фронту України.
           </Subtitle>
         </LeftBlock>
 
@@ -42,10 +43,10 @@ const Greeting = () => {
             сучасне українське мистецтво в такий болючий для сердець час.
           </Description>
           <BlackGradient
-            size={40}
+            size={36}
             animationTime={20}
             right={-20}
-            bottom={-52}
+            bottom={8}
             src="/icons/gradients/right.svg"
           />
         </RightBlock>
@@ -78,10 +79,11 @@ const LeftText = styled.span`
   font-family: "namu-pro";
   font-weight: 300;
   font-size: 2.4vh;
-  color: #e1e1e1;
+  color: #d2d2d2;
 `;
 
 const Info = styled.div`
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -106,27 +108,17 @@ const RightBlock = styled.div`
   padding: 0 12vw;
 `;
 
-const Title = styled.span`
-  font-family: "namu-1750";
-  font-weight: 300;
-  font-size: 2vh;
-  padding: 2vh 0;
-  text-transform: uppercase;
-
-  color: #d8d8d8;
-`;
-
 const Subtitle = styled.span`
-  font-family: "namu-1400";
-  font-size: 4vh;
+  font-family: "murmure";
+  font-size: 10vh;
   color: #fefefe;
 `;
 
 const Description = styled.span`
-  font-family: "namu-1750";
+  font-family: "namu-pro";
   font-weight: 300;
-  font-size: 2vh;
-  color: #ffffff;
+  font-size: 2.4vh;
+  color: #d2d2d2;
   padding-top: 64px;
 `;
 

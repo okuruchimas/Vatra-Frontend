@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import BigTitle from "../layout/BigTitle";
+import RedTitle from "../layout/RedTitle";
 import Performance from "./Performance";
 
 export const TestArr = [
@@ -12,7 +12,7 @@ export const TestArr = [
     type: "лялькова вистава в жанрі сучасної казки на 1 дію (50 хвилин)",
     date: "22.04",
     imgUrl: "/icons/img1.png",
-    link: "meting"
+    link: "meting",
   },
   {
     title: "Перший день війни",
@@ -23,8 +23,7 @@ export const TestArr = [
     type: "Перфоманс-блуканина на 1 дію (50 хвилин)",
     date: "11.06",
     imgUrl: "/icons/img2.png",
-    link: "first-day"
-
+    link: "first-day",
   },
   {
     title: "Як я познайомився з війною і майже вбив путіна",
@@ -36,18 +35,21 @@ export const TestArr = [
     date: "22.04",
     imgUrl:
       "https://images.wallpaperscraft.ru/image/single/vodopad_reka_raznotsvetnyj_kamni_96301_1920x1080.jpg",
-    link: "history"
-
+    link: "history",
   },
 ];
 
 const TheaterPoster = () => {
   return (
     <Wrap id="poster">
-      <BigTitle textBefore="Наші" textAfter="вистави" />
+      <RedTitle text="що ми робимо?" />
+      <Title>вистави</Title>
       <Description>
-        Зустрівшись під одним дахом, ми зрозуміли, що наші цінности й думки
-        збігаються, та через рефлексію створили першу перфомативну виставу.
+        Зустрівшись під одним дахом, ми зрозуміли, що наші цінності й думки
+        збігаються, та через рефлексію створили виставу “Перший День Війни”.
+        <br />
+        Але на цьому ми не зупинились і створили повноційнний театр, в якому ми
+        говоримо про всі важливі думки, що дивуть в наших головах.
       </Description>
       <PerformancesWrap>
         {TestArr.map((performance, index) => (
@@ -72,19 +74,25 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 14vh 6vw 0;
+  padding: 14vh 4vw 0;
   width: 100%;
 `;
 const Description = styled.span`
   font-family: "namu-1750";
   font-size: 2vh;
   color: #909090;
-  width: 48vw;
-  padding-top: 2vh;
+  width: 36vw;
+  padding: 8vh 4vw 0 0;
+  margin-left: auto;
 `;
 const PerformancesWrap = styled.div`
   display: flex;
   flex-direction: column;
-  border-top: 2px solid #ffffff;
   margin-top: 12vh;
+`;
+const Title = styled.span`
+  text-transform: uppercase;
+  font-family: "namu-1400";
+  font-size: 24vh;
+  color: #fff;
 `;
