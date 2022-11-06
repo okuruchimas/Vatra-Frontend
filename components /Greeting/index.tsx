@@ -79,7 +79,7 @@ const LeftText = styled.span`
   font-family: "namu-pro";
   font-weight: 300;
   font-size: 2.4vh;
-  color: #d2d2d2;
+  color: #b5b5b5;
 `;
 
 const Info = styled.div`
@@ -118,7 +118,7 @@ const Description = styled.span`
   font-family: "namu-pro";
   font-weight: 300;
   font-size: 2.4vh;
-  color: #d2d2d2;
+  color: #b5b5b5;
   padding-top: 64px;
 `;
 

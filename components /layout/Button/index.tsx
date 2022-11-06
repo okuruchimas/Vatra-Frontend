@@ -1,43 +1,34 @@
 import styled from "@emotion/styled";
-import Arrow from "../Arrow";
 
-const Button = () => {
-  return (
-    <Wrap>
-      <Text>Купити квиток</Text> <Arrow />
-    </Wrap>
-  );
+type Props = {
+  text: string;
+};
+
+const Button = ({ text }: Props) => {
+  return <Wrap>{text}</Wrap>;
 };
 
 export default Button;
 
 const Wrap = styled.div`
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  padding-right: 1vw;
-  cursor: pointer;
-
-  &:hover {
-    img:first-of-type {
-      transition: left 0.4s ease;
-      left: 12px;
-    }
-    div:first-of-type {
-      opacity: 0.4;
-    }
-    span:last-of-type {
-      background: #b11212;
-    }
-  }
-`;
-const Text = styled.div`
-  font-family: "namu-1400";
-  font-weight: 100;
-  font-size: 2vh;
-  text-transform: uppercase;
   min-width: max-content;
-  color: #ffffff;
-  margin-right: 20px;
-  z-index: 1;
+  font-family: "namu-1400";
+  width: 12vw;
+  height: 5vh;
+  padding: 0 1.2vw;
+  color: #fff;
+  font-size: 2vh;
+  background: #b11212;
+  text-transform: uppercase;
+  border-radius: 24px;
+  cursor: pointer;
+  border: 1px solid #b11212;
+  &:hover {
+    background: inherit;
+    color: #fff;
+    border: 1px solid #fff;
+  }
 `;

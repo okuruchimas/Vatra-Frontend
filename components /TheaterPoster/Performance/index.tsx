@@ -14,23 +14,23 @@ export type RepertoireProps = {
 };
 
 const Performance = (performance: RepertoireProps) => {
-  const {push} = useRouter();
+  const { push } = useRouter();
 
   return (
     <Wrap>
       <LeftBlock>
         <Img src={performance.imgUrl} />
-        <Title onClick={() => push(performance.link)}>
-          &quot;{performance.title}&quot;
-          <br />
-          <DateText>{performance.date}</DateText>
-        </Title>
+        <Type>{performance.type}</Type>
+        <DateText>{performance.date}</DateText>
       </LeftBlock>
       <RightBlock>
+        <Title>{performance.title}</Title>
         <Description>{parse(performance.description)}</Description>
         <BuyWrap>
-          <Type>{performance.type}</Type>
-          <Button />
+          <Button text={"купити квитки"} />
+          <Details onClick={() => push(performance.link)}>
+            Дізнатися більше
+          </Details>
         </BuyWrap>
       </RightBlock>
     </Wrap>
@@ -40,11 +40,11 @@ const Performance = (performance: RepertoireProps) => {
 export default Performance;
 
 const Wrap = styled.div`
-  width: 100%;
+  height: 38vw;
+  width: 92vw;
   display: flex;
   flex-direction: row;
-  border-bottom: 2px solid #ffffff;
-  padding: 8vh 0;
+  margin: 8vh 0;
   color: white;
 `;
 
@@ -53,46 +53,47 @@ const LeftBlock = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 60%;
+  width: 50%;
   padding-right: 4vw;
+`;
+const RightBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 4vw;
+  width: 46vw;
 `;
 
 const Img = styled.img`
-  width: 32vw;
+  width: 38vw;
+  height: 38vw;
+  object-fit: cover;
   border-radius: 16px;
-  margin-left: auto;
 `;
 
 const Title = styled.span`
-  position: absolute;
-  font-family: "namu-1910";
-  font-size: 6vh;
-  width: 36vw;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.8;
-  }
+  font-family: "murmure";
+  font-size: 8vh;
+  padding: 4vh 0;
+  text-align: center;
 `;
 
 const DateText = styled.span`
   position: absolute;
-  padding-top: 2vh;
+  bottom: -8vh;
   font-family: "namu-1750";
-  font-size: 8vh;
-`;
-
-const RightBlock = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 40%;
+  font-size: 16vw;
+  text-transform: uppercase;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
 `;
 
 const Description = styled.span`
   font-family: "namu-1750";
   font-size: 2vh;
-  color: #e0e0e0;
+  text-align: center;
+  color: #b5b5b5;
+
   p {
     margin: 0 auto 2vh;
   }
@@ -101,16 +102,36 @@ const Description = styled.span`
 const BuyWrap = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 4vh;
   width: 100%;
 `;
 
 const Type = styled.span`
+  text-transform: uppercase;
+  width: max-content;
+  color: #fff;
   font-family: "namu-1750";
   font-size: 1.6vh;
+  padding: 1vh 1vw;
+  background: inherit;
+  border-radius: 24px;
+  border: 1px solid #fff;
+  position: absolute;
+  left: 2vw;
+  top: 2vh;
+`;
+const Details = styled.span`
+  font-family: "namu-1750";
+  margin-left: 2vw;
+  font-size: 2vh;
+  background: inherit;
   text-transform: uppercase;
-  width: 40%;
-  color: #919191;
+  border-radius: 24px;
+
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
 `;
