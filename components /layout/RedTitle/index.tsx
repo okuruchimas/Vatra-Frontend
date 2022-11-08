@@ -13,7 +13,7 @@ export default RedTitle;
 const Wrap = styled.span`
   width: 92vw;
   text-transform: uppercase;
-  font-family: "namu-1600";
+  font-family: "namu-1750";
   padding-bottom: 4vh;
   font-size: 2.4vh;
   color: #b11212;

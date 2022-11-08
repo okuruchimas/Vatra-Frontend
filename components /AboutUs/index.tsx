@@ -32,27 +32,17 @@ const Test = [
 const AboutUs = () => {
   return (
     <Wrap id="aboutUs">
-      <RedTitle text="як створився театр" />
-      <DescriptionWrap>
-        <span>
-          Ми прийшли на творчу зустріч у Дикий дім. Простір, який із шелтеру для
-          біженців_ок, перетворився на театрально відроджувальний майданчик.
-        </span>
-        <span>
-          Зустрілись митці_сткині з Харкова, Львова, Києва. Та вирішили, що
-          варто щось робити, варто вертатись до театру, до мистецтва в цілому,
-          варто досліджувати.
-        </span>
-        <span>
-          Наші рефлексії, розказані один одній стосовно переживання першого дня
-          війни, торкнули кожного_у. Й це, безсумнівно, мало торкнутись й
-          глядачів_ок.
-        </span>
-        <span>
-          Тому за 3 дні, сконцентрувавши зусилля на творенні перфоменсу, в
-          Міжнародний день театру ми представились Львову.
-        </span>
-      </DescriptionWrap>
+      <RedTitle text="Історія театру" />
+      <TitleFragment paddingLeft={0}>Ми прийшли</TitleFragment>
+      <TitleFragment paddingLeft={16}>на спільну</TitleFragment>
+      <TitleFragment paddingLeft={40}>зустріч</TitleFragment>
+      <TitleFragment paddingLeft={24}> у вільний</TitleFragment>
+      <TitleFragment paddingLeft={0} last>
+        простір “Дикий Дім”
+      </TitleFragment>
+      <Description>
+        Це шелтер для біженців, який перетворився на простір нашої творості.
+      </Description>
 
       <ImageSlider slides={Test} />
     </Wrap>
@@ -66,17 +56,24 @@ const Wrap = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: 100vw;
-  padding: 14vh 6vw 0;
+  padding: 14vh 4vw 0;
 `;
-const DescriptionWrap = styled.div`
-  padding: 6vh 0 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-column-gap: 8vw;
-  width: 80vw;
+
+const TitleFragment = styled.span<{ paddingLeft: number; last?: boolean }>`
+  padding-left: ${({ paddingLeft }) => `${paddingLeft}vw`};
+  font-family: "murmure";
+  font-size: 24vh;
+  color: #fff;
+  width: 100%;
+  text-align: ${({ last }) => last && "right"};
+`;
+
+const Description = styled.div`
+  margin: 8vh auto;
+  width: 40%;
+  text-align: center;
   font-family: "namu-1750";
-  font-size: 2vh;
+  font-size: 3vh;
   color: #909090;
   span {
     margin: 2vh 0 0;
