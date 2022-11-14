@@ -33,13 +33,11 @@ const AboutUs = () => {
   return (
     <Wrap id="aboutUs">
       <RedTitle text="Історія театру" />
-      <TitleFragment paddingLeft={0}>Ми прийшли</TitleFragment>
+      <TitleFragment>Ми прийшли</TitleFragment>
       <TitleFragment paddingLeft={16}>на спільну</TitleFragment>
       <TitleFragment paddingLeft={40}>зустріч</TitleFragment>
       <TitleFragment paddingLeft={24}> у вільний</TitleFragment>
-      <TitleFragment paddingLeft={0} last>
-        простір “Дикий Дім”
-      </TitleFragment>
+      <TitleFragment last>простір “Дикий Дім”</TitleFragment>
       <Description>
         Це шелтер для біженців, який перетворився на простір нашої творості.
       </Description>
@@ -59,8 +57,9 @@ const Wrap = styled.div`
   padding: 14vh 4vw 0;
 `;
 
-const TitleFragment = styled.span<{ paddingLeft: number; last?: boolean }>`
-  padding-left: ${({ paddingLeft }) => `${paddingLeft}vw`};
+const TitleFragment = styled.span<{ paddingLeft?: number; last?: boolean }>`
+  padding-left: ${({ paddingLeft }) =>
+    paddingLeft ? `${paddingLeft}vw` : "none"};
   font-family: "murmure";
   font-size: 24vh;
   color: #fff;
@@ -69,8 +68,8 @@ const TitleFragment = styled.span<{ paddingLeft: number; last?: boolean }>`
 `;
 
 const Description = styled.div`
-  margin: 8vh auto;
-  width: 40%;
+  margin: 12vh auto;
+  width: 32%;
   text-align: center;
   font-family: "namu-1750";
   font-size: 3vh;
