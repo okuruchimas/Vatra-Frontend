@@ -14,7 +14,7 @@ const PersonCard = (person: Props) => {
       <Role>{person.role}</Role>
       <SuperPower>Суперздібності</SuperPower>
       <Power>{person.superPower}</Power>
-      <Photo src={person.url} />
+      <Photo src={person.url} loading="lazy" />
     </Wrap>
   );
 };
