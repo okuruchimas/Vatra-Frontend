@@ -78,7 +78,7 @@ const Wrap = styled.div`
   border-bottom: 1px solid #ffffff;
 `;
 
-export const LogoVatra = styled.img`
+const LogoVatra = styled.img`
   width: 10vw;
   cursor: pointer;
 

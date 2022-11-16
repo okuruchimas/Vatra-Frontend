@@ -75,7 +75,7 @@ export const Circle = styled.div`
   }
 `;
 const BuyText = styled.span`
-  font-family: "namu-1400";
-  font-size: 12vw;
+  font-family: "murmure";
+  font-size: 26rem;
   color: #b11212;
 `;

@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
-import { GradientProps } from "../Gradients";
 
-export const BlackGradient = styled.img<BlackGradientsProps>`
+export const BlackGradient = styled.img<GradientProps>`
   position: absolute;
   z-index: 0;
 
@@ -76,6 +75,12 @@ export const BlackGradient = styled.img<BlackGradientsProps>`
   }
 `;
 
-interface BlackGradientsProps extends GradientProps {
+type GradientProps = {
+  size: number;
+  animationTime: number;
+  left?: number;
+  right?: number;
+  top?: number;
+  bottom?: number;
   turnLeft?: boolean;
-}
+};

@@ -1,53 +1,19 @@
 import styled from "@emotion/styled";
-import RedTitle from "../layout/RedTitle";
+import { Preview } from "../Greeting";
 
 const MovingText = () => {
   return (
-    <SliderWrap>
-      <SliderTrackWhite></SliderTrackWhite>
-
-      <SliderTrackRed></SliderTrackRed>
-      <SliderTrackWhite></SliderTrackWhite>
-    </SliderWrap>
+    <Wrap>
+      <Preview src="/icons/logo/largeText.svg" loading="lazy" />
+    </Wrap>
   );
 };
 
 export default MovingText;
-const SliderWrap = styled.div`
+
+const Wrap = styled.div`
   margin: 22vh;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-`;
-const SliderTrack = styled.div`
+  width: 100vw;
   display: flex;
-  width: calc(64vw * 4);
-`;
-const SliderTrackWhite = styled(SliderTrack)`
-  animation: text-scroll-right 8s linear infinite;
-  span {
-    margin: 0 2vw;
-  }
-  @keyframes text-scroll-right {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(calc(-64vw * 2));
-    }
-  } ;
-`;
-const SliderTrackRed = styled(SliderTrack)`
-  animation: text-scroll-left 12s linear infinite;
-  span {
-    margin: 0 2vw;
-  }
-  @keyframes text-scroll-left {
-    0% {
-      transform: translateX(calc(-64vw * 2));
-    }
-    100% {
-      transform: translateX(0);
-    }
-  } ;
+  justify-content: flex-end;
 `;

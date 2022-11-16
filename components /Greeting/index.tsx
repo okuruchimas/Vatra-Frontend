@@ -26,7 +26,7 @@ const Greeting = () => {
           size={24}
           animationTime={16}
           left={-16}
-          top={60}
+          top={68}
           src="/icons/gradients/left.svg"
         />
         <LeftBlock>
@@ -64,7 +64,7 @@ const Wrap = styled.div`
   padding: 28vh 4vw 0;
   width: 100vw;
 `;
-const Preview = styled.img`
+export const Preview = styled.img`
   width: 88vw;
 `;
 const BuySection = styled.div`
