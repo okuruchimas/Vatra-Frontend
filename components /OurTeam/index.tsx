@@ -69,16 +69,7 @@ const OurTeam = () => {
         slidesPerView={3}
         spaceBetween={60}
         centeredSlides
-        // effect={"coverflow"}
-        // coverflowEffect={{
-        //   rotate: 16,
-        //   stretch: 0,
-        //   depth: 100,
-        //   modifier: 1,
-        //   slideShadows: false,
-        // }}
         loop
-        // autoplay={{ delay: 3000, disableOnInteraction: false }}
       >
         {TestArr.map(({ name, role, superPower, url }, index) => (
           <Slide key={index}>
