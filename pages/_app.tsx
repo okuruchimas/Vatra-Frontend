@@ -33,6 +33,10 @@ const App = ({ Component, pageProps }: AppProps) => {
             z-index: 1;
           }
 
+          ::-webkit-scrollbar {
+            width: 0;
+          }
+
           @font-face {
             font-family: "namu-pro";
             src: url("/fonts/namu/NAMU-Pro.ttf");
