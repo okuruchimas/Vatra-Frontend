@@ -84,6 +84,7 @@ const TheaterPoster = () => {
         {TestArr.map((performance, index) => (
           <Performance
             key={index}
+            left={(index + 1) % 2}
             title={performance.title}
             description={performance.description}
             type={performance.type}

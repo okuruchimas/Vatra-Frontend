@@ -69,8 +69,8 @@ const Wrap = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin: 0 4vw;
   padding: 2vh 0;
+  margin: 0 4vw;
   height: 8vh;
   background-image: url("/icons/gradients/dottBackground.svg");
   background-color: #181818;

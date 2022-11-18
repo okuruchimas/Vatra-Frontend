@@ -8,6 +8,7 @@ import PerformanceImg from "./PerformanceImg";
 import performanceImg from "./PerformanceImg";
 
 export type RepertoireProps = {
+  left: number;
   title: string;
   description: string;
   type: string;
@@ -19,16 +20,33 @@ export type RepertoireProps = {
 const Performance = (performance: RepertoireProps) => {
   return (
     <Wrap>
-      <PerformanceInfo
-        title={performance.title}
-        description={performance.description}
-        link={performance.link}
-      />
-      <PerformanceImg
-        date={performance.date}
-        imgUrl={performance.imgUrl}
-        type={performance.type}
-      />
+      {performance.left ? (
+        <>
+          <PerformanceInfo
+            title={performance.title}
+            description={performance.description}
+            link={performance.link}
+          />
+          <PerformanceImg
+            date={performance.date}
+            imgUrl={performance.imgUrl}
+            type={performance.type}
+          />
+        </>
+      ) : (
+        <>
+          <PerformanceImg
+            date={performance.date}
+            imgUrl={performance.imgUrl}
+            type={performance.type}
+          />
+          <PerformanceInfo
+            title={performance.title}
+            description={performance.description}
+            link={performance.link}
+          />
+        </>
+      )}
     </Wrap>
   );
 };

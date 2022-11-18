@@ -76,6 +76,6 @@ export const Circle = styled.div`
 `;
 const BuyText = styled.span`
   font-family: "murmure";
-  font-size: 26rem;
+  font-size: 12vh;
   color: #b11212;
 `;
