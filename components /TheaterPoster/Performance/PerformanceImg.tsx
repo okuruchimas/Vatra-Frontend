@@ -9,13 +9,14 @@ type Props = {
   imgUrl: string;
   type: string;
   date: string;
+  left: number;
 };
 
-const PerformanceImg = ({ imgUrl, type, date }: Props) => {
+const PerformanceImg = ({ imgUrl, type, date, left }: Props) => {
   return (
     <ImgBlock>
-      <Img src={imgUrl} loading="lazy" />
-      <Type>{type}</Type>
+      <Img src={imgUrl} loading="lazy" left={left} />
+      <Type left={left}>{type}</Type>
       <DateText>{date}</DateText>
     </ImgBlock>
   );
@@ -32,12 +33,12 @@ const ImgBlock = styled.div`
   padding-right: 4vw;
 `;
 
-const Img = styled.img`
+const Img = styled.img<{ left: number }>`
   width: 38vw;
   height: 38vw;
   object-fit: cover;
   border-radius: 16px;
-  margin-left: auto;
+  margin-left: ${({ left }) => (left ? "auto" : "none")};
 `;
 
 const DateText = styled.span`
@@ -51,7 +52,7 @@ const DateText = styled.span`
   -webkit-text-stroke-width: 1px;
 `;
 
-const Type = styled.span`
+const Type = styled.span<{ left: number }>`
   text-transform: uppercase;
   width: max-content;
   color: #fff;
@@ -62,6 +63,7 @@ const Type = styled.span`
   border-radius: 24px;
   border: 1px solid #fff;
   position: absolute;
-  right: 6vw;
+  left: ${({ left }) => (left ? "inherit" : "2vw")};
+  right: ${({ left }) => (left ? "6vw" : "inherit")};
   top: 2vh;
 `;

@@ -28,6 +28,7 @@ const Performance = (performance: RepertoireProps) => {
             link={performance.link}
           />
           <PerformanceImg
+            left={performance.left}
             date={performance.date}
             imgUrl={performance.imgUrl}
             type={performance.type}
@@ -36,6 +37,7 @@ const Performance = (performance: RepertoireProps) => {
       ) : (
         <>
           <PerformanceImg
+            left={performance.left}
             date={performance.date}
             imgUrl={performance.imgUrl}
             type={performance.type}

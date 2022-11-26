@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type Props = {
   slides: { link: string }[];
@@ -7,8 +7,6 @@ type Props = {
 
 const ImageSlider = ({ slides }: Props) => {
   const [currentId, setCurrentId] = useState<number>(0);
-  const previousSlideId = currentId === 0 ? slides.length - 1 : currentId - 1;
-  const nextSlideId = currentId === slides.length - 1 ? 0 : currentId + 1;
   let currentN = currentId + 1;
   const currentNumber = () => {
     if (currentN.toString().length === 1) {
@@ -16,13 +14,19 @@ const ImageSlider = ({ slides }: Props) => {
     }
     return currentN;
   };
-  const nextNumber = () => {
-    if (currentN.toString().length === 1) {
-      currentN += 1;
-      return "0" + currentN;
-    }
-    return currentN + 1;
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      console.log(currentId, "d");
+      console.log(slides.length, "l");
+      if (currentId === slides.length - 1) {
+        return setCurrentId(0);
+      }
+      return setCurrentId(currentId + 1);
+      console.log("This will be called every 2 seconds");
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [currentId]);
 
   return (
     <Wrap>
@@ -41,7 +45,7 @@ const ImageSlider = ({ slides }: Props) => {
           Міжнародний день театру ми представились Львову.
         </Description>
         <Pagination>
-          <Number>{currentNumber()}</Number>/{nextNumber()}
+          <Number>{currentNumber()}</Number>/{"0" + slides.length}
         </Pagination>
       </RightBlock>
     </Wrap>
@@ -59,8 +63,16 @@ const Wrap = styled.div`
 `;
 
 export default ImageSlider;
+
 const LeftBlock = styled.div``;
-const RightBlock = styled.div``;
+
+const RightBlock = styled.div`
+  padding: 0 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
 const Description = styled.span`
   font-family: "namu-1750";
   font-size: 2.4vh;
@@ -78,14 +90,14 @@ const Img = styled.div`
 
 const Pagination = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-end;
   font-family: "namu-1750";
   font-size: 8vw;
-  padding: 4vh 0;
 `;
 const LoadingLine = styled.div`
-  width: 6vw;
+  margin-top: 3.2vh;
+  width: 4vw;
   height: 1px;
   border-radius: 24px;
   background: #bbbbbb;
@@ -99,7 +111,7 @@ const LoadingLine = styled.div`
     right: 0;
     border-radius: 24px;
     background: #b11212;
-    animation: loading-line 3s linear infinite;
+    animation: loading-line 4s linear infinite;
   }
   @keyframes loading-line {
     0% {
@@ -107,13 +119,13 @@ const LoadingLine = styled.div`
     }
 
     100% {
-      width: 6vw;
+      width: 4vw;
     }
   } ;
 `;
 
 const Number = styled.span`
-  margin: 0 4vw;
+  margin: 0 4vw 0 0;
   align-self: center;
   cursor: pointer;
   font-size: 2em;

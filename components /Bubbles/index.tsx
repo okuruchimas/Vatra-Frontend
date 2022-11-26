@@ -22,7 +22,7 @@ const Bubbles = () => {
         />
 
         <Bubble
-          size={19.2}
+          size={16}
           animationTime={7.7}
           top={40}
           right={28}
@@ -30,7 +30,7 @@ const Bubbles = () => {
         />
 
         <Bubble
-          size={14}
+          size={20}
           animationTime={8}
           top={52}
           left={34}
@@ -63,7 +63,6 @@ const Title = styled.span`
   text-transform: uppercase;
   font-family: "namu-1400";
   font-size: 8vh;
-  color: #bbbbbb;
 `;
 
 const BubblesWrap = styled.div`
