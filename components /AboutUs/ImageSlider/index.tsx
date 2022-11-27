@@ -8,25 +8,24 @@ type Props = {
 const ImageSlider = ({ slides }: Props) => {
   const [currentId, setCurrentId] = useState<number>(0);
   let currentN = currentId + 1;
+
   const currentNumber = () => {
     if (currentN.toString().length === 1) {
       return "0" + currentN;
     }
     return currentN;
   };
+
   useEffect(() => {
     const interval = setInterval(() => {
-      console.log(currentId, "d");
-      console.log(slides.length, "l");
       if (currentId === slides.length - 1) {
         return setCurrentId(0);
       }
       return setCurrentId(currentId + 1);
-      console.log("This will be called every 2 seconds");
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [currentId]);
+  }, [slides.length, currentId]);
 
   return (
     <Wrap>
@@ -34,7 +33,16 @@ const ImageSlider = ({ slides }: Props) => {
         <Img
           style={{ backgroundImage: `url(${slides[currentId].link})` }}
         ></Img>
-        <LoadingLine />
+        <LinesWrap>
+          {slides.map((item, index) => (
+            <LoadingLine
+              isRed={currentId > index}
+              isAnimation={currentId === index}
+              slidesLength={slides.length}
+              key={index}
+            />
+          ))}
+        </LinesWrap>
       </LeftBlock>
       <RightBlock>
         <Description>
@@ -66,6 +74,12 @@ export default ImageSlider;
 
 const LeftBlock = styled.div``;
 
+const LinesWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
 const RightBlock = styled.div`
   padding: 0 2vw;
   display: flex;
@@ -95,23 +109,27 @@ const Pagination = styled.div`
   font-family: "namu-1750";
   font-size: 8vw;
 `;
-const LoadingLine = styled.div`
+const LoadingLine = styled.div<{
+  isRed: boolean;
+  isAnimation: boolean;
+  slidesLength: number;
+}>`
   margin-top: 3.2vh;
-  width: 4vw;
+  width: ${({ slidesLength }) => `calc(32vw / ${slidesLength})`};
   height: 1px;
   border-radius: 24px;
-  background: #bbbbbb;
+  background: ${({ isRed }) => (isRed ? "#b11212" : "#bbbbbb")};
   &:before {
     display: block;
     position: relative;
     content: "";
-    bottom: 1px;
-    height: 3px;
+    height: 1px;
     width: 0;
     right: 0;
     border-radius: 24px;
     background: #b11212;
-    animation: loading-line 4s linear infinite;
+    animation: ${({ isAnimation }) =>
+      isAnimation ? "loading-line 4s linear infinite;" : "none"};
   }
   @keyframes loading-line {
     0% {
