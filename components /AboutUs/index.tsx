@@ -4,28 +4,22 @@ import ImageSlider from "./ImageSlider";
 
 const Test = [
   {
-    link: "/icons/img1.png",
+    link: "/icons/imageSlider/img1.png",
   },
   {
-    link: "/icons/img2.png",
+    link: "/icons/imageSlider/img2.png",
+  },
+  {
+    link: "/icons/imageSlider/img3.png",
+  },
+  {
+    link: "/icons/imageSlider/img4.png",
+  },
+  {
+    link: "/icons/imageSlider/img5.png",
   },
   {
     link: "https://images.wallpaperscraft.ru/image/single/vodopad_reka_raznotsvetnyj_kamni_96301_1920x1080.jpg",
-  },
-  {
-    link: "/icons/slider/slider1.png",
-  },
-  {
-    link: "/icons/slider/slider2.png",
-  },
-  {
-    link: "/icons/slider/slider3.png",
-  },
-  {
-    link: "/icons/slider/slider4.png",
-  },
-  {
-    link: "/icons/slider/slider5.png",
   },
 ];
 

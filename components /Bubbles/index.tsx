@@ -57,9 +57,9 @@ const Wrap = styled.div`
   padding: 8vh 0 0;
   width: 100vw;
 `;
-const Title = styled.span`
+export const Title = styled.span`
   max-width: 60vw;
-  padding-left: 6vw;
+  padding-left: 4vw;
   text-transform: uppercase;
   font-family: "namu-1400";
   font-size: 8vh;

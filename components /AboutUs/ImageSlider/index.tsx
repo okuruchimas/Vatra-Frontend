@@ -35,12 +35,14 @@ const ImageSlider = ({ slides }: Props) => {
         ></Img>
         <LinesWrap>
           {slides.map((item, index) => (
-            <LoadingLine
-              isRed={currentId > index}
-              isAnimation={currentId === index}
-              slidesLength={slides.length}
-              key={index}
-            />
+            <LineWrap key={item.link} onClick={() => setCurrentId(index)}>
+              <LoadingLine
+                isRed={currentId > index}
+                isAnimation={currentId === index}
+                slidesLength={slides.length}
+                key={index}
+              />
+            </LineWrap>
           ))}
         </LinesWrap>
       </LeftBlock>
@@ -73,6 +75,13 @@ const Wrap = styled.div`
 export default ImageSlider;
 
 const LeftBlock = styled.div``;
+const LineWrap = styled.div`
+  padding: 0 0 2.4vh;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+`;
 
 const LinesWrap = styled.div`
   display: flex;
@@ -99,7 +108,6 @@ const Img = styled.div`
   border-radius: 12px;
   background-size: cover;
   background-position: center;
-  cursor: pointer;
 `;
 
 const Pagination = styled.div`
@@ -114,10 +122,11 @@ const LoadingLine = styled.div<{
   isAnimation: boolean;
   slidesLength: number;
 }>`
-  margin-top: 3.2vh;
+  margin-top: 2.4vh;
   width: ${({ slidesLength }) => `calc(32vw / ${slidesLength})`};
   height: 1px;
   border-radius: 24px;
+
   background: ${({ isRed }) => (isRed ? "#b11212" : "#bbbbbb")};
   &:before {
     display: block;
@@ -137,7 +146,7 @@ const LoadingLine = styled.div<{
     }
 
     100% {
-      width: 4vw;
+      width: ${({ slidesLength }) => `calc(32vw / ${slidesLength})`};
     }
   } ;
 `;

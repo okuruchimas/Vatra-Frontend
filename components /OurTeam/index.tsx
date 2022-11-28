@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
-import RedTitle from "../layout/RedTitle";
 import PersonCard from "./PersonCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectCoverflow, FreeMode } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
+import { Title } from "../Bubbles";
 
 const TestArr = [
   {
@@ -60,8 +60,7 @@ const TestArr = [
 const OurTeam = () => {
   return (
     <Wrap id="team">
-      <RedTitle text="наша" />
-
+      <Title>команда</Title>
       <Container
         freeMode={true}
         grabCursor
@@ -94,7 +93,7 @@ const Wrap = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: 100vw;
-  padding: 14vh 4vw;
+  padding: 14vh 0;
   overflow: hidden;
 `;
 
