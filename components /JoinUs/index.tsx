@@ -22,8 +22,10 @@ const Wrap = styled.div`
   margin: 6vh 0 2vh;
 `;
 const Title = styled.span`
-  font-family: "namu-1750";
-  font-size: 2.8vh;
+  font-family: "namu-1400";
+  font-size: 4vh;
+  width: 40vw;
+  text-align: center;
   text-transform: uppercase;
   color: #ffffff;
 `;
@@ -32,14 +34,14 @@ const ArrowWrap = styled.div`
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  padding: 6vh 0 0;
+  padding: 4vh 0 0;
   &:hover {
     img {
     }
   }
 `;
 const ArrowDown = styled.img`
-  height: 32vh;
+  height: 16vh;
   width: 2vw;
   animation: down 3s infinite;
   z-index: 1;
@@ -55,12 +57,12 @@ const ArrowDown = styled.img`
     }
   }
 `;
-export const Circle = styled.div`
+export const Circle = styled.div<{ isEmpty?: boolean }>`
   height: 80px;
   width: 80px;
   border-radius: 50%;
   border: 2px solid #b11212;
-  background: #b11212;
+  background: ${({ isEmpty }) => (isEmpty ? "none" : "#b11212")};
   animation: pulse 3s infinite;
   @keyframes pulse {
     0% {
@@ -76,6 +78,8 @@ export const Circle = styled.div`
 `;
 const BuyText = styled.span`
   font-family: "murmure";
-  font-size: 12vh;
+  font-size: 24vw;
+  line-height: 40vh;
+  text-transform: uppercase;
   color: #b11212;
 `;

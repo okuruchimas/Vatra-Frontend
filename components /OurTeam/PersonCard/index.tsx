@@ -10,11 +10,12 @@ type Props = {
 const PersonCard = (person: Props) => {
   return (
     <Wrap>
-      <Name>{person.name}</Name>
-      <Role>{person.role}</Role>
-      <SuperPower>Суперздібності</SuperPower>
-      <Power>{person.superPower}</Power>
+      <Row>
+        <SuperPower>{person.role}</SuperPower>
+        {person.superPower && <SuperPower>{person.superPower}</SuperPower>}
+      </Row>
       <Photo src={person.url} loading="lazy" />
+      <Name>{person.name}</Name>
     </Wrap>
   );
 };
@@ -22,44 +23,48 @@ const PersonCard = (person: Props) => {
 export default PersonCard;
 
 const Wrap = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 0 6vw;
   width: 20vw;
   span {
     z-index: 1;
-    position: relative;
-    left: -6vw;
   }
 `;
 
 const Name = styled.span`
-  font-family: "namu-1400";
-  font-size: 6vh;
+  position: absolute;
+  width: max-content;
+  bottom: 2vh;
+  //left: 2vw;
+  font-family: "murmure";
+  font-size: 3.6vh;
   color: #ffffff;
 `;
-const Role = styled.span`
-  font-family: "namu-1750";
-  font-size: 2.4vh;
-  padding: 0.8vh 0;
-  color: #bbbbbb;
+const Row = styled.div`
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 `;
 const SuperPower = styled.span`
   font-family: "namu-pro";
   font-size: 2vh;
   color: #b11212;
-  padding-bottom: 0.8vh;
+  padding: 8px 12px 12px;
+  border-radius: 24px;
+  border: 1px solid #b11212;
+  margin: 16px 8px;
 `;
-const Power = styled.span`
-  font-family: "namu-pro";
-  font-size: 2vh;
-  color: #ffffff;
-`;
+
 const Photo = styled.img`
   border-radius: 24px;
   height: auto;
-  width: 20vw;
+  width: 100%;
+  object-fit: cover;
   position: relative;
-  bottom: 12vh;
+  aspect-ratio: 5/6;
 `;

@@ -15,7 +15,7 @@ const Repertoire = () => {
   );
 
   useEffect(() => {
-    setRepertoire(TestArr.find(({ link }) => link === id));
+    // setRepertoire(TestArr.find(({ link }) => link === id));
   }, [id]);
 
   if (!repertoire) return;

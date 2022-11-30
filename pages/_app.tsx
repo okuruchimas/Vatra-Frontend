@@ -36,6 +36,13 @@ const App = ({ Component, pageProps }: AppProps) => {
           ::-webkit-scrollbar {
             width: 0;
           }
+          .swiper-button-next {
+            position: absolute;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: red;
+          }
 
           @font-face {
             font-family: "namu-pro";
