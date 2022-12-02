@@ -57,7 +57,7 @@ export default Performance;
 
 const Wrap = styled.div`
   position: relative;
-  height: 38vw;
+  height: 50vw;
   width: 100vw;
   display: flex;
   flex-direction: row;

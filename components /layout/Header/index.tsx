@@ -109,6 +109,7 @@ const Navbar = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding-right: 9vw;
 `;
 
 const Hint = styled.div<HintProps>`

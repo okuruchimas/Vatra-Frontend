@@ -28,9 +28,9 @@ export default PerformanceInfo;
 const InfoBlock = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  padding: 0 4vw;
-  width: 46vw;
+  justify-content: center;
+  padding: 0 8vw 12vh 4vw;
+  width: 42vw;
 `;
 
 const Title = styled.span`

@@ -68,7 +68,7 @@ export const Preview = styled.img`
   width: 88vw;
 `;
 const BuySection = styled.div`
-  padding: 16vh 0;
+  padding: 22vh 0 4vh;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -92,11 +92,12 @@ const Info = styled.div`
 `;
 
 const LeftBlock = styled.div`
+  padding-left: 6vw;
   align-self: baseline;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 50%;
+  width: 70%;
 `;
 
 const RightBlock = styled.div`
@@ -104,8 +105,7 @@ const RightBlock = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
-  padding: 0 12vw;
+  width: 30%;
 `;
 
 const Subtitle = styled.span`
