@@ -44,7 +44,7 @@ const DateText = styled.span<{ left: number }>`
   position: absolute;
   right: ${({ left }) => (left ? "0" : "auto")};
   left: ${({ left }) => (left ? "auto" : "-4vw")};
-  bottom: -4vh;
+  bottom: -11vh;
   font-family: "namu-1750";
   font-size: 20vw;
   text-transform: uppercase;

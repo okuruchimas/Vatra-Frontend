@@ -29,7 +29,7 @@ const InfoBlock = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 8vw 12vh 4vw;
+  padding: 0 4vw;
   width: 42vw;
 `;
 
@@ -42,8 +42,9 @@ const Title = styled.span`
 
 const Description = styled.span`
   font-family: "namu-1750";
-  font-size: 2vh;
+  font-size: 2.4vh;
   text-align: center;
+  padding: 0 2vw;
   color: #b5b5b5;
 `;
 
