@@ -33,7 +33,7 @@ const Header = () => {
             to={item.to}
             spy={true}
             smooth={true}
-            offset={50}
+            offset={20}
             duration={2000}
             onClick={() => {}}
             key={index}

@@ -90,7 +90,6 @@ const LinesWrap = styled.div`
 `;
 
 const RightBlock = styled.div`
-  padding: 0 2vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -98,21 +97,22 @@ const RightBlock = styled.div`
 
 const Description = styled.span`
   font-family: "namu-1750";
-  font-size: 2.4vh;
+  font-size: 3.4vh;
   color: #b5b5b5;
+  padding: 0 6vw 0 2vw;
 `;
 
 const Img = styled.div`
-  width: 40vw;
-  height: 40vw;
+  width: 44vw;
   border-radius: 12px;
   background-size: cover;
+  aspect-ratio: 181/190;
   background-position: center;
 `;
 
 const Pagination = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: flex-end;
   font-family: "namu-1750";
   font-size: 8vw;
@@ -155,7 +155,7 @@ const Number = styled.span`
   margin: 0 4vw 0 0;
   align-self: center;
   cursor: pointer;
-  font-size: 2em;
+  font-size: 2.4em;
   line-height: 1em;
   text-transform: uppercase;
   -webkit-text-fill-color: transparent;
