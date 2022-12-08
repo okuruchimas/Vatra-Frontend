@@ -81,7 +81,10 @@ const Close = styled.div`
   border-radius: 10px;
   z-index: 1;
 `;
-const CloseIcon = styled.img``;
+const CloseIcon = styled.img`
+  height: 5vh;
+  width: 5vh;
+`;
 
 const DateWrap = styled.div`
   height: 8vh;
@@ -147,7 +150,7 @@ const ButtonText = styled.span`
   border-radius: 10px;
   font-family: "namu-1750";
   font-size: 2vh;
-  padding: 0 1.6vw;
+  padding: 0 1.6vw 0.4vh;
 `;
 const ImgWrap = styled.div`
   height: 8vh;
