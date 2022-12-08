@@ -55,12 +55,14 @@ const Rate = styled.span`
   position: absolute;
   top: 4vh;
   left: 0;
-  width: 80px;
-  height: 80px;
+  height: 8vh;
+  width: 8vh;
   background: #2a2a2a;
   border-radius: 10px;
-  text-align: center;
-  padding: 1vh 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 0.4vh;
   font-family: "namu-1750";
   font-size: 3.6vh;
   z-index: 1;
@@ -70,8 +72,8 @@ const Close = styled.div`
   align-items: center;
   justify-content: center;
   position: absolute;
-  width: 80px;
-  height: 80px;
+  height: 8vh;
+  width: 8vh;
   right: 0;
   top: 4vh;
 
