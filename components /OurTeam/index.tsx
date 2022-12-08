@@ -112,7 +112,7 @@ const OurTeam = () => {
 
 export default OurTeam;
 
-const ArrowRight = styled.img`
+export const ArrowRight = styled.img`
   width: 12vw;
   transition: all 0.3s linear;
 `;

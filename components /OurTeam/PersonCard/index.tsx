@@ -50,7 +50,7 @@ const Row = styled.div`
   flex-direction: row;
   justify-content: flex-end;
 `;
-const SuperPower = styled.span`
+export const SuperPower = styled.span`
   font-family: "namu-pro";
   font-size: 2vh;
   color: #b11212;

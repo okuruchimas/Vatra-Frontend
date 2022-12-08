@@ -33,7 +33,7 @@ const InfoBlock = styled.div`
   width: 42vw;
 `;
 
-const Title = styled.span`
+export const Title = styled.span`
   font-family: "murmure";
   font-size: 8vh;
   padding: 4vh 0;

@@ -52,7 +52,7 @@ const DateText = styled.span<{ left: number }>`
   -webkit-text-stroke-width: 1px;
 `;
 
-const Type = styled.span<{ left: number }>`
+export const Type = styled.span<{ left?: number }>`
   text-transform: uppercase;
   width: max-content;
   color: #fff;

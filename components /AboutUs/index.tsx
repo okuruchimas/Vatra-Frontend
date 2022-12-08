@@ -51,7 +51,10 @@ const Wrap = styled.div`
   padding: 14vh 4vw 0;
 `;
 
-const TitleFragment = styled.span<{ paddingLeft?: number; last?: boolean }>`
+export const TitleFragment = styled.span<{
+  paddingLeft?: number;
+  last?: boolean;
+}>`
   padding-left: ${({ paddingLeft }) =>
     paddingLeft ? `${paddingLeft}vw` : "none"};
   font-family: "murmure";
