@@ -22,12 +22,14 @@ const Repertoire = () => {
   }, [id]);
 
   if (!repertoire) return;
+
   return (
     <Wrap>
       <RepertoirePreview
         title={repertoire.title}
         type={repertoire.type}
         date={repertoire.date}
+        imgUrl={repertoire.largeDescription.imgUrl}
       />
       <DetailWrap>
         <RedTitle text="опис  вистави" />
@@ -51,10 +53,9 @@ const Repertoire = () => {
             </Button>
           </DescriptionWrap>
           <PhotosWrap>
-            {/*{repertoire.largeDescription.images.map((link: string) => (*/}
-            {/*  <Photo key={link} style={{ backgroundImage: `url(${link})` }} />*/}
-            {/*))}*/}
             <Photo link={repertoire.largeDescription.images[0]} />
+            <SecondPhoto link={repertoire.largeDescription.images[1]} />
+            <ThirdPhoto link={repertoire.largeDescription.images[2]} />
           </PhotosWrap>
         </InfoWrap>
       </DetailWrap>
@@ -95,21 +96,23 @@ const DetailWrap = styled.div`
 const InfoWrap = styled.div`
   display: flex;
   flex-direction: row;
+  margin-top: 12vh;
 `;
 
 const DescriptionWrap = styled.div`
-  width: 48%;
+  width: 38%;
 `;
 
 const DescriptionTitle = styled.span`
   text-transform: uppercase;
   font-family: "namu-1400";
-  font-size: 3.2vh;
-  margin-bottom: 4vh;
+  font-size: 4vh;
   color: #fff;
 `;
 
 const Description = styled.div`
+  padding-top: 4vh;
+
   p {
     font-family: "namu-1750";
     font-size: 2.4vh;
@@ -118,6 +121,7 @@ const Description = styled.div`
   }
 `;
 const Button = styled.div`
+  margin-top: 10vh;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -132,19 +136,42 @@ const Button = styled.div`
   }
 `;
 
-const PhotosWrap = styled.div``;
+const PhotosWrap = styled.div`
+  position: relative;
+  width: 62%;
+`;
 
 const Photo = styled.div<{ link: string }>`
-  width: 24vw;
+  width: 28vw;
   background-image: ${({ link }) => `url(${link})`};
   border-radius: 12px;
   background-size: cover;
   aspect-ratio: 600/900;
   background-position: center;
+
+  position: absolute;
+  left: 8vw;
+  bottom: -4vh;
+  transform: rotate(-6deg);
+  z-index: 3;
+`;
+
+const SecondPhoto = styled(Photo)`
+  left: 18vw;
+  bottom: 10vh;
+  transform: rotate(-0.5deg);
+  z-index: 2;
+`;
+
+const ThirdPhoto = styled(Photo)`
+  left: 26vw;
+  bottom: 28vh;
+  transform: rotate(6deg);
+  z-index: 1;
 `;
 
 const TeamInfo = styled.div`
-  margin-top: 16vh;
+  margin-top: 24vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -162,16 +189,18 @@ const TeamMembers = styled.div`
   border-top: 2px solid #fff;
 `;
 
-const EmptyText = styled.span`
-  font-family: "murmure";
-  font-size: 40vh;
-  text-transform: uppercase;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 1px;
-`;
-
-const DateText = styled.span`
+const DateText = styled.div`
+  margin-top: 20vh;
   font-family: "namu-1400";
   text-transform: uppercase;
   font-size: 32vh;
+  text-align: right;
+`;
+
+const EmptyText = styled.span`
+  font-family: "murmure";
+  font-size: 34vh;
+  text-transform: uppercase;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
 `;

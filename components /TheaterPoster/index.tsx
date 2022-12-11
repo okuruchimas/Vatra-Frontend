@@ -12,6 +12,7 @@ export const TestArr = [
     imgUrl: "/icons/poster/img1.png",
     link: "war",
     largeDescription: {
+      imgUrl: "/icons/poster/bigImg1.png",
       videoRemarks: [
         "*У виставі лунає жива музика",
         "**Після вистави є можливість придбати її мерч – автоорську п’єсу",
@@ -63,6 +64,7 @@ export const TestArr = [
     imgUrl: "/icons/poster/img2.png",
     link: "meting",
     largeDescription: {
+      imgUrl: "/icons/poster/bigImg2.png",
       videoRemarks: [
         "*У виставі лунає жива музика",
         "**Після вистави є можливість придбати її мерч – автоорську п’єсу",
@@ -127,6 +129,7 @@ export const TestArr = [
     imgUrl: "/icons/poster/img3.png",
     link: "kill-pupin",
     largeDescription: {
+      imgUrl: "/icons/poster/bigImg3.png",
       videoRemarks: [
         "*У виставі лунає жива музика",
         "**Спільний проєкт театру Лесі та театру Варта",
@@ -182,6 +185,7 @@ export const TestArr = [
     imgUrl: "/icons/poster/img4.png",
     link: "herson",
     largeDescription: {
+      imgUrl: "/icons/poster/bigImg4.png",
       videoRemarks: [
         "*У виставі лунає жива музика",
         " **Використовується обсценна лексика",
@@ -236,6 +240,7 @@ export const TestArr = [
     imgUrl: "/icons/poster/img5.png",
     link: "she-is-war",
     largeDescription: {
+      imgUrl: "/icons/poster/bigImg5.png",
       videoRemarks: [],
       bigTitle1: "Яким є жіночий",
       bigTitle2: "досвід війни?",
@@ -294,6 +299,7 @@ export const TestArr = [
     imgUrl: "/icons/poster/img6.png",
     link: "first-day",
     largeDescription: {
+      imgUrl: "/icons/poster/bigImg6.png",
       videoRemarks: ["*Присутня обсценна лексика"],
       bigTitle1: "Закарбувався в нас",
       bigTitle2: "назавжди...",

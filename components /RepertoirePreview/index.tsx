@@ -6,6 +6,7 @@ type Info = {
   title: string;
   type: string;
   date: string;
+  imgUrl: string;
 };
 
 const RepertoirePreview = (info: Info) => {
@@ -17,12 +18,7 @@ const RepertoirePreview = (info: Info) => {
       </Close>
       <Type>{info.type}</Type>
       <Title>{info.title}</Title>
-      <Video muted autoPlay playsInline controls loop>
-        <source
-          src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"
-          type="video/mp4"
-        />
-      </Video>
+      <Image src={info.imgUrl} />
       <DateWrap>
         <DateText>дати показу</DateText>
         <Dates>
@@ -175,7 +171,8 @@ const Type = styled(Prop2)`
   top: initial;
   bottom: 40vh;
 `;
-const Video = styled.video`
+
+const Image = styled.img`
   width: 100vw;
   border-radius: 30px;
   position: relative;
