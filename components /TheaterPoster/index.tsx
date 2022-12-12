@@ -385,6 +385,10 @@ const Wrap = styled.div`
   align-items: flex-start;
   padding: 14vh 4vw 0;
   width: 100vw;
+
+  @media (max-width: 960px) {
+    padding: 0 4vw;
+  }
 `;
 const Description = styled.span`
   font-family: "namu-1750";
@@ -393,6 +397,9 @@ const Description = styled.span`
   width: 36vw;
   padding: 8vh 4vw 0 0;
   margin-left: auto;
+  @media (max-width: 960px) {
+    width: 86vw;
+  }
 `;
 const PerformancesWrap = styled.div`
   display: flex;
@@ -405,4 +412,8 @@ const Title = styled.span`
   font-size: 24vh;
   margin-left: -1vw;
   color: #fff;
+  @media (max-width: 960px) {
+    margin-top: 1vh;
+    font-size: 6vh;
+  }
 `;

@@ -18,4 +18,9 @@ const Wrap = styled.span`
   font-size: 2.4vh;
   color: #b11212;
   border-bottom: 1px solid #ffff;
+
+  @media (max-width: 960px) {
+    padding-bottom: 2vh;
+    font-size: 2vh;
+  }
 `;
