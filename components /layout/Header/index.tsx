@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { useState } from "react";
 import { Link } from "react-scroll";
 import { useRouter } from "next/router";
+import DonateButton from "../DonateButton";
 
 const arrMenu: { text: string; to: string }[] = [
   { text: "Афіша", to: "poster" },
@@ -27,33 +28,24 @@ const Header = () => {
       >
         <LogoVatra src="/icons/logo/logo.svg" />
       </Link>
-      <Navbar>
-        {arrMenu.map((item, index) => (
-          <ItemList
-            to={item.to}
-            spy={true}
-            smooth={true}
-            offset={20}
-            duration={2000}
-            onClick={() => {}}
-            key={index}
-          >
-            {item.text}
-          </ItemList>
-        ))}
-      </Navbar>
-      <Button
-        onMouseEnter={() => setHint(true)}
-        onMouseLeave={() => setHint(false)}
-      >
-        Donate
-      </Button>
-      <Hint isHint={isHint}>
-        <RedText>Наш театр є незалежним проєктом. </RedText>
-        Тому, якщо маєте бажання і можливість матеріально підтримати акторів —
-        надішліть, будь ласка, будь-яку суму.
-      </Hint>
-      <Lang>EN</Lang>
+      <BurgerIcon src="/icons/logo/burger.svg" />
+      {/*<Navbar>*/}
+      {/*  {arrMenu.map((item, index) => (*/}
+      {/*    <ItemList*/}
+      {/*      to={item.to}*/}
+      {/*      spy={true}*/}
+      {/*      smooth={true}*/}
+      {/*      offset={20}*/}
+      {/*      duration={2000}*/}
+      {/*      onClick={() => {}}*/}
+      {/*      key={index}*/}
+      {/*    >*/}
+      {/*      {item.text}*/}
+      {/*    </ItemList>*/}
+      {/*  ))}*/}
+      {/*</Navbar>*/}
+      {/*<DonateButton isHint={isHint} setHint={setHint} />*/}
+      {/*<Lang>EN</Lang>*/}
     </Wrap>
   );
 };
@@ -82,8 +74,23 @@ const LogoVatra = styled.img`
   width: 10vw;
   cursor: pointer;
 
+  @media (max-width: 640px) {
+    display: block;
+    height: 4vh;
+    width: auto;
+  }
+
   &:hover {
     opacity: 0.8;
+  }
+`;
+
+const BurgerIcon = styled.img`
+  display: none;
+  @media (max-width: 640px) {
+    display: block;
+    height: 3vh;
+    width: auto;
   }
 `;
 const Button = styled.button`
@@ -105,13 +112,6 @@ const Button = styled.button`
   }
 `;
 
-const Navbar = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding-right: 9vw;
-`;
-
 const Hint = styled.div<HintProps>`
   padding: 1vh 1vw;
   position: absolute;
@@ -131,6 +131,13 @@ const Hint = styled.div<HintProps>`
 
 const RedText = styled.span`
   color: #801515;
+`;
+
+const Navbar = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 9vw;
 `;
 
 const ItemList = styled(Link)`
