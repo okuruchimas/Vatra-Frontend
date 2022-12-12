@@ -34,30 +34,31 @@ const Greeting = () => {
       <Info>
         <BlackGradient
           turnLeft
-          size={24}
+          size={width > maxMobileWidth ? 24 : 54}
+          left={width > maxMobileWidth ? -16 : -32}
+          top={width > maxMobileWidth ? 68 : 42}
           animationTime={16}
-          left={-16}
-          top={68}
           src="/icons/gradients/left.svg"
         />
         <LeftBlock>
           <Subtitle>
-            Ми створили незалежний театр для підтримки та розвитку культурного
-            фронту України.
+            Ми створили театр для підтримки культурного фронту України
           </Subtitle>
         </LeftBlock>
 
         <RightBlock>
-          <ArrowDown src="/icons/arrows/arrowDown.svg" />
+          {width > maxMobileWidth && (
+            <ArrowDown src="/icons/arrows/arrowDown.svg" />
+          )}
           <Description>
             Увібравши в себе митців із усієї країни, ми просуваємо та творимо
             сучасне українське мистецтво в такий болючий для сердець час.
           </Description>
           <BlackGradient
-            size={36}
+            size={width > maxMobileWidth ? 36 : 60}
+            right={width > maxMobileWidth ? -20 : -34}
+            bottom={width > maxMobileWidth ? 8 : -12}
             animationTime={20}
-            right={-20}
-            bottom={8}
             src="/icons/gradients/right.svg"
           />
         </RightBlock>
@@ -76,7 +77,7 @@ const Wrap = styled.div`
   width: 100vw;
 
   @media (max-width: 640px) {
-    padding-top: 40vh;
+    padding: 40vh 4vw 2vh;
   }
 `;
 export const Preview = styled.img`
@@ -113,6 +114,10 @@ const Info = styled.div`
   justify-content: center;
   align-items: center;
   padding: 18vh 0 6vh;
+  @media (max-width: 640px) {
+    flex-direction: column;
+    padding: 6vh 0;
+  }
 `;
 
 const LeftBlock = styled.div`
@@ -122,6 +127,9 @@ const LeftBlock = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   width: 70%;
+  @media (max-width: 640px) {
+    width: 80%;
+  }
 `;
 
 const RightBlock = styled.div`
@@ -130,20 +138,30 @@ const RightBlock = styled.div`
   flex-direction: column;
   align-items: center;
   width: 30%;
+  @media (max-width: 640px) {
+    width: 100%;
+    padding-left: 6vw;
+  }
 `;
 
 const Subtitle = styled.span`
   font-family: "murmure";
   font-size: 10vh;
   color: #fefefe;
+  @media (max-width: 640px) {
+    font-size: 5.8vh;
+  }
 `;
 
 const Description = styled.span`
-  font-family: "namu-pro";
+  font-family: "namu-1750";
   font-weight: 300;
   font-size: 2.4vh;
   color: #b5b5b5;
   padding-top: 64px;
+  @media (max-width: 640px) {
+    padding-top: 24px;
+  }
 `;
 
 const ButtonsWrap = styled.div`

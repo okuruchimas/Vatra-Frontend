@@ -47,6 +47,9 @@ const Slider = styled.div`
   width: 100%;
   overflow: hidden;
   padding: 40vh 0 6vh;
+  @media (max-width: 640px) {
+    padding: 16vh 0;
+  }
 `;
 const SliderTrack = styled.div`
   animation: photo-scroll 24s linear infinite;
