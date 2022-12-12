@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { Link } from "react-scroll";
 import { useRouter } from "next/router";
 import DonateButton from "../DonateButton";
+import useWindowDimensions from "../../../hooks/useWindowDimensions";
 
 const arrMenu: { text: string; to: string }[] = [
   { text: "Афіша", to: "poster" },
@@ -14,6 +15,7 @@ const arrMenu: { text: string; to: string }[] = [
 const Header = () => {
   const [isHint, setHint] = useState<boolean>(false);
   const { push } = useRouter();
+  const { width, maxMobileWidth } = useWindowDimensions();
 
   return (
     <Wrap>
@@ -29,23 +31,27 @@ const Header = () => {
         <LogoVatra src="/icons/logo/logo.svg" />
       </Link>
       <BurgerIcon src="/icons/logo/burger.svg" />
-      {/*<Navbar>*/}
-      {/*  {arrMenu.map((item, index) => (*/}
-      {/*    <ItemList*/}
-      {/*      to={item.to}*/}
-      {/*      spy={true}*/}
-      {/*      smooth={true}*/}
-      {/*      offset={20}*/}
-      {/*      duration={2000}*/}
-      {/*      onClick={() => {}}*/}
-      {/*      key={index}*/}
-      {/*    >*/}
-      {/*      {item.text}*/}
-      {/*    </ItemList>*/}
-      {/*  ))}*/}
-      {/*</Navbar>*/}
-      {/*<DonateButton isHint={isHint} setHint={setHint} />*/}
-      {/*<Lang>EN</Lang>*/}
+      <Navbar>
+        {arrMenu.map((item, index) => (
+          <ItemList
+            to={item.to}
+            spy={true}
+            smooth={true}
+            offset={20}
+            duration={2000}
+            onClick={() => {}}
+            key={index}
+          >
+            {item.text}
+          </ItemList>
+        ))}
+      </Navbar>
+      {width > maxMobileWidth && (
+        <Fragment>
+          <DonateButton isHint={isHint} setHint={setHint} />
+          <Lang>EN</Lang>
+        </Fragment>
+      )}
     </Wrap>
   );
 };
@@ -93,51 +99,15 @@ const BurgerIcon = styled.img`
     width: auto;
   }
 `;
-const Button = styled.button`
-  position: fixed;
-  right: 8vw;
-  width: 9vw;
-  height: 4vh;
-  color: #000000;
-  font-size: 2vh;
-  border: 1px solid #000000;
-  background: #fff;
-  text-transform: uppercase;
-  border-radius: 24px;
-  cursor: pointer;
-  &:hover {
-    background: inherit;
-    color: #fff;
-    border: 1px solid #fff;
-  }
-`;
-
-const Hint = styled.div<HintProps>`
-  padding: 1vh 1vw;
-  position: absolute;
-  top: 8vh;
-  right: 0;
-  display: ${({ isHint }: HintProps) => (isHint ? "block" : "none")};
-  font-family: "namu-1750";
-  width: 20vw;
-  font-weight: 300;
-  font-size: 1.6vh;
-  color: #909090;
-  background-image: url("/icons/gradients/dottBackground.svg");
-  background-color: #181818;
-  border-radius: 12px;
-  border: 1px solid #b0b0b0;
-`;
-
-const RedText = styled.span`
-  color: #801515;
-`;
 
 const Navbar = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   padding-right: 9vw;
+  @media (max-width: 640px) {
+    display: none;
+  }
 `;
 
 const ItemList = styled(Link)`

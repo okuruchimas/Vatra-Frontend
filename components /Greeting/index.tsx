@@ -2,8 +2,14 @@ import styled from "@emotion/styled";
 import VideoPreview from "./VideoPreview";
 import { BlackGradient } from "../layout/BlackGradients";
 import { Link } from "react-scroll";
+import DonateButton from "../layout/DonateButton";
+import { useState } from "react";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 const Greeting = () => {
+  const [isHint, setHint] = useState<boolean>(false);
+  const { width, maxMobileWidth } = useWindowDimensions();
+
   return (
     <Wrap>
       <Preview src="/icons/logo/varta.svg" />
@@ -12,10 +18,15 @@ const Greeting = () => {
           На сторожі Української культури. <br /> Створений під час війни в
           Україні.
         </LeftText>
-        <ArrowSmall src="/icons/arrows/arrowDown.svg" />
-        <Button to="poster" spy smooth offset={20} duration={2000} isDynamic>
-          Дивитись квитки
-        </Button>
+        <ButtonsWrap>
+          {width < maxMobileWidth && (
+            <DonateButton isHint={isHint} setHint={setHint} />
+          )}
+          <Button to="poster" spy smooth offset={20} duration={2000} isDynamic>
+            Дивитись квитки
+          </Button>
+          <ArrowSmall src="/icons/arrows/arrowDown.svg" />
+        </ButtonsWrap>
       </BuySection>
 
       <VideoPreview />
@@ -63,6 +74,10 @@ const Wrap = styled.div`
   align-items: center;
   padding: 28vh 4vw 0;
   width: 100vw;
+
+  @media (max-width: 640px) {
+    padding-top: 40vh;
+  }
 `;
 export const Preview = styled.img`
   width: 88vw;
@@ -74,12 +89,21 @@ const BuySection = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 640px) {
+    padding: 2vh 0 4vh;
+    flex-direction: column;
+  }
 `;
 const LeftText = styled.span`
   font-family: "namu-pro";
   font-weight: 300;
-  font-size: 2.4vh;
+  font-size: 2vh;
   color: #b5b5b5;
+  @media (max-width: 640px) {
+    padding-bottom: 28vh;
+    text-align: center;
+  }
 `;
 
 const Info = styled.div`
@@ -122,16 +146,27 @@ const Description = styled.span`
   padding-top: 64px;
 `;
 
+const ButtonsWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  @media (max-width: 640px) {
+    width: 100%;
+  }
+`;
+
 const Button = styled(Link)`
   font-family: "namu-1400";
-  width: 160px;
+  width: 120px;
   text-transform: uppercase;
-  text-align: right;
+  text-align: left;
   color: #b11212;
   cursor: pointer;
-
+  margin-left: auto;
   &:hover {
     opacity: 0.8;
+  }
+  @media (max-width: 640px) {
+    margin-right: 4vw;
   }
 `;
 
@@ -153,9 +188,7 @@ const ArrowDown = styled.img`
 `;
 const ArrowSmall = styled(ArrowDown)`
   height: 8vh;
-  margin-left: auto;
   position: relative;
-  left: 4vw;
   animation: down-small 3s infinite;
   @keyframes down-small {
     0% {
@@ -167,5 +200,8 @@ const ArrowSmall = styled(ArrowDown)`
     40% {
       transform: translate(0);
     }
+  }
+  @media (max-width: 640px) {
+    left: -4vw;
   }
 `;

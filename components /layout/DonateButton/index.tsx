@@ -27,9 +27,8 @@ const DonateButton = ({ isHint, setHint }: Props) => {
 export default DonateButton;
 
 const Button = styled.button`
-  position: fixed;
-  right: 8vw;
-  width: 9vw;
+  margin-right: 2vw;
+  width: 40vw;
   height: 4vh;
   color: #000000;
   font-size: 2vh;
@@ -38,6 +37,7 @@ const Button = styled.button`
   text-transform: uppercase;
   border-radius: 24px;
   cursor: pointer;
+
   &:hover {
     background: inherit;
     color: #fff;
