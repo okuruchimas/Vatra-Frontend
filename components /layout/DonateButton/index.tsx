@@ -28,7 +28,7 @@ export default DonateButton;
 
 const Button = styled.button`
   margin-right: 2vw;
-  width: 40vw;
+  width: 9vw;
   height: 4vh;
   color: #000000;
   font-size: 2vh;
@@ -37,7 +37,9 @@ const Button = styled.button`
   text-transform: uppercase;
   border-radius: 24px;
   cursor: pointer;
-
+  @media (max-width: 960px) {
+    width: 40vw;
+  }
   &:hover {
     background: inherit;
     color: #fff;

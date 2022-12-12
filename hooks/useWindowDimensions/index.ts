@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
-  const maxMobileWidth = 640;
+  const maxMobileWidth = 960;
   const isDesktopWidth = width >= maxMobileWidth;
   return {
     width,

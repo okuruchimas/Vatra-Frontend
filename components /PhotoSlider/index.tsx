@@ -47,7 +47,7 @@ const Slider = styled.div`
   width: 100%;
   overflow: hidden;
   padding: 40vh 0 6vh;
-  @media (max-width: 640px) {
+  @media (max-width: 960px) {
     padding: 16vh 0;
   }
 `;
@@ -57,14 +57,25 @@ const SliderTrack = styled.div`
   width: calc(20vw * 12);
   div:nth-of-type(even) {
     bottom: 12vh;
-    transform: rotate(16deg);
+    transform: rotate(5deg);
+    @media (max-width: 960px) {
+      bottom: 8vh;
+    }
   }
+
+  @media (max-width: 960px) {
+    width: calc(32vw * 12);
+  }
+
   @keyframes photo-scroll {
     0% {
       transform: translateX(0);
     }
     100% {
       transform: translateX(calc(-20vw * 6));
+      @media (max-width: 960px) {
+        transform: translateX(calc(-32vw * 6));
+      }
     }
   }
 `;
@@ -76,4 +87,8 @@ const Slide = styled.div`
 const Img = styled.img`
   width: 20vw;
   border-radius: 24px;
+  @media (max-width: 960px) {
+    border-radius: 10px;
+    width: 32vw;
+  }
 `;

@@ -76,7 +76,7 @@ const Wrap = styled.div`
   padding: 28vh 4vw 0;
   width: 100vw;
 
-  @media (max-width: 640px) {
+  @media (max-width: 960px) {
     padding: 40vh 4vw 2vh;
   }
 `;
@@ -91,7 +91,7 @@ const BuySection = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  @media (max-width: 640px) {
+  @media (max-width: 960px) {
     padding: 2vh 0 4vh;
     flex-direction: column;
   }
@@ -101,7 +101,7 @@ const LeftText = styled.span`
   font-weight: 300;
   font-size: 2vh;
   color: #b5b5b5;
-  @media (max-width: 640px) {
+  @media (max-width: 960px) {
     padding-bottom: 28vh;
     text-align: center;
   }
@@ -114,7 +114,7 @@ const Info = styled.div`
   justify-content: center;
   align-items: center;
   padding: 18vh 0 6vh;
-  @media (max-width: 640px) {
+  @media (max-width: 960px) {
     flex-direction: column;
     padding: 6vh 0;
   }
@@ -127,7 +127,7 @@ const LeftBlock = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   width: 70%;
-  @media (max-width: 640px) {
+  @media (max-width: 960px) {
     width: 80%;
   }
 `;
@@ -138,7 +138,7 @@ const RightBlock = styled.div`
   flex-direction: column;
   align-items: center;
   width: 30%;
-  @media (max-width: 640px) {
+  @media (max-width: 960px) {
     width: 100%;
     padding-left: 6vw;
   }
@@ -148,7 +148,7 @@ const Subtitle = styled.span`
   font-family: "murmure";
   font-size: 10vh;
   color: #fefefe;
-  @media (max-width: 640px) {
+  @media (max-width: 960px) {
     font-size: 5.8vh;
   }
 `;
@@ -159,7 +159,7 @@ const Description = styled.span`
   font-size: 2.4vh;
   color: #b5b5b5;
   padding-top: 64px;
-  @media (max-width: 640px) {
+  @media (max-width: 960px) {
     padding-top: 24px;
   }
 `;
@@ -167,7 +167,7 @@ const Description = styled.span`
 const ButtonsWrap = styled.div`
   display: flex;
   flex-direction: row;
-  @media (max-width: 640px) {
+  @media (max-width: 960px) {
     width: 100%;
   }
 `;
@@ -183,7 +183,7 @@ const Button = styled(Link)`
   &:hover {
     opacity: 0.8;
   }
-  @media (max-width: 640px) {
+  @media (max-width: 960px) {
     margin-right: 4vw;
   }
 `;
@@ -219,7 +219,7 @@ const ArrowSmall = styled(ArrowDown)`
       transform: translate(0);
     }
   }
-  @media (max-width: 640px) {
+  @media (max-width: 960px) {
     left: -4vw;
   }
 `;

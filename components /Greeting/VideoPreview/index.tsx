@@ -22,7 +22,7 @@ const Wrap = styled.div`
   border-radius: 12px;
   width: 92vw;
   padding: 2vw 0;
-  @media (max-width: 640px) {
+  @media (max-width: 960px) {
     padding: 4vw 0;
   }
 `;
@@ -31,7 +31,7 @@ const Video = styled.video`
   height: auto;
   border-radius: 12px;
   outline: none;
-  @media (max-width: 640px) {
+  @media (max-width: 960px) {
     width: 84vw;
   }
 `;

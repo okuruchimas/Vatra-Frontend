@@ -80,7 +80,7 @@ const LogoVatra = styled.img`
   width: 10vw;
   cursor: pointer;
 
-  @media (max-width: 640px) {
+  @media (max-width: 960px) {
     display: block;
     height: 4vh;
     width: auto;
@@ -93,7 +93,7 @@ const LogoVatra = styled.img`
 
 const BurgerIcon = styled.img`
   display: none;
-  @media (max-width: 640px) {
+  @media (max-width: 960px) {
     display: block;
     height: 3vh;
     width: auto;
@@ -105,7 +105,7 @@ const Navbar = styled.div`
   flex-direction: row;
   align-items: center;
   padding-right: 9vw;
-  @media (max-width: 640px) {
+  @media (max-width: 960px) {
     display: none;
   }
 `;
