@@ -3,11 +3,11 @@ import styled from "@emotion/styled";
 const JoinUs = () => {
   return (
     <Wrap id="contacts">
-      <Title>Приєднуйся до культурного фронту</Title>
+      <Title>Долучайся до культурного фронту</Title>
       <ArrowWrap>
         <ArrowDown src="/icons/arrows/arrowDown.svg" />
         <Circle />
-        <BuyText>Купити квиток</BuyText>
+        <BuyText>Придбати квиток</BuyText>
       </ArrowWrap>
     </Wrap>
   );
@@ -28,6 +28,10 @@ const Title = styled.span`
   text-align: center;
   text-transform: uppercase;
   color: #ffffff;
+  @media (max-width: 960px) {
+    font-size: 3vh;
+    width: 82vw;
+  }
 `;
 const ArrowWrap = styled.div`
   display: flex;
@@ -35,9 +39,8 @@ const ArrowWrap = styled.div`
   align-items: center;
   cursor: pointer;
   padding: 4vh 0 0;
-  &:hover {
-    img {
-    }
+  @media (max-width: 960px) {
+    padding: 8vh 0 0;
   }
 `;
 const ArrowDown = styled.img`
@@ -55,6 +58,10 @@ const ArrowDown = styled.img`
     40% {
       transform: translate(0);
     }
+  }
+  @media (max-width: 960px) {
+    height: 32vh;
+    width: 4vw;
   }
 `;
 export const Circle = styled.div<{ isEmpty?: boolean }>`
@@ -82,4 +89,9 @@ const BuyText = styled.span`
   line-height: 40vh;
   text-transform: uppercase;
   color: #b11212;
+  @media (max-width: 960px) {
+    font-size: 12vh;
+    line-height: 12vh;
+    margin-top: 8vh;
+  }
 `;

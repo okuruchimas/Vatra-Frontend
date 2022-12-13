@@ -113,6 +113,7 @@ const Description = styled.span`
   padding: 0 6vw 0 2vw;
   @media (max-width: 960px) {
     padding: 6vh 0 0 6vw;
+    font-size: 2.8vh;
   }
 `;
 

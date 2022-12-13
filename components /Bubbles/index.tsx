@@ -56,6 +56,9 @@ const Wrap = styled.div`
   flex-direction: column;
   padding: 8vh 0 0;
   width: 100vw;
+  @media (max-width: 960px) {
+    padding: 6vh 0 0;
+  }
 `;
 export const Title = styled.span`
   max-width: 60vw;
@@ -63,6 +66,10 @@ export const Title = styled.span`
   text-transform: uppercase;
   font-family: "namu-1400";
   font-size: 8vh;
+  @media (max-width: 960px) {
+    font-size: 4vh;
+    max-width: 92vw;
+  }
 `;
 
 const BubblesWrap = styled.div`
