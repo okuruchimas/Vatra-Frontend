@@ -30,7 +30,7 @@ const Title = styled.span`
   color: #ffffff;
   @media (max-width: 960px) {
     font-size: 3vh;
-    width: 82vw;
+    width: 84vw;
   }
 `;
 const ArrowWrap = styled.div`
@@ -85,12 +85,13 @@ export const Circle = styled.div<{ isEmpty?: boolean }>`
 `;
 const BuyText = styled.span`
   font-family: "murmure";
-  font-size: 24vw;
+  font-size: 36vh;
   line-height: 40vh;
+  padding-bottom: 1vh;
   text-transform: uppercase;
   color: #b11212;
   @media (max-width: 960px) {
-    font-size: 12vh;
+    font-size: 5em;
     line-height: 12vh;
     margin-top: 8vh;
   }

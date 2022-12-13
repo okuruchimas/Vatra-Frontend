@@ -3,13 +3,13 @@ import styled from "@emotion/styled";
 const Footer = () => {
   return (
     <Wrap>
-      <SocialShareWrap>
+      <LinkWrap>
         <Logo src="/icons/logo/instagram.svg" loading="lazy" />
         <Text>інстаграм</Text>
-        <Logo src="/icons/logo/telegram.svg" loading="lazy" />
-        <Text>телеграм</Text>
-      </SocialShareWrap>
-      <Text>theatre.varta@gmail.com</Text>
+      </LinkWrap>
+      <LinkWrap>
+        <Text>theatre.varta@gmail.com</Text>
+      </LinkWrap>
     </Wrap>
   );
 };
@@ -21,27 +21,41 @@ const Wrap = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 100vw;
-  padding: 0 4vw;
+  width: 92vw;
+  margin: 0 4vw;
   height: 8vh;
   border-top: 1px solid #ffffff;
 `;
 
-const SocialShareWrap = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  span:first-of-type {
-    margin-right: 4vw;
+const Logo = styled.img`
+  height: 2vw;
+  width: 2vw;
+  margin-right: 1vw;
+  @media (max-width: 960px) {
+    height: 6vw;
+    width: 6vw;
   }
 `;
-const Logo = styled.img``;
 
 const Text = styled.span`
   font-family: "namu-pro";
   font-weight: 300;
-  font-size: 16px;
   text-transform: uppercase;
-  color: #ffffff;
-  margin-left: 12px;
+`;
+
+const LinkWrap = styled.div`
+  display: flex;
+  align-items: center;
+  font-family: "namu-pro";
+  font-size: 2vh;
+  color: #b11212;
+  padding: 1vh 2vw;
+  border-radius: 24px;
+  border: 1px solid #fff;
+
+  @media (max-width: 960px) {
+    padding: 1vh 4vw;
+    height: 5vh;
+    font-size: 1.4vh;
+  }
 `;
