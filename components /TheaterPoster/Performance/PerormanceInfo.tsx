@@ -17,7 +17,10 @@ const PerformanceInfo = ({ title, description, link }: Props) => {
       <Description>{description}</Description>
       <BuyWrap>
         <Button text={"купити квитки"} />
-        <Details onClick={() => push(link)}>Дізнатися більше</Details>
+        <Details onClick={() => push(link)}>
+          <Dot src="/icons/arrows/redDot.svg" />
+          Дізнатись більше
+        </Details>
       </BuyWrap>
     </InfoBlock>
   );
@@ -71,18 +74,39 @@ const BuyWrap = styled.div`
   align-items: center;
   margin-top: 4vh;
   width: 100%;
+  @media (max-width: 960px) {
+    padding: 0 2vw;
+    justify-content: space-between;
+  }
 `;
 
 const Details = styled.span`
-  font-family: "namu-1750";
-  margin-left: 2vw;
+  font-family: "namu-1400";
+  margin-left: 2.4vw;
+  color: #bbbaba;
   font-size: 2vh;
   background: inherit;
   text-transform: uppercase;
   border-radius: 24px;
-
+  width: 36%;
+  display: flex;
+  align-items: center;
   cursor: pointer;
+  @media (max-width: 960px) {
+    margin-left: 6vw;
+    margin-right: auto;
+  }
   &:hover {
     opacity: 0.8;
+  }
+`;
+const Dot = styled.img`
+  height: 1vw;
+  width: 1vw;
+  margin-right: 1vw;
+  @media (max-width: 960px) {
+    height: 4vw;
+    width: 4vw;
+    margin-right: 3.6vw;
   }
 `;
