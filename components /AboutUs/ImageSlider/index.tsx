@@ -62,6 +62,8 @@ const ImageSlider = ({ slides }: Props) => {
   );
 };
 
+export default ImageSlider;
+
 const Wrap = styled.div`
   position: relative;
   display: flex;
@@ -70,9 +72,11 @@ const Wrap = styled.div`
   padding: 16vh 0;
   width: 100%;
   color: #fff;
+  @media (max-width: 960px) {
+    padding: 12vh 0 6vh;
+    flex-direction: column;
+  }
 `;
-
-export default ImageSlider;
 
 const LeftBlock = styled.div``;
 const LineWrap = styled.div`
@@ -87,12 +91,19 @@ const LinesWrap = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  @media (max-width: 960px) {
+    margin-top: 6vh;
+    width: 72%;
+  }
 `;
 
 const RightBlock = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media (max-width: 960px) {
+    position: relative;
+  }
 `;
 
 const Description = styled.span`
@@ -100,6 +111,9 @@ const Description = styled.span`
   font-size: 3.4vh;
   color: #b5b5b5;
   padding: 0 6vw 0 2vw;
+  @media (max-width: 960px) {
+    padding: 6vh 0 0 6vw;
+  }
 `;
 
 const Img = styled.div`
@@ -108,6 +122,10 @@ const Img = styled.div`
   background-size: cover;
   aspect-ratio: 181/190;
   background-position: center;
+  @media (max-width: 960px) {
+    width: 92vw;
+    aspect-ratio: 350/284;
+  }
 `;
 
 const Pagination = styled.div`
@@ -116,6 +134,11 @@ const Pagination = styled.div`
   align-items: flex-end;
   font-family: "namu-1750";
   font-size: 8vw;
+  @media (max-width: 960px) {
+    font-size: 6vh;
+    position: absolute;
+    top: -18vh;
+  }
 `;
 const LoadingLine = styled.div<{
   isRed: boolean;
