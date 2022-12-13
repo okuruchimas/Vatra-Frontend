@@ -10,13 +10,15 @@ type Props = {
   type: string;
   date: string;
   left: number;
+  title?: string;
 };
 
-const PerformanceImg = ({ imgUrl, type, date, left }: Props) => {
+const PerformanceImg = ({ imgUrl, type, date, left, title }: Props) => {
   return (
     <ImgBlock>
       <Img src={imgUrl} loading="lazy" left={left} />
       <Type left={left}>{type}</Type>
+      <OpenIcon src="/icons/arrows/triangle.svg" />
       <DateText left={left}>{date}</DateText>
     </ImgBlock>
   );
@@ -30,6 +32,10 @@ const ImgBlock = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   padding-right: 4vw;
+  @media (max-width: 960px) {
+    width: 92vw;
+    padding-right: 0;
+  }
 `;
 
 const Img = styled.img<{ left: number }>`
@@ -38,6 +44,24 @@ const Img = styled.img<{ left: number }>`
   border-radius: 16px;
   aspect-ratio: 193/180;
   margin-left: ${({ left }) => (left ? "auto" : "none")};
+  @media (max-width: 960px) {
+    margin-left: inherit;
+    margin-top: 12vh;
+    width: 91.6vw;
+  }
+`;
+
+const OpenIcon = styled.img`
+  display: none;
+
+  @media (max-width: 960px) {
+    display: flex;
+    position: absolute;
+    right: 6vw;
+    height: 6vh;
+    top: 3vh;
+    align-items: center;
+  }
 `;
 
 const DateText = styled.span<{ left: number }>`
@@ -50,6 +74,20 @@ const DateText = styled.span<{ left: number }>`
   text-transform: uppercase;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
+  @media (max-width: 960px) {
+    font-family: "murmure";
+    font-size: 4vh;
+    -webkit-text-fill-color: inherit;
+    -webkit-text-stroke-width: inherit;
+    right: inherit;
+    left: 34vw;
+    height: 6vh;
+    bottom: 5vh;
+    &::before {
+      content: "/";
+      margin-right: 1vw;
+    }
+  }
 `;
 
 export const Type = styled.span<{ left?: number }>`
@@ -66,4 +104,10 @@ export const Type = styled.span<{ left?: number }>`
   left: ${({ left }) => (left ? "inherit" : "2vw")};
   right: ${({ left }) => (left ? "6vw" : "inherit")};
   top: 2vh;
+
+  @media (max-width: 960px) {
+    right: inherit;
+    left: 6vw;
+    top: 4vh;
+  }
 `;

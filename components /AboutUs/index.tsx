@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 import RedTitle from "../layout/RedTitle";
 import ImageSlider from "./ImageSlider";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
+import { Fragment } from "react";
 
 const Test = [
   {
@@ -24,14 +26,30 @@ const Test = [
 ];
 
 const AboutUs = () => {
+  const { width, maxMobileWidth } = useWindowDimensions();
+
   return (
     <Wrap id="aboutUs">
       <RedTitle text="Історія театру" />
       <TitleFragment>Ми прийшли</TitleFragment>
-      <TitleFragment paddingLeft={16}>на спільну</TitleFragment>
-      <TitleFragment paddingLeft={40}>зустріч</TitleFragment>
-      <TitleFragment paddingLeft={24}> у вільний</TitleFragment>
-      <TitleFragment last>простір “Дикий Дім”</TitleFragment>
+      <TitleFragment paddingLeft={width > maxMobileWidth ? 16 : 20}>
+        на спільну
+      </TitleFragment>
+      <TitleFragment paddingLeft={width > maxMobileWidth ? 40 : 12}>
+        зустріч
+      </TitleFragment>
+      <TitleFragment paddingLeft={width > maxMobileWidth ? 24 : 32}>
+        {" "}
+        у вільний
+      </TitleFragment>
+      {width > maxMobileWidth ? (
+        <TitleFragment last>простір “Дикий Дім”</TitleFragment>
+      ) : (
+        <Fragment>
+          <TitleFragment paddingLeft={22}>простір</TitleFragment>
+          <TitleFragment last>“Дикий Дім”</TitleFragment>
+        </Fragment>
+      )}
       <Description>
         Це шелтер для біженців, який перетворився на простір нашої творості.
       </Description>
@@ -62,6 +80,9 @@ export const TitleFragment = styled.span<{
   color: #fff;
   width: 100%;
   text-align: ${({ last }) => last && "right"};
+  @media (max-width: 960px) {
+    font-size: 9vh;
+  }
 `;
 
 const Description = styled.div`
@@ -73,5 +94,9 @@ const Description = styled.div`
   color: #909090;
   span {
     margin: 2vh 0 0;
+  }
+  @media (max-width: 960px) {
+    margin: 8vh auto 6vh;
+    width: 100%;
   }
 `;

@@ -6,6 +6,7 @@ import Repertoire from "../../../pages/[id]";
 import PerformanceInfo from "./PerormanceInfo";
 import PerformanceImg from "./PerformanceImg";
 import performanceImg from "./PerformanceImg";
+import useWindowDimensions from "../../../hooks/useWindowDimensions";
 
 export type RepertoireProps = {
   left: number;
@@ -18,9 +19,11 @@ export type RepertoireProps = {
 };
 
 const Performance = (performance: RepertoireProps) => {
+  const { width, maxMobileWidth } = useWindowDimensions();
+
   return (
     <Wrap>
-      {performance.left ? (
+      {performance.left && width > maxMobileWidth ? (
         <>
           <PerformanceInfo
             title={performance.title}
@@ -41,6 +44,7 @@ const Performance = (performance: RepertoireProps) => {
             date={performance.date}
             imgUrl={performance.imgUrl}
             type={performance.type}
+            title={performance.title}
           />
           <PerformanceInfo
             title={performance.title}
@@ -57,10 +61,19 @@ export default Performance;
 
 const Wrap = styled.div`
   position: relative;
-  //height: 50vw;
   width: 100vw;
   display: flex;
   flex-direction: row;
   margin: 8vh 0;
   color: white;
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+    border: 1px solid #ffffff;
+    border-bottom: none;
+    border-radius: 30px 30px 0 0;
+    width: 92vw;
+    margin: 0 0 -4vh;
+    padding-bottom: 12vh;
+  }
 `;

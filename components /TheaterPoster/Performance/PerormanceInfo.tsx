@@ -31,6 +31,9 @@ const InfoBlock = styled.div`
   justify-content: center;
   padding: 0 4vw;
   width: 42vw;
+  @media (max-width: 960px) {
+    width: 92vw;
+  }
 `;
 
 export const Title = styled.span`
@@ -38,6 +41,15 @@ export const Title = styled.span`
   font-size: 8vh;
   padding: 4vh 0;
   text-align: center;
+  @media (max-width: 960px) {
+    font-size: 7vh;
+    display: flex;
+    position: absolute;
+    left: 6vw;
+    height: 6vh;
+    top: 48vh;
+    align-items: center;
+  }
 `;
 
 const Description = styled.span`
@@ -46,6 +58,10 @@ const Description = styled.span`
   text-align: center;
   padding: 0 2vw;
   color: #b5b5b5;
+  @media (max-width: 960px) {
+    padding: 4vh 2vw;
+    text-align: left;
+  }
 `;
 
 const BuyWrap = styled.div`
