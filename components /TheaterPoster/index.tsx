@@ -355,8 +355,6 @@ const TheaterPoster = () => {
     number | undefined
   >(0);
 
-  console.log(currentPerformance, "POSTER");
-
   return (
     <Wrap id="poster">
       <RedTitle text="що ми робимо?" />

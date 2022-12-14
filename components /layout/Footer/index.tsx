@@ -28,12 +28,12 @@ const Wrap = styled.div`
 `;
 
 const Logo = styled.img`
-  height: 2vw;
-  width: 2vw;
+  height: 2.4vh;
+  width: 2.4vh;
   margin-right: 1vw;
   @media (max-width: 960px) {
-    height: 6vw;
-    width: 6vw;
+    height: 3.2vh;
+    width: 3.2vh;
   }
 `;
 
@@ -55,6 +55,7 @@ const LinkWrap = styled.div`
 
   @media (max-width: 960px) {
     padding: 1vh 4vw;
+    max-height: 5vh;
     height: 5vh;
     font-size: 1.4vh;
   }

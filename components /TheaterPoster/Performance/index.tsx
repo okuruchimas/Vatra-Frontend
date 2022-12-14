@@ -21,7 +21,6 @@ export type RepertoireProps = {
 
 const Performance = (props: RepertoireProps) => {
   const { width, maxMobileWidth } = useWindowDimensions();
-  console.log(props.isLast, "Performance");
 
   return (
     <Wrap isLast={props.isLast}>

@@ -37,7 +37,6 @@ const PerformanceImg = ({
               onClick={() => {
                 if (currentPerformance === index) {
                   return setCurrentPerformance(undefined);
-                  console.log("setPERS");
                 }
                 return setCurrentPerformance(index);
               }}
