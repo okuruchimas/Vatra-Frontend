@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import Button from "../../layout/Button";
 import { useRouter } from "next/router";
+import useWindowDimensions from "../../../hooks/useWindowDimensions";
 
 type Props = {
   title: string;
@@ -10,25 +11,26 @@ type Props = {
 
 const PerformanceInfo = ({ title, description, link }: Props) => {
   const { push } = useRouter();
+  const { width, maxMobileWidth } = useWindowDimensions();
 
   return (
-    <InfoBlock>
+    <Wrap>
       <Title>{title}</Title>
       <Description>{description}</Description>
       <BuyWrap>
-        <Button text={"купити квитки"} />
+        <Button text={width > maxMobileWidth ? "купити квитки" : "купити"} />
         <Details onClick={() => push(link)}>
           <Dot src="/icons/arrows/redDot.svg" />
           Дізнатись більше
         </Details>
       </BuyWrap>
-    </InfoBlock>
+    </Wrap>
   );
 };
 
 export default PerformanceInfo;
 
-const InfoBlock = styled.div`
+const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,11 +49,8 @@ export const Title = styled.span`
   @media (max-width: 960px) {
     font-size: 7vh;
     display: flex;
-    position: absolute;
-    left: 6vw;
-    height: 6vh;
-    top: 48vh;
     align-items: center;
+    text-align: left;
   }
 `;
 
@@ -77,6 +76,7 @@ const BuyWrap = styled.div`
   @media (max-width: 960px) {
     padding: 0 2vw;
     justify-content: space-between;
+    margin-bottom: 6vh;
   }
 `;
 
@@ -95,6 +95,7 @@ const Details = styled.span`
   @media (max-width: 960px) {
     margin-left: 6vw;
     margin-right: auto;
+    text-transform: none;
   }
   &:hover {
     opacity: 0.8;

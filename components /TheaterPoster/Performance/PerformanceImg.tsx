@@ -1,9 +1,6 @@
 import styled from "@emotion/styled";
-import Button from "../../layout/Button";
-import parse from "html-react-parser";
-import { useRouter } from "next/router";
-import Repertoire from "../../../pages/[id]";
-import { RepertoireProps } from "./index";
+import { Title as Prop } from "./PerormanceInfo";
+import { Dispatch, SetStateAction } from "react";
 
 type Props = {
   imgUrl: string;
@@ -11,22 +8,62 @@ type Props = {
   date: string;
   left: number;
   title?: string;
+  isOpen?: boolean;
+  setCurrentPerformance?: Dispatch<SetStateAction<number | undefined>>;
+  currentPerformance?: number;
+  index?: number;
 };
 
-const PerformanceImg = ({ imgUrl, type, date, left, title }: Props) => {
+const PerformanceImg = ({
+  imgUrl,
+  type,
+  date,
+  left,
+  title,
+  isOpen,
+  setCurrentPerformance,
+  index,
+  currentPerformance,
+}: Props) => {
   return (
-    <ImgBlock>
-      <Img src={imgUrl} loading="lazy" left={left} />
-      <Type left={left}>{type}</Type>
-      <OpenIcon src="/icons/arrows/triangle.svg" />
-      <DateText left={left}>{date}</DateText>
-    </ImgBlock>
+    <Wrap>
+      {isOpen ? (
+        <>
+          <Img src={imgUrl} loading="lazy" left={left} />
+          {setCurrentPerformance && (!!index || index === 0) && (
+            <OpenIcon
+              isOpen={isOpen}
+              src="/icons/arrows/triangle.svg"
+              onClick={() => {
+                if (currentPerformance === index) {
+                  return setCurrentPerformance(undefined);
+                  console.log("setPERS");
+                }
+                return setCurrentPerformance(index);
+              }}
+            />
+          )}
+          <Type left={left}>{type}</Type>
+          <DateText left={left}>{date}</DateText>
+        </>
+      ) : (
+        <>
+          <Title>{title}</Title>
+          {setCurrentPerformance && (!!index || index === 0) && (
+            <OpenIcon
+              src="/icons/arrows/triangle.svg"
+              onClick={() => setCurrentPerformance(index)}
+            />
+          )}
+        </>
+      )}
+    </Wrap>
   );
 };
 
 export default PerformanceImg;
 
-const ImgBlock = styled.div`
+const Wrap = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -37,6 +74,11 @@ const ImgBlock = styled.div`
     padding-right: 0;
   }
 `;
+const Title = styled(Prop)`
+  width: 80%;
+  margin-left: 6vw;
+  padding: 2vh 0;
+`;
 
 const Img = styled.img<{ left: number }>`
   width: 50vw;
@@ -46,12 +88,12 @@ const Img = styled.img<{ left: number }>`
   margin-left: ${({ left }) => (left ? "auto" : "none")};
   @media (max-width: 960px) {
     margin-left: inherit;
-    margin-top: 12vh;
+    margin-top: 14vh;
     width: 91.6vw;
   }
 `;
 
-const OpenIcon = styled.img`
+const OpenIcon = styled.img<{ isOpen?: boolean }>`
   display: none;
 
   @media (max-width: 960px) {
@@ -59,8 +101,10 @@ const OpenIcon = styled.img`
     position: absolute;
     right: 6vw;
     height: 6vh;
-    top: 3vh;
+    top: 4vh;
     align-items: center;
+    z-index: 6;
+    rotate: ${({ isOpen }) => (isOpen ? "180deg" : "none")};
   }
 `;
 
@@ -108,6 +152,6 @@ export const Type = styled.span<{ left?: number }>`
   @media (max-width: 960px) {
     right: inherit;
     left: 6vw;
-    top: 4vh;
+    top: 5vh;
   }
 `;

@@ -77,7 +77,7 @@ const Wrap = styled.div`
   width: 100vw;
 
   @media (max-width: 960px) {
-    padding: 40vh 4vw 2vh;
+    padding: 36vh 4vw 2vh;
   }
 `;
 export const Preview = styled.img`

@@ -33,5 +33,6 @@ const Wrap = styled.div`
   }
   @media (max-width: 960px) {
     padding: 0 4vw;
+    width: 40vw;
   }
 `;

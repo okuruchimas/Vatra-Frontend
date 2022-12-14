@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 import RedTitle from "../layout/RedTitle";
 import Performance from "./Performance";
+import { useState } from "react";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 export const TestArr = [
   {
@@ -348,6 +350,13 @@ export const TestArr = [
 ];
 
 const TheaterPoster = () => {
+  const { width, maxMobileWidth } = useWindowDimensions();
+  const [currentPerformance, setCurrentPerformance] = useState<
+    number | undefined
+  >(0);
+
+  console.log(currentPerformance, "POSTER");
+
   return (
     <Wrap id="poster">
       <RedTitle text="що ми робимо?" />
@@ -370,6 +379,13 @@ const TheaterPoster = () => {
             date={performance.date}
             imgUrl={performance.imgUrl}
             link={performance.link}
+            currentPerformance={currentPerformance}
+            setCurrentPerformance={setCurrentPerformance}
+            isOpen={
+              width > maxMobileWidth ? true : currentPerformance === index
+            }
+            index={index}
+            isLast={TestArr.length - 1 === index}
           />
         ))}
       </PerformancesWrap>
@@ -399,6 +415,7 @@ const Description = styled.span`
   margin-left: auto;
   @media (max-width: 960px) {
     width: 86vw;
+    margin-left: 6vw;
   }
 `;
 const PerformancesWrap = styled.div`

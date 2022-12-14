@@ -1,12 +1,8 @@
 import styled from "@emotion/styled";
-import Button from "../../layout/Button";
-import parse from "html-react-parser";
-import { useRouter } from "next/router";
-import Repertoire from "../../../pages/[id]";
 import PerformanceInfo from "./PerormanceInfo";
 import PerformanceImg from "./PerformanceImg";
-import performanceImg from "./PerformanceImg";
 import useWindowDimensions from "../../../hooks/useWindowDimensions";
+import { Dispatch, SetStateAction } from "react";
 
 export type RepertoireProps = {
   left: number;
@@ -16,50 +12,71 @@ export type RepertoireProps = {
   date: string;
   imgUrl: string;
   link: string;
+  isOpen: boolean;
+  setCurrentPerformance: Dispatch<SetStateAction<number | undefined>>;
+  currentPerformance?: number;
+  index?: number;
+  isLast: boolean;
 };
 
-const Performance = (performance: RepertoireProps) => {
+const Performance = (props: RepertoireProps) => {
   const { width, maxMobileWidth } = useWindowDimensions();
+  console.log(props.isLast, "Performance");
 
   return (
-    <Wrap>
-      {performance.left && width > maxMobileWidth ? (
+    <Wrap isLast={props.isLast}>
+      {props.left && width > maxMobileWidth ? (
         <>
           <PerformanceInfo
-            title={performance.title}
-            description={performance.description}
-            link={performance.link}
+            title={props.title}
+            description={props.description}
+            link={props.link}
           />
           <PerformanceImg
-            left={performance.left}
-            date={performance.date}
-            imgUrl={performance.imgUrl}
-            type={performance.type}
+            left={props.left}
+            date={props.date}
+            imgUrl={props.imgUrl}
+            type={props.type}
+            isOpen={props.isOpen}
+          />
+        </>
+      ) : props.isOpen ? (
+        <>
+          <PerformanceImg
+            index={props.index}
+            isOpen={props.isOpen}
+            currentPerformance={props.currentPerformance}
+            setCurrentPerformance={props.setCurrentPerformance}
+            left={props.left}
+            date={props.date}
+            imgUrl={props.imgUrl}
+            type={props.type}
+            title={props.title}
+          />
+          <PerformanceInfo
+            title={props.title}
+            description={props.description}
+            link={props.link}
           />
         </>
       ) : (
-        <>
-          <PerformanceImg
-            left={performance.left}
-            date={performance.date}
-            imgUrl={performance.imgUrl}
-            type={performance.type}
-            title={performance.title}
-          />
-          <PerformanceInfo
-            title={performance.title}
-            description={performance.description}
-            link={performance.link}
-          />
-        </>
+        <PerformanceImg
+          index={props.index}
+          isOpen={props.isOpen}
+          left={props.left}
+          date={props.date}
+          imgUrl={props.imgUrl}
+          type={props.type}
+          title={props.title}
+          currentPerformance={props.currentPerformance}
+          setCurrentPerformance={props.setCurrentPerformance}
+        />
       )}
     </Wrap>
   );
 };
 
-export default Performance;
-
-const Wrap = styled.div`
+const Wrap = styled.div<{ isLast: boolean }>`
   position: relative;
   width: 100vw;
   display: flex;
@@ -70,10 +87,12 @@ const Wrap = styled.div`
   @media (max-width: 960px) {
     flex-direction: column;
     border: 1px solid #ffffff;
-    border-bottom: none;
-    border-radius: 30px 30px 0 0;
+    border-radius: ${({ isLast }) => (isLast ? "30px" : "30px 30px 0 0")};
+    border-bottom: ${({ isLast }) => (isLast ? "1px solid #ffffff" : "none")};
     width: 92vw;
     margin: 0 0 -4vh;
-    padding-bottom: 12vh;
+    padding-bottom: ${({ isLast }) => (isLast ? "2vh" : "6vh")};
   }
 `;
+
+export default Performance;
