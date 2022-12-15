@@ -51,9 +51,15 @@ const Wrap = styled.div<BubbleProps>`
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 100%;
+  aspect-ratio: 1/1;
 `;
 
 const BubbleText = styled.span`
   font-family: "namu-1750";
   font-weight: 400;
+  @media (max-width: 960px) {
+    padding: 0 2vw;
+    text-align: center;
+    font-size: 2vh;
+  }
 `;

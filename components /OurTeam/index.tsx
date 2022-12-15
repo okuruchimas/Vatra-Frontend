@@ -124,6 +124,9 @@ const Wrap = styled.div`
   width: 100vw;
   padding: 14vh 0;
   overflow: hidden;
+  @media (max-width: 960px) {
+    padding: 4vh 0 14vh;
+  }
 `;
 
 const Container = styled.div`

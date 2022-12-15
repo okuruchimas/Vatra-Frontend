@@ -16,4 +16,7 @@ const Wrap = styled.div`
   width: 100vw;
   display: flex;
   justify-content: flex-end;
+  @media (max-width: 960px) {
+    margin: 12vh;
+  }
 `;
