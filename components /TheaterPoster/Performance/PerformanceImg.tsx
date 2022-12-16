@@ -74,7 +74,7 @@ const Wrap = styled.div`
   }
 `;
 const Title = styled(Prop)`
-  width: 80%;
+  width: 76%;
   margin-left: 6vw;
   padding: 2vh 0;
 `;

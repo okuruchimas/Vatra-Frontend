@@ -5,15 +5,18 @@ type Props = {
   role: string;
   superPower?: string;
   url: string;
+  isPower: boolean;
 };
 
 const PersonCard = (person: Props) => {
   return (
     <Wrap>
-      <Row>
-        <SuperPower>{person.role}</SuperPower>
-        {person.superPower && <SuperPower>{person.superPower}</SuperPower>}
-      </Row>
+      {person.isPower && (
+        <Row>
+          <SuperPower>{person.role}</SuperPower>
+          {person.superPower && <SuperPower>{person.superPower}</SuperPower>}
+        </Row>
+      )}
       <Photo src={person.url} loading="lazy" />
       <Name>{person.name}</Name>
     </Wrap>
@@ -31,16 +34,24 @@ const Wrap = styled.div`
   span {
     z-index: 1;
   }
+  @media (max-width: 960px) {
+    width: 44vw;
+  }
 `;
 
 const Name = styled.span`
   position: absolute;
   width: max-content;
   bottom: 2vh;
-  //left: 2vw;
   font-family: "murmure";
   font-size: 3.6vh;
   color: #ffffff;
+
+  @media (max-width: 960px) {
+    font-family: "namu-1750";
+    font-size: 2.4vh;
+    width: 50%;
+  }
 `;
 const Row = styled.div`
   position: absolute;

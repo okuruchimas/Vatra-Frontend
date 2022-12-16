@@ -13,7 +13,7 @@ const Bubbles = () => {
           size={width > maxMobileWidth ? 19.6 : 32}
           animationTime={5}
           top={width > maxMobileWidth ? 6 : 20}
-          left={width > maxMobileWidth ? 28 : 62}
+          left={width > maxMobileWidth ? 28 : 60}
           text="Актуальність"
         />
         <Bubble
@@ -59,15 +59,14 @@ const Wrap = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 8vh 0 0;
+  padding: 8vh 4vw 0;
   width: 100vw;
   @media (max-width: 960px) {
-    padding: 6vh 0 0;
+    padding: 6vh 4vw 0;
   }
 `;
 export const Title = styled.span`
   max-width: 60vw;
-  padding-left: 4vw;
   text-transform: uppercase;
   font-family: "namu-1400";
   font-size: 8vh;
@@ -83,6 +82,9 @@ const BubblesWrap = styled.div`
   padding: 4vw 8vw;
   min-height: 52vw;
   @media (max-width: 960px) {
+    width: 100%;
+    padding: 4vw 0;
+
     min-height: 56vh;
   }
 `;

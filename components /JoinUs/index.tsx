@@ -71,6 +71,8 @@ export const Circle = styled.div<{ isEmpty?: boolean }>`
   border: 2px solid #b11212;
   background: ${({ isEmpty }) => (isEmpty ? "none" : "#b11212")};
   animation: pulse 3s infinite;
+  z-index: 4;
+
   @keyframes pulse {
     0% {
       box-shadow: 0 0 0 0 rgba(142, 23, 23, 0.583333);

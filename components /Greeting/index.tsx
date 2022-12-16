@@ -92,7 +92,7 @@ const BuySection = styled.div`
   justify-content: space-between;
 
   @media (max-width: 960px) {
-    padding: 2vh 0 4vh;
+    padding: 2vh 0 8vh;
     flex-direction: column;
   }
 `;

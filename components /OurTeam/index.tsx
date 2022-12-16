@@ -2,7 +2,8 @@ import styled from "@emotion/styled";
 import PersonCard from "./PersonCard";
 import { Title } from "../Bubbles";
 import { useState } from "react";
-import { Circle } from "../JoinUs";
+import { Circle as Prop } from "../JoinUs";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 const TestArr = [
   {
@@ -72,19 +73,41 @@ const TestArr = [
     superPower: "Актор",
     url: "/icons/ourTeam/11.png",
   },
+  {
+    name: "Світлана Мельник",
+    role: "Хореограф",
+    superPower: "Актор",
+    url: "/icons/ourTeam/8.png",
+  },
+  {
+    name: "Олеся Стрельбіцька",
+    role: "Хореограф",
+    superPower: "Актор",
+    url: "/icons/ourTeam/11.png",
+  },
 ];
 
 const OurTeam = () => {
+  const { width, maxMobileWidth } = useWindowDimensions();
   const [posts, setPosts] = useState(TestArr);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postPerPage, setPostPerPage] = useState(6);
 
   //Get current Photos
+  const postPerPage = width > maxMobileWidth ? 6 : 4;
   const indexLastPost = currentPage * postPerPage;
   const indexFirstPost = indexLastPost - postPerPage;
   const currentPosts = posts.slice(indexFirstPost, indexLastPost);
+
   //Change Photos
-  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  const lastPageNumber = Math.ceil(
+    posts.length / (width > maxMobileWidth ? 6 : 4)
+  );
+  const paginate = (pageNumber: number) => {
+    if (lastPageNumber === currentPage) {
+      return setCurrentPage(1);
+    }
+    return setCurrentPage(pageNumber);
+  };
 
   return (
     <Wrap id="team">
@@ -98,10 +121,11 @@ const OurTeam = () => {
               role={role}
               superPower={superPower}
               url={url}
+              isPower={width > maxMobileWidth}
             />
           </Slide>
         ))}
-        <Button onClick={() => paginate(currentPage === 1 ? 2 : 1)}>
+        <Button onClick={() => paginate(currentPage + 1)}>
           <ArrowRight src="/icons/arrows/arrowRight.svg" />
           <Circle isEmpty />
         </Button>
@@ -115,6 +139,15 @@ export default OurTeam;
 export const ArrowRight = styled.img`
   width: 12vw;
   transition: all 0.3s linear;
+  @media (max-width: 960px) {
+    width: 32vw;
+  }
+`;
+const Circle = styled(Prop)`
+  @media (max-width: 960px) {
+    height: 60px;
+    width: 60px;
+  }
 `;
 
 const Wrap = styled.div`
@@ -122,10 +155,10 @@ const Wrap = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: 100vw;
-  padding: 14vh 0;
+  padding: 14vh 4vw;
   overflow: hidden;
   @media (max-width: 960px) {
-    padding: 4vh 0 14vh;
+    padding: 4vh 4vw 14vh;
   }
 `;
 
@@ -135,11 +168,18 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   margin-top: 4vh;
+  @media (max-width: 960px) {
+    gap: 0 4vw;
+    aspect-ratio: 5/6;
+  }
 `;
 
 const Slide = styled.div<{ firstPost: boolean }>`
-  margin-left: ${({ firstPost }) => (firstPost ? "24vw" : "4vw")};
+  //margin-left: ${({ firstPost }) => (firstPost ? "24vw" : "4vw")};
   margin-bottom: 2vw;
+  @media (max-width: 960px) {
+    margin-bottom: 4vw;
+  }
 `;
 
 const Button = styled.div`
@@ -157,5 +197,10 @@ const Button = styled.div`
       transform: translatex(32px);
       z-index: 1;
     }
+  }
+
+  @media (max-width: 960px) {
+    right: 4vw;
+    bottom: -10vh;
   }
 `;
