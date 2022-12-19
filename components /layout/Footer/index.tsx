@@ -1,10 +1,19 @@
 import styled from "@emotion/styled";
+import useWindowDimensions from "../../../hooks/useWindowDimensions";
 
 const Footer = () => {
+  const { width, maxMobileWidth } = useWindowDimensions();
   return (
     <Wrap>
       <LinkWrap>
-        <Logo src="/icons/logo/instagram.svg" loading="lazy" />
+        <Logo
+          src={
+            width > maxMobileWidth
+              ? "/icons/logo/instagram.svg"
+              : "/icons/logo/instagramWhite.svg"
+          }
+          loading="lazy"
+        />
         <Text>інстаграм</Text>
       </LinkWrap>
       <LinkWrap>
@@ -54,6 +63,7 @@ const LinkWrap = styled.div`
   border: 1px solid #fff;
 
   @media (max-width: 960px) {
+    color: #fff;
     padding: 1vh 4vw;
     max-height: 5vh;
     height: 5vh;

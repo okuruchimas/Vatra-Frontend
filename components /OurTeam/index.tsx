@@ -114,7 +114,10 @@ const OurTeam = () => {
       <Title>команда</Title>
       <Container>
         {currentPosts.map(({ name, role, superPower, url }, index) => (
-          <Slide key={index} firstPost={0 === index}>
+          <Slide
+            key={index}
+            firstPost={width < maxMobileWidth ? false : 0 === index}
+          >
             <PersonCard
               key={name}
               name={name}
@@ -170,15 +173,15 @@ const Container = styled.div`
   margin-top: 4vh;
   @media (max-width: 960px) {
     gap: 0 4vw;
-    aspect-ratio: 5/6;
+    aspect-ratio: 20/25;
   }
 `;
 
 const Slide = styled.div<{ firstPost: boolean }>`
-  //margin-left: ${({ firstPost }) => (firstPost ? "24vw" : "4vw")};
+  margin-left: ${({ firstPost }) => (firstPost ? "24vw" : "4vw")};
   margin-bottom: 2vw;
   @media (max-width: 960px) {
-    margin-bottom: 4vw;
+    margin: 0;
   }
 `;
 

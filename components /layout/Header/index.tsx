@@ -4,6 +4,7 @@ import { Link } from "react-scroll";
 import { useRouter } from "next/router";
 import DonateButton from "../DonateButton";
 import useWindowDimensions from "../../../hooks/useWindowDimensions";
+import Footer from "../Footer";
 
 const arrMenu: { text: string; to: string }[] = [
   { text: "Афіша", to: "poster" },
@@ -14,6 +15,7 @@ const arrMenu: { text: string; to: string }[] = [
 
 const Header = () => {
   const [isHint, setHint] = useState<boolean>(false);
+  const [isNavbar, setIsNavbar] = useState<boolean>(false);
   const { push } = useRouter();
   const { width, maxMobileWidth } = useWindowDimensions();
 
@@ -30,8 +32,25 @@ const Header = () => {
       >
         <LogoVatra src="/icons/logo/logo.svg" />
       </Link>
-      <BurgerIcon src="/icons/logo/burger.svg" />
-      <Navbar>
+      <BurgerIcon
+        src={isNavbar ? "/icons/close/close.svg" : "/icons/logo/burger.svg"}
+        onClick={() => setIsNavbar(!isNavbar)}
+      />
+      <Navbar isNavbar={isNavbar}>
+        {width < maxMobileWidth && (
+          <ItemList
+            to="/"
+            spy={true}
+            smooth={true}
+            offset={20}
+            duration={2000}
+            onClick={() => {
+              setIsNavbar(!isNavbar);
+            }}
+          >
+            головна
+          </ItemList>
+        )}
         {arrMenu.map((item, index) => (
           <ItemList
             to={item.to}
@@ -39,12 +58,15 @@ const Header = () => {
             smooth={true}
             offset={20}
             duration={2000}
-            onClick={() => {}}
+            onClick={() => {
+              setIsNavbar(!isNavbar);
+            }}
             key={index}
           >
             {item.text}
           </ItemList>
         ))}
+        {width < maxMobileWidth && <Footer />}
       </Navbar>
       {width > maxMobileWidth && (
         <Fragment>
@@ -100,20 +122,34 @@ const BurgerIcon = styled.img`
   }
 `;
 
-const Navbar = styled.div`
+const Navbar = styled.div<{ isNavbar: boolean }>`
   display: flex;
   flex-direction: row;
   align-items: center;
   padding-right: 9vw;
   @media (max-width: 960px) {
-    display: none;
+    display: ${({ isNavbar }) => (isNavbar ? "flex" : "none")};
+    background-image: url("/icons/gradients/dottBackground.svg");
+    background-color: #181818;
+    position: absolute;
+    top: 8vh;
+    left: -4vw;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 92vh;
+    width: 100vw;
+    padding-right: 0;
+    a:last-of-type {
+      margin-bottom: 6vh;
+    }
   }
 `;
 
 const ItemList = styled(Link)`
   color: #b0b0b0;
   font-family: "namu-pro";
-  font-weight: 400;
+  font-weight: 400; 
   font-size: 2vh;
   margin: 0 2vw;
   cursor: pointer;
@@ -121,12 +157,20 @@ const ItemList = styled(Link)`
   &:hover {
       text-decoration: underline;,
     }
+
+  @media (max-width: 960px) {
+    color: #fff;
+    font-family: "namu-1400";
+    margin: 2vh 4vw ;
+    text-transform: uppercase;
+    font-size: 3.2em;
+  }
 `;
 
 const Lang = styled.span`
   font-family: "namu-pro";
   font-size: 2vh;
-  text-transform: uppercase
+  text-transform: uppercase;
   cursor: pointer;
 
   &:hover {
