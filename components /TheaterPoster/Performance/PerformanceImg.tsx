@@ -107,7 +107,7 @@ const OpenIcon = styled.img<{ isOpen?: boolean }>`
   }
 `;
 
-const DateText = styled.span<{ left: number }>`
+export const DateText = styled.span<{ left: number }>`
   position: absolute;
   right: ${({ left }) => (left ? "0" : "auto")};
   left: ${({ left }) => (left ? "auto" : "-4vw")};
@@ -122,14 +122,9 @@ const DateText = styled.span<{ left: number }>`
     font-size: 4vh;
     -webkit-text-fill-color: inherit;
     -webkit-text-stroke-width: inherit;
-    right: inherit;
-    left: 34vw;
+    right: 8vw;
     height: 6vh;
-    bottom: 5vh;
-    &::before {
-      content: "/";
-      margin-right: 1vw;
-    }
+    top: 16vh;
   }
 `;
 

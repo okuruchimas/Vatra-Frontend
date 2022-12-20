@@ -430,5 +430,6 @@ const Title = styled.span`
   @media (max-width: 960px) {
     margin-top: 1vh;
     font-size: 6vh;
+    margin-left: 0;
   }
 `;

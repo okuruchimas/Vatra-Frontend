@@ -28,7 +28,7 @@ const Bubble = (props: BubbleProps) => {
       bottom={props.bottom}
       animationTime={props.animationTime}
     >
-      <BubbleText>{props.text}</BubbleText>
+      <BubbleText size={props.size}>{props.text}</BubbleText>
     </Wrap>
   );
 };
@@ -54,10 +54,11 @@ const Wrap = styled.div<BubbleProps>`
   aspect-ratio: 1/1;
 `;
 
-const BubbleText = styled.span`
+const BubbleText = styled.span<{ size: number }>`
   font-family: "namu-1750";
   font-weight: 400;
   @media (max-width: 960px) {
+    width: ${({ size }) => `${size}vw`};
     padding: 0 2vw;
     text-align: center;
     font-size: 2vh;
