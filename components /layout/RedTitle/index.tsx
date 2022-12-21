@@ -20,7 +20,7 @@ const Wrap = styled.span`
   border-bottom: 1px solid #ffff;
 
   @media (max-width: 960px) {
-    padding-bottom: 2vh;
-    font-size: 2vh;
+    padding-bottom: 4vh;
+    font-size: 1em;
   }
 `;
