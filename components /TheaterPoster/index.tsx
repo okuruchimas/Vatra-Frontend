@@ -357,14 +357,18 @@ const TheaterPoster = () => {
 
   return (
     <Wrap id="poster">
-      <RedTitle text="що ми робимо?" />
+      <RedTitle text="Що ми створюємо?" />
       <Title>вистави</Title>
       <Description>
-        Зустрівшись під одним дахом, ми зрозуміли, що наші цінності й думки
-        збігаються, та через рефлексію створили виставу “Перший День Війни”.
-        <br />
-        Але на цьому ми не зупинились і створили повноційнний театр, в якому ми
-        говоримо про всі важливі думки, що дивуть в наших головах.
+        <p>
+          Зустрівшись під одним дахом, ми зрозуміли, що наші цінности й думки
+          збігаються, та через рефлексію створили перформанс «Перший День
+          Війни».
+        </p>
+        <p>
+          Але на цьому ми не зупинились і створили повноцінний театр, у якому
+          говоримо про всі важливі та актуальні теми українського суспільства.
+        </p>
       </Description>
       <PerformancesWrap>
         {TestArr.map((performance, index) => (
@@ -406,10 +410,11 @@ const Wrap = styled.div`
 `;
 const Description = styled.span`
   font-family: "namu-1750";
-  font-size: 2.4vh;
+  font-size: 3.2vh;
+  line-height: 4.6vh;
   color: #b5b5b5;
-  width: 36vw;
-  padding: 8vh 4vw 0 0;
+  width: 54vw;
+  padding: 4vh 14vw 0 0;
   margin-left: auto;
   @media (max-width: 960px) {
     width: 86vw;
@@ -419,13 +424,13 @@ const Description = styled.span`
 const PerformancesWrap = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 12vh;
 `;
 const Title = styled.span`
   text-transform: uppercase;
-  font-family: "namu-1400";
+  font-family: "namu-pro";
   font-size: 24vh;
   margin-left: -1vw;
+  margin-top: -3vh;
   color: #fff;
   @media (max-width: 960px) {
     margin-top: 1vh;
