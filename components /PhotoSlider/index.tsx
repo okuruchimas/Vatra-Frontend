@@ -54,7 +54,7 @@ const Slider = styled.div`
 const SliderTrack = styled.div`
   animation: photo-scroll 24s linear infinite;
   display: flex;
-  width: calc(20vw * 12);
+  width: calc(24vw * 12);
   div:nth-of-type(even) {
     bottom: 12vh;
     transform: rotate(5deg);
@@ -72,7 +72,7 @@ const SliderTrack = styled.div`
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-20vw * 6));
+      transform: translateX(calc(-24vw * 6));
       @media (max-width: 960px) {
         transform: translateX(calc(-32vw * 6));
       }
@@ -85,7 +85,7 @@ const Slide = styled.div`
 `;
 
 const Img = styled.img`
-  width: 20vw;
+  width: 24vw;
   border-radius: 24px;
   @media (max-width: 960px) {
     border-radius: 10px;

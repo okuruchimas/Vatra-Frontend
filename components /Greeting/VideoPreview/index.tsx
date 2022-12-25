@@ -19,7 +19,7 @@ const Wrap = styled.div`
   align-items: center;
   justify-content: center;
   border: 1px solid #fff;
-  border-radius: 12px;
+  border-radius: 45px;
   width: 92vw;
   padding: 2vw 0;
   @media (max-width: 960px) {
@@ -29,7 +29,7 @@ const Wrap = styled.div`
 const Video = styled.video`
   width: 88vw;
   height: auto;
-  border-radius: 12px;
+  border-radius: 30px;
   outline: none;
   @media (max-width: 960px) {
     width: 84vw;

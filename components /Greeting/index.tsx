@@ -21,11 +21,11 @@ const Greeting = () => {
         <ButtonsWrap>
           {width < maxMobileWidth && (
             <DonateButton isHint={isHint} setHint={setHint} />
-          )}
+          )}{" "}
+          <ArrowSmall src="/icons/arrows/arrowDown.svg" />
           <Button to="poster" spy smooth offset={20} duration={2000} isDynamic>
             Дивитись квитки
           </Button>
-          <ArrowSmall src="/icons/arrows/arrowDown.svg" />
         </ButtonsWrap>
       </BuySection>
 
@@ -42,7 +42,8 @@ const Greeting = () => {
         />
         <LeftBlock>
           <Subtitle>
-            Ми створили театр для підтримки культурного фронту України
+            Ми створили незалежний театр для підтримки та розвитку культурного
+            фронту України.
           </Subtitle>
         </LeftBlock>
 
@@ -51,8 +52,8 @@ const Greeting = () => {
             <ArrowDown src="/icons/arrows/arrowDown.svg" />
           )}
           <Description>
-            Увібравши в себе митців із усієї країни, ми просуваємо та творимо
-            сучасне українське мистецтво в такий болючий для сердець час.
+            Увібравши в себе митців і мисткинь з усієї країни, ми просуваємо та
+            творимо сучасне українське мистецтво в такий турбулентний час.
           </Description>
           <BlackGradient
             size={width > maxMobileWidth ? 36 : 60}
@@ -159,6 +160,7 @@ const Description = styled.span`
   font-size: 2.4vh;
   color: #b5b5b5;
   padding-top: 64px;
+  text-align: center;
   @media (max-width: 960px) {
     padding-top: 24px;
   }
@@ -174,9 +176,10 @@ const ButtonsWrap = styled.div`
 
 const Button = styled(Link)`
   font-family: "namu-1400";
-  width: 120px;
+  font-size: 1.4em;
+  width: 140px;
   text-transform: uppercase;
-  text-align: left;
+  text-align: right;
   color: #b11212;
   cursor: pointer;
   margin-left: auto;
