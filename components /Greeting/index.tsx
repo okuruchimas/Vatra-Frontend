@@ -7,7 +7,6 @@ import { useState } from "react";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 const Greeting = () => {
-  const [isHint, setHint] = useState<boolean>(false);
   const { width, maxMobileWidth } = useWindowDimensions();
 
   return (
@@ -19,9 +18,7 @@ const Greeting = () => {
           Україні.
         </LeftText>
         <ButtonsWrap>
-          {width < maxMobileWidth && (
-            <DonateButton isHint={isHint} setHint={setHint} />
-          )}{" "}
+          {width < maxMobileWidth && <DonateButton />}
           <ArrowSmall src="/icons/arrows/arrowDown.svg" />
           <Button to="poster" spy smooth offset={20} duration={2000} isDynamic>
             Дивитись квитки
