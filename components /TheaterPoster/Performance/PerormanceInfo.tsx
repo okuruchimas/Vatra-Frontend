@@ -33,8 +33,8 @@ export default PerformanceInfo;
 const Wrap = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 0 4vw;
+  justify-content: flex-start;
+  padding: 10vh 4vw 0;
   width: 42vw;
   @media (max-width: 960px) {
     width: 92vw;
@@ -71,7 +71,7 @@ const BuyWrap = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 4vh;
+  margin-top: 8vh;
   width: 100%;
   @media (max-width: 960px) {
     padding: 0 2vw;

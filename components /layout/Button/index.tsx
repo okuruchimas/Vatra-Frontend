@@ -19,18 +19,20 @@ const Wrap = styled.div`
   width: 12vw;
   height: 5vh;
   padding: 0 1.2vw;
-  color: #000;
   font-size: 2vh;
-  background: #fff;
   text-transform: uppercase;
-  border-radius: 24px;
   cursor: pointer;
   border: 1px solid #fff;
+  color: #b11212;
+  background: inherit;
+  border-radius: 60px;
+
   &:hover {
-    background: inherit;
+    background: #b11212;
     color: #fff;
-    border: 1px solid #fff;
+    border: 1px solid #b11212;
   }
+
   @media (max-width: 960px) {
     padding: 0 4vw;
     width: 40vw;

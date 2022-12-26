@@ -5,7 +5,7 @@ import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 type Props = {
   name: string;
-  abilities: [string];
+  abilities: string[];
 };
 
 const Member = (member: Props) => {

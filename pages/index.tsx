@@ -8,14 +8,18 @@ import MovingText from "../components /MovingText";
 import OurTeam from "../components /OurTeam";
 import JoinUs from "../components /JoinUs";
 import Header from "../components /layout/Header";
+import {
+  PerformanceProps,
+  TestArr,
+} from "../components /TheaterPoster/performances";
 
-const Home = () => {
+const Home = ({ performances }: PerformanceProps) => {
   return (
     <Wrap id="/">
       <Header />
       <Greeting />
       <PhotoSlider />
-      <TheaterPoster />
+      {performances && <TheaterPoster performances={performances} />}
       <AboutUs />
       <Bubbles />
       <MovingText />
@@ -24,6 +28,15 @@ const Home = () => {
     </Wrap>
   );
 };
+
+export async function getStaticProps() {
+  const performances = TestArr;
+  return {
+    props: {
+      performances,
+    },
+  };
+}
 
 export default Home;
 

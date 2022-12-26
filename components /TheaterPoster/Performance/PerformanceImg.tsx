@@ -67,10 +67,8 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-right: 4vw;
   @media (max-width: 960px) {
     width: 92vw;
-    padding-right: 0;
   }
 `;
 const Title = styled(Prop)`
@@ -80,6 +78,8 @@ const Title = styled(Prop)`
 `;
 
 const Img = styled.img<{ left: number }>`
+  position: relative;
+  top: 2vh;
   width: 50vw;
   object-fit: cover;
   border-radius: 16px;
@@ -109,7 +109,7 @@ const OpenIcon = styled.img<{ isOpen?: boolean }>`
 
 export const DateText = styled.span<{ left: number }>`
   position: absolute;
-  right: ${({ left }) => (left ? "0" : "auto")};
+  right: ${({ left }) => (left ? "-4vw" : "auto")};
   left: ${({ left }) => (left ? "auto" : "-4vw")};
   bottom: -11vh;
   font-family: "namu-1750";
@@ -140,8 +140,8 @@ export const Type = styled.span<{ left?: number }>`
   border: 1px solid #fff;
   position: absolute;
   left: ${({ left }) => (left ? "inherit" : "2vw")};
-  right: ${({ left }) => (left ? "6vw" : "inherit")};
-  top: 2vh;
+  right: ${({ left }) => (left ? "2vw" : "inherit")};
+  top: 6vh;
 
   @media (max-width: 960px) {
     right: inherit;

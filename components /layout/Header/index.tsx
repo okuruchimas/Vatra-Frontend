@@ -14,7 +14,6 @@ const arrMenu: { text: string; to: string }[] = [
 ];
 
 const Header = () => {
-  const [isHint, setHint] = useState<boolean>(false);
   const [isNavbar, setIsNavbar] = useState<boolean>(false);
   const { push } = useRouter();
   const { width, maxMobileWidth } = useWindowDimensions();
@@ -68,12 +67,7 @@ const Header = () => {
         ))}
         {width < maxMobileWidth && <Footer />}
       </Navbar>
-      {width > maxMobileWidth && (
-        <Fragment>
-          <DonateButton isHint={isHint} setHint={setHint} />
-          <Lang>EN</Lang>
-        </Fragment>
-      )}
+      {width > maxMobileWidth && <DonateButton />}
     </Wrap>
   );
 };
@@ -166,16 +160,3 @@ const ItemList = styled(Link)`
     font-size: 3.2em;
   }
 `;
-
-const Lang = styled.span`
-  font-family: "namu-pro";
-  font-size: 2vh;
-  text-transform: uppercase;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.8;
-  }
-`;
-
-type HintProps = { isHint?: boolean };

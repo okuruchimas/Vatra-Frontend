@@ -3,27 +3,36 @@ import PerformanceInfo from "./PerormanceInfo";
 import PerformanceImg from "./PerformanceImg";
 import useWindowDimensions from "../../../hooks/useWindowDimensions";
 import { Dispatch, SetStateAction } from "react";
+import { PerformanceType } from "../performances";
 
-export type RepertoireProps = {
+interface Props extends PerformanceType {
   left: number;
-  title: string;
-  description: string;
-  type: string;
-  date: string;
-  imgUrl: string;
-  link: string;
   isOpen: boolean;
   setCurrentPerformance: Dispatch<SetStateAction<number | undefined>>;
   currentPerformance?: number;
   index?: number;
   isLast: boolean;
-};
+}
 
-const Performance = (props: RepertoireProps) => {
+function hexToRgb(hex: string) {
+  let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result
+    ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16),
+      }
+    : { r: 0, g: 0, b: 0 };
+}
+
+const Performance = (props: Props) => {
   const { width, maxMobileWidth } = useWindowDimensions();
 
   return (
-    <Wrap isLast={props.isLast}>
+    <Wrap
+      isLast={props.isLast}
+      performanceColor={hexToRgb(props.performanceColor)}
+    >
       {props.left && width > maxMobileWidth ? (
         <>
           <PerformanceInfo
@@ -75,14 +84,19 @@ const Performance = (props: RepertoireProps) => {
   );
 };
 
-const Wrap = styled.div<{ isLast: boolean }>`
+const Wrap = styled.div<{
+  isLast: boolean;
+  performanceColor: any;
+}>`
   position: relative;
-  width: 100vw;
+  width: 92vw;
   display: flex;
   flex-direction: row;
-  margin: 8vh 0;
+  margin: 8vh 0 20vh;
   color: white;
-
+  border-radius: 30px;
+  background: ${({ performanceColor }) =>
+    `rgba(${performanceColor.r}, ${performanceColor.g}, ${performanceColor.b}, 0.1)`};
   @media (max-width: 960px) {
     flex-direction: column;
     border: 1px solid #ffffff;

@@ -1,71 +1,53 @@
 import React, { Fragment } from "react";
 import styled from "@emotion/styled";
 
-type Props = {
-  isHint: boolean;
-  setHint: (hint: boolean) => any;
-};
+interface Props {}
 
-const DonateButton = ({ isHint, setHint }: Props) => {
+const DonateButton = ({}: Props) => {
   return (
-    <Fragment>
-      <Button
-        onMouseEnter={() => setHint(true)}
-        onMouseLeave={() => setHint(false)}
-      >
-        Donate
-      </Button>
-      <Hint isHint={isHint}>
-        <RedText>Наш театр є незалежним проєктом. </RedText>
-        Тому, якщо маєте бажання і можливість матеріально підтримати акторів —
-        надішліть, будь ласка, будь-яку суму.
-      </Hint>
-    </Fragment>
+    <Wrap>
+      <Button>Donate</Button>
+      <Lang>EN</Lang>
+    </Wrap>
   );
 };
 
 export default DonateButton;
 
+const Wrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
 const Button = styled.button`
   margin-right: 2vw;
   width: 9vw;
   height: 4vh;
-  color: #000000;
+  color: #b11212;
   font-size: 2vh;
-  border: 1px solid #000000;
-  background: #fff;
+  background: inherit;
+  border: 1px solid #fff;
   text-transform: uppercase;
-  border-radius: 24px;
+  border-radius: 60px;
   cursor: pointer;
   @media (max-width: 960px) {
     width: 40vw;
   }
   &:hover {
-    background: inherit;
+    background: #b11212;
     color: #fff;
-    border: 1px solid #fff;
+    border: 1px solid #b11212;
   }
 `;
 
-const Hint = styled.div<HintProps>`
-  padding: 1vh 1vw;
-  position: absolute;
-  top: 8vh;
-  right: 0;
-  display: ${({ isHint }: HintProps) => (isHint ? "block" : "none")};
-  font-family: "namu-1750";
-  width: 20vw;
-  font-weight: 300;
-  font-size: 1.6vh;
-  color: #909090;
-  background-image: url("/icons/gradients/dottBackground.svg");
-  background-color: #181818;
-  border-radius: 12px;
-  border: 1px solid #b0b0b0;
-`;
+const Lang = styled.span`
+  font-family: "namu-pro";
+  font-size: 2vh;
+  text-transform: uppercase;
+  cursor: pointer;
 
-const RedText = styled.span`
-  color: #801515;
+  &:hover {
+    opacity: 0.8;
+  }
 `;
-
-type HintProps = { isHint?: boolean };

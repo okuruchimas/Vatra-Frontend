@@ -1,23 +1,14 @@
 import styled from "@emotion/styled";
-import { TestArr } from "../../components /TheaterPoster";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 import RepertoirePreview from "../../components /RepertoirePreview";
 import Member from "../../components /Member";
 import PerformanceDetail from "../../components /TheaterPoster/PerformanceDetails";
+import {
+  PerformanceType,
+  TestArr,
+} from "../../components /TheaterPoster/performances";
 
-const Repertoire = () => {
-  const {
-    query: { id },
-  } = useRouter();
-
-  const [repertoire, setRepertoire] = useState<any>(undefined);
-
-  useEffect(() => {
-    setRepertoire(TestArr.find(({ link }) => link === id));
-  }, [id]);
-
-  if (!repertoire) return;
+const Repertoire = ({ repertoire }: { repertoire: PerformanceType }) => {
+  if (!repertoire?.largeDescription) return;
 
   return (
     <Wrap>
@@ -38,15 +29,13 @@ const Repertoire = () => {
       <TeamInfo>
         <TitleTeam>Cклад</TitleTeam>
         <TeamMembers>
-          {repertoire.largeDescription.composition.map(
-            (item: { name: string; abilities: [string] }) => (
-              <Member
-                key={item.name}
-                name={item.name}
-                abilities={item.abilities}
-              />
-            )
-          )}
+          {repertoire.largeDescription.composition.map((item) => (
+            <Member
+              key={item.name}
+              name={item.name}
+              abilities={item.abilities}
+            />
+          ))}
         </TeamMembers>
       </TeamInfo>
       <DateText>
@@ -55,6 +44,25 @@ const Repertoire = () => {
     </Wrap>
   );
 };
+
+export async function getStaticPaths() {
+  const paths = TestArr.map((el) => {
+    return { params: { id: el.link } };
+  });
+  return {
+    paths: paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }: any) {
+  const repertoire = TestArr.find(({ link }) => link === params.id);
+  return {
+    props: {
+      repertoire,
+    },
+  };
+}
 
 export default Repertoire;
 
