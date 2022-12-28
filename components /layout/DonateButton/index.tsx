@@ -1,13 +1,16 @@
 import React, { Fragment } from "react";
 import styled from "@emotion/styled";
+import useWindowDimensions from "../../../hooks/useWindowDimensions";
 
 interface Props {}
 
 const DonateButton = ({}: Props) => {
+  const { width, maxMobileWidth } = useWindowDimensions();
+
   return (
     <Wrap>
       <Button>Donate</Button>
-      <Lang>EN</Lang>
+      {width > maxMobileWidth && <Lang>EN</Lang>}
     </Wrap>
   );
 };

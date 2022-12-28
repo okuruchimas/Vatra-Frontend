@@ -18,10 +18,15 @@ const Greeting = () => {
         </LeftText>
         <ButtonsWrap>
           {width < maxMobileWidth && <DonateButton />}
-          <ArrowSmall src="/icons/arrows/arrowDown.svg" />
+          {width > maxMobileWidth && (
+            <ArrowSmall src="/icons/arrows/arrowDown.svg" />
+          )}
           <Button to="poster" spy smooth offset={20} duration={2000} isDynamic>
             Дивитись квитки
           </Button>
+          {width < maxMobileWidth && (
+            <ArrowSmall src="/icons/arrows/arrowDown.svg" />
+          )}
         </ButtonsWrap>
       </BuySection>
 
@@ -183,6 +188,10 @@ const Button = styled(Link)`
     opacity: 0.8;
   }
   @media (max-width: 960px) {
+    font-size: 1em;
+    text-transform: none;
+    width: 130px;
+    text-align: left;
     margin-right: 4vw;
   }
 `;

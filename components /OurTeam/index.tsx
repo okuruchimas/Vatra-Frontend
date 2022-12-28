@@ -4,116 +4,18 @@ import { Title } from "../Bubbles";
 import { useState } from "react";
 import { Circle as Prop } from "../JoinUs";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
+import { OurTeamProps, Pagination as Props, Person } from "./ourTeam";
+const Pagination = new Props();
 
-const TestArr = [
-  {
-    name: "Артем Вусик",
-    role: "Режисер",
-    superPower: "Актор",
-    url: "/icons/ourTeam/3.png",
-  },
-  {
-    name: "Костянтин Васюков",
-    role: "Режисер",
-    superPower: "Актор",
-    url: "/icons/ourTeam/4.png",
-  },
-  {
-    name: "Дробот Іван",
-    role: "Актор",
-    superPower: "",
-    url: "/icons/ourTeam/2.png",
-  },
-  {
-    name: "Артур Рожицький",
-    role: "Актор",
-    superPower: "",
-    url: "/icons/ourTeam/9.png",
-  },
-
-  {
-    name: "Юрій Cулик",
-    role: "Актор",
-    superPower: "",
-    url: "/icons/ourTeam/1.png",
-  },
-  {
-    name: "Акім Драгомирецький",
-    role: "Актор",
-    superPower: "Фотограф",
-    url: "/icons/ourTeam/10.png",
-  },
-  {
-    name: "Артур Слісаренко",
-    role: "Актор-лялькар",
-    superPower: "",
-    url: "/icons/ourTeam/5.png",
-  },
-  {
-    name: "Ліза Прасолова",
-    role: "Акторка-лялькарка",
-    superPower: "",
-    url: "/icons/ourTeam/6.png",
-  },
-  {
-    name: "Тарас Волох",
-    role: "Хореограф",
-    superPower: "Актор",
-    url: "/icons/ourTeam/7.png",
-  },
-  {
-    name: "Світлана Мельник",
-    role: "Хореограф",
-    superPower: "Актор",
-    url: "/icons/ourTeam/8.png",
-  },
-  {
-    name: "Олеся Стрельбіцька",
-    role: "Хореограф",
-    superPower: "Актор",
-    url: "/icons/ourTeam/11.png",
-  },
-  {
-    name: "Світлана Мельник",
-    role: "Хореограф",
-    superPower: "Актор",
-    url: "/icons/ourTeam/8.png",
-  },
-  {
-    name: "Олеся Стрельбіцька",
-    role: "Хореограф",
-    superPower: "Актор",
-    url: "/icons/ourTeam/11.png",
-  },
-];
-
-const OurTeam = () => {
+const OurTeam = ({ members }: OurTeamProps) => {
   const { width, maxMobileWidth } = useWindowDimensions();
-  const [posts, setPosts] = useState(TestArr);
-  const [currentPage, setCurrentPage] = useState(1);
-
-  //Get current Photos
-  const postPerPage = width > maxMobileWidth ? 6 : 4;
-  const indexLastPost = currentPage * postPerPage;
-  const indexFirstPost = indexLastPost - postPerPage;
-  const currentPosts = posts.slice(indexFirstPost, indexLastPost);
-
-  //Change Photos
-  const lastPageNumber = Math.ceil(
-    posts.length / (width > maxMobileWidth ? 6 : 4)
-  );
-  const paginate = (pageNumber: number) => {
-    if (lastPageNumber === currentPage) {
-      return setCurrentPage(1);
-    }
-    return setCurrentPage(pageNumber);
-  };
+  const [postsToShow, setPostsToShow] = useState<Person[]>(members.slice(0, 6));
 
   return (
     <Wrap id="team">
       <Title>команда</Title>
       <Container>
-        {currentPosts.map(({ name, role, superPower, url }, index) => (
+        {postsToShow.map(({ name, role, superPower, url }, index) => (
           <Slide
             key={index}
             firstPost={width < maxMobileWidth ? false : 0 === index}
@@ -128,7 +30,7 @@ const OurTeam = () => {
             />
           </Slide>
         ))}
-        <Button onClick={() => paginate(currentPage + 1)}>
+        <Button onClick={() => Pagination.paginate(members, setPostsToShow)}>
           <ArrowRight src="/icons/arrows/arrowRight.svg" />
           <Circle isEmpty />
         </Button>
@@ -187,7 +89,7 @@ const Slide = styled.div<{ firstPost: boolean }>`
 
 const Button = styled.div`
   position: absolute;
-  right: 4vw;
+  right: 2vw;
   bottom: 20vh;
   display: flex;
   flex-direction: row;

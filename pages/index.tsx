@@ -9,11 +9,17 @@ import OurTeam from "../components /OurTeam";
 import JoinUs from "../components /JoinUs";
 import Header from "../components /layout/Header";
 import {
-  PerformanceProps,
+  PerformanceType,
   TestArr,
 } from "../components /TheaterPoster/performances";
+import { OurTeamArray, Person } from "../components /OurTeam/ourTeam";
 
-const Home = ({ performances }: PerformanceProps) => {
+interface HomeProps {
+  performances: PerformanceType[];
+  ourTeam: Person[];
+}
+
+const Home = ({ performances, ourTeam }: HomeProps) => {
   return (
     <Wrap id="/">
       <Header />
@@ -23,7 +29,7 @@ const Home = ({ performances }: PerformanceProps) => {
       <AboutUs />
       <Bubbles />
       <MovingText />
-      <OurTeam />
+      {ourTeam && <OurTeam members={ourTeam} />}
       <JoinUs />
     </Wrap>
   );
@@ -31,9 +37,12 @@ const Home = ({ performances }: PerformanceProps) => {
 
 export async function getStaticProps() {
   const performances = TestArr;
+  const ourTeam = OurTeamArray;
+
   return {
     props: {
       performances,
+      ourTeam,
     },
   };
 }
