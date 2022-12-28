@@ -93,7 +93,7 @@ const Wrap = styled.div`
 `;
 
 const LogoVatra = styled.img`
-  width: 10vw;
+  width: 8vw;
   cursor: pointer;
 
   @media (max-width: 960px) {

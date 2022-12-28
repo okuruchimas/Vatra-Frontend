@@ -158,7 +158,7 @@ const Wrap = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: 100vw;
-  padding: 14vh 4vw;
+  padding: 0 4vw 14vh;
   overflow: hidden;
   @media (max-width: 960px) {
     padding: 4vh 4vw 14vh;

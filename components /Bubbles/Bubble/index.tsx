@@ -57,10 +57,12 @@ const Wrap = styled.div<BubbleProps>`
 const BubbleText = styled.span<{ size: number }>`
   font-family: "namu-1750";
   font-weight: 400;
+  font-size: 2.4vh;
+  text-align: center;
+  padding: 0 2vw;
+
   @media (max-width: 960px) {
     width: ${({ size }) => `${size}vw`};
-    padding: 0 2vw;
-    text-align: center;
     font-size: 2vh;
   }
 `;

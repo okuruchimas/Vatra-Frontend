@@ -39,7 +39,6 @@ const AboutUs = () => {
         зустріч
       </TitleFragment>
       <TitleFragment paddingLeft={width > maxMobileWidth ? 24 : 32}>
-        {" "}
         у вільний
       </TitleFragment>
       {width > maxMobileWidth ? (
@@ -51,7 +50,8 @@ const AboutUs = () => {
         </Fragment>
       )}
       <Description>
-        Це шелтер для біженців, який перетворився на простір нашої творості.
+        який був шелтером для біженців, згодом перетворившись на простір нашої
+        творчости.
       </Description>
 
       <ImageSlider slides={Test} />
@@ -87,11 +87,12 @@ export const TitleFragment = styled.span<{
 
 const Description = styled.div`
   margin: 12vh auto;
-  width: 32%;
+  width: 40%;
   text-align: center;
   font-family: "namu-1750";
   font-size: 3vh;
-  color: #909090;
+  text-transform: uppercase;
+  color: #dcdada;
   span {
     margin: 2vh 0 0;
   }

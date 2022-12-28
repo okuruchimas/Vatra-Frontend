@@ -3,7 +3,6 @@ import VideoPreview from "./VideoPreview";
 import { BlackGradient } from "../layout/BlackGradients";
 import { Link } from "react-scroll";
 import DonateButton from "../layout/DonateButton";
-import { useState } from "react";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 const Greeting = () => {

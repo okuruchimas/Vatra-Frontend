@@ -48,11 +48,9 @@ const ImageSlider = ({ slides }: Props) => {
       </LeftBlock>
       <RightBlock>
         <Description>
-          Наші рефлексії, розказані один одному стосовно переживання першого дня
-          війни, торкнулись кожного.
-          <br />
-          Тому за 3 дні, сконцентрувавши зусилля на творенні перфоменсу, в
-          Міжнародний день театру ми представились Львову.
+          Зустрілись митці та мисткині зі всієї України. Ми вирішили, що варто
+          вертатись до театру, до мистецтва загалом, варто досліджувати,
+          дякувати, підтримувати, рефлексувати й взаємодіяти.
         </Description>
         <Pagination>
           <Number>{currentNumber()}</Number>/{"0" + slides.length}
@@ -101,6 +99,7 @@ const RightBlock = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 0 0 0 2vw;
   @media (max-width: 960px) {
     position: relative;
   }
@@ -108,9 +107,8 @@ const RightBlock = styled.div`
 
 const Description = styled.span`
   font-family: "namu-1750";
-  font-size: 3.4vh;
+  font-size: 3.2vh;
   color: #b5b5b5;
-  padding: 0 6vw 0 2vw;
   @media (max-width: 960px) {
     padding: 6vh 0 0 6vw;
     font-size: 2.8vh;
@@ -118,7 +116,7 @@ const Description = styled.span`
 `;
 
 const Img = styled.div`
-  width: 44vw;
+  width: 46vw;
   border-radius: 12px;
   background-size: cover;
   aspect-ratio: 181/190;
@@ -131,7 +129,7 @@ const Img = styled.div`
 
 const Pagination = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: flex-end;
   font-family: "namu-1750";
   font-size: 8vw;
@@ -147,7 +145,7 @@ const LoadingLine = styled.div<{
   slidesLength: number;
 }>`
   margin-top: 2.4vh;
-  width: ${({ slidesLength }) => `calc(32vw / ${slidesLength})`};
+  width: ${({ slidesLength }) => `calc(34vw / ${slidesLength})`};
   height: 1px;
   border-radius: 24px;
 
@@ -170,19 +168,19 @@ const LoadingLine = styled.div<{
     }
 
     100% {
-      width: ${({ slidesLength }) => `calc(32vw / ${slidesLength})`};
+      width: ${({ slidesLength }) => `calc(34vw / ${slidesLength})`};
     }
   } ;
 `;
 
 const Number = styled.span`
-  margin: 0 4vw 0 0;
+  margin: 0 4vw 0 -1vw;
   align-self: center;
   cursor: pointer;
   font-size: 2.4em;
   line-height: 1em;
   text-transform: uppercase;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #b11212;
 `;

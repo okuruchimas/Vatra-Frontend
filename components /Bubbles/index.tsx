@@ -10,43 +10,43 @@ const Bubbles = () => {
       <Title>наші цінності</Title>
       <BubblesWrap>
         <Bubble
-          size={width > maxMobileWidth ? 19.6 : 32}
+          size={width > maxMobileWidth ? 22 : 32}
           animationTime={5}
-          top={width > maxMobileWidth ? 6 : 20}
-          left={width > maxMobileWidth ? 28 : 60}
+          top={width > maxMobileWidth ? 8 : 20}
+          left={width > maxMobileWidth ? 26 : 60}
           text="Актуальність"
         />
         <Bubble
           size={width > maxMobileWidth ? 18.6 : 30}
           animationTime={7}
-          top={width > maxMobileWidth ? 2 : 44}
-          right={width > maxMobileWidth ? 16 : 24}
+          top={width > maxMobileWidth ? 6 : 44}
+          right={width > maxMobileWidth ? 8 : 24}
           text="Підтримка та розвиток"
         />
 
         {width > maxMobileWidth && (
           <Bubble
-            size={16}
+            size={22}
             animationTime={7.7}
             top={40}
-            right={28}
+            right={24}
             text="Мультидисциплінарність"
           />
         )}
 
         <Bubble
-          size={width > maxMobileWidth ? 20 : 40}
+          size={width > maxMobileWidth ? 16 : 40}
           animationTime={8}
-          top={width > maxMobileWidth ? 52 : 24}
-          left={width > maxMobileWidth ? 34 : 4}
+          top={width > maxMobileWidth ? 68 : 24}
+          left={width > maxMobileWidth ? 28 : 4}
           text="Любов і свобода самовираження"
         />
         <Bubble
           size={width > maxMobileWidth ? 16 : 36}
           animationTime={8}
-          top={width > maxMobileWidth ? 36 : 4}
-          left={width > maxMobileWidth ? 12 : 28}
-          text="Повага до свого коріня"
+          top={width > maxMobileWidth ? 52 : 4}
+          left={width > maxMobileWidth ? 4 : 28}
+          text="Повага до свого коріння"
         />
       </BubblesWrap>
     </Wrap>
@@ -66,10 +66,9 @@ const Wrap = styled.div`
   }
 `;
 export const Title = styled.span`
-  max-width: 60vw;
   text-transform: uppercase;
-  font-family: "namu-1400";
-  font-size: 8vh;
+  font-family: "namu-1600";
+  font-size: 11vh;
   @media (max-width: 960px) {
     font-size: 4vh;
     max-width: 92vw;
