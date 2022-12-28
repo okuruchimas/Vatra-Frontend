@@ -5,27 +5,6 @@ import useWindowDimensions from "../../hooks/useWindowDimensions";
 import { Fragment } from "react";
 import { AboutUsSliderProps } from "./aboutUsSlides";
 
-const Test = [
-  {
-    link: "/icons/imageSlider/img1.png",
-  },
-  {
-    link: "/icons/imageSlider/img2.png",
-  },
-  {
-    link: "/icons/imageSlider/img3.png",
-  },
-  {
-    link: "/icons/imageSlider/img4.png",
-  },
-  {
-    link: "/icons/imageSlider/img5.png",
-  },
-  {
-    link: "https://images.wallpaperscraft.ru/image/single/vodopad_reka_raznotsvetnyj_kamni_96301_1920x1080.jpg",
-  },
-];
-
 const AboutUs = ({ aboutUsSlides }: AboutUsSliderProps) => {
   const { width, maxMobileWidth } = useWindowDimensions();
 
