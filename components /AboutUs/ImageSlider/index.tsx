@@ -1,11 +1,8 @@
 import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
+import { AboutUsSliderProps } from "../aboutUsSlides";
 
-type Props = {
-  slides: { link: string }[];
-};
-
-const ImageSlider = ({ slides }: Props) => {
+const ImageSlider = ({ aboutUsSlides }: AboutUsSliderProps) => {
   const [currentId, setCurrentId] = useState<number>(0);
   let currentN = currentId + 1;
 
@@ -18,28 +15,28 @@ const ImageSlider = ({ slides }: Props) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (currentId === slides.length - 1) {
+      if (currentId === aboutUsSlides.length - 1) {
         return setCurrentId(0);
       }
       return setCurrentId(currentId + 1);
-    }, 4000);
+    }, 5000);
 
     return () => clearInterval(interval);
-  }, [slides.length, currentId]);
+  }, [aboutUsSlides.length, currentId]);
 
   return (
     <Wrap>
       <LeftBlock>
         <Img
-          style={{ backgroundImage: `url(${slides[currentId].link})` }}
+          style={{ backgroundImage: `url(${aboutUsSlides[currentId].link})` }}
         ></Img>
         <LinesWrap>
-          {slides.map((item, index) => (
+          {aboutUsSlides.map((item, index) => (
             <LineWrap key={item.link} onClick={() => setCurrentId(index)}>
               <LoadingLine
                 isRed={currentId > index}
                 isAnimation={currentId === index}
-                slidesLength={slides.length}
+                slidesLength={aboutUsSlides.length}
                 key={index}
               />
             </LineWrap>
@@ -47,13 +44,9 @@ const ImageSlider = ({ slides }: Props) => {
         </LinesWrap>
       </LeftBlock>
       <RightBlock>
-        <Description>
-          Зустрілись митці та мисткині зі всієї України. Ми вирішили, що варто
-          вертатись до театру, до мистецтва загалом, варто досліджувати,
-          дякувати, підтримувати, рефлексувати й взаємодіяти.
-        </Description>
+        <Description>{aboutUsSlides[currentId].text}</Description>
         <Pagination>
-          <Number>{currentNumber()}</Number>/{"0" + slides.length}
+          <Number>{currentNumber()}</Number>/{"0" + aboutUsSlides.length}
         </Pagination>
       </RightBlock>
     </Wrap>
@@ -160,7 +153,7 @@ const LoadingLine = styled.div<{
     border-radius: 24px;
     background: #b11212;
     animation: ${({ isAnimation }) =>
-      isAnimation ? "loading-line 4s linear infinite;" : "none"};
+      isAnimation ? "loading-line 5s linear infinite;" : "none"};
   }
   @keyframes loading-line {
     0% {

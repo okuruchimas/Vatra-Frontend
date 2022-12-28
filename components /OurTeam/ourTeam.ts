@@ -33,12 +33,6 @@ export const OurTeamArray = [
     url: "/icons/ourTeam/9.png",
   },
   {
-    name: "asdhsd Рожицький",
-    role: "Актор",
-    superPower: "",
-    url: "/icons/ourTeam/9.png",
-  },
-  {
     name: "Тарас Волох",
     role: "Хореограф",
     superPower: "Актор",

@@ -9,24 +9,31 @@ import OurTeam from "../components /OurTeam";
 import JoinUs from "../components /JoinUs";
 import Header from "../components /layout/Header";
 import {
-  PerformanceType,
   TestArr,
+  PerformanceType,
 } from "../components /TheaterPoster/performances";
 import { OurTeamArray, Person } from "../components /OurTeam/ourTeam";
+import { Slides, Slide } from "../components /PhotoSlider/slides";
+import {
+  AboutUsSlide,
+  AboutUsSlides,
+} from "../components /AboutUs/aboutUsSlides";
 
 interface HomeProps {
   performances: PerformanceType[];
   ourTeam: Person[];
+  slides: Slide[];
+  aboutUsSlides: AboutUsSlide[];
 }
 
-const Home = ({ performances, ourTeam }: HomeProps) => {
+const Home = ({ performances, ourTeam, slides, aboutUsSlides }: HomeProps) => {
   return (
     <Wrap id="/">
       <Header />
       <Greeting />
-      <PhotoSlider />
+      {slides && <PhotoSlider slides={slides} />}
       {performances && <TheaterPoster performances={performances} />}
-      <AboutUs />
+      {aboutUsSlides && <AboutUs aboutUsSlides={aboutUsSlides} />}
       <Bubbles />
       <MovingText />
       {ourTeam && <OurTeam members={ourTeam} />}
@@ -38,11 +45,15 @@ const Home = ({ performances, ourTeam }: HomeProps) => {
 export async function getStaticProps() {
   const performances = TestArr;
   const ourTeam = OurTeamArray;
+  const slides = Slides;
+  const aboutUsSlides = AboutUsSlides;
 
   return {
     props: {
       performances,
       ourTeam,
+      slides,
+      aboutUsSlides,
     },
   };
 }

@@ -3,6 +3,7 @@ import RedTitle from "../layout/RedTitle";
 import ImageSlider from "./ImageSlider";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import { Fragment } from "react";
+import { AboutUsSliderProps } from "./aboutUsSlides";
 
 const Test = [
   {
@@ -25,7 +26,7 @@ const Test = [
   },
 ];
 
-const AboutUs = () => {
+const AboutUs = ({ aboutUsSlides }: AboutUsSliderProps) => {
   const { width, maxMobileWidth } = useWindowDimensions();
 
   return (
@@ -54,7 +55,7 @@ const AboutUs = () => {
         творчости.
       </Description>
 
-      <ImageSlider slides={Test} />
+      <ImageSlider aboutUsSlides={aboutUsSlides} />
     </Wrap>
   );
 };

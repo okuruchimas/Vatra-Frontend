@@ -1,35 +1,16 @@
 import styled from "@emotion/styled";
+import { PhotoSliderProps } from "./slides";
 
-const TestArr = [
-  {
-    url: "/icons/slider/slider1.png",
-  },
-  {
-    url: "/icons/slider/slider2.png",
-  },
-  {
-    url: "/icons/slider/slider3.png",
-  },
-  {
-    url: "/icons/slider/slider4.png",
-  },
-  {
-    url: "/icons/slider/slider5.png",
-  },
-  {
-    url: "/icons/slider/slider6.png",
-  },
-];
-const PhotoSlider = () => {
+const PhotoSlider = ({ slides }: PhotoSliderProps) => {
   return (
     <Slider>
       <SliderTrack>
-        {TestArr.map(({ url }) => (
+        {slides.map(({ url }) => (
           <Slide key={url}>
             <Img src={url} loading="lazy" />
           </Slide>
         ))}
-        {TestArr.map(({ url }, index) => (
+        {slides.map(({ url }, index) => (
           <Slide key={index}>
             <Img src={url} loading="lazy" />
           </Slide>
