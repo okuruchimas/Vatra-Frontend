@@ -12,7 +12,7 @@ const MovingText = () => {
 export default MovingText;
 
 const Wrap = styled.div`
-  margin: 22vh;
+  margin: 22vh 0 12vh;
   width: 100vw;
   display: flex;
   justify-content: flex-end;

@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-scroll";
 import { useRouter } from "next/router";
 import DonateButton from "../DonateButton";

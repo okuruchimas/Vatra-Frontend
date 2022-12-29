@@ -22,7 +22,7 @@ const Greeting = () => {
             <ArrowSmall src="/icons/arrows/arrowDown.svg" />
           )}
           <Button to="poster" spy smooth offset={20} duration={2000} isDynamic>
-            Дивитись квитки
+            <Text>Дивитись квитки</Text>
           </Button>
           {width < maxMobileWidth && (
             <ArrowSmall src="/icons/arrows/arrowDown.svg" />
@@ -177,8 +177,7 @@ const ButtonsWrap = styled.div`
 
 const Button = styled(Link)`
   font-family: "namu-1400";
-  font-size: 1.4em;
-  width: 140px;
+  font-size: 2vh;
   text-transform: uppercase;
   text-align: right;
   color: #b11212;
@@ -194,6 +193,11 @@ const Button = styled(Link)`
     text-align: left;
     margin-right: 4vw;
   }
+`;
+
+const Text = styled.div`
+  display: table-caption;
+  padding-top: 1.5vh;
 `;
 
 const ArrowDown = styled.img`
