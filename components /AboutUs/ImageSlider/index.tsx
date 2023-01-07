@@ -19,7 +19,7 @@ const ImageSlider = ({ aboutUsSlides }: AboutUsSliderProps) => {
         return setCurrentId(0);
       }
       return setCurrentId(currentId + 1);
-    }, 5000);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, [aboutUsSlides.length, currentId]);
@@ -46,7 +46,8 @@ const ImageSlider = ({ aboutUsSlides }: AboutUsSliderProps) => {
       <RightBlock>
         <Description>{aboutUsSlides[currentId].text}</Description>
         <Pagination>
-          <Number>{currentNumber()}</Number>/{"0" + aboutUsSlides.length}
+          <EmptyNumber>{currentNumber()}</EmptyNumber>
+          <Number>/{"0" + aboutUsSlides.length}</Number>
         </Pagination>
       </RightBlock>
     </Wrap>
@@ -83,9 +84,62 @@ const LinesWrap = styled.div`
   flex-direction: row;
   justify-content: space-between;
   @media (max-width: 960px) {
-    margin-top: 6vh;
-    width: 72%;
+    margin-top: 10vh;
+    width: 84%;
   }
+`;
+
+const LoadingLine = styled.div<{
+  isRed: boolean;
+  isAnimation: boolean;
+  slidesLength: number;
+}>`
+  margin-top: 2.4vh;
+  width: ${({ slidesLength }) => `calc(34vw / ${slidesLength})`};
+  height: 1px;
+  border-radius: 24px;
+  background: ${({ isRed }) => (isRed ? "#b11212" : "#bbbbbb")};
+
+  @media (max-width: 960px) {
+    width: ${({ slidesLength }) => `calc(48vw / ${slidesLength})`};
+  }
+
+  &:before {
+    display: block;
+    position: relative;
+    content: "";
+    height: 1px;
+    width: 0;
+    right: 0;
+    border-radius: 24px;
+    background: #b11212;
+    animation: ${({ isAnimation }) =>
+      isAnimation ? "loading-line 6s linear infinite;" : "none"};
+
+    @media (max-width: 960px) {
+      animation: ${({ isAnimation }) =>
+        isAnimation ? "loading-line-mobile 6s linear infinite;" : "none"};
+    }
+  }
+  @keyframes loading-line {
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: ${({ slidesLength }) => `calc(34vw / ${slidesLength})`};
+    }
+  }
+
+  @keyframes loading-line-mobile {
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: ${({ slidesLength }) => `calc(48vw / ${slidesLength})`};
+    }
+  } ;
 `;
 
 const RightBlock = styled.div`
@@ -105,6 +159,7 @@ const Description = styled.span`
   @media (max-width: 960px) {
     padding: 6vh 0 0 6vw;
     font-size: 2.8vh;
+    min-height: 30vh;
   }
 `;
 
@@ -127,46 +182,15 @@ const Pagination = styled.div`
   font-family: "namu-1750";
   font-size: 8vw;
   @media (max-width: 960px) {
-    font-size: 6vh;
+    width: 84%;
+    font-size: 8vh;
     position: absolute;
-    top: -18vh;
+    top: -26vh;
+    left: 0;
   }
 `;
-const LoadingLine = styled.div<{
-  isRed: boolean;
-  isAnimation: boolean;
-  slidesLength: number;
-}>`
-  margin-top: 2.4vh;
-  width: ${({ slidesLength }) => `calc(34vw / ${slidesLength})`};
-  height: 1px;
-  border-radius: 24px;
 
-  background: ${({ isRed }) => (isRed ? "#b11212" : "#bbbbbb")};
-  &:before {
-    display: block;
-    position: relative;
-    content: "";
-    height: 1px;
-    width: 0;
-    right: 0;
-    border-radius: 24px;
-    background: #b11212;
-    animation: ${({ isAnimation }) =>
-      isAnimation ? "loading-line 5s linear infinite;" : "none"};
-  }
-  @keyframes loading-line {
-    0% {
-      width: 0;
-    }
-
-    100% {
-      width: ${({ slidesLength }) => `calc(34vw / ${slidesLength})`};
-    }
-  } ;
-`;
-
-const Number = styled.span`
+const EmptyNumber = styled.span`
   margin: 0 4vw 0 -1vw;
   align-self: center;
   cursor: pointer;
@@ -176,4 +200,11 @@ const Number = styled.span`
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #b11212;
+
+  @media (max-width: 960px) {
+    -webkit-text-stroke-width: 1px;
+    font-size: 2.6em;
+  }
 `;
+
+const Number = styled.span``;

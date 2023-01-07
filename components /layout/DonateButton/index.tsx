@@ -35,7 +35,9 @@ const Button = styled.button`
   border-radius: 60px;
   cursor: pointer;
   @media (max-width: 960px) {
-    width: 40vw;
+    font-family: "namu-1400";
+    width: 50vw;
+    height: 44px;
   }
   &:hover {
     background: #b11212;

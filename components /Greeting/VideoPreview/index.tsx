@@ -24,6 +24,8 @@ const Wrap = styled.div`
   padding: 2vw 0;
   @media (max-width: 960px) {
     padding: 4vw 0;
+    border-radius: 30px;
+    aspect-ratio: 350/313;
   }
 `;
 const Video = styled.video`
@@ -32,6 +34,8 @@ const Video = styled.video`
   border-radius: 30px;
   outline: none;
   @media (max-width: 960px) {
-    width: 84vw;
+    object-fit: cover;
+    width: 80vw;
+    aspect-ratio: 302/265;
   }
 `;

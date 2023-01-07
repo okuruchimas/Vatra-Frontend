@@ -69,13 +69,15 @@ const Description = styled.span`
   font-family: "namu-1750";
   font-size: 3.2vh;
   line-height: 4.6vh;
-  color: #b5b5b5;
+  color: #a7a5a5;
   width: 54vw;
   padding: 4vh 14vw 0 0;
   margin-left: auto;
   @media (max-width: 960px) {
-    width: 86vw;
-    margin-left: 6vw;
+    width: 94vw;
+    margin-left: 8vw;
+    font-size: 2.6vh;
+    line-height: 136%;
   }
 `;
 const PerformancesWrap = styled.div`
@@ -90,8 +92,9 @@ const Title = styled.span`
   margin-top: -3vh;
   color: #fff;
   @media (max-width: 960px) {
-    margin-top: 1vh;
-    font-size: 6vh;
+    font-family: "namu-1400";
+    margin-top: 3vh;
+    font-size: 3em;
     margin-left: 0;
   }
 `;

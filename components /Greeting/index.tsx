@@ -13,8 +13,10 @@ const Greeting = () => {
       <Preview src="/icons/logo/varta.svg" />
       <BuySection>
         <LeftText>
-          На сторожі Української культури. <br /> Створений під час війни в
-          Україні.
+          На сторожі Української культури. <br />
+          {width > maxMobileWidth
+            ? "Створений під час війни в Україні."
+            : "Створений під час війни."}
         </LeftText>
         <ButtonsWrap>
           {width < maxMobileWidth && <DonateButton />}
@@ -35,16 +37,17 @@ const Greeting = () => {
       <Info>
         <BlackGradient
           turnLeft
-          size={width > maxMobileWidth ? 24 : 54}
-          left={width > maxMobileWidth ? -16 : -32}
-          top={width > maxMobileWidth ? 68 : 42}
+          size={width > maxMobileWidth ? 24 : 64}
+          left={width > maxMobileWidth ? -16 : -38}
+          top={width > maxMobileWidth ? 68 : 62}
           animationTime={16}
           src="/icons/gradients/left.svg"
         />
         <LeftBlock>
           <Subtitle>
-            Ми створили незалежний театр для підтримки та розвитку культурного
-            фронту України.
+            {width > maxMobileWidth
+              ? "Ми створили незалежний театр для підтримки та розвитку культурного фронту України."
+              : "Ми створили театр для підтримки культурного фронту України."}
           </Subtitle>
         </LeftBlock>
 
@@ -53,13 +56,13 @@ const Greeting = () => {
             <ArrowDown src="/icons/arrows/arrowDown.svg" />
           )}
           <Description>
-            Увібравши в себе митців і мисткинь з усієї країни, ми просуваємо та
-            творимо сучасне українське мистецтво в такий турбулентний час.
+            Увібравши в себе митців із усієї країни, ми просуваємо та творимо
+            сучасне українське мистецтво в такий болючий для сердець час.
           </Description>
           <BlackGradient
-            size={width > maxMobileWidth ? 36 : 60}
-            right={width > maxMobileWidth ? -20 : -34}
-            bottom={width > maxMobileWidth ? 8 : -12}
+            size={width > maxMobileWidth ? 36 : 68}
+            right={width > maxMobileWidth ? -20 : -40}
+            bottom={width > maxMobileWidth ? 8 : -20}
             animationTime={20}
             src="/icons/gradients/right.svg"
           />
@@ -79,7 +82,7 @@ const Wrap = styled.div`
   width: 100vw;
 
   @media (max-width: 960px) {
-    padding: 36vh 4vw 2vh;
+    padding: 32vh 4vw 2vh;
   }
 `;
 export const Preview = styled.img`
@@ -94,7 +97,7 @@ const BuySection = styled.div`
   justify-content: space-between;
 
   @media (max-width: 960px) {
-    padding: 2vh 0 8vh;
+    padding: 2vh 0 4vh;
     flex-direction: column;
   }
 `;
@@ -104,7 +107,9 @@ const LeftText = styled.span`
   font-size: 2vh;
   color: #b5b5b5;
   @media (max-width: 960px) {
+    font-family: "namu-1400";
     padding-bottom: 28vh;
+    font-size: 1em;
     text-align: center;
   }
 `;
@@ -118,7 +123,7 @@ const Info = styled.div`
   padding: 18vh 0 6vh;
   @media (max-width: 960px) {
     flex-direction: column;
-    padding: 6vh 0;
+    padding: 12vh 0;
   }
 `;
 
@@ -130,7 +135,8 @@ const LeftBlock = styled.div`
   justify-content: flex-start;
   width: 70%;
   @media (max-width: 960px) {
-    width: 80%;
+    width: 100%;
+    padding-left: 8vw;
   }
 `;
 
@@ -142,7 +148,7 @@ const RightBlock = styled.div`
   width: 30%;
   @media (max-width: 960px) {
     width: 100%;
-    padding-left: 6vw;
+    padding-left: 8vw;
   }
 `;
 
@@ -151,7 +157,7 @@ const Subtitle = styled.span`
   font-size: 10vh;
   color: #fefefe;
   @media (max-width: 960px) {
-    font-size: 5.8vh;
+    font-size: 3em;
   }
 `;
 
@@ -163,7 +169,10 @@ const Description = styled.span`
   padding-top: 64px;
   text-align: center;
   @media (max-width: 960px) {
+    font-size: 2.8vh;
     padding-top: 24px;
+    text-align: left;
+    line-height: 136%;
   }
 `;
 
@@ -189,9 +198,9 @@ const Button = styled(Link)`
   @media (max-width: 960px) {
     font-size: 1em;
     text-transform: none;
-    width: 130px;
+    width: max-content;
     text-align: left;
-    margin-right: 4vw;
+    margin-right: 10vw;
   }
 `;
 

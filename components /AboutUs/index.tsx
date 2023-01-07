@@ -11,7 +11,7 @@ const AboutUs = ({ aboutUsSlides }: AboutUsSliderProps) => {
   return (
     <Wrap id="aboutUs">
       <RedTitle text="Історія театру" />
-      <TitleFragment>Ми прийшли</TitleFragment>
+      <TitleFragment marginTop={6}>Ми прийшли</TitleFragment>
       <TitleFragment paddingLeft={width > maxMobileWidth ? 16 : 20}>
         на спільну
       </TitleFragment>
@@ -31,7 +31,7 @@ const AboutUs = ({ aboutUsSlides }: AboutUsSliderProps) => {
       )}
       <Description>
         який був шелтером для біженців, згодом перетворившись на простір нашої
-        творчости.
+        творчості.
       </Description>
 
       <ImageSlider aboutUsSlides={aboutUsSlides} />
@@ -52,6 +52,7 @@ const Wrap = styled.div`
 export const TitleFragment = styled.span<{
   paddingLeft?: number;
   last?: boolean;
+  marginTop?: number;
 }>`
   padding-left: ${({ paddingLeft }) =>
     paddingLeft ? `${paddingLeft}vw` : "none"};
@@ -60,8 +61,10 @@ export const TitleFragment = styled.span<{
   color: #fff;
   width: 100%;
   text-align: ${({ last }) => last && "right"};
+  margin-top: ${({ marginTop }) => (marginTop ? `${marginTop}vh` : "initial")};
+
   @media (max-width: 960px) {
-    font-size: 9vh;
+    font-size: 12vh;
   }
 `;
 
@@ -77,7 +80,8 @@ const Description = styled.div`
     margin: 2vh 0 0;
   }
   @media (max-width: 960px) {
-    margin: 8vh auto 6vh;
+    font-size: 2.4vh;
+    margin: 8vh auto;
     width: 100%;
   }
 `;

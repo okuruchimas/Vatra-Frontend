@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { PhotoSliderProps } from "./slides";
+import { keyframes } from "@emotion/react";
 
 const PhotoSlider = ({ slides }: PhotoSliderProps) => {
   return (
@@ -32,31 +33,45 @@ const Slider = styled.div`
     padding: 16vh 0;
   }
 `;
+
+const photoScroll = keyframes`
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-24vw * 6));
+  }
+`;
+
+const photoScrollMobile = keyframes`
+  0% {
+    transform: translateX(0);
+  }
+  
+  100% {
+    transform: translateX(calc(-40vw * 6));
+  }
+`;
+
 const SliderTrack = styled.div`
-  animation: photo-scroll 24s linear infinite;
+  animation: ${photoScroll} 24s linear infinite;
   display: flex;
   width: calc(24vw * 12);
+
   div:nth-of-type(even) {
     bottom: 12vh;
     transform: rotate(5deg);
     @media (max-width: 960px) {
-      bottom: 8vh;
+      z-index: 1;
+      bottom: 10vh;
     }
   }
 
   @media (max-width: 960px) {
-    width: calc(32vw * 12);
-  }
-
-  @keyframes photo-scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(calc(-24vw * 6));
-      @media (max-width: 960px) {
-        transform: translateX(calc(-32vw * 6));
-      }
+    animation: ${photoScrollMobile} 24s linear infinite;
+    width: calc(40vw * 12);
+    div:nth-of-type(odd) {
+      transform: rotate(-5deg);
     }
   }
 `;
@@ -70,6 +85,6 @@ const Img = styled.img`
   border-radius: 24px;
   @media (max-width: 960px) {
     border-radius: 10px;
-    width: 32vw;
+    width: 40vw;
   }
 `;
