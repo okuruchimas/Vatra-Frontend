@@ -41,21 +41,7 @@ const OurTeam = ({ members }: OurTeamProps) => {
 
 export default OurTeam;
 
-export const ArrowRight = styled.img`
-  width: 12vw;
-  transition: all 0.3s linear;
-  @media (max-width: 960px) {
-    width: 32vw;
-  }
-`;
-const Circle = styled(Prop)`
-  @media (max-width: 960px) {
-    height: 60px;
-    width: 60px;
-  }
-`;
-
-const Wrap = styled.div`
+const Wrap = styled.section`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -64,6 +50,20 @@ const Wrap = styled.div`
   overflow: hidden;
   @media (max-width: 960px) {
     padding: 4vh 4vw 14vh;
+  }
+`;
+export const ArrowRight = styled.img`
+  width: 12vw;
+  transition: all 0.3s linear;
+  @media (max-width: 960px) {
+    width: 32vw;
+  }
+`;
+
+const Circle = styled(Prop)`
+  @media (max-width: 960px) {
+    height: 60px;
+    width: 60px;
   }
 `;
 

@@ -74,7 +74,7 @@ const Greeting = () => {
 
 export default Greeting;
 
-const Wrap = styled.div`
+const Wrap = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;

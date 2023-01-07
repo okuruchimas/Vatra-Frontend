@@ -5,7 +5,7 @@ const Footer = () => {
   const { width, maxMobileWidth } = useWindowDimensions();
   return (
     <Wrap>
-      <LinkWrap>
+      <LinkWrap href="https://instagram.com/teatr_varta?igshid=YmMyMTA2M2Y=">
         <Logo
           src={
             width > maxMobileWidth
@@ -16,7 +16,7 @@ const Footer = () => {
         />
         <Text>інстаграм</Text>
       </LinkWrap>
-      <LinkWrap>
+      <LinkWrap href="mailto:theatre.varta@gmail.com">
         <Text>theatre.varta@gmail.com</Text>
       </LinkWrap>
     </Wrap>
@@ -25,7 +25,7 @@ const Footer = () => {
 
 export default Footer;
 
-const Wrap = styled.div`
+const Wrap = styled.address`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -52,9 +52,11 @@ const Text = styled.span`
   text-transform: uppercase;
 `;
 
-const LinkWrap = styled.div`
+const LinkWrap = styled.a`
   display: flex;
   align-items: center;
+  text-decoration: none;
+  font-style: normal;
   font-family: "namu-pro";
   font-size: 2vh;
   color: #b11212;

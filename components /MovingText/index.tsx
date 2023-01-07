@@ -11,7 +11,7 @@ const MovingText = () => {
 
 export default MovingText;
 
-const Wrap = styled.div`
+const Wrap = styled.section`
   margin: 22vh 0 12vh;
   width: 100vw;
   display: flex;

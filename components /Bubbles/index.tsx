@@ -57,7 +57,7 @@ const Bubbles = () => {
 
 export default Bubbles;
 
-const Wrap = styled.div`
+const Wrap = styled.section`
   position: relative;
   display: flex;
   flex-direction: column;

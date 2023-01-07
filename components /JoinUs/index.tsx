@@ -15,7 +15,7 @@ const JoinUs = () => {
 
 export default JoinUs;
 
-const Wrap = styled.div`
+const Wrap = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -41,7 +41,7 @@ const AboutUs = ({ aboutUsSlides }: AboutUsSliderProps) => {
 
 export default AboutUs;
 
-const Wrap = styled.div`
+const Wrap = styled.section`
   display: flex;
   flex-direction: column;
   align-items: flex-start;

@@ -23,7 +23,7 @@ const PhotoSlider = ({ slides }: PhotoSliderProps) => {
 
 export default PhotoSlider;
 
-const Slider = styled.div`
+const Slider = styled.section`
   position: relative;
   margin: auto;
   width: 100%;
