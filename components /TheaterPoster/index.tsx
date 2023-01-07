@@ -73,6 +73,7 @@ const Description = styled.span`
   width: 54vw;
   padding: 4vh 14vw 0 0;
   margin-left: auto;
+
   @media (max-width: 960px) {
     width: 94vw;
     margin-left: 8vw;
@@ -84,6 +85,7 @@ const PerformancesWrap = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
 const Title = styled.span`
   text-transform: uppercase;
   font-family: "namu-pro";
@@ -91,6 +93,7 @@ const Title = styled.span`
   margin-left: -1vw;
   margin-top: -3vh;
   color: #fff;
+
   @media (max-width: 960px) {
     font-family: "namu-1400";
     margin-top: 3vh;
