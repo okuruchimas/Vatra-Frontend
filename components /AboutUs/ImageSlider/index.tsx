@@ -181,6 +181,7 @@ const Pagination = styled.div`
   align-items: flex-end;
   font-family: "namu-1750";
   font-size: 8vw;
+
   @media (max-width: 960px) {
     width: 84%;
     font-size: 8vh;
