@@ -6,11 +6,6 @@ import useWindowDimensions from "../../hooks/useWindowDimensions";
 import { PerformanceProps, TestArr } from "./performances";
 
 const TheaterPoster = ({ performances }: PerformanceProps) => {
-  const { width, maxMobileWidth } = useWindowDimensions();
-  const [currentPerformance, setCurrentPerformance] = useState<
-    number | undefined
-  >(0);
-
   return (
     <Wrap id="poster">
       <RedTitle text="Що ми створюємо?" />
@@ -38,13 +33,9 @@ const TheaterPoster = ({ performances }: PerformanceProps) => {
             imgUrl={performance.imgUrl}
             link={performance.link}
             performanceColor={performance.performanceColor}
-            currentPerformance={currentPerformance}
-            setCurrentPerformance={setCurrentPerformance}
-            isOpen={
-              width > maxMobileWidth ? true : currentPerformance === index
-            }
+            mobileColor={performance.mobileColor}
+            performancesLength={performances.length}
             index={index}
-            isLast={TestArr.length - 1 === index}
           />
         ))}
       </PerformancesWrap>
@@ -84,6 +75,11 @@ const Description = styled.span`
 const PerformancesWrap = styled.div`
   display: flex;
   flex-direction: column;
+  @media (max-width: 960px) {
+    flex-direction: initial;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 `;
 
 const Title = styled.span`

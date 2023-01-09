@@ -7,85 +7,85 @@ import { PerformanceType } from "../performances";
 
 interface Props extends PerformanceType {
   left: number;
-  isOpen: boolean;
-  setCurrentPerformance: Dispatch<SetStateAction<number | undefined>>;
-  currentPerformance?: number;
   index?: number;
-  isLast: boolean;
+  performancesLength: number;
 }
 
-function hexToRgb(hex: string) {
+function hexToRgb(hex: string, opacity = 0.1) {
   let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
         r: parseInt(result[1], 16),
         g: parseInt(result[2], 16),
         b: parseInt(result[3], 16),
+        o: opacity,
       }
-    : { r: 0, g: 0, b: 0 };
+    : { r: 0, g: 0, b: 0, o: 0 };
 }
 
 const Performance = (props: Props) => {
   const { width, maxMobileWidth } = useWindowDimensions();
-
   return (
     <Wrap
-      isLast={props.isLast}
-      performanceColor={hexToRgb(props.performanceColor)}
+      isBlack={
+        props.index === 0 || props.index === props.performancesLength - 1
+      }
+      isGray={props.index === 1 || props.index === props.performancesLength - 2}
+      performanceColor={
+        width > maxMobileWidth
+          ? hexToRgb(props.performanceColor)
+          : hexToRgb(props.mobileColor.color, props.mobileColor.opacity)
+      }
     >
-      {props.left && width > maxMobileWidth ? (
-        <>
-          <PerformanceInfo
-            title={props.title}
-            description={props.description}
-            link={props.link}
-          />
-          <PerformanceImg
-            left={props.left}
-            date={props.date}
-            imgUrl={props.imgUrl}
-            type={props.type}
-            isOpen={props.isOpen}
-          />
-        </>
-      ) : props.isOpen ? (
-        <>
-          <PerformanceImg
-            index={props.index}
-            isOpen={props.isOpen}
-            currentPerformance={props.currentPerformance}
-            setCurrentPerformance={props.setCurrentPerformance}
-            left={props.left}
-            date={props.date}
-            imgUrl={props.imgUrl}
-            type={props.type}
-            title={props.title}
-          />
-          <PerformanceInfo
-            title={props.title}
-            description={props.description}
-            link={props.link}
-          />
-        </>
-      ) : (
+      {width < maxMobileWidth ? (
         <PerformanceImg
-          index={props.index}
-          isOpen={props.isOpen}
+          title={props.title}
+          link={props.link}
           left={props.left}
           date={props.date}
           imgUrl={props.imgUrl}
           type={props.type}
-          title={props.title}
-          currentPerformance={props.currentPerformance}
-          setCurrentPerformance={props.setCurrentPerformance}
+          isDesktop={width > maxMobileWidth}
         />
+      ) : props.left ? (
+        <>
+          <PerformanceInfo
+            title={props.title}
+            description={props.description}
+            link={props.link}
+          />
+          <PerformanceImg
+            left={props.left}
+            date={props.date}
+            imgUrl={props.imgUrl}
+            type={props.type}
+            isDesktop={width > maxMobileWidth}
+          />
+        </>
+      ) : (
+        <>
+          <PerformanceImg
+            isDesktop={width > maxMobileWidth}
+            left={props.left}
+            date={props.date}
+            imgUrl={props.imgUrl}
+            type={props.type}
+            title={props.title}
+          />
+          <PerformanceInfo
+            title={props.title}
+            description={props.description}
+            link={props.link}
+          />
+        </>
       )}
     </Wrap>
   );
 };
 
 const Wrap = styled.div<{
-  isLast: boolean;
+  isBlack: boolean;
+  isGray: boolean;
   performanceColor: any;
 }>`
   position: relative;
@@ -96,15 +96,18 @@ const Wrap = styled.div<{
   color: white;
   border-radius: 30px;
   background: ${({ performanceColor }) =>
-    `rgba(${performanceColor.r}, ${performanceColor.g}, ${performanceColor.b}, 0.1)`};
+    `rgba(${performanceColor.r}, ${performanceColor.g}, ${performanceColor.b}, ${performanceColor.o})`};
+
   @media (max-width: 960px) {
+    flex-basis: ${({ isBlack, isGray }) =>
+      isBlack || isGray ? "48%" : "100%"};
+    height: min-content;
     flex-direction: column;
-    border: 1px solid #ffffff;
-    border-radius: ${({ isLast }) => (isLast ? "30px" : "30px 30px 0 0")};
-    border-bottom: ${({ isLast }) => (isLast ? "1px solid #ffffff" : "none")};
-    width: 92vw;
-    margin: 0 0 -4vh;
-    padding-bottom: ${({ isLast }) => (isLast ? "2vh" : "6vh")};
+    border: none;
+    border-radius: ${({ isBlack, isGray }) =>
+      isBlack ? "0 30px 30px 30px" : isGray ? "30px 30px 0 30px" : "30px"};
+    //width: 92vw;
+    margin: 0 0 2vh;
   }
 `;
 

@@ -36,9 +36,6 @@ const Wrap = styled.div`
   justify-content: flex-start;
   padding: 10vh 4vw 0;
   width: 42vw;
-  @media (max-width: 960px) {
-    width: 92vw;
-  }
 `;
 
 export const Title = styled.span`
@@ -47,7 +44,7 @@ export const Title = styled.span`
   padding: 4vh 0;
   text-align: center;
   @media (max-width: 960px) {
-    font-size: 7vh;
+    font-size: 6vh;
     display: flex;
     align-items: center;
     text-align: left;
@@ -60,10 +57,6 @@ const Description = styled.span`
   text-align: center;
   padding: 0 2vw;
   color: #b5b5b5;
-  @media (max-width: 960px) {
-    padding: 4vh 2vw;
-    text-align: left;
-  }
 `;
 
 const BuyWrap = styled.div`
@@ -73,14 +66,9 @@ const BuyWrap = styled.div`
   align-items: center;
   margin-top: 8vh;
   width: 100%;
-  @media (max-width: 960px) {
-    padding: 0 2vw;
-    justify-content: space-between;
-    margin-bottom: 6vh;
-  }
 `;
 
-const Details = styled.span`
+export const Details = styled.span`
   font-family: "namu-1400";
   margin-left: 2.4vw;
   color: #bbbaba;
@@ -101,7 +89,7 @@ const Details = styled.span`
     opacity: 0.8;
   }
 `;
-const Dot = styled.img`
+export const Dot = styled.img`
   height: 1vw;
   width: 1vw;
   margin-right: 1vw;

@@ -1,8 +1,10 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 export class Pagination {
   firstCardId = 0;
   lastCardId = 6;
+
   public paginate(
     members: Person[],
     setPostsToShow: Dispatch<SetStateAction<Person[]>>

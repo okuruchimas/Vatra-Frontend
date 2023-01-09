@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
-import { Title as Prop } from "./PerormanceInfo";
+import { Details, Dot, Title as Prop } from "./PerormanceInfo";
 import { Dispatch, SetStateAction } from "react";
+import { useRouter } from "next/router";
 
 type Props = {
   imgUrl: string;
@@ -8,10 +9,8 @@ type Props = {
   date: string;
   left: number;
   title?: string;
-  isOpen?: boolean;
-  setCurrentPerformance?: Dispatch<SetStateAction<number | undefined>>;
-  currentPerformance?: number;
-  index?: number;
+  isDesktop?: boolean;
+  link?: string;
 };
 
 const PerformanceImg = ({
@@ -20,41 +19,30 @@ const PerformanceImg = ({
   date,
   left,
   title,
-  isOpen,
-  setCurrentPerformance,
-  index,
-  currentPerformance,
+  isDesktop,
+  link,
 }: Props) => {
+  const { push } = useRouter();
+
   return (
     <Wrap>
-      {isOpen ? (
+      {isDesktop ? (
         <>
           <Img src={imgUrl} loading="lazy" left={left} />
-          {setCurrentPerformance && (!!index || index === 0) && (
-            <OpenIcon
-              isOpen={isOpen}
-              src="/icons/arrows/triangle.svg"
-              onClick={() => {
-                if (currentPerformance === index) {
-                  return setCurrentPerformance(undefined);
-                }
-                return setCurrentPerformance(index);
-              }}
-            />
-          )}
           <Type left={left}>{type}</Type>
           <DateText left={left}>{date}</DateText>
         </>
       ) : (
-        <>
+        <MobileWrap>
           <Title>{title}</Title>
-          {setCurrentPerformance && (!!index || index === 0) && (
-            <OpenIcon
-              src="/icons/arrows/triangle.svg"
-              onClick={() => setCurrentPerformance(index)}
-            />
+          <Type left={left}>{type}</Type>
+          {link && (
+            <Details onClick={() => push(link)}>
+              <Dot src="/icons/arrows/redDot.svg" />
+              Дізнатись більше
+            </Details>
           )}
-        </>
+        </MobileWrap>
       )}
     </Wrap>
   );
@@ -68,11 +56,17 @@ const Wrap = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   @media (max-width: 960px) {
-    width: 92vw;
+    //width: 92vw;
   }
 `;
+
+const MobileWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+`;
 const Title = styled(Prop)`
-  width: 76%;
+  width: min-content;
   margin-left: 6vw;
   padding: 2vh 0;
 `;
@@ -85,26 +79,6 @@ const Img = styled.img<{ left: number }>`
   border-radius: 16px;
   aspect-ratio: 193/180;
   margin-left: ${({ left }) => (left ? "auto" : "none")};
-  @media (max-width: 960px) {
-    margin-left: inherit;
-    margin-top: 14vh;
-    width: 91.6vw;
-  }
-`;
-
-const OpenIcon = styled.img<{ isOpen?: boolean }>`
-  display: none;
-
-  @media (max-width: 960px) {
-    display: flex;
-    position: absolute;
-    right: 6vw;
-    height: 6vh;
-    top: 4vh;
-    align-items: center;
-    z-index: 6;
-    rotate: ${({ isOpen }) => (isOpen ? "180deg" : "none")};
-  }
 `;
 
 export const DateText = styled.span<{ left: number }>`
@@ -144,6 +118,7 @@ export const Type = styled.span<{ left?: number }>`
   top: 6vh;
 
   @media (max-width: 960px) {
+    position: initial;
     right: inherit;
     left: 6vw;
     top: 5vh;
