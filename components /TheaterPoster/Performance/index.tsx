@@ -27,6 +27,7 @@ const Performance = (props: Props) => {
   const { width, maxMobileWidth } = useWindowDimensions();
   return (
     <Wrap
+      isFirst={props.index === 0}
       isBlack={
         props.index === 0 || props.index === props.performancesLength - 1
       }
@@ -84,6 +85,7 @@ const Performance = (props: Props) => {
 };
 
 const Wrap = styled.div<{
+  isFirst: boolean;
   isBlack: boolean;
   isGray: boolean;
   performanceColor: any;
@@ -99,6 +101,7 @@ const Wrap = styled.div<{
     `rgba(${performanceColor.r}, ${performanceColor.g}, ${performanceColor.b}, ${performanceColor.o})`};
 
   @media (max-width: 960px) {
+    align-self: ${({ isFirst }) => (isFirst ? "flex-end" : "initial")};
     flex-basis: ${({ isBlack, isGray }) =>
       isBlack || isGray ? "48%" : "100%"};
     height: min-content;
