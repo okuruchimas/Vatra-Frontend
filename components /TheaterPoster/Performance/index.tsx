@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 import PerformanceInfo from "./PerormanceInfo";
 import PerformanceImg from "./PerformanceImg";
 import useWindowDimensions from "../../../hooks/useWindowDimensions";
-import { Dispatch, SetStateAction } from "react";
 import { PerformanceType } from "../performances";
 
 interface Props extends PerformanceType {
@@ -109,7 +108,6 @@ const Wrap = styled.div<{
     border: none;
     border-radius: ${({ isBlack, isGray }) =>
       isBlack ? "0 30px 30px 30px" : isGray ? "30px 30px 0 30px" : "30px"};
-    //width: 92vw;
     margin: 0 0 2vh;
   }
 `;

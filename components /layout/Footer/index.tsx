@@ -31,8 +31,8 @@ const Wrap = styled.address`
   align-items: center;
   justify-content: space-between;
   width: 92vw;
-  margin: 0 4vw;
   height: 8vh;
+  margin: 0 auto;
   border-top: 1px solid #ffffff;
 `;
 

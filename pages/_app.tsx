@@ -1,6 +1,5 @@
 import type { AppProps } from "next/app";
 import Seo from "../components /Seo";
-import Footer from "../components /layout/Footer";
 import styled from "@emotion/styled";
 import { Global, css } from "@emotion/react";
 
@@ -97,7 +96,6 @@ const App = ({ Component, pageProps }: AppProps) => {
       />
       <Seo />
       <Component {...pageProps} />
-      <Footer />
     </Wrap>
   );
 };

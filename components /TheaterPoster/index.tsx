@@ -1,9 +1,7 @@
 import styled from "@emotion/styled";
 import RedTitle from "../layout/RedTitle";
 import Performance from "./Performance";
-import { useState } from "react";
-import useWindowDimensions from "../../hooks/useWindowDimensions";
-import { PerformanceProps, TestArr } from "./performances";
+import { PerformanceProps } from "./performances";
 
 const TheaterPoster = ({ performances }: PerformanceProps) => {
   return (

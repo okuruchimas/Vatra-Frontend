@@ -18,6 +18,7 @@ import {
   AboutUsSlide,
   AboutUsSlides,
 } from "../components /AboutUs/aboutUsSlides";
+import Footer from "../components /layout/Footer";
 
 interface HomeProps {
   performances: PerformanceType[];
@@ -38,6 +39,7 @@ const Home = ({ performances, ourTeam, slides, aboutUsSlides }: HomeProps) => {
       <MovingText />
       {ourTeam && <OurTeam members={ourTeam} />}
       <JoinUs />
+      <Footer />
     </Wrap>
   );
 };

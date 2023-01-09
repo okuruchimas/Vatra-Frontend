@@ -6,6 +6,7 @@ import {
   PerformanceType,
   TestArr,
 } from "../../components /TheaterPoster/performances";
+import Footer from "../../components /layout/Footer";
 
 const Repertoire = ({ repertoire }: { repertoire: PerformanceType }) => {
   if (!repertoire?.largeDescription) return;
@@ -41,6 +42,7 @@ const Repertoire = ({ repertoire }: { repertoire: PerformanceType }) => {
       <DateText>
         <EmptyText>Прем&lsquo;єра — </EmptyText>21 травня 2022
       </DateText>
+      <Footer />
     </Wrap>
   );
 };
@@ -67,11 +69,8 @@ export async function getStaticProps({ params }: any) {
 export default Repertoire;
 
 const Wrap = styled.div`
-  padding: 0 4vw 9vh;
+  padding: 0 4vw;
   width: 100vw;
-  @media (max-width: 960px) {
-    padding: 0 4vw 4vh;
-  }
 `;
 
 const TeamInfo = styled.div`
