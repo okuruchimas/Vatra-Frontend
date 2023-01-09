@@ -11,6 +11,7 @@ type Props = {
   title?: string;
   isDesktop?: boolean;
   link?: string;
+  isCentered?: boolean;
 };
 
 const PerformanceImg = ({
@@ -21,9 +22,9 @@ const PerformanceImg = ({
   title,
   isDesktop,
   link,
+  isCentered,
 }: Props) => {
   const { push } = useRouter();
-
   return (
     <Wrap>
       {isDesktop ? (
@@ -35,9 +36,11 @@ const PerformanceImg = ({
       ) : (
         <MobileWrap>
           <Title>{title}</Title>
-          <Type left={left}>{type}</Type>
+          <Type left={left} isCentered={isCentered}>
+            {type}
+          </Type>
           {link && (
-            <Details onClick={() => push(link)}>
+            <Details onClick={() => push(link)} isCentered={isCentered}>
               <Dot src="/icons/arrows/redDot.svg" />
               Дізнатись більше
             </Details>
@@ -55,9 +58,6 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  @media (max-width: 960px) {
-    //width: 92vw;
-  }
 `;
 
 const MobileWrap = styled.div`
@@ -66,9 +66,11 @@ const MobileWrap = styled.div`
   justify-content: flex-start;
 `;
 const Title = styled(Prop)`
-  width: min-content;
-  margin-left: 6vw;
-  padding: 2vh 0;
+  padding: 0;
+  font-size: 4.4vh;
+  display: flex;
+  align-items: center;
+  text-align: left;
 `;
 
 const Img = styled.img<{ left: number }>`
@@ -102,7 +104,7 @@ export const DateText = styled.span<{ left: number }>`
   }
 `;
 
-export const Type = styled.span<{ left?: number }>`
+export const Type = styled.span<{ left?: number; isCentered?: boolean }>`
   text-transform: uppercase;
   width: max-content;
   color: #fff;
@@ -118,9 +120,12 @@ export const Type = styled.span<{ left?: number }>`
   top: 6vh;
 
   @media (max-width: 960px) {
+    display: table-caption;
     position: initial;
-    right: inherit;
-    left: 6vw;
-    top: 5vh;
+    border: none;
+    padding: ${({ isCentered }) => (isCentered ? "2vh 0 8vh" : "2vh 0")};
+    color: #aeaeae;
+    font-size: 0.8em;
+    width: ${({ isCentered }) => (isCentered ? "36vw" : "44vw")};
   }
 `;

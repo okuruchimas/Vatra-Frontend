@@ -43,12 +43,6 @@ export const Title = styled.span`
   font-size: 8vh;
   padding: 4vh 0;
   text-align: center;
-  @media (max-width: 960px) {
-    font-size: 6vh;
-    display: flex;
-    align-items: center;
-    text-align: left;
-  }
 `;
 
 const Description = styled.span`
@@ -68,10 +62,9 @@ const BuyWrap = styled.div`
   width: 100%;
 `;
 
-export const Details = styled.span`
+export const Details = styled.span<{ isCentered?: boolean }>`
   font-family: "namu-1400";
   margin-left: 2.4vw;
-  color: #bbbaba;
   font-size: 2vh;
   background: inherit;
   text-transform: uppercase;
@@ -81,8 +74,9 @@ export const Details = styled.span`
   align-items: center;
   cursor: pointer;
   @media (max-width: 960px) {
-    margin-left: 6vw;
-    margin-right: auto;
+    margin-top: ${({ isCentered }) => (isCentered ? "0" : "-4vh")};
+    width: min-content;
+    align-self: flex-end;
     text-transform: none;
   }
   &:hover {

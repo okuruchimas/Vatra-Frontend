@@ -34,59 +34,61 @@ const App = ({ Component, pageProps }: AppProps) => {
           ::-webkit-scrollbar {
             width: 0;
           }
-          .swiper-button-next {
-            position: absolute;
-            right: 0;
-            width: 100px;
-            height: 100px;
-            background: red;
-          }
 
           @font-face {
             font-family: "namu-pro";
             src: url("/fonts/namu/NAMU-Pro.ttf");
             font-display: swap;
           }
+
           @font-face {
             font-family: "namu-1400";
             src: url("/fonts/namu/NAMU-1400.ttf");
             font-display: swap;
           }
+
           @font-face {
             font-family: "namu-1600";
             src: url("/fonts/namu/NAMU-1600.ttf");
             font-display: swap;
           }
+
           @font-face {
             font-family: "namu-1750";
             src: url("/fonts/namu/NAMU-1750.ttf");
             font-display: swap;
           }
+
           @font-face {
             font-family: "namu-1850";
             src: url("/fonts/namu/NAMU-1850.ttf");
             font-display: swap;
           }
+
           @font-face {
             font-family: "namu-1910";
             src: url("/fonts/namu/NAMU-1910.ttf");
             font-display: swap;
           }
+
           @font-face {
             font-family: "namu-1930";
             src: url("/fonts/namu/NAMU-1930.ttf");
             font-display: swap;
           }
+
           @font-face {
             font-family: "namu-1960";
             src: url("/fonts/namu/NAMU-1960.ttf");
             font-display: swap;
           }
+
           @font-face {
             font-family: "namu-1990";
             src: url("/fonts/namu/NAMU-1990.ttf");
             font-display: swap;
           }
+
           @font-face {
             font-family: "murmure";
             src: url("/fonts/murmure/murmure-regular.ttf");

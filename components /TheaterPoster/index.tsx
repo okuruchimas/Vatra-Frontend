@@ -77,6 +77,7 @@ const PerformancesWrap = styled.div`
     flex-direction: initial;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: 12vh;
   }
 `;
 

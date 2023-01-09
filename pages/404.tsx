@@ -27,6 +27,7 @@ const Wrap = styled.div`
   align-items: center;
   text-transform: uppercase;
 `;
+
 const Logo = styled.img`
   width: 8vw;
   margin-top: 2vh;
@@ -37,6 +38,7 @@ const Logo = styled.img`
     width: auto;
   }
 `;
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -48,6 +50,7 @@ const Wrapper = styled.div`
     flex-direction: column;
   }
 `;
+
 const Number = styled.img`
   width: 24vw;
   aspect-ratio: 177/155;
@@ -55,6 +58,7 @@ const Number = styled.img`
     width: 60vw;
   }
 `;
+
 const Text = styled.div`
   align-self: flex-end;
   display: flex;
@@ -70,6 +74,7 @@ const Text = styled.div`
     margin-top: 2vh;
   }
 `;
+
 const Button = styled.div`
   border: 1px solid #fff;
   border-radius: 60px;

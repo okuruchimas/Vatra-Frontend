@@ -24,13 +24,16 @@ function hexToRgb(hex: string, opacity = 0.1) {
 
 const Performance = (props: Props) => {
   const { width, maxMobileWidth } = useWindowDimensions();
+  const isBlack =
+    props.index === 0 || props.index === props.performancesLength - 1;
+  const isGray =
+    props.index === 1 || props.index === props.performancesLength - 2;
+
   return (
     <Wrap
       isFirst={props.index === 0}
-      isBlack={
-        props.index === 0 || props.index === props.performancesLength - 1
-      }
-      isGray={props.index === 1 || props.index === props.performancesLength - 2}
+      isBlack={isBlack}
+      isGray={isGray}
       performanceColor={
         width > maxMobileWidth
           ? hexToRgb(props.performanceColor)
@@ -39,6 +42,7 @@ const Performance = (props: Props) => {
     >
       {width < maxMobileWidth ? (
         <PerformanceImg
+          isCentered={isBlack || isGray}
           title={props.title}
           link={props.link}
           left={props.left}
@@ -102,13 +106,14 @@ const Wrap = styled.div<{
   @media (max-width: 960px) {
     align-self: ${({ isFirst }) => (isFirst ? "flex-end" : "initial")};
     flex-basis: ${({ isBlack, isGray }) =>
-      isBlack || isGray ? "48%" : "100%"};
+      isBlack || isGray ? "49%" : "100%"};
     height: min-content;
     flex-direction: column;
     border: none;
     border-radius: ${({ isBlack, isGray }) =>
       isBlack ? "0 30px 30px 30px" : isGray ? "30px 30px 0 30px" : "30px"};
-    margin: 0 0 2vh;
+    margin: 0 0 1vh;
+    padding: 6vh 4vw 2vh;
   }
 `;
 
