@@ -1,15 +1,22 @@
 import styled from "@emotion/styled";
 import PersonCard from "./PersonCard";
 import { Title } from "../Bubbles";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Circle as Prop } from "../JoinUs";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import { OurTeamProps, Pagination as Props, Person } from "./ourTeam";
+
 const Pagination = new Props();
 
 const OurTeam = ({ members }: OurTeamProps) => {
-  const { width, maxMobileWidth } = useWindowDimensions();
-  const [postsToShow, setPostsToShow] = useState<Person[]>(members.slice(0, 6));
+  const { width, maxMobileWidth, isDesktopWidth } = useWindowDimensions();
+  const [postsToShow, setPostsToShow] = useState<Person[]>(
+    members.slice(0, isDesktopWidth ? 6 : 4)
+  );
+
+  useEffect(() => {
+    setPostsToShow(members.slice(0, isDesktopWidth ? 6 : 4));
+  }, [members, isDesktopWidth]);
 
   return (
     <Wrap id="team">
@@ -21,6 +28,7 @@ const OurTeam = ({ members }: OurTeamProps) => {
             firstPost={width < maxMobileWidth ? false : 0 === index}
           >
             <PersonCard
+              index={index}
               key={name}
               name={name}
               role={role}
@@ -30,7 +38,11 @@ const OurTeam = ({ members }: OurTeamProps) => {
             />
           </Slide>
         ))}
-        <Button onClick={() => Pagination.paginate(members, setPostsToShow)}>
+        <Button
+          onClick={() =>
+            Pagination.paginate(members, setPostsToShow, isDesktopWidth)
+          }
+        >
           <ArrowRight src="/icons/arrows/arrowRight.svg" />
           <Circle isEmpty />
         </Button>
@@ -106,6 +118,6 @@ const Button = styled.div`
 
   @media (max-width: 960px) {
     right: 4vw;
-    bottom: -10vh;
+    bottom: -8vh;
   }
 `;

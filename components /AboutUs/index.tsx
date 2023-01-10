@@ -6,22 +6,22 @@ import { Fragment } from "react";
 import { AboutUsSliderProps } from "./aboutUsSlides";
 
 const AboutUs = ({ aboutUsSlides }: AboutUsSliderProps) => {
-  const { width, maxMobileWidth } = useWindowDimensions();
+  const { isDesktopWidth } = useWindowDimensions();
 
   return (
     <Wrap id="aboutUs">
       <RedTitle text="Історія театру" />
       <TitleFragment marginTop={6}>Ми прийшли</TitleFragment>
-      <TitleFragment paddingLeft={width > maxMobileWidth ? 16 : 20}>
+      <TitleFragment paddingLeft={isDesktopWidth ? 16 : 20}>
         на спільну
       </TitleFragment>
-      <TitleFragment paddingLeft={width > maxMobileWidth ? 40 : 12}>
+      <TitleFragment paddingLeft={isDesktopWidth ? 40 : 12}>
         зустріч
       </TitleFragment>
-      <TitleFragment paddingLeft={width > maxMobileWidth ? 24 : 32}>
+      <TitleFragment paddingLeft={isDesktopWidth ? 24 : 32}>
         у вільний
       </TitleFragment>
-      {width > maxMobileWidth ? (
+      {isDesktopWidth ? (
         <TitleFragment last>простір “Дикий Дім”</TitleFragment>
       ) : (
         <Fragment>

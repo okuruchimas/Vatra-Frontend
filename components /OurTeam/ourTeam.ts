@@ -1,27 +1,35 @@
-import { Dispatch, SetStateAction, useState } from "react";
-import useWindowDimensions from "../../hooks/useWindowDimensions";
+import { Dispatch, SetStateAction } from "react";
 
 export class Pagination {
   firstCardId = 0;
-  lastCardId = 6;
 
   public paginate(
     members: Person[],
-    setPostsToShow: Dispatch<SetStateAction<Person[]>>
+    setPostsToShow: Dispatch<SetStateAction<Person[]>>,
+    isDesktop: boolean
   ) {
     const postsLength = members.length;
-    this.firstCardId += 3;
+    const step = isDesktop ? 6 : 4;
+    let lastCardId = isDesktop ? 6 : 4;
+
+    if (isDesktop) {
+      this.firstCardId += 3;
+    } else {
+      this.firstCardId += 2;
+    }
+
     if (this.firstCardId >= postsLength) {
       this.firstCardId = this.firstCardId - postsLength;
     }
-    if (this.firstCardId + 6 <= postsLength) {
-      setPostsToShow(members.slice(this.firstCardId, this.firstCardId + 6));
+
+    if (this.firstCardId + step <= postsLength) {
+      setPostsToShow(members.slice(this.firstCardId, this.firstCardId + step));
     } else {
-      this.lastCardId =
-        postsLength - (postsLength - 6 + (postsLength - this.firstCardId));
+      lastCardId =
+        postsLength - (postsLength - step + (postsLength - this.firstCardId));
       setPostsToShow([
         ...members.slice(this.firstCardId, postsLength),
-        ...members.slice(0, this.lastCardId),
+        ...members.slice(0, lastCardId),
       ]);
     }
   }

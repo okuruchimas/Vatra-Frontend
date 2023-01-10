@@ -6,6 +6,7 @@ type Props = {
   superPower?: string;
   url: string;
   isPower: boolean;
+  index: number;
 };
 
 const PersonCard = (person: Props) => {
@@ -17,8 +18,13 @@ const PersonCard = (person: Props) => {
           {person.superPower && <SuperPower>{person.superPower}</SuperPower>}
         </Row>
       )}
-      <Photo src={person.url} loading="lazy" />
-      <Name>{person.name}</Name>
+      <Photo
+        isCentered={person.index === 1 || person.index === 2}
+        isLast={person.index === 3}
+        src={person.url}
+        loading="lazy"
+      />
+      <Name isLast={person.index === 3}>{person.name}</Name>
     </Wrap>
   );
 };
@@ -39,7 +45,7 @@ const Wrap = styled.div`
   }
 `;
 
-const Name = styled.span`
+const Name = styled.span<{ isLast: boolean }>`
   position: absolute;
   width: max-content;
   bottom: 2vh;
@@ -51,6 +57,8 @@ const Name = styled.span`
     font-family: "namu-1750";
     font-size: 2.4vh;
     width: 50%;
+    padding-left: 4vw;
+    bottom: ${({ isLast }) => (isLast ? "10vh" : "4vh")};
   }
 `;
 const Row = styled.div`
@@ -71,11 +79,16 @@ export const SuperPower = styled.span`
   margin: 16px 8px;
 `;
 
-const Photo = styled.img`
+const Photo = styled.img<{ isCentered: boolean; isLast: boolean }>`
   border-radius: 24px;
   height: auto;
   width: 100%;
   object-fit: cover;
   position: relative;
   aspect-ratio: 5/6;
+
+  @media (max-width: 960px) {
+    aspect-ratio: ${({ isCentered }) => (isCentered ? "165/145" : "5/6")};
+    bottom: ${({ isLast }) => (isLast ? "52px" : "initial")};
+  }
 `;
