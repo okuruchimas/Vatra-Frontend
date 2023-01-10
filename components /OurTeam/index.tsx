@@ -118,6 +118,6 @@ const Button = styled.div`
 
   @media (max-width: 960px) {
     right: 4vw;
-    bottom: -8vh;
+    bottom: -4vh;
   }
 `;
