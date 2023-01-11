@@ -19,6 +19,7 @@ import {
   AboutUsSlides,
 } from "../components /AboutUs/aboutUsSlides";
 import Footer from "../components /layout/Footer";
+import StickyContainer from "../components /layout/StickyContainer";
 
 interface HomeProps {
   performances: PerformanceType[];
@@ -30,7 +31,9 @@ interface HomeProps {
 const Home = ({ performances, ourTeam, slides, aboutUsSlides }: HomeProps) => {
   return (
     <Wrap id="/">
-      <Header />
+      <StickyContainer>
+        <Header />
+      </StickyContainer>
       <Greeting />
       {slides && <PhotoSlider slides={slides} />}
       {performances && <TheaterPoster performances={performances} />}
