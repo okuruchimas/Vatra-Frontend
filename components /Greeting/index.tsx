@@ -21,7 +21,7 @@ const Greeting = () => {
         <ButtonsWrap>
           {width < maxMobileWidth && <DonateButton />}
           {width > maxMobileWidth && (
-            <ArrowSmall src="/icons/arrows/arrowDown.svg" />
+            <ArrowSmall src="/icons/arrows/arrowDownSmall.svg" />
           )}
           <Button to="poster" spy smooth offset={20} duration={2000} isDynamic>
             <Text>Дивитись квитки</Text>
@@ -37,7 +37,7 @@ const Greeting = () => {
       <Info>
         <BlackGradient
           turnLeft
-          size={width > maxMobileWidth ? 24 : 64}
+          size={width > maxMobileWidth ? 30 : 64}
           left={width > maxMobileWidth ? -16 : -38}
           top={width > maxMobileWidth ? 68 : 62}
           animationTime={16}
@@ -45,9 +45,8 @@ const Greeting = () => {
         />
         <LeftBlock>
           <Subtitle>
-            {width > maxMobileWidth
-              ? "Ми створили незалежний театр для підтримки та розвитку культурного фронту України."
-              : "Ми створили театр для підтримки культурного фронту України."}
+            Ми створили незалежний театр для підтримки та розвитку культурного
+            фронту України.
           </Subtitle>
         </LeftBlock>
 
@@ -56,13 +55,13 @@ const Greeting = () => {
             <ArrowDown src="/icons/arrows/arrowDown.svg" />
           )}
           <Description>
-            Увібравши в себе митців із усієї країни, ми просуваємо та творимо
-            сучасне українське мистецтво в такий болючий для сердець час.
+            Увібравши в себе митців і мисткинь з усієї країни, ми просуваємо та
+            творимо сучасне українське мистецтво в такий турбулентний час.
           </Description>
           <BlackGradient
             size={width > maxMobileWidth ? 36 : 68}
-            right={width > maxMobileWidth ? -20 : -40}
-            bottom={width > maxMobileWidth ? 8 : -20}
+            right={width > maxMobileWidth ? -32 : -40}
+            top={width > maxMobileWidth ? -8 : -20}
             animationTime={20}
             src="/icons/gradients/right.svg"
           />
@@ -142,11 +141,15 @@ const LeftBlock = styled.div`
 
 const RightBlock = styled.div`
   position: relative;
+  top: 3.6vh;
+  right: 12vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 30%;
   @media (max-width: 960px) {
+    top: 0;
+    right: 0;
     width: 100%;
     padding-left: 8vw;
   }
@@ -166,7 +169,7 @@ const Description = styled.span`
   font-weight: 300;
   font-size: 2.4vh;
   color: #b5b5b5;
-  padding-top: 64px;
+  padding-top: 100px;
   text-align: center;
   @media (max-width: 960px) {
     font-size: 2.8vh;
@@ -206,7 +209,7 @@ const Button = styled(Link)`
 
 const Text = styled.div`
   display: table-caption;
-  padding-top: 1.5vh;
+  padding-top: 0.5vh;
 `;
 
 const ArrowDown = styled.img`
@@ -226,21 +229,23 @@ const ArrowDown = styled.img`
   }
 `;
 const ArrowSmall = styled(ArrowDown)`
-  height: 8vh;
+  height: 6vh;
   position: relative;
+  top: 1vh;
   animation: down-small 3s infinite;
   @keyframes down-small {
     0% {
       transform: translate(0);
     }
     20% {
-      transform: translateY(16px);
+      transform: translateY(12px);
     }
     40% {
       transform: translate(0);
     }
   }
   @media (max-width: 960px) {
+    top: 0;
     left: -4vw;
   }
 `;
