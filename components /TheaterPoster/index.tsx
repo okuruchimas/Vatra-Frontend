@@ -59,9 +59,12 @@ const Description = styled.span`
   font-size: 3.2vh;
   line-height: 4.6vh;
   color: #a7a5a5;
-  width: 54vw;
+  width: 55vw;
   padding: 4vh 14vw 0 0;
   margin-left: auto;
+  @media (max-width: 1600px) {
+    width: 54vw;
+  }
 
   @media (max-width: 960px) {
     width: 94vw;

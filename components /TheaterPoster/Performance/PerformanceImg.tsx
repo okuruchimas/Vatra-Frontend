@@ -112,14 +112,14 @@ export const Type = styled.span<{ left?: number; isCentered?: boolean }>`
   color: #fff;
   font-family: "namu-1750";
   font-size: 1.6vh;
-  padding: 1vh 1vw;
+  padding: 1vh 2vw;
   background: inherit;
   border-radius: 24px;
   border: 1px solid #fff;
   position: absolute;
-  left: ${({ left }) => (left ? "inherit" : "2vw")};
-  right: ${({ left }) => (left ? "2vw" : "inherit")};
-  top: 6vh;
+  left: ${({ left }) => (left ? "inherit" : "4vw")};
+  right: ${({ left }) => (left ? "4vw" : "inherit")};
+  top: 4vw;
 
   @media (max-width: 960px) {
     display: table-caption;

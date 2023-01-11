@@ -84,7 +84,7 @@ const Container = styled.div`
   flex-wrap: wrap;
   position: relative;
   width: 100%;
-  margin-top: 4vh;
+  margin-top: 8vh;
   @media (max-width: 960px) {
     gap: 0 4vw;
     aspect-ratio: 20/25;

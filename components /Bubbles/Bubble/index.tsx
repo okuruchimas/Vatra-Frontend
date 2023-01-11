@@ -60,9 +60,9 @@ const BubbleText = styled.span<{ size: number }>`
   font-size: 2.4vh;
   text-align: center;
   padding: 0 2vw;
+  width: ${({ size }) => `${size}vw`};
 
   @media (max-width: 960px) {
-    width: ${({ size }) => `${size}vw`};
     font-size: 2vh;
   }
 `;

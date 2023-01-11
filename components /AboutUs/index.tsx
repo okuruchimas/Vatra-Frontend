@@ -11,7 +11,7 @@ const AboutUs = ({ aboutUsSlides }: AboutUsSliderProps) => {
   return (
     <Wrap id="aboutUs">
       <RedTitle text="Історія театру" />
-      <TitleFragment marginTop={6}>Ми прийшли</TitleFragment>
+      <TitleFragment marginTop={2}>Ми прийшли</TitleFragment>
       <TitleFragment paddingLeft={isDesktopWidth ? 16 : 20}>
         на спільну
       </TitleFragment>
@@ -55,8 +55,9 @@ export const TitleFragment = styled.span<{
   marginTop?: number;
 }>`
   padding-left: ${({ paddingLeft }) =>
-    paddingLeft ? `${paddingLeft}vw` : "none"};
+    paddingLeft ? `${paddingLeft}vw` : "initial"};
   font-family: "murmure";
+  line-height: 26vh;
   font-size: 24vh;
   color: #fff;
   width: 100%;
@@ -64,6 +65,7 @@ export const TitleFragment = styled.span<{
   margin-top: ${({ marginTop }) => (marginTop ? `${marginTop}vh` : "initial")};
 
   @media (max-width: 960px) {
+    line-height: initial;
     font-size: 12vh;
   }
 `;

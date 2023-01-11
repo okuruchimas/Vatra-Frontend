@@ -7,10 +7,10 @@ const Bubbles = () => {
 
   return (
     <Wrap>
-      <Title>наші цінності</Title>
+      <Title>наші цінноcті</Title>
       <BubblesWrap>
         <Bubble
-          size={width > maxMobileWidth ? 22 : 32}
+          size={width > maxMobileWidth ? 20 : 32}
           animationTime={5}
           top={width > maxMobileWidth ? 8 : 20}
           left={width > maxMobileWidth ? 26 : 60}
@@ -29,8 +29,8 @@ const Bubbles = () => {
           <Bubble
             size={22}
             animationTime={7.7}
-            top={40}
-            right={24}
+            top={32}
+            right={28}
             text="Мультидисциплінарність"
           />
         )}
@@ -38,7 +38,7 @@ const Bubbles = () => {
         <Bubble
           size={width > maxMobileWidth ? 16 : 40}
           animationTime={8}
-          top={width > maxMobileWidth ? 68 : 24}
+          top={width > maxMobileWidth ? 52 : 24}
           left={width > maxMobileWidth ? 28 : 4}
           text="Любов і свобода самовираження"
         />
@@ -46,7 +46,7 @@ const Bubbles = () => {
         <Bubble
           size={width > maxMobileWidth ? 16 : 36}
           animationTime={8}
-          top={width > maxMobileWidth ? 52 : 4}
+          top={width > maxMobileWidth ? 44 : 4}
           left={width > maxMobileWidth ? 4 : 28}
           text="Повага до свого коріння"
         />
