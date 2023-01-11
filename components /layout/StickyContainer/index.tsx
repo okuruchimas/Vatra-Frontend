@@ -5,7 +5,6 @@ import styled from "@emotion/styled";
 
 const StickyContainer = ({ children }: Props) => {
   const [shouldHideHeader, setShouldHideHeader] = useState(false);
-  const [shouldShowShadow, setShouldShowShadow] = useState(false);
 
   const MINIMUM_SCROLL = 80;
   const TIMEOUT_DELAY = 300;
@@ -16,18 +15,12 @@ const StickyContainer = ({ children }: Props) => {
       const isScrolledDown = previousScrollTop < currentScrollTop;
       const isMinimumScrolled = currentScrollTop > MINIMUM_SCROLL;
 
-      setShouldShowShadow(currentScrollTop > 2);
-
       setTimeout(() => {
         setShouldHideHeader(isScrolledDown && isMinimumScrolled);
       }, TIMEOUT_DELAY);
     }
   );
-  return (
-    <Wrap show={shouldShowShadow} hide={shouldHideHeader}>
-      {children}
-    </Wrap>
-  );
+  return <Wrap hide={shouldHideHeader}>{children}</Wrap>;
 };
 
 interface Props {
@@ -36,7 +29,7 @@ interface Props {
 
 export default StickyContainer;
 
-const Wrap = styled.div<{ show: any; hide: any }>`
+const Wrap = styled.div<{ hide: any }>`
   & > div {
     transform: ${({ hide }) => `translateY(${hide ? -110 : 0}%)`};
     transition: transform 0.2s ease;
@@ -44,7 +37,5 @@ const Wrap = styled.div<{ show: any; hide: any }>`
     top: 0;
     left: 0;
     z-index: 100;
-    box-shadow: ${({ show }) =>
-      show ? "0 9px 9px -9px rgba(0, 0, 0, 0.13);" : "none"};
   }
 `;

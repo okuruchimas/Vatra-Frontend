@@ -120,7 +120,7 @@ const Navbar = styled.div<{ isNavbar: boolean }>`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-right: 9vw;
+  margin-right: -4vw;
   @media (max-width: 960px) {
     display: ${({ isNavbar }) => (isNavbar ? "flex" : "none")};
     background-image: url("/icons/gradients/dottBackground.svg");
@@ -133,7 +133,7 @@ const Navbar = styled.div<{ isNavbar: boolean }>`
     align-items: flex-end;
     height: 92vh;
     width: 100vw;
-    padding-right: 0;
+    margin-right: 0;
     a:last-of-type {
       margin-bottom: 6vh;
     }
@@ -145,7 +145,7 @@ const ItemList = styled(Link)`
   font-family: "namu-pro";
   font-weight: 400; 
   font-size: 2vh;
-  margin: 0 2vw;
+  margin: 0 1.6vw;
   cursor: pointer;
 
   &:hover {

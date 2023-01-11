@@ -24,7 +24,7 @@ const Wrap = styled.div`
 `;
 
 const Button = styled.button`
-  margin-right: 2vw;
+  margin-right: 1vw;
   width: 9vw;
   height: 4vh;
   color: #b11212;
@@ -40,9 +40,8 @@ const Button = styled.button`
     height: 44px;
   }
   &:hover {
-    background: #b11212;
-    color: #fff;
-    border: 1px solid #b11212;
+    background: #fff;
+    color: #b11212;
   }
 `;
 
