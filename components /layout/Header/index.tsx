@@ -87,7 +87,7 @@ const Wrap = styled.div`
   margin: 0 4vw;
   height: 8vh;
   background-image: url("/icons/gradients/dottBackground.svg");
-  background-color: #181818;
+  background-color: #1d1d1d;
   animation: background-noise 0.5s linear infinite;
   border-bottom: 1px solid #ffffff;
 `;

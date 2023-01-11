@@ -76,6 +76,8 @@ const Title = styled(Prop)`
 const Img = styled.img<{ left: number }>`
   position: relative;
   top: 2vh;
+  right: ${({ left }) => (left ? "2vh" : "initial")};
+  left: ${({ left }) => (left ? "initial" : "2vh")};
   width: 50vw;
   object-fit: cover;
   border-radius: 16px;

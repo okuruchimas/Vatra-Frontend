@@ -14,9 +14,7 @@ const Greeting = () => {
       <BuySection>
         <LeftText>
           На сторожі Української культури. <br />
-          {width > maxMobileWidth
-            ? "Створений під час війни в Україні."
-            : "Створений під час війни."}
+          Створений під час війни в Україні.
         </LeftText>
         <ButtonsWrap>
           {width < maxMobileWidth && <DonateButton />}
@@ -27,7 +25,7 @@ const Greeting = () => {
             <Text>Дивитись квитки</Text>
           </Button>
           {width < maxMobileWidth && (
-            <ArrowSmall src="/icons/arrows/arrowDown.svg" />
+            <ArrowSmall src="/icons/arrows/arrowDownSmall.svg" />
           )}
         </ButtonsWrap>
       </BuySection>

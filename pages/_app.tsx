@@ -23,7 +23,7 @@ const App = ({ Component, pageProps }: AppProps) => {
             -webkit-background-image: url("/icons/gradients/dottBackground.svg");
             background-image: url("/icons/gradients/dottBackground.svg");
 
-            background-color: #181818;
+            background-color: #1d1d1d;
             color: white;
           }
 
