@@ -135,12 +135,12 @@ const Navbar = styled.div<{ isNavbar: boolean }>`
     background-image: url("/icons/gradients/dottBackground.svg");
     background-color: #1d1d1d;
     position: absolute;
-    top: calc(8vh + 2px);
+    top: 8vh;
     left: 0;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
-    height: 92vh;
+    height: calc(92vh + 2px);
     width: 100vw;
     margin-right: 0;
   }

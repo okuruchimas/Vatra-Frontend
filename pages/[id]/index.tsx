@@ -58,7 +58,9 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: any) {
-  const repertoire = TestArr.find(({ link }) => link === params.id);
+  const { id } = params;
+  const repertoire = TestArr.find(({ link }) => link === id);
+
   return {
     props: {
       repertoire,
