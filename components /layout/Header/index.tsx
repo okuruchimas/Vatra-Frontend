@@ -74,7 +74,6 @@ const Header = () => {
             {item.text}
           </ItemList>
         ))}
-        {width < maxMobileWidth && <Footer />}
       </Navbar>
       {width > maxMobileWidth && <DonateButton />}
     </Wrap>
@@ -86,14 +85,14 @@ export default Header;
 const Wrap = styled.div`
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 10;
-  width: 92vw;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 2vh 0;
-  margin: 0 4vw;
+  padding: 2vh 4vw;
   height: 8vh;
   background-image: url("/icons/gradients/dottBackground.svg");
   background-color: #1d1d1d;
@@ -130,17 +129,18 @@ const Navbar = styled.div<{ isNavbar: boolean }>`
   flex-direction: row;
   align-items: center;
   margin-right: -4vw;
+
   @media (max-width: 960px) {
     display: ${({ isNavbar }) => (isNavbar ? "flex" : "none")};
     background-image: url("/icons/gradients/dottBackground.svg");
     background-color: #1d1d1d;
     position: absolute;
-    top: 8vh;
-    left: -4vw;
+    top: calc(8vh + 2px);
+    left: 0;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: flex-end;
-    height: calc(92vh + 2px);
+    height: 92vh;
     width: 100vw;
     margin-right: 0;
   }
@@ -164,7 +164,7 @@ const ItemList = styled(Link)<{ isLast?: boolean }>`
     margin: 2vh 4vw ;
     text-transform: uppercase;
     font-size: 3.2em;
-    margin-bottom: ${({ isLast }) => (isLast ? "6vh" : "initial")};
+    margin-bottom: ${({ isLast }) => (isLast ? "24vh" : "initial")};
     &:hover {
       text-decoration: none;,
     }
