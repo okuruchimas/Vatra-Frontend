@@ -57,9 +57,9 @@ const Greeting = () => {
             творимо сучасне українське мистецтво в такий турбулентний час.
           </Description>
           <BlackGradient
-            size={width > maxMobileWidth ? 36 : 68}
+            size={width > maxMobileWidth ? 36 : 60}
             right={width > maxMobileWidth ? -32 : -40}
-            top={width > maxMobileWidth ? -8 : -20}
+            top={width > maxMobileWidth ? -8 : 8}
             animationTime={20}
             src="/icons/gradients/right.svg"
           />
@@ -120,7 +120,7 @@ const Info = styled.div`
   padding: 18vh 0 6vh;
   @media (max-width: 960px) {
     flex-direction: column;
-    padding: 12vh 0;
+    padding: 12vh 0 8vh;
   }
 `;
 
@@ -170,7 +170,7 @@ const Description = styled.span`
   padding-top: 100px;
   text-align: center;
   @media (max-width: 960px) {
-    font-size: 2.8vh;
+    font-size: 2vh;
     padding-top: 24px;
     text-align: left;
     line-height: 136%;

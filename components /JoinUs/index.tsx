@@ -47,7 +47,7 @@ const ArrowDown = styled.img`
   height: 16vh;
   width: 2vw;
   animation: down 3s infinite;
-  z-index: 1;
+  z-index: 5;
   @keyframes down {
     0% {
       transform: translate(0);
@@ -65,8 +65,8 @@ const ArrowDown = styled.img`
   }
 `;
 export const Circle = styled.div<{ isEmpty?: boolean }>`
-  height: 80px;
-  width: 80px;
+  height: 120px;
+  width: 120px;
   border-radius: 50%;
   border: 2px solid #b11212;
   background: ${({ isEmpty }) => (isEmpty ? "none" : "#b11212")};

@@ -52,10 +52,11 @@ const Name = styled.span<{ isLast: boolean }>`
   font-family: "murmure";
   font-size: 3.6vh;
   color: #ffffff;
+  padding-left: 2vw;
 
   @media (max-width: 960px) {
     font-family: "namu-1750";
-    font-size: 2.4vh;
+    font-size: 2vh;
     width: 50%;
     padding-left: 4vw;
     bottom: ${({ isLast }) => (isLast ? "10vh" : "4vh")};

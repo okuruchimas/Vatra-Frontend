@@ -65,7 +65,7 @@ const Wrap = styled.div`
   width: 100%;
   color: #fff;
   @media (max-width: 960px) {
-    padding: 12vh 0 6vh;
+    padding: 10vh 0 6vh;
     flex-direction: column;
   }
 `;
@@ -158,8 +158,8 @@ const Description = styled.span`
   color: #b5b5b5;
   @media (max-width: 960px) {
     padding: 6vh 0 0 6vw;
-    font-size: 2.8vh;
-    min-height: 30vh;
+    font-size: 2vh;
+    min-height: 24vh;
   }
 `;
 
@@ -186,7 +186,7 @@ const Pagination = styled.div`
     width: 84%;
     font-size: 8vh;
     position: absolute;
-    top: -26vh;
+    top: -22vh;
     left: 0;
   }
 `;
@@ -204,7 +204,7 @@ const EmptyNumber = styled.span`
 
   @media (max-width: 960px) {
     -webkit-text-stroke-width: 1px;
-    font-size: 2.6em;
+    font-size: 2em;
   }
 `;
 

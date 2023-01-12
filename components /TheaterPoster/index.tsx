@@ -69,7 +69,7 @@ const Description = styled.span`
   @media (max-width: 960px) {
     width: 94vw;
     margin-left: 8vw;
-    font-size: 2.6vh;
+    font-size: 2vh;
     line-height: 136%;
   }
 `;

@@ -10,18 +10,18 @@ const Bubbles = () => {
       <Title>наші цінноcті</Title>
       <BubblesWrap>
         <Bubble
-          size={width > maxMobileWidth ? 20 : 32}
+          size={width > maxMobileWidth ? 20 : 28}
           animationTime={5}
-          top={width > maxMobileWidth ? 8 : 20}
-          left={width > maxMobileWidth ? 26 : 60}
+          top={width > maxMobileWidth ? 8 : 12}
+          left={width > maxMobileWidth ? 26 : 64}
           text="Актуальність"
         />
 
         <Bubble
           size={width > maxMobileWidth ? 18.6 : 30}
           animationTime={7}
-          top={width > maxMobileWidth ? 6 : 44}
-          right={width > maxMobileWidth ? 8 : 24}
+          top={width > maxMobileWidth ? 6 : 24}
+          right={width > maxMobileWidth ? 8 : 22}
           text="Підтримка та розвиток"
         />
 
@@ -36,15 +36,15 @@ const Bubbles = () => {
         )}
 
         <Bubble
-          size={width > maxMobileWidth ? 16 : 40}
+          size={width > maxMobileWidth ? 16 : 36}
           animationTime={8}
-          top={width > maxMobileWidth ? 52 : 24}
-          left={width > maxMobileWidth ? 28 : 4}
+          top={width > maxMobileWidth ? 52 : 18}
+          left={width > maxMobileWidth ? 28 : 0}
           text="Любов і свобода самовираження"
         />
 
         <Bubble
-          size={width > maxMobileWidth ? 16 : 36}
+          size={width > maxMobileWidth ? 16 : 32}
           animationTime={8}
           top={width > maxMobileWidth ? 44 : 4}
           left={width > maxMobileWidth ? 4 : 28}
@@ -88,6 +88,6 @@ const BubblesWrap = styled.div`
   @media (max-width: 960px) {
     width: 100%;
     padding: 4vw 0;
-    min-height: 56vh;
+    min-height: 40vh;
   }
 `;

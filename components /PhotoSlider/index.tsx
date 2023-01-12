@@ -30,7 +30,7 @@ const Slider = styled.section`
   overflow: hidden;
   padding: 40vh 0 6vh;
   @media (max-width: 960px) {
-    padding: 16vh 0;
+    padding: 14vh 0;
   }
 `;
 
