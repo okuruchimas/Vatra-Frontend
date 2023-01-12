@@ -23,4 +23,7 @@ const Wrap = styled.section`
 
 const Preview = styled(Prop)`
   width: 98vw;
+  @media (max-width: 960px) {
+    width: 100vw;
+  }
 `;

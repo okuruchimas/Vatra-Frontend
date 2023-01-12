@@ -20,8 +20,8 @@ const Bubbles = () => {
         <Bubble
           size={width > maxMobileWidth ? 18.6 : 30}
           animationTime={7}
-          top={width > maxMobileWidth ? 6 : 24}
-          right={width > maxMobileWidth ? 8 : 22}
+          top={width > maxMobileWidth ? 6 : 26}
+          right={width > maxMobileWidth ? 8 : 20}
           text="Підтримка та розвиток"
         />
 
@@ -38,7 +38,7 @@ const Bubbles = () => {
         <Bubble
           size={width > maxMobileWidth ? 16 : 36}
           animationTime={8}
-          top={width > maxMobileWidth ? 52 : 18}
+          top={width > maxMobileWidth ? 52 : 20}
           left={width > maxMobileWidth ? 28 : 0}
           text="Любов і свобода самовираження"
         />
