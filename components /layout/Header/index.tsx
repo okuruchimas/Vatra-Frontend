@@ -138,7 +138,7 @@ const Navbar = styled.div<{ isNavbar: boolean }>`
     top: 8vh;
     left: -4vw;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: flex-end;
     height: calc(92vh + 2px);
     width: 100vw;
@@ -165,6 +165,8 @@ const ItemList = styled(Link)<{ isLast?: boolean }>`
     text-transform: uppercase;
     font-size: 3.2em;
     margin-bottom: ${({ isLast }) => (isLast ? "6vh" : "initial")};
-
+    &:hover {
+      text-decoration: none;,
+    }
   }
 `;
