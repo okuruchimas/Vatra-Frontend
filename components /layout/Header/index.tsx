@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import DonateButton from "../DonateButton";
 import useWindowDimensions from "../../../hooks/useWindowDimensions";
 import Footer from "../Footer";
+import { Global, css } from "@emotion/react";
 
 const arrMenu: { text: string; to: string }[] = [
   { text: "Афіша", to: "poster" },
@@ -12,6 +13,12 @@ const arrMenu: { text: string; to: string }[] = [
   { text: "Команда", to: "team" },
   { text: "Контакти", to: "contacts" },
 ];
+
+const GlobalStyles = css`
+  body {
+    overflow: hidden;
+  }
+`;
 
 const Header = () => {
   const [isNavbar, setIsNavbar] = useState<boolean>(false);
@@ -35,6 +42,7 @@ const Header = () => {
         src={isNavbar ? "/icons/close/close.svg" : "/icons/logo/burger.svg"}
         onClick={() => setIsNavbar(!isNavbar)}
       />
+      {isNavbar && <Global styles={GlobalStyles} />}
       <Navbar isNavbar={isNavbar}>
         {width < maxMobileWidth && (
           <ItemList
@@ -52,6 +60,7 @@ const Header = () => {
         )}
         {arrMenu.map((item, index) => (
           <ItemList
+            isLast={arrMenu.length - 1 === index}
             to={item.to}
             spy={true}
             smooth={true}
@@ -124,23 +133,20 @@ const Navbar = styled.div<{ isNavbar: boolean }>`
   @media (max-width: 960px) {
     display: ${({ isNavbar }) => (isNavbar ? "flex" : "none")};
     background-image: url("/icons/gradients/dottBackground.svg");
-    background-color: #181818;
+    background-color: #1d1d1d;
     position: absolute;
     top: 8vh;
     left: -4vw;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
-    height: 92vh;
+    height: calc(92vh + 2px);
     width: 100vw;
     margin-right: 0;
-    a:last-of-type {
-      margin-bottom: 6vh;
-    }
   }
 `;
 
-const ItemList = styled(Link)`
+const ItemList = styled(Link)<{ isLast?: boolean }>`
   color: #b0b0b0;
   font-family: "namu-pro";
   font-weight: 400; 
@@ -158,5 +164,7 @@ const ItemList = styled(Link)`
     margin: 2vh 4vw ;
     text-transform: uppercase;
     font-size: 3.2em;
+    margin-bottom: ${({ isLast }) => (isLast ? "6vh" : "initial")};
+
   }
 `;
