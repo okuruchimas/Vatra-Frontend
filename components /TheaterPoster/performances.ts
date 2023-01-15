@@ -19,8 +19,8 @@ export const TestArr = [
     largeDescription: {
       imgUrl: "/icons/poster/bigImg1.png",
       videoRemarks: [
-        "*У виставі лунає жива музика",
-        "**Використовується обсценна лексика",
+        "У виставі лунає жива музика",
+        "Використовується обсценна лексика",
       ],
       dates: [11.12, 12.11, 12.12, 9.2, 10.1],
       videoLink: "hjhjg",
@@ -77,10 +77,7 @@ export const TestArr = [
     link: "meting",
     largeDescription: {
       imgUrl: "/icons/poster/bigImg2.png",
-      videoRemarks: [
-        "*У виставі лунає жива музика",
-        "**Після вистави є можливість придбати її мерч – автоорську п’єсу",
-      ],
+      videoRemarks: ["У виставі лунає жива музика"],
       dates: [11.12, 12.11, 12.12, 9.2, 10.1],
       bigTitle1: "Чому Леся так",
       bigTitle2: "швидко їде?",
@@ -145,8 +142,8 @@ export const TestArr = [
     largeDescription: {
       imgUrl: "/icons/poster/bigImg4.png",
       videoRemarks: [
-        "*У виставі лунає жива музика",
-        " **Використовується обсценна лексика",
+        "У виставі лунає жива музика",
+        "Використовується обсценна лексика",
       ],
       dates: [11.12, 12.11, 12.12, 9.2, 10.1],
       bigTitle1: "Ситуація складна...",
@@ -278,8 +275,8 @@ export const TestArr = [
     largeDescription: {
       imgUrl: "/icons/poster/bigImg3.png",
       videoRemarks: [
-        "*У виставі лунає жива музика",
-        "**Спільний проєкт театру Лесі та театру Варта",
+        "У виставі лунає жива музика",
+        "Спільний проєкт театру Лесі та театру Варта",
       ],
       dates: [11.12, 12.11, 12.12, 9.2, 10.1],
       bigTitle1: "Що спонукає людину",
@@ -342,7 +339,7 @@ export const TestArr = [
     link: "first-day",
     largeDescription: {
       imgUrl: "/icons/poster/bigImg6.png",
-      videoRemarks: ["*Присутня обсценна лексика"],
+      videoRemarks: ["Присутня обсценна лексика"],
       dates: [11.12, 12.11, 12.12, 9.2, 10.1],
       videoLink: "hjhjg",
       bigTitle1: "Закарбувався в нас",

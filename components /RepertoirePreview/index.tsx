@@ -12,6 +12,7 @@ interface Info {
   imgUrl: string;
   dates: number[];
   videoLink?: string;
+  remarks: string[];
 }
 
 const RepertoirePreview = (info: Info) => {
@@ -52,10 +53,13 @@ const RepertoirePreview = (info: Info) => {
           </Dates>
         </DateWrap>
 
-        <RemarksWrap>
-          <Remark>У виставі лунає жива музика</Remark>
-          <Remark>Спільний проєкт Театру Лесі та театру “Варта”</Remark>
-        </RemarksWrap>
+        {info.remarks.length > 0 && (
+          <RemarksWrap>
+            {info.remarks.map((item, i) => (
+              <Remark key={i}>{item}</Remark>
+            ))}
+          </RemarksWrap>
+        )}
       </BottomWrap>
 
       {width > maxMobileWidth && info.videoLink && (
