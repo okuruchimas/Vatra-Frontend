@@ -92,6 +92,7 @@ export const TestArr = [
           abilities: ["Музикант"],
         },
       ],
+      premiere: "03 вереcня 2022",
     },
   },
   {
@@ -157,6 +158,7 @@ export const TestArr = [
           abilities: ["Актор", "Виготовлення декорацій"],
         },
       ],
+      premiere: "16 ЧЕРВНЯ 2022",
     },
   },
   {
@@ -228,6 +230,7 @@ export const TestArr = [
           abilities: ["Актори"],
         },
       ],
+      premiere: "16 ЧЕРВНЯ 2022",
     },
   },
 
@@ -304,6 +307,7 @@ export const TestArr = [
           abilities: ["2d–анімація"],
         },
       ],
+      premiere: "15 липня 2022",
     },
   },
   {
@@ -369,6 +373,7 @@ export const TestArr = [
           abilities: ["первофрер", "композитор"],
         },
       ],
+      premiere: "02 липня 2022",
     },
   },
 
@@ -447,6 +452,7 @@ export const TestArr = [
           abilities: ["Перформер"],
         },
       ],
+      premiere: "27 Березня 2022",
     },
   },
 ];
@@ -482,6 +488,7 @@ export interface LargeDescription {
   description: string;
   images: string[];
   composition: Composition[];
+  premiere: string;
 }
 
 interface Composition {

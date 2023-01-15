@@ -43,7 +43,8 @@ const Repertoire = ({ repertoire }: { repertoire: PerformanceType }) => {
         </TeamMembers>
       </TeamInfo>
       <DateText>
-        <EmptyText>Прем&lsquo;єра — </EmptyText>21 травня 2022
+        <EmptyText>Прем&lsquo;єра — </EmptyText>
+        {repertoire.largeDescription.premiere}
       </DateText>
       <Footer />
     </Wrap>
@@ -79,7 +80,7 @@ const Wrap = styled.div`
 `;
 
 const TeamInfo = styled.div`
-  margin-top: 28vh;
+  margin-top: 32vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -105,7 +106,7 @@ const TeamMembers = styled.div`
 `;
 
 const DateText = styled.div`
-  margin-top: 24vh;
+  margin-top: 28vh;
   font-family: "namu-1400";
   text-transform: uppercase;
   font-size: 28vh;
@@ -119,7 +120,7 @@ const DateText = styled.div`
 
 const EmptyText = styled.span`
   font-family: "murmure";
-  font-size: 36vh;
+  font-size: 34vh;
   text-transform: uppercase;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;

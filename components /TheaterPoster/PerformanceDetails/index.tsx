@@ -88,7 +88,7 @@ const Description = styled.div`
   p {
     font-family: "namu-1750";
     font-size: 2.4vh;
-    padding: 0 2vw;
+    padding-left: 2vw;
     color: #b5b5b5;
     @media (max-width: 960px) {
       padding: 0 6vw;

@@ -248,7 +248,7 @@ const TitleWrap = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
-  bottom: 24vh;
+  bottom: 20vh;
   z-index: 10;
   width: 36vw;
 `;
