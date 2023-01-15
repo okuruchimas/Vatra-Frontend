@@ -18,6 +18,8 @@ const Repertoire = ({ repertoire }: { repertoire: PerformanceType }) => {
         type={repertoire.type}
         date={repertoire.date}
         imgUrl={repertoire.largeDescription.imgUrl}
+        dates={repertoire.largeDescription.dates}
+        videoLink={repertoire.largeDescription.videoLink}
       />
       <PerformanceDetail
         bigTitle1={repertoire.largeDescription.bigTitle1}

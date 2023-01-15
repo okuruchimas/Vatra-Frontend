@@ -60,7 +60,6 @@ const Header = () => {
         )}
         {arrMenu.map((item, index) => (
           <ItemList
-            isLast={arrMenu.length - 1 === index}
             to={item.to}
             spy={true}
             smooth={true}
@@ -143,6 +142,7 @@ const Navbar = styled.div<{ isNavbar: boolean }>`
     height: calc(92vh + 2px);
     width: 100vw;
     margin-right: 0;
+    padding-bottom: 16vh;
   }
 `;
 
@@ -164,7 +164,6 @@ const ItemList = styled(Link)<{ isLast?: boolean }>`
     margin: 2vh 4vw ;
     text-transform: uppercase;
     font-size: 3.2em;
-    margin-bottom: ${({ isLast }) => (isLast ? "24vh" : "initial")};
     &:hover {
       text-decoration: none;,
     }

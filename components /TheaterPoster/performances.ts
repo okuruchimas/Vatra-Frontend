@@ -16,13 +16,14 @@ export const TestArr = [
     date: "12.04",
     imgUrl: "/icons/poster/img1.png",
     link: "war",
-    videoLink: "hjhjg",
     largeDescription: {
       imgUrl: "/icons/poster/bigImg1.png",
       videoRemarks: [
         "*У виставі лунає жива музика",
-        "**Після вистави є можливість придбати її мерч – автоорську п’єсу",
+        "**Використовується обсценна лексика",
       ],
+      dates: [11.12, 12.11, 12.12, 9.2, 10.1],
+      videoLink: "hjhjg",
       bigTitle1: "Лютий завжди був",
       bigTitle2: "холодним...",
       smallTitle: "«ЛЮТИЙ» — це простір, де вивільняється внутрішня боротьба",
@@ -80,6 +81,7 @@ export const TestArr = [
         "*У виставі лунає жива музика",
         "**Після вистави є можливість придбати її мерч – автоорську п’єсу",
       ],
+      dates: [11.12, 12.11, 12.12, 9.2, 10.1],
       bigTitle1: "Чому Леся так",
       bigTitle2: "швидко їде?",
       smallTitle:
@@ -146,6 +148,7 @@ export const TestArr = [
         "*У виставі лунає жива музика",
         " **Використовується обсценна лексика",
       ],
+      dates: [11.12, 12.11, 12.12, 9.2, 10.1],
       bigTitle1: "Ситуація складна...",
       bigTitle2: "",
       smallTitle:
@@ -205,6 +208,7 @@ export const TestArr = [
     largeDescription: {
       imgUrl: "/icons/poster/bigImg5.png",
       videoRemarks: [],
+      dates: [11.12, 12.11, 12.12, 9.2, 10.1],
       bigTitle1: "Яким є жіночий",
       bigTitle2: "досвід війни?",
       smallTitle:
@@ -277,6 +281,7 @@ export const TestArr = [
         "*У виставі лунає жива музика",
         "**Спільний проєкт театру Лесі та театру Варта",
       ],
+      dates: [11.12, 12.11, 12.12, 9.2, 10.1],
       bigTitle1: "Що спонукає людину",
       bigTitle2: "до вбивства?",
       smallTitle: "Яке воно — знайомство з війною?",
@@ -335,10 +340,11 @@ export const TestArr = [
     date: "23.07",
     imgUrl: "/icons/poster/img6.png",
     link: "first-day",
-    videoLink: "hjhjg",
     largeDescription: {
       imgUrl: "/icons/poster/bigImg6.png",
       videoRemarks: ["*Присутня обсценна лексика"],
+      dates: [11.12, 12.11, 12.12, 9.2, 10.1],
+      videoLink: "hjhjg",
       bigTitle1: "Закарбувався в нас",
       bigTitle2: "назавжди...",
       smallTitle: "напружено затамувався подих наш тоді назавжди.",
@@ -408,6 +414,8 @@ interface MobileColor {
 export interface LargeDescription {
   imgUrl: string;
   videoRemarks: string[];
+  dates: number[];
+  videoLink?: string;
   bigTitle1: string;
   bigTitle2?: string;
   smallTitle: string;

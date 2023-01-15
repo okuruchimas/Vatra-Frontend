@@ -1,22 +1,28 @@
+import React from "react";
 import styled from "@emotion/styled";
 import { Title as Prop } from "../TheaterPoster/Performance/PerormanceInfo";
 import { Type as Prop2 } from "../TheaterPoster/Performance/PerformanceImg";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
+import { useRouter } from "next/router";
 
-type Info = {
+interface Info {
   title: string;
   type: string;
   date: string;
   imgUrl: string;
-};
+  dates: number[];
+  videoLink?: string;
+}
 
 const RepertoirePreview = (info: Info) => {
   const { width, maxMobileWidth } = useWindowDimensions();
+  const { back } = useRouter();
 
   return (
     <Wrap>
       <Rate>16+</Rate>
-      <Close>
+
+      <Close onClick={() => back()}>
         <CloseIcon
           src={
             width > maxMobileWidth
@@ -25,27 +31,37 @@ const RepertoirePreview = (info: Info) => {
           }
         />
       </Close>
-      <Type>{info.type}</Type>
-      <Title>{info.title}</Title>
-      <Image src={info.imgUrl} />
-      <DateWrap>
-        {width > maxMobileWidth && <DateText>дати показу</DateText>}
-        <Dates>
-          <Date> {info.date}</Date> <Line /> <Date> {info.date}</Date>
-          <Line />
-          <Date> {info.date}</Date> <Line /> <Date> {info.date}</Date>
-        </Dates>
-      </DateWrap>
-      <RemarksWrap>
-        <Remark>У виставі лунає жива музика</Remark>
-        <Remark>Спільний проєкт Театру Лесі та театру “Варта”</Remark>
-      </RemarksWrap>
-      {width > maxMobileWidth && (
+
+      <TitleWrap>
+        <Type>{info.type}</Type>
+        <Title>{info.title}</Title>
+      </TitleWrap>
+
+      <Image alt="Preview" src={info.imgUrl} />
+
+      <BottomWrap>
+        <DateWrap>
+          {width > maxMobileWidth && <DateText>дати показу</DateText>}
+          <Dates>
+            {info.dates.map((date, index) => (
+              <React.Fragment key={date}>
+                <Date> {date}</Date>
+                {index !== info.dates.length - 1 && <Line />}
+              </React.Fragment>
+            ))}
+          </Dates>
+        </DateWrap>
+
+        <RemarksWrap>
+          <Remark>У виставі лунає жива музика</Remark>
+          <Remark>Спільний проєкт Театру Лесі та театру “Варта”</Remark>
+        </RemarksWrap>
+      </BottomWrap>
+
+      {width > maxMobileWidth && info.videoLink && (
         <ButtonWrap>
+          <ButtonIcon src="/icons/close/play.svg" />
           <ButtonText>Дивитись запис</ButtonText>
-          <ImgWrap>
-            <ButtonIcon src="/icons/close/play.svg" />
-          </ImgWrap>
         </ButtonWrap>
       )}
     </Wrap>
@@ -71,8 +87,8 @@ const Rate = styled.span`
   align-items: center;
   justify-content: center;
   padding-bottom: 0.4vh;
-  font-family: "namu-1750";
-  font-size: 3.6vh;
+  font-family: "murmure";
+  font-size: 4vh;
   z-index: 1;
 
   @media (max-width: 960px) {
@@ -86,6 +102,7 @@ const Rate = styled.span`
     font-size: 2em;
   }
 `;
+
 const Close = styled.div`
   display: flex;
   align-items: center;
@@ -99,6 +116,12 @@ const Close = styled.div`
   background: #2a2a2a;
   border-radius: 10px;
   z-index: 1;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.4;
+  }
+
   @media (max-width: 960px) {
     background: #fffcfc;
     top: 6vh;
@@ -106,6 +129,7 @@ const Close = styled.div`
     width: 6vh;
   }
 `;
+
 const CloseIcon = styled.img`
   height: 5vh;
   width: 5vh;
@@ -116,47 +140,55 @@ const CloseIcon = styled.img`
   }
 `;
 
-const DateWrap = styled.div`
-  height: 10vh;
+const BottomWrap = styled.div`
   position: absolute;
+  bottom: 6vh;
   display: flex;
   flex-direction: row;
-  left: 0;
-  bottom: 4vh;
-  border-radius: 10px;
-  padding: 1vh;
-  background: rgba(217, 217, 217, 0.21);
-  @media (max-width: 960px) {
-    left: 4vw;
-  }
 `;
-const DateText = styled.span`
-  background: #2b2a2a;
-  border-radius: 10px;
-  color: #b11212;
-  font-family: "namu-1750";
-  font-size: 2.8vh;
-  padding: 2vh 1vw;
-`;
-const Dates = styled.div`
+
+const DateWrap = styled.div`
+  height: 8vh;
   display: flex;
   flex-direction: row;
   align-items: center;
-  background: #676767;
+  border-radius: 10px;
+  padding: 1vh;
+  background: rgba(217, 217, 217, 0.21);
+`;
+
+const DateText = styled.span`
+  background: transparent;
+  text-transform: uppercase;
   border-radius: 10px;
   font-family: "namu-1750";
   font-size: 2vh;
-  padding: 0 1.6vw;
+  padding: 0 1vw;
+`;
+
+const Dates = styled.div`
+  height: 6vh;
+  padding: 0 2vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: rgba(103, 103, 103, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  font-family: "namu-1750";
+  font-size: 2vh;
+
   @media (max-width: 960px) {
     font-size: 1em;
     background: #fff;
     padding: 0 4vw;
   }
 `;
+
 const Line = styled.div`
-  width: 24px;
-  height: 1px;
-  border: 1px solid #b11212;
+  width: 1px;
+  height: 28px;
+  border: 1px solid #fff;
   margin: 0 1vw;
   @media (max-width: 960px) {
     border-color: #828282;
@@ -170,65 +202,62 @@ const Date = styled.span`
 `;
 
 const RemarksWrap = styled.ul`
-  position: absolute;
-  bottom: 4vh;
-  left: 38vw;
-  @media (max-width: 960px) {
-    bottom: -12vh;
-    left: 0vw;
-  }
+  margin-left: 2vw;
 `;
 const Remark = styled.li`
   font-family: "namu-1750";
+  color: #b3b3b3;
   font-size: 1.6vh;
 `;
 const ButtonWrap = styled.div`
-  height: 10vh;
+  height: 8vh;
   position: absolute;
   display: flex;
   flex-direction: row;
+  align-items: center;
   right: 0;
-  bottom: 4vh;
+  bottom: 6vh;
   border-radius: 10px;
   padding: 1vh;
   background: rgba(217, 217, 217, 0.21);
 `;
 const ButtonText = styled.span`
+  height: 6vh;
   display: flex;
   align-items: center;
-  background: #676767;
+  background: #fff;
+  color: #000;
   border-radius: 10px;
   font-family: "namu-1750";
+  text-transform: uppercase;
   font-size: 2vh;
   padding: 0 1.6vw 0.4vh;
 `;
-const ImgWrap = styled.div`
-  height: 8vh;
-  width: 8vh;
-  padding-left: 0.2vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #2b2a2a;
-  border-radius: 10px;
+
+const ButtonIcon = styled.img`
+  height: 3vh;
+  width: auto;
+  margin: 0 1.6vw;
 `;
-const ButtonIcon = styled.img``;
-const Title = styled(Prop)`
-  width: 42vw;
+
+const TitleWrap = styled.div`
+  display: flex;
+  flex-direction: column;
   position: absolute;
-  bottom: 12vh;
+  bottom: 24vh;
+  z-index: 10;
+  width: 36vw;
+`;
+
+const Title = styled(Prop)`
+  padding: 0;
   font-size: 10vh;
   text-align: left;
-  @media (max-width: 960px) {
-    bottom: 26vh;
-    left: 4vw;
-    padding: 0;
-  }
 `;
+
 const Type = styled(Prop2)`
-  left: 0;
-  top: initial;
-  bottom: 28vh;
+  position: initial;
+
   @media (max-width: 960px) {
     border: none;
     padding: 2vh 0 0;
@@ -236,9 +265,6 @@ const Type = styled(Prop2)`
     font-size: 0.8em;
     height: 4vh;
     width: 36vw;
-    left: 4vw;
-    top: initial;
-    bottom: 22vh;
   }
 `;
 
