@@ -158,7 +158,7 @@ const DateWrap = styled.div`
   align-items: center;
   border-radius: 10px;
   padding: 1vh;
-  background: rgba(217, 217, 217, 0.21);
+  background: rgba(217, 217, 217, 0.1);
 `;
 
 const DateText = styled.span`
@@ -223,7 +223,7 @@ const ButtonWrap = styled.div`
   bottom: 6vh;
   border-radius: 10px;
   padding: 1vh;
-  background: rgba(217, 217, 217, 0.21);
+  background: rgba(217, 217, 217, 0.1);
 `;
 const ButtonText = styled.span`
   height: 6vh;

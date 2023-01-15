@@ -34,13 +34,13 @@ const Wrap = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 2vh 0;
+  padding: 4vh 0;
   border-bottom: 2px solid #fff;
 `;
 const Name = styled.span`
   font-family: "murmure";
-  color: #9a9a9a;
-  font-size: 6vh;
+  color: #eeeeee;
+  font-size: 8vh;
   padding-bottom: 1vh;
   @media (max-width: 960px) {
     font-size: 2em;

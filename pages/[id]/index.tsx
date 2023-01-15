@@ -79,7 +79,7 @@ const Wrap = styled.div`
 `;
 
 const TeamInfo = styled.div`
-  margin-top: 24vh;
+  margin-top: 28vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -91,13 +91,13 @@ const TeamInfo = styled.div`
 
 const TitleTeam = styled.span`
   font-family: "namu-1400";
-  font-size: 4vh;
+  font-size: 5vh;
   text-transform: uppercase;
 `;
 
 const TeamMembers = styled.div`
   width: 64%;
-  margin-top: 3vh;
+  margin-top: 2vh;
   border-top: 2px solid #fff;
   @media (max-width: 960px) {
     width: 100%;
@@ -105,10 +105,11 @@ const TeamMembers = styled.div`
 `;
 
 const DateText = styled.div`
-  margin-top: 20vh;
+  margin-top: 24vh;
   font-family: "namu-1400";
   text-transform: uppercase;
-  font-size: 32vh;
+  font-size: 28vh;
+  line-height: 28vh;
   text-align: right;
   @media (max-width: 960px) {
     margin-top: 12vh;
@@ -118,7 +119,7 @@ const DateText = styled.div`
 
 const EmptyText = styled.span`
   font-family: "murmure";
-  font-size: 34vh;
+  font-size: 36vh;
   text-transform: uppercase;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;

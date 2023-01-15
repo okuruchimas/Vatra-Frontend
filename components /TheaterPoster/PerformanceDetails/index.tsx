@@ -2,8 +2,6 @@ import React from "react";
 import RedTitle from "../../layout/RedTitle";
 import { TitleFragment } from "../../AboutUs";
 import parse from "html-react-parser";
-import { ArrowRight } from "../../OurTeam";
-import { Circle } from "../../JoinUs";
 import styled from "@emotion/styled";
 
 type Props = {
@@ -24,16 +22,12 @@ const PerformanceDetail = ({
   return (
     <Wrap>
       <RedTitle text="опис  вистави" />
-      <TitleFragment>{bigTitle1}</TitleFragment>
+      <TitleFragment marginTop={2}>{bigTitle1}</TitleFragment>
       {bigTitle2 && <TitleFragment last>{bigTitle2}</TitleFragment>}
       <InfoWrap>
         <DescriptionWrap>
-          <DescriptionTitle>{smallTitle}</DescriptionTitle>
+          <DescriptionTitle>{parse(smallTitle)}</DescriptionTitle>
           <Description>{parse(description)}</Description>
-          <Button>
-            <ArrowRight src="/icons/arrows/arrowRight.svg" />
-            <Circle isEmpty />
-          </Button>
         </DescriptionWrap>
         <PhotosWrap>
           <Photo link={images[0]} />
@@ -48,7 +42,7 @@ const PerformanceDetail = ({
 export default PerformanceDetail;
 
 const Wrap = styled.div`
-  margin-top: 8vh;
+  margin-top: 20vh;
   display: flex;
   flex-direction: column;
   @media (max-width: 960px) {
@@ -64,14 +58,14 @@ const Wrap = styled.div`
 const InfoWrap = styled.div`
   display: flex;
   flex-direction: row;
-  margin-top: 12vh;
+  margin-top: 28vh;
   @media (max-width: 960px) {
     flex-direction: column;
   }
 `;
 
 const DescriptionWrap = styled.div`
-  width: 38%;
+  width: 45%;
   @media (max-width: 960px) {
     width: 86%;
   }
@@ -89,6 +83,7 @@ const DescriptionTitle = styled.span`
 
 const Description = styled.div`
   padding-top: 4vh;
+  padding-left: 6vw;
 
   p {
     font-family: "namu-1750";
@@ -100,46 +95,31 @@ const Description = styled.div`
     }
   }
 `;
-const Button = styled.div`
-  margin-top: 10vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  height: min-content;
-  cursor: pointer;
-  &:hover {
-    opacity: 0.8;
-    img {
-      transform: translatex(32px);
-      z-index: 1;
-    }
-  }
-  @media (max-width: 960px) {
-    display: none;
-  }
-`;
 
 const PhotosWrap = styled.div`
+  display: flex;
+  flex-direction: row;
   position: relative;
-  width: 62%;
+  width: 55%;
+  height: 100vh;
   @media (max-width: 960px) {
     width: 100%;
   }
 `;
 
 const Photo = styled.div<{ link: string }>`
-  width: 28vw;
+  height: 80vh;
   background-image: ${({ link }) => `url(${link})`};
   border-radius: 12px;
   background-size: cover;
   aspect-ratio: 600/900;
   background-position: center;
 
-  position: absolute;
-  left: 8vw;
-  bottom: -4vh;
+  position: relative;
+  left: 4vw;
+  bottom: 12vh;
   transform: rotate(-6deg);
-  z-index: 3;
+  z-index: 1;
   @media (max-width: 960px) {
     position: initial;
     transform: rotate(0);
@@ -149,15 +129,15 @@ const Photo = styled.div<{ link: string }>`
 `;
 
 const SecondPhoto = styled(Photo)`
-  left: 18vw;
-  bottom: 10vh;
-  transform: rotate(-0.5deg);
+  left: -16vw;
+  bottom: -8vh;
+  transform: rotate(0);
   z-index: 2;
 `;
 
 const ThirdPhoto = styled(Photo)`
-  left: 26vw;
-  bottom: 28vh;
+  left: -40vw;
+  bottom: -24vh;
   transform: rotate(6deg);
-  z-index: 1;
+  z-index: 3;
 `;

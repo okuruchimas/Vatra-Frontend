@@ -15,7 +15,7 @@ const Wrap = styled.span`
   text-transform: uppercase;
   font-family: "namu-1750";
   padding-bottom: 4vh;
-  font-size: 2.4vh;
+  font-size: 3.2vh;
   color: #b11212;
   border-bottom: 1px solid #ffff;
 
