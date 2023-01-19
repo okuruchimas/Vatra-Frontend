@@ -46,7 +46,7 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   @media (max-width: 960px) {
-    margin-top: 20vh;
+    margin-top: 18vh;
     background: rgba(158, 145, 145, 0.16);
     border-radius: 30px;
     padding: 8vh 4vw;
@@ -74,7 +74,7 @@ const DescriptionWrap = styled.div`
 const DescriptionTitle = styled.span`
   text-transform: uppercase;
   font-family: "namu-1400";
-  font-size: 4vh;
+  font-size: 4.4vh;
   color: #fff;
   @media (max-width: 960px) {
     font-size: 1.4em;
@@ -82,14 +82,13 @@ const DescriptionTitle = styled.span`
 `;
 
 const Description = styled.div`
-  padding-top: 4vh;
-  padding-left: 6vw;
+  padding: 4vh 4vw 0;
 
   p {
     font-family: "namu-1750";
     font-size: 2.4vh;
     padding-left: 2vw;
-    color: #b5b5b5;
+    color: #cecece;
     @media (max-width: 960px) {
       padding: 0 6vw;
     }

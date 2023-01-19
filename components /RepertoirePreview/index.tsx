@@ -24,13 +24,7 @@ const RepertoirePreview = (info: Info) => {
       <Rate>16+</Rate>
 
       <Close onClick={() => back()}>
-        <CloseIcon
-          src={
-            width > maxMobileWidth
-              ? "/icons/close/close.svg"
-              : "/icons/close/closeBlack.svg"
-          }
-        />
+        <CloseIcon src={"/icons/close/close.svg"} />
       </Close>
 
       <TitleWrap>
@@ -47,7 +41,9 @@ const RepertoirePreview = (info: Info) => {
             {info.dates.map((date, index) => (
               <React.Fragment key={date}>
                 <Date> {date}</Date>
-                {index !== info.dates.length - 1 && <Line />}
+                {index !== info.dates.length - 1 && width > maxMobileWidth && (
+                  <Line />
+                )}
               </React.Fragment>
             ))}
           </Dates>
@@ -96,14 +92,12 @@ const Rate = styled.span`
   z-index: 1;
 
   @media (max-width: 960px) {
-    background: #fffcfc;
-    font-family: "murmure";
-    color: #404040;
-    opacity: 0.65;
+    opacity: 1;
+    background: rgba(103, 103, 103, 0.5);
     top: 6vh;
-    height: 6vh;
-    width: 6vh;
-    font-size: 2em;
+    width: 60px;
+    height: 60px;
+    font-size: 2.6em;
   }
 `;
 
@@ -127,10 +121,11 @@ const Close = styled.div`
   }
 
   @media (max-width: 960px) {
-    background: #fffcfc;
+    opacity: 1;
+    background: rgba(103, 103, 103, 0.5);
     top: 6vh;
-    height: 6vh;
-    width: 6vh;
+    height: 60px;
+    width: 60px;
   }
 `;
 
@@ -149,16 +144,27 @@ const BottomWrap = styled.div`
   bottom: 6vh;
   display: flex;
   flex-direction: row;
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+    bottom: -2vh;
+  }
 `;
 
 const DateWrap = styled.div`
   height: 8vh;
+  width: min-content;
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 15px;
   padding: 1vh;
   background: rgba(217, 217, 217, 0.1);
+  @media (max-width: 960px) {
+    height: auto;
+    padding: 1.2vh;
+    background: rgba(217, 217, 217, 0.2);
+  }
 `;
 
 const DateText = styled.span`
@@ -178,14 +184,15 @@ const Dates = styled.div`
   align-items: center;
   background: rgba(103, 103, 103, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
+  border-radius: 15px;
   font-family: "namu-1750";
   font-size: 2vh;
 
   @media (max-width: 960px) {
+    height: auto;
     font-size: 1em;
-    background: #fff;
-    padding: 0 4vw;
+    padding: 1.4vh 4vw;
+    border: 1px solid rgba(255, 255, 255, 0.25);
   }
 `;
 
@@ -194,24 +201,34 @@ const Line = styled.div`
   height: 28px;
   border: 1px solid #fff;
   margin: 0 1vw;
-  @media (max-width: 960px) {
-    border-color: #828282;
-    width: 16px;
-  }
 `;
 const Date = styled.span`
   @media (max-width: 960px) {
-    color: #828282;
+    margin: 0 2vw;
   }
 `;
 
 const RemarksWrap = styled.ul`
   margin-left: 2vw;
+  @media (max-width: 960px) {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 10vh;
+  }
 `;
 const Remark = styled.li`
   font-family: "namu-1750";
   color: #b3b3b3;
   font-size: 1.6vh;
+  @media (max-width: 960px) {
+    color: #fff;
+
+    &::marker {
+      color: #b11212;
+    }
+  }
 `;
 const ButtonWrap = styled.div`
   height: 8vh;
@@ -251,12 +268,19 @@ const TitleWrap = styled.div`
   bottom: 20vh;
   z-index: 10;
   width: 36vw;
+  @media (max-width: 960px) {
+    flex-direction: column-reverse;
+    bottom: 18vh;
+  }
 `;
 
 const Title = styled(Prop)`
   padding: 0;
   font-size: 10vh;
   text-align: left;
+  @media (max-width: 960px) {
+    font-size: 7vh;
+  }
 `;
 
 const Type = styled(Prop2)`
@@ -264,10 +288,9 @@ const Type = styled(Prop2)`
 
   @media (max-width: 960px) {
     border: none;
-    padding: 2vh 0 0;
+    padding: 1vh 0 0;
     color: #aeaeae;
     font-size: 0.8em;
-    height: 4vh;
     width: 36vw;
   }
 `;
@@ -278,7 +301,7 @@ const Image = styled.img`
   position: relative;
   left: -4vw;
   @media (max-width: 960px) {
-    height: 96vh;
+    height: 80vh;
     width: 100vw;
     object-fit: cover;
   }

@@ -99,7 +99,7 @@ const TitleTeam = styled.span`
 const TeamMembers = styled.div`
   width: 64%;
   margin-top: 2vh;
-  border-top: 2px solid #fff;
+  border-top: 1px solid #fff;
   @media (max-width: 960px) {
     width: 100%;
   }
