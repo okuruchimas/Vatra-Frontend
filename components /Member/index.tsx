@@ -36,12 +36,16 @@ const Wrap = styled.div`
   align-items: center;
   padding: 4vh 0;
   border-bottom: 2px solid #fff;
+  @media (max-width: 960px) {
+    padding: 2vh 0;
+  }
 `;
 const Name = styled.span`
   font-family: "murmure";
   color: #eeeeee;
   font-size: 8vh;
   padding-bottom: 1vh;
+  width: 50%;
   @media (max-width: 960px) {
     font-size: 2em;
   }
@@ -50,7 +54,7 @@ const SuperPower = styled(Prop)`
   @media (max-width: 960px) {
     margin: 0;
     text-transform: uppercase;
-    font-size: 1.6vh;
+    font-size: 1.2vh;
   }
 `;
 

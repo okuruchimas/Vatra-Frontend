@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import RepertoirePreview from "../../components /RepertoirePreview";
+import PerformanceDetail from "../../components /PerformanceDetails";
 import Member from "../../components /Member";
-import PerformanceDetail from "../../components /TheaterPoster/PerformanceDetails";
 import {
   PerformanceType,
   TestArr,
@@ -94,6 +94,9 @@ const TitleTeam = styled.span`
   font-family: "namu-1400";
   font-size: 5vh;
   text-transform: uppercase;
+  @media (max-width: 960px) {
+    font-size: 4vh;
+  }
 `;
 
 const TeamMembers = styled.div`
@@ -101,6 +104,7 @@ const TeamMembers = styled.div`
   margin-top: 2vh;
   border-top: 1px solid #fff;
   @media (max-width: 960px) {
+    margin-top: 8vh;
     width: 100%;
   }
 `;
@@ -113,8 +117,9 @@ const DateText = styled.div`
   line-height: 28vh;
   text-align: right;
   @media (max-width: 960px) {
-    margin-top: 12vh;
+    margin: 12vh 0 2vh;
     font-size: 3.6em;
+    line-height: 8vh;
   }
 `;
 
