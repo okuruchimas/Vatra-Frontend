@@ -3,6 +3,10 @@ import RedTitle from "../../layout/RedTitle";
 import { TitleFragment } from "../../AboutUs";
 import parse from "html-react-parser";
 import styled from "@emotion/styled";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Autoplay, EffectCoverflow, FreeMode, Pagination } from "swiper";
 
 type Props = {
   bigTitle1: string;
@@ -29,6 +33,20 @@ const PerformanceDetail = ({
           <DescriptionTitle>{parse(smallTitle)}</DescriptionTitle>
           <Description>{parse(description)}</Description>
         </DescriptionWrap>
+        <Container
+          slidesPerView={"auto"}
+          spaceBetween={20}
+          pagination={{
+            clickable: true,
+          }}
+          loop
+        >
+          {images.map((item) => (
+            <Slide key={item}>
+              <Photo link={item} />
+            </Slide>
+          ))}
+        </Container>
         <PhotosWrap>
           <Photo link={images[0]} />
           <SecondPhoto link={images[1]} />
@@ -49,7 +67,7 @@ const Wrap = styled.div`
     margin-top: 18vh;
     background: rgba(158, 145, 145, 0.16);
     border-radius: 30px;
-    padding: 8vh 4vw;
+    padding: 4vh 4vw;
     width: 100vw;
     margin-left: -4vw;
   }
@@ -60,6 +78,7 @@ const InfoWrap = styled.div`
   flex-direction: row;
   margin-top: 28vh;
   @media (max-width: 960px) {
+    margin-top: 8vh;
     flex-direction: column;
   }
 `;
@@ -67,7 +86,7 @@ const InfoWrap = styled.div`
 const DescriptionWrap = styled.div`
   width: 45%;
   @media (max-width: 960px) {
-    width: 86%;
+    width: 100%;
   }
 `;
 
@@ -90,6 +109,7 @@ const Description = styled.div`
     padding-left: 2vw;
     color: #cecece;
     @media (max-width: 960px) {
+      font-size: 1.8vh;
       padding: 0 6vw;
     }
   }
@@ -103,7 +123,22 @@ const PhotosWrap = styled.div`
   height: 100vh;
   @media (max-width: 960px) {
     width: 100%;
+    height: auto;
   }
+`;
+const Container = styled(Swiper)`
+  width: 100vw;
+  margin-left: -4vw;
+  padding: 50px 0;
+`;
+
+const Slide = styled(SwiperSlide)`
+  //background-position: center;
+  //background-size: cover;
+  width: 280px !important;
+  margin-left: 4vw;
+  //height: 300px;
+  //background: #000;
 `;
 
 const Photo = styled.div<{ link: string }>`
@@ -122,7 +157,8 @@ const Photo = styled.div<{ link: string }>`
   @media (max-width: 960px) {
     position: initial;
     transform: rotate(0);
-    width: 68vw;
+    width: 280px;
+    height: 260px;
     aspect-ratio: 280/260;
   }
 `;

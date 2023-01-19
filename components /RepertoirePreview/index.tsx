@@ -146,6 +146,7 @@ const BottomWrap = styled.div`
   flex-direction: row;
 
   @media (max-width: 960px) {
+    width: 100%;
     flex-direction: column;
     bottom: -2vh;
   }
@@ -211,6 +212,8 @@ const Date = styled.span`
 const RemarksWrap = styled.ul`
   margin-left: 2vw;
   @media (max-width: 960px) {
+    padding: 0;
+    margin-left: 0;
     position: relative;
     display: flex;
     flex-direction: column;
