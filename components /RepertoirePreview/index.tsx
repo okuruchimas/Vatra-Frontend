@@ -154,7 +154,7 @@ const BottomWrap = styled.div`
 
 const DateWrap = styled.div`
   height: 8vh;
-  width: min-content;
+  width: max-content;
   display: flex;
   flex-direction: row;
   align-items: center;
