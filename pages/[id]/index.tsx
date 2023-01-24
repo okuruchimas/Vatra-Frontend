@@ -95,7 +95,7 @@ const TitleTeam = styled.span`
   font-size: 5vh;
   text-transform: uppercase;
   @media (max-width: 960px) {
-    font-size: 4vh;
+    font-size: 3vh;
   }
 `;
 
@@ -104,7 +104,7 @@ const TeamMembers = styled.div`
   margin-top: 2vh;
   border-top: 1px solid #fff;
   @media (max-width: 960px) {
-    margin-top: 8vh;
+    margin-top: 7vh;
     width: 100%;
   }
 `;

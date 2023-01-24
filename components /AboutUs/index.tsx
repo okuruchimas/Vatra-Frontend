@@ -66,7 +66,7 @@ export const TitleFragment = styled.span<{
 
   @media (max-width: 960px) {
     line-height: initial;
-    font-size: 8vh;
+    font-size: 7.6vh;
   }
 `;
 

@@ -37,7 +37,7 @@ const Wrap = styled.div`
   padding: 4vh 0;
   border-bottom: 2px solid #fff;
   @media (max-width: 960px) {
-    padding: 2vh 0;
+    padding: 1vh 0;
   }
 `;
 const Name = styled.span`

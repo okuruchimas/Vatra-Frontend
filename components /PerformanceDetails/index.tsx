@@ -4,6 +4,7 @@ import { TitleFragment } from "../AboutUs";
 import parse from "html-react-parser";
 import styled from "@emotion/styled";
 import PerformancePhotos from "./performancePhotos";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 interface Props {
   bigTitle1: string;
@@ -20,11 +21,19 @@ const PerformanceDetail = ({
   description,
   images,
 }: Props) => {
+  const { isDesktopWidth } = useWindowDimensions();
+
   return (
     <Wrap>
       <RedTitle text="опис  вистави" />
-      <TitleFragment marginTop={2}>{bigTitle1}</TitleFragment>
-      {bigTitle2 && <TitleFragment last>{bigTitle2}</TitleFragment>}
+      <TitleFragment marginTop={isDesktopWidth ? 2 : 1}>
+        {bigTitle1}
+      </TitleFragment>
+      {bigTitle2 && (
+        <TitleFragment marginTop={isDesktopWidth ? 0 : -2} last>
+          {bigTitle2}
+        </TitleFragment>
+      )}
       <InfoWrap>
         <DescriptionWrap>
           <DescriptionTitle>{parse(smallTitle)}</DescriptionTitle>
@@ -44,7 +53,7 @@ const Wrap = styled.div`
   flex-direction: column;
   @media (max-width: 960px) {
     margin-top: 18vh;
-    background: rgba(158, 145, 145, 0.16);
+    background: rgba(203, 101, 101, 0.11);
     border-radius: 30px;
     padding: 4vh 4vw;
     width: 100vw;
@@ -57,7 +66,7 @@ const InfoWrap = styled.div`
   flex-direction: row;
   margin-top: 28vh;
   @media (max-width: 960px) {
-    margin-top: 8vh;
+    margin-top: 7vh;
     flex-direction: column;
   }
 `;
@@ -75,18 +84,20 @@ const DescriptionTitle = styled.span`
   font-size: 4.4vh;
   color: #fff;
   @media (max-width: 960px) {
-    font-size: 1.4em;
+    font-size: 2.4vh;
   }
 `;
 
 const Description = styled.div`
   padding: 4vh 4vw 0;
-
+  @media (max-width: 960px) {
+    padding-top: 1vh;
+  }
   p {
     font-family: "namu-1750";
     font-size: 2.4vh;
     padding-left: 2vw;
-    color: #cecece;
+    color: #b3b3b3;
     @media (max-width: 960px) {
       font-size: 1.8vh;
       padding: 0 6vw;
