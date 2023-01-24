@@ -29,6 +29,7 @@ const ImageSlider = ({ aboutUsSlides }: AboutUsSliderProps) => {
       <LeftBlock>
         <Img
           style={{ backgroundImage: `url(${aboutUsSlides[currentId].link})` }}
+          key={aboutUsSlides[currentId].link}
         ></Img>
         <LinesWrap>
           {aboutUsSlides.map((item, index) => (
@@ -44,7 +45,9 @@ const ImageSlider = ({ aboutUsSlides }: AboutUsSliderProps) => {
         </LinesWrap>
       </LeftBlock>
       <RightBlock>
-        <Description>{aboutUsSlides[currentId].text}</Description>
+        <Description key={aboutUsSlides[currentId].text}>
+          {aboutUsSlides[currentId].text}
+        </Description>
         <Pagination>
           <EmptyNumber>{currentNumber()}</EmptyNumber>
           <Number>/{"0" + aboutUsSlides.length}</Number>
