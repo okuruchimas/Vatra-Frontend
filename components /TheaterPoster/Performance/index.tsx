@@ -23,7 +23,7 @@ function hexToRgb(hex: string, opacity = 0.1) {
 }
 
 const Performance = (props: Props) => {
-  const { width, maxMobileWidth } = useWindowDimensions();
+  const { isDesktopWidth } = useWindowDimensions();
   const isBlack =
     props.index === 0 || props.index === props.performancesLength - 1;
   const isGray =
@@ -35,12 +35,12 @@ const Performance = (props: Props) => {
       isBlack={isBlack}
       isGray={isGray}
       performanceColor={
-        width > maxMobileWidth
+        isDesktopWidth
           ? hexToRgb(props.performanceColor)
           : hexToRgb(props.mobileColor.color, props.mobileColor.opacity)
       }
     >
-      {width < maxMobileWidth ? (
+      {!isDesktopWidth ? (
         <PerformanceImg
           isCentered={isBlack || isGray}
           title={props.title}
@@ -49,7 +49,7 @@ const Performance = (props: Props) => {
           date={props.date}
           imgUrl={props.imgUrl}
           type={props.type}
-          isDesktop={width > maxMobileWidth}
+          isDesktop={isDesktopWidth}
         />
       ) : props.left ? (
         <>
@@ -63,13 +63,13 @@ const Performance = (props: Props) => {
             date={props.date}
             imgUrl={props.imgUrl}
             type={props.type}
-            isDesktop={width > maxMobileWidth}
+            isDesktop={isDesktopWidth}
           />
         </>
       ) : (
         <>
           <PerformanceImg
-            isDesktop={width > maxMobileWidth}
+            isDesktop={isDesktopWidth}
             left={props.left}
             date={props.date}
             imgUrl={props.imgUrl}

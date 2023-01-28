@@ -334,7 +334,6 @@ export const TestArr = [
         "У виставі лунає жива музика",
         "Спільний проєкт театру Лесі та театру Варта",
       ],
-      dates: [11.12, 12.11, 12.12, 9.2, 10.1],
       bigTitle1: "Що спонукає людину",
       bigTitle2: "до вбивства?",
       smallTitle: "Яке воно — знайомство <br/> з війною?",
@@ -395,7 +394,6 @@ export const TestArr = [
     largeDescription: {
       imgUrl: "/icons/poster/bigImg6.png",
       videoRemarks: ["Присутня обсценна лексика"],
-      dates: [11.12, 12.11, 12.12, 9.2, 10.1],
       videoLink: "hjhjg",
       bigTitle1: "Закарбувався в нас",
       bigTitle2: "назавжди...",
@@ -480,7 +478,7 @@ interface MobileColor {
 export interface LargeDescription {
   imgUrl: string;
   videoRemarks: string[];
-  dates: number[];
+  dates?: number[];
   videoLink?: string;
   bigTitle1: string;
   bigTitle2?: string;
@@ -491,7 +489,7 @@ export interface LargeDescription {
   premiere: string;
 }
 
-interface Composition {
+export interface Composition {
   name: string;
   abilities: string[];
 }

@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
-import { AboutUsSliderProps } from "../aboutUsSlides";
+import { AboutUsSliderProps } from "../slider";
 
 const ImageSlider = ({ aboutUsSlides }: AboutUsSliderProps) => {
   const [currentId, setCurrentId] = useState<number>(0);

@@ -14,10 +14,7 @@ import {
 } from "../components /TheaterPoster/performances";
 import { OurTeamArray, Person } from "../components /OurTeam/ourTeam";
 import { Slides, Slide } from "../components /PhotoSlider/slides";
-import {
-  AboutUsSlide,
-  AboutUsSlides,
-} from "../components /AboutUs/aboutUsSlides";
+import { AboutUsSlide, AboutUsSlides } from "../components /AboutUs/slider";
 import Footer from "../components /layout/Footer";
 import StickyContainer from "../components /layout/StickyContainer";
 

@@ -4,7 +4,6 @@ import { Link } from "react-scroll";
 import { useRouter } from "next/router";
 import DonateButton from "../DonateButton";
 import useWindowDimensions from "../../../hooks/useWindowDimensions";
-import Footer from "../Footer";
 import { Global, css } from "@emotion/react";
 
 const arrMenu: { text: string; to: string }[] = [
@@ -14,7 +13,7 @@ const arrMenu: { text: string; to: string }[] = [
   { text: "Контакти", to: "contacts" },
 ];
 
-const GlobalStyles = css`
+const hiddenOverflow = css`
   body {
     overflow: hidden;
   }
@@ -23,7 +22,7 @@ const GlobalStyles = css`
 const Header = () => {
   const [isNavbar, setIsNavbar] = useState<boolean>(false);
   const { push } = useRouter();
-  const { width, maxMobileWidth } = useWindowDimensions();
+  const { isDesktopWidth } = useWindowDimensions();
 
   return (
     <Wrap>
@@ -42,9 +41,9 @@ const Header = () => {
         src={isNavbar ? "/icons/close/close.svg" : "/icons/logo/burger.svg"}
         onClick={() => setIsNavbar(!isNavbar)}
       />
-      {isNavbar && <Global styles={GlobalStyles} />}
+      {isNavbar && <Global styles={hiddenOverflow} />}
       <Navbar isNavbar={isNavbar}>
-        {width < maxMobileWidth && (
+        {!isDesktopWidth && (
           <ItemList
             to="/"
             spy={true}
@@ -74,7 +73,7 @@ const Header = () => {
           </ItemList>
         ))}
       </Navbar>
-      {width > maxMobileWidth && <DonateButton />}
+      {isDesktopWidth && <DonateButton />}
     </Wrap>
   );
 };

@@ -3,7 +3,8 @@ import RedTitle from "../layout/RedTitle";
 import ImageSlider from "./ImageSlider";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import { Fragment } from "react";
-import { AboutUsSliderProps } from "./aboutUsSlides";
+import { AboutUsSliderProps } from "./slider";
+import TitleFragment from "../layout/LargeTitle";
 
 const AboutUs = ({ aboutUsSlides }: AboutUsSliderProps) => {
   const { isDesktopWidth } = useWindowDimensions();
@@ -11,22 +12,16 @@ const AboutUs = ({ aboutUsSlides }: AboutUsSliderProps) => {
   return (
     <Wrap id="aboutUs">
       <RedTitle text="Історія театру" />
-      <TitleFragment marginTop={2}>Ми прийшли</TitleFragment>
-      <TitleFragment paddingLeft={isDesktopWidth ? 16 : 20}>
-        на спільну
-      </TitleFragment>
-      <TitleFragment paddingLeft={isDesktopWidth ? 40 : 12}>
-        зустріч
-      </TitleFragment>
-      <TitleFragment paddingLeft={isDesktopWidth ? 24 : 32}>
-        у вільний
-      </TitleFragment>
+      <TitleFragment mt={2} text="Ми прийшли" />
+      <TitleFragment pl={isDesktopWidth ? 16 : 20} text="на спільну" />
+      <TitleFragment pl={isDesktopWidth ? 40 : 12} text="зустріч" />
+      <TitleFragment pl={isDesktopWidth ? 24 : 32} text="у вільний" />
       {isDesktopWidth ? (
-        <TitleFragment last>простір “Дикий Дім”</TitleFragment>
+        <TitleFragment last text="простір “Дикий Дім”" />
       ) : (
         <Fragment>
-          <TitleFragment paddingLeft={22}>простір</TitleFragment>
-          <TitleFragment last>“Дикий Дім”</TitleFragment>
+          <TitleFragment pl={22} text="простір" />
+          <TitleFragment last text="“Дикий Дім”" />
         </Fragment>
       )}
       <Description>
@@ -47,27 +42,6 @@ const Wrap = styled.section`
   align-items: flex-start;
   width: 100vw;
   padding: 14vh 4vw 0;
-`;
-
-export const TitleFragment = styled.span<{
-  paddingLeft?: number;
-  last?: boolean;
-  marginTop?: number;
-}>`
-  padding-left: ${({ paddingLeft }) =>
-    paddingLeft ? `${paddingLeft}vw` : "initial"};
-  font-family: "murmure";
-  line-height: 26vh;
-  font-size: 24vh;
-  color: #fff;
-  width: 100%;
-  text-align: ${({ last }) => last && "right"};
-  margin-top: ${({ marginTop }) => (marginTop ? `${marginTop}vh` : "initial")};
-
-  @media (max-width: 960px) {
-    line-height: initial;
-    font-size: 7.6vh;
-  }
 `;
 
 const Description = styled.div`

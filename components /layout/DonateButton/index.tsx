@@ -5,12 +5,12 @@ import useWindowDimensions from "../../../hooks/useWindowDimensions";
 interface Props {}
 
 const DonateButton = ({}: Props) => {
-  const { width, maxMobileWidth } = useWindowDimensions();
+  const { isDesktopWidth } = useWindowDimensions();
 
   return (
     <Wrap>
       <Button>Donate</Button>
-      {width > maxMobileWidth && <Lang>EN</Lang>}
+      {isDesktopWidth && <Lang>EN</Lang>}
     </Wrap>
   );
 };

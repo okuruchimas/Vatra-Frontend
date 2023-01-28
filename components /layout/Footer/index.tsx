@@ -2,13 +2,16 @@ import styled from "@emotion/styled";
 import useWindowDimensions from "../../../hooks/useWindowDimensions";
 
 const Footer = () => {
-  const { width, maxMobileWidth } = useWindowDimensions();
+  const { isDesktopWidth } = useWindowDimensions();
   return (
     <Wrap>
-      <LinkWrap href="https://instagram.com/teatr_varta?igshid=YmMyMTA2M2Y=">
+      <LinkWrap
+        href="https://instagram.com/teatr_varta?igshid=YmMyMTA2M2Y="
+        target="_blank"
+      >
         <Logo
           src={
-            width > maxMobileWidth
+            isDesktopWidth
               ? "/icons/logo/instagram.svg"
               : "/icons/logo/instagramWhite.svg"
           }
@@ -16,7 +19,7 @@ const Footer = () => {
         />
         <Text>інстаграм</Text>
       </LinkWrap>
-      <LinkWrap href="mailto:theatre.varta@gmail.com">
+      <LinkWrap href="mailto:theatre.varta@gmail.com" target="_blank">
         <Text>theatre.varta@gmail.com</Text>
       </LinkWrap>
     </Wrap>

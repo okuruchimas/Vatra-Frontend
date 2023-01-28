@@ -3,29 +3,29 @@ import Bubble from "./Bubble";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 const Bubbles = () => {
-  const { width, maxMobileWidth } = useWindowDimensions();
+  const { isDesktopWidth } = useWindowDimensions();
 
   return (
     <Wrap>
       <Title>наші цінноcті</Title>
       <BubblesWrap>
         <Bubble
-          size={width > maxMobileWidth ? 20 : 28}
+          size={isDesktopWidth ? 20 : 28}
           animationTime={5}
-          top={width > maxMobileWidth ? 8 : 12}
-          left={width > maxMobileWidth ? 26 : 64}
+          top={isDesktopWidth ? 8 : 12}
+          left={isDesktopWidth ? 26 : 64}
           text="Актуальність"
         />
 
         <Bubble
-          size={width > maxMobileWidth ? 18.6 : 30}
+          size={isDesktopWidth ? 18.6 : 30}
           animationTime={7}
-          top={width > maxMobileWidth ? 6 : 26}
-          right={width > maxMobileWidth ? 8 : 20}
+          top={isDesktopWidth ? 6 : 26}
+          right={isDesktopWidth ? 8 : 20}
           text="Підтримка та розвиток"
         />
 
-        {width > maxMobileWidth && (
+        {isDesktopWidth && (
           <Bubble
             size={22}
             animationTime={7.7}
@@ -36,18 +36,18 @@ const Bubbles = () => {
         )}
 
         <Bubble
-          size={width > maxMobileWidth ? 16 : 36}
+          size={isDesktopWidth ? 16 : 36}
           animationTime={8}
-          top={width > maxMobileWidth ? 52 : 20}
-          left={width > maxMobileWidth ? 28 : 0}
+          top={isDesktopWidth ? 52 : 20}
+          left={isDesktopWidth ? 28 : 0}
           text="Любов і свобода самовираження"
         />
 
         <Bubble
-          size={width > maxMobileWidth ? 16 : 32}
+          size={isDesktopWidth ? 16 : 32}
           animationTime={8}
-          top={width > maxMobileWidth ? 44 : 4}
-          left={width > maxMobileWidth ? 4 : 28}
+          top={isDesktopWidth ? 44 : 4}
+          left={isDesktopWidth ? 4 : 28}
           text="Повага до свого коріння"
         />
       </BubblesWrap>

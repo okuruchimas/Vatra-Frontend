@@ -60,7 +60,7 @@ const ArrowDown = styled.img`
     }
   }
   @media (max-width: 960px) {
-    height: 32vh;
+    height: 30vh;
     width: 4vw;
   }
 `;
@@ -95,6 +95,6 @@ const BuyText = styled.span`
   @media (max-width: 960px) {
     font-size: 5em;
     line-height: 12vh;
-    margin-top: 8vh;
+    margin-top: 6vh;
   }
 `;

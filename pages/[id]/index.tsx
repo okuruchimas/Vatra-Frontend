@@ -1,15 +1,15 @@
 import styled from "@emotion/styled";
 import RepertoirePreview from "../../components /RepertoirePreview";
 import PerformanceDetail from "../../components /PerformanceDetails";
-import Member from "../../components /Member";
 import {
   PerformanceType,
   TestArr,
 } from "../../components /TheaterPoster/performances";
 import Footer from "../../components /layout/Footer";
+import PerformanceTeam from "../../components /PerformanceTeam";
 
 const Repertoire = ({ repertoire }: { repertoire: PerformanceType }) => {
-  if (!repertoire?.largeDescription) return;
+  if (!repertoire?.largeDescription) return null;
 
   return (
     <Wrap>
@@ -22,6 +22,7 @@ const Repertoire = ({ repertoire }: { repertoire: PerformanceType }) => {
         videoLink={repertoire.largeDescription.videoLink}
         remarks={repertoire.largeDescription.videoRemarks}
       />
+
       <PerformanceDetail
         bigTitle1={repertoire.largeDescription.bigTitle1}
         bigTitle2={repertoire.largeDescription.bigTitle2}
@@ -30,18 +31,8 @@ const Repertoire = ({ repertoire }: { repertoire: PerformanceType }) => {
         images={repertoire.largeDescription.images}
       />
 
-      <TeamInfo>
-        <TitleTeam>Cклад</TitleTeam>
-        <TeamMembers>
-          {repertoire.largeDescription.composition.map((item) => (
-            <Member
-              key={item.name}
-              name={item.name}
-              abilities={item.abilities}
-            />
-          ))}
-        </TeamMembers>
-      </TeamInfo>
+      <PerformanceTeam compositions={repertoire.largeDescription.composition} />
+
       <DateText>
         <EmptyText>Прем&lsquo;єра — </EmptyText>
         {repertoire.largeDescription.premiere}
@@ -77,36 +68,6 @@ export default Repertoire;
 const Wrap = styled.div`
   padding: 0 4vw;
   width: 100vw;
-`;
-
-const TeamInfo = styled.div`
-  margin-top: 32vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  @media (max-width: 960px) {
-    margin-top: 12vh;
-    flex-direction: column;
-  }
-`;
-
-const TitleTeam = styled.span`
-  font-family: "namu-1400";
-  font-size: 5vh;
-  text-transform: uppercase;
-  @media (max-width: 960px) {
-    font-size: 3vh;
-  }
-`;
-
-const TeamMembers = styled.div`
-  width: 64%;
-  margin-top: 2vh;
-  border-top: 1px solid #fff;
-  @media (max-width: 960px) {
-    margin-top: 7vh;
-    width: 100%;
-  }
 `;
 
 const DateText = styled.div`

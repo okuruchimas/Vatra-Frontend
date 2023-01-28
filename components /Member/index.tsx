@@ -9,19 +9,13 @@ type Props = {
 };
 
 const Member = (member: Props) => {
-  const { width, maxMobileWidth } = useWindowDimensions();
-
   return (
     <Wrap>
       <Name>{member.name}</Name>
       <AbilitiesWrap>
-        {width > maxMobileWidth ? (
-          member.abilities.map((item) => (
-            <SuperPower key={item}> {item}</SuperPower>
-          ))
-        ) : (
-          <SuperPower> {member.abilities[0]}</SuperPower>
-        )}
+        {member.abilities.map((item) => (
+          <SuperPower key={item}> {item}</SuperPower>
+        ))}
       </AbilitiesWrap>
     </Wrap>
   );
@@ -40,6 +34,7 @@ const Wrap = styled.div`
     padding: 1vh 0;
   }
 `;
+
 const Name = styled.span`
   font-family: "murmure";
   color: #eeeeee;
@@ -50,12 +45,22 @@ const Name = styled.span`
     font-size: 2em;
   }
 `;
-const SuperPower = styled(Prop)`
+
+const AbilitiesWrap = styled.div`
+  display: flex;
+  flex-flow: wrap;
+  justify-content: flex-end;
   @media (max-width: 960px) {
-    margin: 0;
-    text-transform: uppercase;
-    font-size: 1.2vh;
+    gap: 1vh;
   }
 `;
 
-const AbilitiesWrap = styled.div``;
+const SuperPower = styled(Prop)`
+  text-transform: uppercase;
+  width: max-content;
+  padding: 1vh 2vw;
+  @media (max-width: 960px) {
+    margin: 0;
+    font-size: 1.2vh;
+  }
+`;

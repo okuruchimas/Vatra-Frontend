@@ -1,10 +1,10 @@
 import React from "react";
 import RedTitle from "../layout/RedTitle";
-import { TitleFragment } from "../AboutUs";
 import parse from "html-react-parser";
 import styled from "@emotion/styled";
 import PerformancePhotos from "./performancePhotos";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
+import TitleFragment from "../layout/LargeTitle";
 
 interface Props {
   bigTitle1: string;
@@ -26,13 +26,9 @@ const PerformanceDetail = ({
   return (
     <Wrap>
       <RedTitle text="опис  вистави" />
-      <TitleFragment marginTop={isDesktopWidth ? 2 : 1}>
-        {bigTitle1}
-      </TitleFragment>
+      <TitleFragment mt={isDesktopWidth ? 2 : 1} text={bigTitle1} />
       {bigTitle2 && (
-        <TitleFragment marginTop={isDesktopWidth ? 0 : -2} last>
-          {bigTitle2}
-        </TitleFragment>
+        <TitleFragment mt={isDesktopWidth ? 0 : -2} text={bigTitle2} last />
       )}
       <InfoWrap>
         <DescriptionWrap>

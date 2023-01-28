@@ -10,13 +10,13 @@ interface Info {
   type: string;
   date: string;
   imgUrl: string;
-  dates: number[];
+  dates?: number[];
   videoLink?: string;
   remarks: string[];
 }
 
 const RepertoirePreview = (info: Info) => {
-  const { width, maxMobileWidth } = useWindowDimensions();
+  const { isDesktopWidth } = useWindowDimensions();
   const { back } = useRouter();
 
   return (
@@ -35,19 +35,19 @@ const RepertoirePreview = (info: Info) => {
       <Image alt="Preview" src={info.imgUrl} />
 
       <BottomWrap>
-        <DateWrap>
-          {width > maxMobileWidth && <DateText>дати показу</DateText>}
-          <Dates>
-            {info.dates.map((date, index) => (
-              <React.Fragment key={date}>
-                <Date> {date}</Date>
-                {index !== info.dates.length - 1 && width > maxMobileWidth && (
-                  <Line />
-                )}
-              </React.Fragment>
-            ))}
-          </Dates>
-        </DateWrap>
+        {info.dates && info.dates.length && (
+          <DateWrap>
+            {isDesktopWidth && <DateText>дати показу</DateText>}
+            <Dates>
+              {info.dates.map((date, index) => (
+                <React.Fragment key={date}>
+                  <Date> {date}</Date>
+                  {isDesktopWidth && <Line />}
+                </React.Fragment>
+              ))}
+            </Dates>
+          </DateWrap>
+        )}
 
         {info.remarks.length > 0 && (
           <RemarksWrap>
@@ -58,7 +58,7 @@ const RepertoirePreview = (info: Info) => {
         )}
       </BottomWrap>
 
-      {width > maxMobileWidth && info.videoLink && (
+      {isDesktopWidth && info.videoLink && (
         <ButtonWrap>
           <ButtonIcon src="/icons/close/play.svg" />
           <ButtonText>Дивитись запис</ButtonText>
@@ -148,7 +148,8 @@ const BottomWrap = styled.div`
   @media (max-width: 960px) {
     width: 100%;
     flex-direction: column;
-    bottom: -2vh;
+    bottom: initial;
+    top: 67vh;
   }
 `;
 
@@ -270,7 +271,7 @@ const TitleWrap = styled.div`
   position: absolute;
   bottom: 20vh;
   z-index: 10;
-  width: 36vw;
+  width: 72vw;
   @media (max-width: 960px) {
     flex-direction: column-reverse;
     bottom: 18vh;
