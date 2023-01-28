@@ -3,29 +3,29 @@ import Bubble from "./Bubble";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 const Bubbles = () => {
-  const { isDesktopWidth } = useWindowDimensions();
+  const { isDesktop } = useWindowDimensions();
 
   return (
     <Wrap>
       <Title>наші цінноcті</Title>
       <BubblesWrap>
         <Bubble
-          size={isDesktopWidth ? 20 : 28}
+          size={isDesktop ? 20 : 28}
           animationTime={5}
-          top={isDesktopWidth ? 8 : 12}
-          left={isDesktopWidth ? 26 : 64}
+          top={isDesktop ? 8 : 12}
+          left={isDesktop ? 26 : 64}
           text="Актуальність"
         />
 
         <Bubble
-          size={isDesktopWidth ? 18.6 : 30}
+          size={isDesktop ? 18.6 : 30}
           animationTime={7}
-          top={isDesktopWidth ? 6 : 26}
-          right={isDesktopWidth ? 8 : 20}
+          top={isDesktop ? 6 : 26}
+          right={isDesktop ? 8 : 20}
           text="Підтримка та розвиток"
         />
 
-        {isDesktopWidth && (
+        {isDesktop && (
           <Bubble
             size={22}
             animationTime={7.7}
@@ -36,18 +36,18 @@ const Bubbles = () => {
         )}
 
         <Bubble
-          size={isDesktopWidth ? 16 : 36}
+          size={isDesktop ? 16 : 36}
           animationTime={8}
-          top={isDesktopWidth ? 52 : 20}
-          left={isDesktopWidth ? 28 : 0}
+          top={isDesktop ? 52 : 20}
+          left={isDesktop ? 28 : 0}
           text="Любов і свобода самовираження"
         />
 
         <Bubble
-          size={isDesktopWidth ? 16 : 32}
+          size={isDesktop ? 16 : 32}
           animationTime={8}
-          top={isDesktopWidth ? 44 : 4}
-          left={isDesktopWidth ? 4 : 28}
+          top={isDesktop ? 44 : 4}
+          left={isDesktop ? 4 : 28}
           text="Повага до свого коріння"
         />
       </BubblesWrap>

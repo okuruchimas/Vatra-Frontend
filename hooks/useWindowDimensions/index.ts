@@ -1,42 +1,31 @@
 import { useState, useEffect } from "react";
 
-function getWindowDimensions() {
-  const { innerWidth: width, innerHeight: height } = window;
-  const maxMobileWidth = 960;
-  const isDesktopWidth = width >= maxMobileWidth;
+function getWindowDimension() {
+  const { innerWidth: width } = window;
   return {
-    width,
-    height,
-    maxMobileWidth,
-    isDesktopWidth,
+    isDesktop: width >= 960,
   };
 }
 
 export default function useWindowDimensions(): {
-  height: number;
-  width: number;
-  maxMobileWidth: number;
-  isDesktopWidth: boolean;
+  isDesktop: boolean;
 } {
-  const [windowDimensions, setWindowDimensions] = useState({
-    height: 0,
-    width: 0,
-    maxMobileWidth: 0,
-    isDesktopWidth: false,
+  const [windowDimension, setWindowDimension] = useState({
+    isDesktop: false,
   });
 
   useEffect(() => {
-    setWindowDimensions(getWindowDimensions());
+    setWindowDimension(getWindowDimension());
   }, []);
 
   useEffect(() => {
     function handleResize() {
-      setWindowDimensions(getWindowDimensions());
+      setWindowDimension(getWindowDimension());
     }
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return windowDimensions;
+  return windowDimension;
 }

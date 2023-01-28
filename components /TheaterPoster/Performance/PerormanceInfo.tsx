@@ -11,14 +11,14 @@ type Props = {
 
 const PerformanceInfo = ({ title, description, link }: Props) => {
   const { push } = useRouter();
-  const { isDesktopWidth } = useWindowDimensions();
+  const { isDesktop } = useWindowDimensions();
 
   return (
     <Wrap>
       <Title>{title}</Title>
       <Description>{description}</Description>
       <BuyWrap>
-        <Button text={isDesktopWidth ? "купити квитки" : "купити"} />
+        <Button text={isDesktop ? "купити квитки" : "купити"} />
         <Details onClick={() => push(link)}>
           <Dot src="/icons/arrows/redDot.svg" />
           Дізнатись більше

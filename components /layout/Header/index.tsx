@@ -22,7 +22,7 @@ const hiddenOverflow = css`
 const Header = () => {
   const [isNavbar, setIsNavbar] = useState<boolean>(false);
   const { push } = useRouter();
-  const { isDesktopWidth } = useWindowDimensions();
+  const { isDesktop } = useWindowDimensions();
 
   return (
     <Wrap>
@@ -43,7 +43,7 @@ const Header = () => {
       />
       {isNavbar && <Global styles={hiddenOverflow} />}
       <Navbar isNavbar={isNavbar}>
-        {!isDesktopWidth && (
+        {!isDesktop && (
           <ItemList
             to="/"
             spy={true}
@@ -73,7 +73,7 @@ const Header = () => {
           </ItemList>
         ))}
       </Navbar>
-      {isDesktopWidth && <DonateButton />}
+      {isDesktop && <DonateButton />}
     </Wrap>
   );
 };

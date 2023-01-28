@@ -9,9 +9,9 @@ interface Props {
   images: string[];
 }
 const PerformancePhotos = ({ images }: Props) => {
-  const { isDesktopWidth } = useWindowDimensions();
+  const { isDesktop } = useWindowDimensions();
 
-  return isDesktopWidth ? (
+  return isDesktop ? (
     <PhotosWrap>
       <Photo link={images[0]} />
       <SecondPhoto link={images[1]} />

@@ -1,7 +1,6 @@
 import React from "react";
 import { SuperPower as Prop } from "../OurTeam/PersonCard";
 import styled from "@emotion/styled";
-import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 type Props = {
   name: string;

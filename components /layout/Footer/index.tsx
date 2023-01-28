@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import useWindowDimensions from "../../../hooks/useWindowDimensions";
 
 const Footer = () => {
-  const { isDesktopWidth } = useWindowDimensions();
+  const { isDesktop } = useWindowDimensions();
   return (
     <Wrap>
       <LinkWrap
@@ -11,7 +11,7 @@ const Footer = () => {
       >
         <Logo
           src={
-            isDesktopWidth
+            isDesktop
               ? "/icons/logo/instagram.svg"
               : "/icons/logo/instagramWhite.svg"
           }

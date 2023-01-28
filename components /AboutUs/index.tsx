@@ -7,16 +7,16 @@ import { AboutUsSliderProps } from "./slider";
 import TitleFragment from "../layout/LargeTitle";
 
 const AboutUs = ({ aboutUsSlides }: AboutUsSliderProps) => {
-  const { isDesktopWidth } = useWindowDimensions();
+  const { isDesktop } = useWindowDimensions();
 
   return (
     <Wrap id="aboutUs">
       <RedTitle text="Історія театру" />
       <TitleFragment mt={2} text="Ми прийшли" />
-      <TitleFragment pl={isDesktopWidth ? 16 : 20} text="на спільну" />
-      <TitleFragment pl={isDesktopWidth ? 40 : 12} text="зустріч" />
-      <TitleFragment pl={isDesktopWidth ? 24 : 32} text="у вільний" />
-      {isDesktopWidth ? (
+      <TitleFragment pl={isDesktop ? 16 : 20} text="на спільну" />
+      <TitleFragment pl={isDesktop ? 40 : 12} text="зустріч" />
+      <TitleFragment pl={isDesktop ? 24 : 32} text="у вільний" />
+      {isDesktop ? (
         <TitleFragment last text="простір “Дикий Дім”" />
       ) : (
         <Fragment>

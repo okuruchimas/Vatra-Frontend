@@ -6,7 +6,7 @@ import DonateButton from "../layout/DonateButton";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 const Greeting = () => {
-  const { isDesktopWidth } = useWindowDimensions();
+  const { isDesktop } = useWindowDimensions();
 
   return (
     <Wrap>
@@ -17,16 +17,12 @@ const Greeting = () => {
           Створений під час війни в Україні.
         </LeftText>
         <ButtonsWrap>
-          {!isDesktopWidth && <DonateButton />}
-          {isDesktopWidth && (
-            <ArrowSmall src="/icons/arrows/arrowDownSmall.svg" />
-          )}
+          {!isDesktop && <DonateButton />}
+          {isDesktop && <ArrowSmall src="/icons/arrows/arrowDownSmall.svg" />}
           <Button to="poster" spy smooth offset={20} duration={2000} isDynamic>
             <Text>Дивитись квитки</Text>
           </Button>
-          {!isDesktopWidth && (
-            <ArrowSmall src="/icons/arrows/arrowDownSmall.svg" />
-          )}
+          {!isDesktop && <ArrowSmall src="/icons/arrows/arrowDownSmall.svg" />}
         </ButtonsWrap>
       </BuySection>
 
@@ -35,9 +31,9 @@ const Greeting = () => {
       <Info>
         <BlackGradient
           turnLeft
-          size={isDesktopWidth ? 30 : 64}
-          left={isDesktopWidth ? -16 : -38}
-          top={isDesktopWidth ? 68 : 62}
+          size={isDesktop ? 30 : 64}
+          left={isDesktop ? -16 : -38}
+          top={isDesktop ? 68 : 62}
           animationTime={16}
           src="/icons/gradients/left.svg"
         />
@@ -49,15 +45,15 @@ const Greeting = () => {
         </LeftBlock>
 
         <RightBlock>
-          {isDesktopWidth && <ArrowDown src="/icons/arrows/arrowDown.svg" />}
+          {isDesktop && <ArrowDown src="/icons/arrows/arrowDown.svg" />}
           <Description>
             Увібравши в себе митців і мисткинь з усієї країни, ми просуваємо та
             творимо сучасне українське мистецтво в такий турбулентний час.
           </Description>
           <BlackGradient
-            size={isDesktopWidth ? 36 : 60}
-            right={isDesktopWidth ? -32 : -40}
-            top={isDesktopWidth ? -8 : 8}
+            size={isDesktop ? 36 : 60}
+            right={isDesktop ? -32 : -40}
+            top={isDesktop ? -8 : 8}
             animationTime={20}
             src="/icons/gradients/right.svg"
           />

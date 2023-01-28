@@ -21,14 +21,14 @@ const PerformanceDetail = ({
   description,
   images,
 }: Props) => {
-  const { isDesktopWidth } = useWindowDimensions();
+  const { isDesktop } = useWindowDimensions();
 
   return (
     <Wrap>
       <RedTitle text="опис  вистави" />
-      <TitleFragment mt={isDesktopWidth ? 2 : 1} text={bigTitle1} />
+      <TitleFragment mt={isDesktop ? 2 : 1} text={bigTitle1} />
       {bigTitle2 && (
-        <TitleFragment mt={isDesktopWidth ? 0 : -2} text={bigTitle2} last />
+        <TitleFragment mt={isDesktop ? 0 : -2} text={bigTitle2} last />
       )}
       <InfoWrap>
         <DescriptionWrap>

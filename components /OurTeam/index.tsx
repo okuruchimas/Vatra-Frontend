@@ -9,21 +9,21 @@ import { OurTeamProps, Pagination as Props, Person } from "./ourTeam";
 const Pagination = new Props();
 
 const OurTeam = ({ members }: OurTeamProps) => {
-  const { isDesktopWidth } = useWindowDimensions();
+  const { isDesktop } = useWindowDimensions();
   const [postsToShow, setPostsToShow] = useState<Person[]>(
-    members.slice(0, isDesktopWidth ? 6 : 4)
+    members.slice(0, isDesktop ? 6 : 4)
   );
 
   useEffect(() => {
-    setPostsToShow(members.slice(0, isDesktopWidth ? 6 : 4));
-  }, [members, isDesktopWidth]);
+    setPostsToShow(members.slice(0, isDesktop ? 6 : 4));
+  }, [members, isDesktop]);
 
   return (
     <Wrap id="team">
       <Title>команда</Title>
       <Container>
         {postsToShow.map(({ name, role, superPower, url }, index) => (
-          <Slide key={index} firstPost={!isDesktopWidth ? false : 0 === index}>
+          <Slide key={index} firstPost={!isDesktop ? false : 0 === index}>
             <PersonCard
               index={index}
               key={name}
@@ -31,13 +31,13 @@ const OurTeam = ({ members }: OurTeamProps) => {
               role={role}
               superPower={superPower}
               url={url}
-              isPower={isDesktopWidth}
+              isPower={isDesktop}
             />
           </Slide>
         ))}
         <Button
           onClick={() =>
-            Pagination.paginate(members, setPostsToShow, isDesktopWidth)
+            Pagination.paginate(members, setPostsToShow, isDesktop)
           }
         >
           <ArrowRight src="/icons/arrows/arrowRight.svg" />

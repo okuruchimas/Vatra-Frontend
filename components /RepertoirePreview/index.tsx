@@ -16,7 +16,7 @@ interface Info {
 }
 
 const RepertoirePreview = (info: Info) => {
-  const { isDesktopWidth } = useWindowDimensions();
+  const { isDesktop } = useWindowDimensions();
   const { back } = useRouter();
 
   return (
@@ -37,12 +37,12 @@ const RepertoirePreview = (info: Info) => {
       <BottomWrap>
         {info.dates && info.dates.length && (
           <DateWrap>
-            {isDesktopWidth && <DateText>дати показу</DateText>}
+            {isDesktop && <DateText>дати показу</DateText>}
             <Dates>
               {info.dates.map((date, index) => (
                 <React.Fragment key={date}>
                   <Date> {date}</Date>
-                  {isDesktopWidth && <Line />}
+                  {isDesktop && <Line />}
                 </React.Fragment>
               ))}
             </Dates>
@@ -58,7 +58,7 @@ const RepertoirePreview = (info: Info) => {
         )}
       </BottomWrap>
 
-      {isDesktopWidth && info.videoLink && (
+      {isDesktop && info.videoLink && (
         <ButtonWrap>
           <ButtonIcon src="/icons/close/play.svg" />
           <ButtonText>Дивитись запис</ButtonText>
