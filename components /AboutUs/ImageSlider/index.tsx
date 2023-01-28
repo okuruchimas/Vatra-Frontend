@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
 import { AboutUsSliderProps } from "../slider";
+import { keyframes } from "@emotion/react";
+import { fadeIn } from "react-animations";
 
 const ImageSlider = ({ aboutUsSlides }: AboutUsSliderProps) => {
   const [currentId, setCurrentId] = useState<number>(0);
@@ -19,7 +21,7 @@ const ImageSlider = ({ aboutUsSlides }: AboutUsSliderProps) => {
         return setCurrentId(0);
       }
       return setCurrentId(currentId + 1);
-    }, 6000);
+    }, 9000);
 
     return () => clearInterval(interval);
   }, [aboutUsSlides.length, currentId]);
@@ -74,6 +76,7 @@ const Wrap = styled.div`
 `;
 
 const LeftBlock = styled.div``;
+
 const LineWrap = styled.div`
   padding: 0 0 2.4vh;
   cursor: pointer;
@@ -117,11 +120,11 @@ const LoadingLine = styled.div<{
     border-radius: 24px;
     background: #b11212;
     animation: ${({ isAnimation }) =>
-      isAnimation ? "loading-line 6s linear infinite;" : "none"};
+      isAnimation ? "loading-line 9s linear infinite;" : "none"};
 
     @media (max-width: 960px) {
       animation: ${({ isAnimation }) =>
-        isAnimation ? "loading-line-mobile 6s linear infinite;" : "none"};
+        isAnimation ? "loading-line-mobile 9s linear infinite;" : "none"};
     }
   }
   @keyframes loading-line {
@@ -166,12 +169,15 @@ const Description = styled.span`
   }
 `;
 
+const fadeInAnimation = keyframes`${fadeIn}`;
+
 const Img = styled.div`
   width: 46vw;
   border-radius: 12px;
   background-size: cover;
   aspect-ratio: 181/190;
   background-position: center;
+  animation: 3s ${fadeInAnimation};
   @media (max-width: 960px) {
     width: 92vw;
     aspect-ratio: 350/284;

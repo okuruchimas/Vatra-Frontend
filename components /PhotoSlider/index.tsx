@@ -8,12 +8,12 @@ const PhotoSlider = ({ slides }: PhotoSliderProps) => {
       <SliderTrack>
         {slides.map(({ url }) => (
           <Slide key={url}>
-            <Img src={url} loading="lazy" />
+            <Img src={url} />
           </Slide>
         ))}
         {slides.map(({ url }, index) => (
           <Slide key={index}>
-            <Img src={url} loading="lazy" />
+            <Img src={url} />
           </Slide>
         ))}
       </SliderTrack>
@@ -30,7 +30,7 @@ const Slider = styled.section`
   overflow: hidden;
   padding: 40vh 0 6vh;
   @media (max-width: 960px) {
-    padding: 14vh 0;
+    padding: 4vh 0;
   }
 `;
 

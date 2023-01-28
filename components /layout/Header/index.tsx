@@ -65,7 +65,7 @@ const Header = () => {
             offset={20}
             duration={2000}
             onClick={() => {
-              setIsNavbar(!isNavbar);
+              setIsNavbar(isDesktop ? false : !isNavbar);
             }}
             key={index}
           >

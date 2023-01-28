@@ -4,7 +4,7 @@ import { Preview as Prop } from "../Greeting";
 const MovingText = () => {
   return (
     <Wrap>
-      <Preview src="/icons/logo/largeText.svg" loading="lazy" />
+      <Preview src="/icons/logo/largeText.svg" />
     </Wrap>
   );
 };

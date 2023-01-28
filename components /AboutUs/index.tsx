@@ -41,7 +41,8 @@ const Wrap = styled.section`
   flex-direction: column;
   align-items: flex-start;
   width: 100vw;
-  padding: 14vh 4vw 0;
+  margin-top: 8vh;
+  padding: 6vh 4vw 0;
 `;
 
 const Description = styled.div`

@@ -47,11 +47,13 @@ const Wrap = styled.section`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 14vh 4vw 0;
+  margin-top: 8vh;
+  padding: 6vh 4vw 0;
   width: 100vw;
 
   @media (max-width: 960px) {
-    padding: 0 4vw;
+    margin-top: 4vh;
+    padding: 6vh 4vw;
   }
 `;
 const Description = styled.span`

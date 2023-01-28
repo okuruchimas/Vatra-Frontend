@@ -5,11 +5,23 @@ import { useEffect, useState } from "react";
 import { Circle as Prop } from "../JoinUs";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import { OurTeamProps, Pagination as Props, Person } from "./ourTeam";
+import {
+  merge,
+  fadeInLeft,
+  slideInUp,
+  slideInLeft,
+  fadeInUp,
+} from "react-animations";
+import { Keyframes, keyframes } from "@emotion/react";
 
 const Pagination = new Props();
 
 const OurTeam = ({ members }: OurTeamProps) => {
   const { isDesktop } = useWindowDimensions();
+  const lastId = isDesktop ? 2 : 1;
+  const tAnimation = isDesktop ? merge(slideInUp, slideInLeft) : slideInUp;
+  const bAnimation = isDesktop ? fadeInLeft : fadeInUp;
+
   const [postsToShow, setPostsToShow] = useState<Person[]>(
     members.slice(0, isDesktop ? 6 : 4)
   );
@@ -23,10 +35,16 @@ const OurTeam = ({ members }: OurTeamProps) => {
       <Title>команда</Title>
       <Container>
         {postsToShow.map(({ name, role, superPower, url }, index) => (
-          <Slide key={index} firstPost={!isDesktop ? false : 0 === index}>
+          <Slide
+            key={name}
+            firstPost={!isDesktop ? false : 0 === index}
+            isTop={index <= lastId}
+            fadeInAnimation={keyframes`${
+              index <= lastId ? tAnimation : bAnimation
+            }`}
+          >
             <PersonCard
               index={index}
-              key={name}
               name={name}
               role={role}
               superPower={superPower}
@@ -55,12 +73,15 @@ const Wrap = styled.section`
   flex-direction: column;
   align-items: flex-start;
   width: 100vw;
-  padding: 10vh 4vw 14vh;
+  padding: 4vh 4vw 14vh;
   overflow: hidden;
+  margin-top: 6vh;
   @media (max-width: 960px) {
+    margin-top: 0;
     padding: 4vh 4vw 14vh;
   }
 `;
+
 export const ArrowRight = styled.img`
   width: 12vw;
   transition: all 0.3s linear;
@@ -90,9 +111,15 @@ const Container = styled.div`
   }
 `;
 
-const Slide = styled.div<{ firstPost: boolean }>`
+const Slide = styled.div<{
+  firstPost: boolean;
+  isTop: boolean;
+  fadeInAnimation: Keyframes;
+}>`
   margin-left: ${({ firstPost }) => (firstPost ? "24vw" : "4vw")};
   margin-bottom: 2vw;
+  animation: 1.6s ${({ fadeInAnimation }) => fadeInAnimation};
+  z-index: ${({ isTop }) => (isTop ? 4 : 3)};
   @media (max-width: 960px) {
     margin: 0;
   }

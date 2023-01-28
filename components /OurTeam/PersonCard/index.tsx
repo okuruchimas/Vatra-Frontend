@@ -22,7 +22,7 @@ const PersonCard = (person: Props) => {
         isCentered={person.index === 1 || person.index === 2}
         isLast={person.index === 3}
         src={person.url}
-        loading="lazy"
+        // loading="lazy"
       />
       <Name isLast={person.index === 3}>{person.name}</Name>
     </Wrap>

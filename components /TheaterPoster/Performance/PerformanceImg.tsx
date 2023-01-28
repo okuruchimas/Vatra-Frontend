@@ -29,7 +29,7 @@ const PerformanceImg = ({
     <Wrap>
       {isDesktop ? (
         <>
-          <Img src={imgUrl} loading="lazy" left={left} />
+          <Img src={imgUrl} left={left} />
           <Type left={left}>{type}</Type>
           <DateText left={left}>{date}</DateText>
         </>
