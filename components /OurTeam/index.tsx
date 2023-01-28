@@ -57,6 +57,9 @@ const OurTeam = ({ members }: OurTeamProps) => {
           onClick={() =>
             Pagination.paginate(members, setPostsToShow, isDesktop)
           }
+          onTouchStart={() =>
+            Pagination.paginate(members, setPostsToShow, isDesktop)
+          }
         >
           <ArrowRight src="/icons/arrows/arrowRight.svg" />
           <Circle isEmpty />
