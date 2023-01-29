@@ -14,10 +14,10 @@ export const TestArr = [
       "є нашою реальністю нині.",
     type: "Перформативна вистава",
     date: "12.04",
-    imgUrl: "/icons/poster/img1.png",
+    imgUrl: "/icons/poster/img1.webp",
     link: "war",
     largeDescription: {
-      imgUrl: "/icons/poster/bigImg1.png",
+      imgUrl: "/icons/poster/bigImg1.webp",
       videoRemarks: [
         "У виставі лунає жива музика",
         "Використовується обсценна лексика",
@@ -107,10 +107,10 @@ export const TestArr = [
       "Познайомившись, вони розпочинають свої пригоди та сміливо допомагають країні боротися зі злом.",
     type: "вистава театру анімації",
     date: "22.08",
-    imgUrl: "/icons/poster/img2.png",
+    imgUrl: "/icons/poster/img2.webp",
     link: "meting",
     largeDescription: {
-      imgUrl: "/icons/poster/bigImg2.png",
+      imgUrl: "/icons/poster/bigImg2.webp",
       videoRemarks: ["У виставі лунає жива музика"],
       dates: [11.12, 12.11, 12.12, 9.2, 10.1],
       bigTitle1: "Чому Леся так",
@@ -171,10 +171,10 @@ export const TestArr = [
       "Події розгортаються ніби в партизанському штабі, де оповідачі_ка ведуть дію, використовуючи історії людей, які жили_вуть у Херсонській області. Обшуки, знущання, вбивства, викрадення, зґвалтування, сльози на очах і в серці — це реалії нині, які щоденно кояться армією рф.",
     type: "Вистава–блуканина",
     date: "04.22",
-    imgUrl: "/icons/poster/img4.png",
+    imgUrl: "/icons/poster/img4.webp",
     link: "herson",
     largeDescription: {
-      imgUrl: "/icons/poster/bigImg4.png",
+      imgUrl: "/icons/poster/bigImg4.webp",
       videoRemarks: [
         "У виставі лунає жива музика",
         "Використовується обсценна лексика",
@@ -248,10 +248,10 @@ export const TestArr = [
       "за кожну спокійну хвилину.",
     type: "Постдокументальна вистава",
     date: "05.09",
-    imgUrl: "/icons/poster/img5.png",
+    imgUrl: "/icons/poster/img5.webp",
     link: "she-is-war",
     largeDescription: {
-      imgUrl: "/icons/poster/bigImg5.png",
+      imgUrl: "/icons/poster/bigImg5.webp",
       videoRemarks: [],
       dates: [11.12, 12.11, 12.12, 9.2, 10.1],
       bigTitle1: "Яким є жіночий",
@@ -325,11 +325,11 @@ export const TestArr = [
       "\n",
     type: "вистава–концерт",
     date: "11.06",
-    imgUrl: "/icons/poster/img3.png",
+    imgUrl: "/icons/poster/img3.webp",
     link: "kill-pupin",
     largeDescription: {
       videoLink: "hjhjg",
-      imgUrl: "/icons/poster/bigImg3.png",
+      imgUrl: "/icons/poster/bigImg3.webp",
       videoRemarks: [
         "У виставі лунає жива музика",
         "Спільний проєкт театру Лесі та театру Варта",
@@ -389,10 +389,10 @@ export const TestArr = [
       "на крок ближче до перемоги.",
     type: "Перформативна вистава",
     date: "23.07",
-    imgUrl: "/icons/poster/img6.png",
+    imgUrl: "/icons/poster/img6.webp",
     link: "first-day",
     largeDescription: {
-      imgUrl: "/icons/poster/bigImg6.png",
+      imgUrl: "/icons/poster/bigImg6.webp",
       videoRemarks: ["Присутня обсценна лексика"],
       videoLink: "hjhjg",
       bigTitle1: "Закарбувався в нас",

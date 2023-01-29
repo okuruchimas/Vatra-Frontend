@@ -4,6 +4,8 @@ import { Title as Prop } from "../TheaterPoster/Performance/PerormanceInfo";
 import { Type as Prop2 } from "../TheaterPoster/Performance/PerformanceImg";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import { useRouter } from "next/router";
+import { keyframes } from "@emotion/react";
+import { fadeIn, fadeInLeft, fadeInRight } from "react-animations";
 
 interface Info {
   title: string;
@@ -14,6 +16,10 @@ interface Info {
   videoLink?: string;
   remarks: string[];
 }
+
+const fadeInAn = keyframes`${fadeIn}`;
+const fadeInLAn = keyframes`${fadeInLeft}`;
+const fadeInRAn = keyframes`${fadeInRight}`;
 
 const RepertoirePreview = (info: Info) => {
   const { isDesktop } = useWindowDimensions();
@@ -98,6 +104,7 @@ const Rate = styled.span`
   z-index: 1;
 
   @media (max-width: 960px) {
+    animation: 1s ${fadeInLAn};
     opacity: 1;
     background: rgba(103, 103, 103, 0.5);
     top: 6vh;
@@ -127,6 +134,7 @@ const Close = styled.div`
   }
 
   @media (max-width: 960px) {
+    animation: 1s ${fadeInRAn};
     opacity: 1;
     background: rgba(103, 103, 103, 0.5);
     top: 6vh;
@@ -219,6 +227,7 @@ const Date = styled.span`
 const RemarksWrap = styled.ul`
   margin-left: 2vw;
   @media (max-width: 960px) {
+    animation: 1.6s ${fadeInLAn};
     padding: 0;
     margin-left: 0;
     position: relative;
@@ -252,6 +261,7 @@ const ButtonWrap = styled.div`
   padding: 1vh;
   background: rgba(217, 217, 217, 0.1);
   @media (max-width: 960px) {
+    animation: 1.5s ${fadeInRAn};
     position: initial;
     width: min-content;
   }
@@ -290,6 +300,7 @@ const TitleWrap = styled.div`
   z-index: 10;
   width: 72vw;
   @media (max-width: 960px) {
+    animation: 1s ${fadeInLAn};
     flex-direction: column-reverse;
     bottom: 18vh;
   }
@@ -322,6 +333,7 @@ const Image = styled.img`
   position: relative;
   left: -4vw;
   @media (max-width: 960px) {
+    animation: 0.8s ${fadeInAn};
     height: 80vh;
     width: 100vw;
     object-fit: cover;
