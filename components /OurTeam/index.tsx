@@ -59,7 +59,14 @@ const OurTeam = ({ members }: OurTeamProps) => {
         ))}
         <Button
           onClick={() => {
-            Pagination.paginate(members, setPostsToShow, isDesktop);
+            isDesktop
+              ? Pagination.paginate(members, setPostsToShow, isDesktop)
+              : null;
+          }}
+          onTouchStart={() => {
+            !isDesktop
+              ? Pagination.paginate(members, setPostsToShow, isDesktop)
+              : null;
           }}
         >
           <ArrowRight src="/icons/arrows/arrowRight.svg" />
