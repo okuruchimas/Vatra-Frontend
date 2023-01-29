@@ -5,7 +5,13 @@ import { useEffect, useState } from "react";
 import { Circle as Prop } from "../JoinUs";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import { OurTeamProps, Pagination as Props, Person } from "./ourTeam";
-import { merge, fadeInLeft, slideInUp, slideInLeft } from "react-animations";
+import {
+  merge,
+  fadeInLeft,
+  slideInUp,
+  slideInLeft,
+  fadeIn,
+} from "react-animations";
 import { Keyframes, keyframes } from "@emotion/react";
 
 const Pagination = new Props();
@@ -13,8 +19,8 @@ const Pagination = new Props();
 const OurTeam = ({ members }: OurTeamProps) => {
   const { isDesktop } = useWindowDimensions();
   const lastId = isDesktop ? 2 : 1;
-  const tAnimation = isDesktop ? merge(slideInUp, slideInLeft) : slideInLeft;
-  const bAnimation = isDesktop ? fadeInLeft : fadeInLeft;
+  const tAnimation = isDesktop ? merge(slideInUp, slideInLeft) : fadeIn;
+  const bAnimation = isDesktop ? fadeInLeft : fadeIn;
 
   const [postsToShow, setPostsToShow] = useState<Person[]>(
     members.slice(0, isDesktop ? 6 : 4)
