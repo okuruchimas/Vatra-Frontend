@@ -1,4 +1,7 @@
 import styled from "@emotion/styled";
+import { fadeInUp } from "react-animations";
+import { keyframes } from "@emotion/react";
+const fadeInUpAnimation = keyframes`${fadeInUp}`;
 
 const VideoPreview = () => {
   return (
@@ -14,6 +17,7 @@ const VideoPreview = () => {
 };
 
 export default VideoPreview;
+
 const Wrap = styled.div`
   display: flex;
   align-items: center;
@@ -23,6 +27,7 @@ const Wrap = styled.div`
   width: 92vw;
   padding: 2vw 0;
   @media (max-width: 960px) {
+    animation: 1s ${fadeInUpAnimation};
     padding: 4vw 0;
     border-radius: 30px;
     aspect-ratio: 350/313;

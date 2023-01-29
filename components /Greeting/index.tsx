@@ -4,6 +4,12 @@ import { BlackGradient } from "../layout/BlackGradients";
 import { Link } from "react-scroll";
 import DonateButton from "../layout/DonateButton";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
+import { fadeInUp, fadeInDown, fadeInRight } from "react-animations";
+import { keyframes } from "@emotion/react";
+
+const fadeInDownAn = keyframes`${fadeInDown}`;
+const fadeInUpAn = keyframes`${fadeInUp}`;
+const fadeInRightAn = keyframes`${fadeInRight}`;
 
 const Greeting = () => {
   const { isDesktop } = useWindowDimensions();
@@ -21,8 +27,10 @@ const Greeting = () => {
           {isDesktop && <ArrowSmall src="/icons/arrows/arrowDownSmall.svg" />}
           <Button to="poster" spy smooth offset={20} duration={2000} isDynamic>
             <Text>Дивитись квитки</Text>
+            {!isDesktop && (
+              <ArrowSmall src="/icons/arrows/arrowDownSmall.svg" />
+            )}
           </Button>
-          {!isDesktop && <ArrowSmall src="/icons/arrows/arrowDownSmall.svg" />}
         </ButtonsWrap>
       </BuySection>
 
@@ -76,8 +84,12 @@ const Wrap = styled.section`
     padding: 32vh 4vw 2vh;
   }
 `;
+
 export const Preview = styled.img`
   width: 88vw;
+  @media (max-width: 960px) {
+    animation: 1s ${fadeInDownAn};
+  }
 `;
 const BuySection = styled.div`
   padding: 22vh 0 4vh;
@@ -98,8 +110,10 @@ const LeftText = styled.span`
   font-size: 2vh;
   color: #b5b5b5;
   @media (max-width: 960px) {
+    animation: 1s ${fadeInUpAn};
     font-family: "namu-1400";
-    padding-bottom: 28vh;
+    padding-bottom: 8vh;
+    margin-bottom: 20vh;
     font-size: 1em;
     text-align: center;
   }
@@ -180,6 +194,8 @@ const ButtonsWrap = styled.div`
 `;
 
 const Button = styled(Link)`
+  display: flex;
+  flex-direction: row;
   font-family: "namu-1400";
   font-size: 2vh;
   text-transform: uppercase;
@@ -191,6 +207,7 @@ const Button = styled(Link)`
     opacity: 0.8;
   }
   @media (max-width: 960px) {
+    animation: 1s ${fadeInRightAn};
     font-size: 1em;
     text-transform: none;
     width: max-content;
@@ -202,6 +219,7 @@ const Button = styled(Link)`
 const Text = styled.div`
   display: table-caption;
   padding-top: 0.5vh;
+  width: min-content;
 `;
 
 const ArrowDown = styled.img`
@@ -238,6 +256,6 @@ const ArrowSmall = styled(ArrowDown)`
   }
   @media (max-width: 960px) {
     top: 0;
-    left: -4vw;
+    left: 6vw;
   }
 `;

@@ -5,13 +5,7 @@ import { useEffect, useState } from "react";
 import { Circle as Prop } from "../JoinUs";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import { OurTeamProps, Pagination as Props, Person } from "./ourTeam";
-import {
-  merge,
-  fadeInLeft,
-  slideInUp,
-  slideInLeft,
-  fadeInUp,
-} from "react-animations";
+import { merge, fadeInLeft, slideInUp, slideInLeft } from "react-animations";
 import { Keyframes, keyframes } from "@emotion/react";
 
 const Pagination = new Props();
