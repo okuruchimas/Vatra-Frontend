@@ -23,7 +23,6 @@ export const TestArr = [
         "Використовується обсценна лексика",
       ],
       dates: [11.12, 12.11, 12.12, 9.2, 10.1],
-      videoLink: "hjhjg",
       bigTitle1: "Лютий завжди був",
       bigTitle2: "холодним...",
       smallTitle:
@@ -329,6 +328,7 @@ export const TestArr = [
     imgUrl: "/icons/poster/img3.png",
     link: "kill-pupin",
     largeDescription: {
+      videoLink: "hjhjg",
       imgUrl: "/icons/poster/bigImg3.png",
       videoRemarks: [
         "У виставі лунає жива музика",

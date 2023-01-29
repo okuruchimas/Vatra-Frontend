@@ -48,6 +48,12 @@ const RepertoirePreview = (info: Info) => {
             </Dates>
           </DateWrap>
         )}
+        {!isDesktop && info.videoLink && (
+          <ButtonWrap>
+            <ButtonIcon src="/icons/close/play.svg" />
+            <ButtonText>Дивитись запис</ButtonText>
+          </ButtonWrap>
+        )}
 
         {info.remarks.length > 0 && (
           <RemarksWrap>
@@ -245,6 +251,10 @@ const ButtonWrap = styled.div`
   border-radius: 10px;
   padding: 1vh;
   background: rgba(217, 217, 217, 0.1);
+  @media (max-width: 960px) {
+    position: initial;
+    width: min-content;
+  }
 `;
 const ButtonText = styled.span`
   height: 6vh;
@@ -257,12 +267,19 @@ const ButtonText = styled.span`
   text-transform: uppercase;
   font-size: 2vh;
   padding: 0 1.6vw 0.4vh;
+  @media (max-width: 960px) {
+    width: max-content;
+    padding: 0 8vw;
+  }
 `;
 
 const ButtonIcon = styled.img`
   height: 3vh;
   width: auto;
   margin: 0 1.6vw;
+  @media (max-width: 960px) {
+    margin: 0 4vw;
+  }
 `;
 
 const TitleWrap = styled.div`
