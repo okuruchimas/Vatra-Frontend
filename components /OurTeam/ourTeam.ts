@@ -40,57 +40,57 @@ export const OurTeamArray = [
     name: "Артур Рожицький",
     role: "Актор",
     superPower: "",
-    url: "/icons/ourTeam/9.png",
+    url: "/icons/ourTeam/9.webp",
   },
   {
     name: "Тарас Волох",
     role: "Хореограф",
     superPower: "Актор",
-    url: "/icons/ourTeam/7.png",
+    url: "/icons/ourTeam/7.webp",
   },
   {
     name: "Акім Драгомирецький",
     role: "Актор",
     superPower: "Фотограф",
-    url: "/icons/ourTeam/10.png",
+    url: "/icons/ourTeam/10.webp",
   },
   {
     name: "Дробот Іван",
     role: "Актор",
     superPower: "",
-    url: "/icons/ourTeam/2.png",
+    url: "/icons/ourTeam/2.webp",
   },
   {
     name: "Артем Вусик",
     role: "Режисер",
     superPower: "Актор",
-    url: "/icons/ourTeam/3.png",
+    url: "/icons/ourTeam/3.webp",
   },
   {
     name: "Ліза Прасолова",
     role: "Акторка-лялькарка",
     superPower: "",
-    url: "/icons/ourTeam/6.png",
+    url: "/icons/ourTeam/6.webp",
   },
 
   {
     name: "Артур Слісаренко",
     role: "Актор-лялькар",
     superPower: "",
-    url: "/icons/ourTeam/5.png",
+    url: "/icons/ourTeam/5.webp",
   },
 
   {
     name: "Світлана Мельник",
     role: "Хореограф",
     superPower: "Актор",
-    url: "/icons/ourTeam/8.png",
+    url: "/icons/ourTeam/8.webp",
   },
   {
     name: "Олеся Стрельбіцька",
     role: "Хореограф",
     superPower: "Актор",
-    url: "/icons/ourTeam/11.png",
+    url: "/icons/ourTeam/11.webp",
   },
 ];
 
