@@ -29,6 +29,7 @@ const OurTeam = ({ members }: OurTeamProps) => {
   const [postsToShow, setPostsToShow] = useState<Person[]>(
     members.slice(0, isDesktop ? 6 : 4)
   );
+  const [isShown, setIsShown] = useState(false);
 
   useEffect(() => {
     setPostsToShow(members.slice(0, isDesktop ? 6 : 4));
@@ -59,14 +60,23 @@ const OurTeam = ({ members }: OurTeamProps) => {
         ))}
         <Button
           onClick={() => {
+            setIsShown(true);
             isDesktop
               ? Pagination.paginate(members, setPostsToShow, isDesktop)
               : null;
+            setTimeout(() => {
+              setIsShown(false);
+            }, 240);
           }}
+          isShown={isShown}
           onTouchStart={() => {
+            setIsShown(true);
             !isDesktop
               ? Pagination.paginate(members, setPostsToShow, isDesktop)
               : null;
+            setTimeout(() => {
+              setIsShown(false);
+            }, 240);
           }}
         >
           <ArrowRight src="/icons/arrows/arrowRight.svg" />
@@ -131,12 +141,13 @@ const Slide = styled.div<{
   margin-bottom: 2vw;
   animation: 1.6s ${({ fadeInAnimation }) => fadeInAnimation};
   z-index: ${({ isTop }) => (isTop ? 4 : 3)};
+
   @media (max-width: 960px) {
     margin: 0;
   }
 `;
 
-const Button = styled.button`
+const Button = styled.div<{ isShown: boolean }>`
   background: transparent;
   border: none;
   outline: none;
@@ -149,13 +160,14 @@ const Button = styled.button`
   align-items: center;
   height: min-content;
   cursor: pointer;
-  &:hover {
-    opacity: 0.8;
-    img {
-      transform: translatex(32px);
-      z-index: 1;
-    }
+
+  //&:hover {
+  //  opacity: 0.8;
+  img {
+    transform: ${({ isShown }) => (isShown ? "translatex(32px)" : null)};
+    z-index: 1;
   }
+  //}
 
   @media (max-width: 960px) {
     right: 4vw;
