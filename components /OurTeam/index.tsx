@@ -54,16 +54,9 @@ const OurTeam = ({ members }: OurTeamProps) => {
           </Slide>
         ))}
         <Button
-          onClick={() =>
-            isDesktop
-              ? Pagination.paginate(members, setPostsToShow, isDesktop)
-              : null
-          }
-          onTouchStart={() =>
-            !isDesktop
-              ? Pagination.paginate(members, setPostsToShow, isDesktop)
-              : null
-          }
+          onClick={() => {
+            Pagination.paginate(members, setPostsToShow, isDesktop);
+          }}
         >
           <ArrowRight src="/icons/arrows/arrowRight.svg" />
           <Circle isEmpty />
@@ -132,13 +125,17 @@ const Slide = styled.div<{
   }
 `;
 
-const Button = styled.div`
+const Button = styled.button`
+  background: transparent;
+  border: none;
+  outline: none;
   position: absolute;
   right: 2vw;
   bottom: 20vh;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  align-items: center;
   height: min-content;
   cursor: pointer;
   &:hover {
