@@ -177,6 +177,7 @@ const DateWrap = styled.div`
   padding: 1vh;
   background: rgba(217, 217, 217, 0.1);
   @media (max-width: 960px) {
+    animation: 1.5s ${fadeInRAn};
     height: auto;
     padding: 1.2vh;
     background: rgba(217, 217, 217, 0.2);
@@ -333,7 +334,7 @@ const Image = styled.img`
   position: relative;
   left: -4vw;
   @media (max-width: 960px) {
-    animation: 0.8s ${fadeInAn};
+    animation: 2s ${fadeInAn};
     height: 80vh;
     width: 100vw;
     object-fit: cover;
