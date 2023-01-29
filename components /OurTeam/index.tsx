@@ -11,6 +11,8 @@ import {
   slideInUp,
   slideInLeft,
   fadeIn,
+  zoomOut,
+  zoomIn,
 } from "react-animations";
 import { Keyframes, keyframes } from "@emotion/react";
 
@@ -19,8 +21,10 @@ const Pagination = new Props();
 const OurTeam = ({ members }: OurTeamProps) => {
   const { isDesktop } = useWindowDimensions();
   const lastId = isDesktop ? 2 : 1;
-  const tAnimation = isDesktop ? merge(slideInUp, slideInLeft) : fadeIn;
-  const bAnimation = isDesktop ? fadeInLeft : fadeIn;
+  const tAnimation = isDesktop
+    ? merge(slideInUp, slideInLeft)
+    : merge(fadeIn, zoomIn);
+  const bAnimation = isDesktop ? fadeInLeft : zoomIn;
 
   const [postsToShow, setPostsToShow] = useState<Person[]>(
     members.slice(0, isDesktop ? 6 : 4)
