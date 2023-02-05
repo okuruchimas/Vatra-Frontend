@@ -10,11 +10,12 @@ const ErrorPage = () => {
       <Logo src="/icons/logo/logo.svg" />
       <Wrapper>
         <Number src="/icons/logo/404.svg" />
+
         <Text>
           Ууупсс!! <span>пейдж нот фаунд</span>
         </Text>
       </Wrapper>
-      <Button onClick={() => push("/")}>Повернутись на головну </Button>
+      <Button onClick={() => push("/")}>Повернутись на головну</Button>
     </Wrap>
   );
 };
@@ -33,6 +34,7 @@ const Logo = styled.img`
   margin-top: 2vh;
   margin-left: 4vw;
   align-self: flex-start;
+
   @media (max-width: 960px) {
     height: 4vh;
     width: auto;
@@ -45,6 +47,7 @@ const Wrapper = styled.div`
   align-items: center;
   margin-top: 20vh;
   padding-left: 20vw;
+
   @media (max-width: 960px) {
     padding-left: 0;
     flex-direction: column;
@@ -54,6 +57,7 @@ const Wrapper = styled.div`
 const Number = styled.img`
   width: 24vw;
   aspect-ratio: 177/155;
+
   @media (max-width: 960px) {
     width: 60vw;
   }
