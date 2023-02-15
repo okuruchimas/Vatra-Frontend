@@ -24,6 +24,8 @@ function hexToRgb(hex: string, opacity = 0.1) {
 
 const Performance = (props: Props) => {
   const { isDesktop } = useWindowDimensions();
+
+  const isFirst = props.index === 0 || props.index === 1;
   const isBlack =
     props.index === 0 || props.index === props.performancesLength - 1;
   const isGray =
@@ -31,7 +33,7 @@ const Performance = (props: Props) => {
 
   return (
     <Wrap
-      isFirst={props.index === 0}
+      isFirst={isFirst}
       isBlack={isBlack}
       isGray={isGray}
       performanceColor={
@@ -49,6 +51,7 @@ const Performance = (props: Props) => {
           date={props.date}
           imgUrl={props.imgUrl}
           type={props.type}
+          isBuy={props.isBuy}
           isDesktop={isDesktop}
         />
       ) : props.left ? (
@@ -57,12 +60,14 @@ const Performance = (props: Props) => {
             title={props.title}
             description={props.description}
             link={props.link}
+            isBuy={props.isBuy}
           />
           <PerformanceImg
             left={props.left}
             date={props.date}
             imgUrl={props.imgUrl}
             type={props.type}
+            isBuy={props.isBuy}
             isDesktop={isDesktop}
           />
         </>
@@ -74,12 +79,14 @@ const Performance = (props: Props) => {
             date={props.date}
             imgUrl={props.imgUrl}
             type={props.type}
+            isBuy={props.isBuy}
             title={props.title}
           />
           <PerformanceInfo
             title={props.title}
             description={props.description}
             link={props.link}
+            isBuy={props.isBuy}
           />
         </>
       )}

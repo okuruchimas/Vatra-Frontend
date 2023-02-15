@@ -152,7 +152,7 @@ const RightBlock = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0 0 0 2vw;
+  padding: 0 0 0 4vw;
   @media (max-width: 960px) {
     position: relative;
   }
@@ -172,8 +172,8 @@ const Description = styled.span`
 const fadeInAnimation = keyframes`${fadeIn}`;
 
 const Img = styled.div`
-  width: 46vw;
-  border-radius: 12px;
+  width: 44vw;
+  border-radius: 30px;
   background-size: cover;
   aspect-ratio: 181/190;
   background-position: center;

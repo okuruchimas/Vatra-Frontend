@@ -18,7 +18,7 @@ const Wrap = styled.div`
   font-family: "namu-1400";
   width: 12vw;
   height: 5vh;
-  padding: 0 2vw;
+  padding: 0 3vw;
   font-size: 2vh;
   text-transform: uppercase;
   cursor: pointer;

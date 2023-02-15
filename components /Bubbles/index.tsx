@@ -7,7 +7,7 @@ const Bubbles = () => {
 
   return (
     <Wrap>
-      <Title>наші цінноcті</Title>
+      <Title>наші цінноcти</Title>
       <BubblesWrap>
         <Bubble
           size={isDesktop ? 20 : 28}

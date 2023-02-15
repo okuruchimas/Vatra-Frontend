@@ -19,8 +19,8 @@ const Footer = () => {
         />
         <Text>інстаграм</Text>
       </LinkWrap>
-      <LinkWrap href="mailto:theatre.varta@gmail.com" target="_blank">
-        <Text>theatre.varta@gmail.com</Text>
+      <LinkWrap href="mailto:teatr.varta@gmail.com" target="_blank">
+        <Text>teatr.varta@gmail.com</Text>
       </LinkWrap>
     </Wrap>
   );

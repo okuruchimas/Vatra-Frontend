@@ -17,6 +17,7 @@ const Repertoire = ({ repertoire }: { repertoire: PerformanceType }) => {
         title={repertoire.title}
         type={repertoire.type}
         date={repertoire.date}
+        isBuy={repertoire.isBuy}
         imgUrl={repertoire.largeDescription.imgUrl}
         dates={repertoire.largeDescription.dates}
         videoLink={repertoire.largeDescription.videoLink}

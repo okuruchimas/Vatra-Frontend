@@ -24,7 +24,7 @@ export const Wrap = styled.span<{
 }>`
   padding-left: ${({ pl }) => (pl ? `${pl}vw` : "initial")};
   font-family: "murmure";
-  line-height: 26vh;
+  line-height: 24vh;
   font-size: 24vh;
   color: #fff;
   width: 100%;

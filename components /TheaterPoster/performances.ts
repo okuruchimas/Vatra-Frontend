@@ -2,6 +2,92 @@ export const TestArr = [
   {
     performanceColor: "#CB6565",
     mobileColor: {
+      color: "#414040",
+      opacity: 0.67,
+    },
+    title: "Всередині моєї кімнати",
+    description:
+      "Ця вистава — про пам‘ять і відновлення зв‘язків між минулим і теперішнім.\n" +
+      "Ця вистава — про повернення додому, \n" +
+      "про його пошуки: зовні та всередині.\n" +
+      "Ця вистава — про мою кімнату.",
+    type: "Вистава театру анімації",
+    isBuy: true,
+    date: "20.02",
+    imgUrl: "/icons/poster/img0.webp",
+    link: "inside-my-room",
+    largeDescription: {
+      imgUrl: "/icons/poster/bigImg0.webp",
+      videoRemarks: [
+        "У виставі лунає жива музика",
+        "Вистава створена за фінансової підтримки Goethe-Institut",
+      ],
+      dates: [20.02, 21.02],
+      bigTitle1: "Той самий",
+      bigTitle2: "довгоочікувний момент",
+      smallTitle:
+        "Ми хочемо вірити,<br/>що зможемо це<br/>витримати й залишитиcя<br/>cамими cобою.",
+      description:
+        "<p>«Той самий довгоочікуваний момент, та подія, яка довгий час була наче мрія, наче марево.\n" +
+        "Це, напевно, була несвідома головна мета — нарешті опинитися удома. Певна ціль, яка після її досягнення, дарує відчуття зустрічі \n" +
+        "з втраченим, зі своїм рідним.»</p>\n" +
+        "\n" +
+        "<p>Ми хочемо говорити про наші домівки, \n" +
+        "про ті місця, які дарували нам відчуття\n" +
+        "безпеки та спокою. Ми хочемо розповідати наші історії та відчувати, що ми не самотні \n" +
+        "в цьому досвіді. Ми хочемо вірити, що зможемо все це витримати й залишитися самими собою.Ми хочемо реконструювати кожен фрагмент нашого життя, щоби нічого \n" +
+        "не забути й рушити далі.</p>\n" +
+        "\n" +
+        "<p>Ця вистава — про пам‘ять і відновлення зв‘язків між минулим і теперішнім.\n" +
+        "Ця вистава — про повернення додому, \n" +
+        "про його пошуки: зовні та всередині.\n" +
+        "Ця вистава — про мою кімнату.</p>",
+      images: [
+        "/icons/performances/room1.webp",
+        "/icons/performances/room2.webp",
+        "/icons/performances/room3.webp",
+      ],
+      composition: [
+        {
+          name: "Артем Вусик",
+          abilities: ["Режисер"],
+        },
+        {
+          name: "Hіна Хижна",
+          abilities: ["Акторка"],
+        },
+
+        {
+          name: "Данило Білоус",
+          abilities: ["Музичне оформлення"],
+        },
+        {
+          name: "Андрій Кізім",
+          abilities: ["Музичне оформлення"],
+        },
+        {
+          name: "Олександр Чиж",
+          abilities: ["Світлорежисер"],
+        },
+        {
+          name: "Антон Репях",
+          abilities: ["звукоТехнік"],
+        },
+        {
+          name: "Пабло Бучман",
+          abilities: ["Звукорежисер"],
+        },
+        {
+          name: "Андрій Пастернак",
+          abilities: ["Дизайн Афіші"],
+        },
+      ],
+      premiere: "20 лютого 2023",
+    },
+  },
+  {
+    performanceColor: "#CB6565",
+    mobileColor: {
       color: "#2F2F2F",
       opacity: 0.67,
     },
@@ -13,9 +99,10 @@ export const TestArr = [
       "зі своїми почуттями. Це спільний пошук власної ідентичності в контексті війни, що \n" +
       "є нашою реальністю нині.",
     type: "Перформативна вистава",
+    isBuy: false,
     date: "12.04",
     imgUrl: "/icons/poster/img1.webp",
-    link: "war",
+    link: "february",
     largeDescription: {
       imgUrl: "/icons/poster/bigImg1.webp",
       videoRemarks: [
@@ -37,9 +124,9 @@ export const TestArr = [
         "лягло в основу постдокументальної вистави «ЛЮТИЙ».</p>" +
         "<p>Були атаковані не тільки кордони нашої держави, а й наші власні. Вистава досліджує руйнівні відчуття люті, ненависті й щось їх засильніше, що не описати словами.</p>",
       images: [
-        "/icons/performances/februar1.png",
-        "/icons/performances/februar2.png",
-        "/icons/performances/februar3.png",
+        "/icons/performances/februar1.webp",
+        "/icons/performances/februar2.webp",
+        "/icons/performances/februar3.webp",
       ],
       composition: [
         {
@@ -106,6 +193,7 @@ export const TestArr = [
       "їх від снарядів, що розриваються у їхніх рідних містах.\n" +
       "Познайомившись, вони розпочинають свої пригоди та сміливо допомагають країні боротися зі злом.",
     type: "вистава театру анімації",
+    isBuy: false,
     date: "22.08",
     imgUrl: "/icons/poster/img2.webp",
     link: "meting",
@@ -128,9 +216,9 @@ export const TestArr = [
         "пригод, взаємности, щемливости й надії \n" +
         "з порошинками чарівности.</p>",
       images: [
-        "/icons/performances/landa1.png",
-        "/icons/performances/landa2.png",
-        "/icons/performances/landa3.png",
+        "/icons/performances/landa1.webp",
+        "/icons/performances/landa2.webp",
+        "/icons/performances/landa3.webp",
       ],
       composition: [
         {
@@ -170,9 +258,10 @@ export const TestArr = [
     description:
       "Події розгортаються ніби в партизанському штабі, де оповідачі_ка ведуть дію, використовуючи історії людей, які жили_вуть у Херсонській області. Обшуки, знущання, вбивства, викрадення, зґвалтування, сльози на очах і в серці — це реалії нині, які щоденно кояться армією рф.",
     type: "Вистава–блуканина",
+    isBuy: false,
     date: "04.22",
     imgUrl: "/icons/poster/img4.webp",
-    link: "herson",
+    link: "unbreakable-kherson",
     largeDescription: {
       imgUrl: "/icons/poster/bigImg4.webp",
       videoRemarks: [
@@ -195,9 +284,9 @@ export const TestArr = [
         "ненависті, можна тільки силою. Херсон звільнено завдяки нашим військовим і спільній підтримці. \n" +
         "Ми ніколи не здамося.</p>",
       images: [
-        "/icons/performances/kherson1.png",
-        "/icons/performances/kherson2.png",
-        "/icons/performances/kherson3.png",
+        "/icons/performances/kherson1.webp",
+        "/icons/performances/kherson2.webp",
+        "/icons/performances/kherson3.webp",
       ],
       composition: [
         {
@@ -247,6 +336,7 @@ export const TestArr = [
       "та скільки є сил, можливостей бореться \n" +
       "за кожну спокійну хвилину.",
     type: "Постдокументальна вистава",
+    isBuy: false,
     date: "05.09",
     imgUrl: "/icons/poster/img5.webp",
     link: "she-is-war",
@@ -276,9 +366,9 @@ export const TestArr = [
         "у спину. Кожна з нас носить цей ніж у спині \n" +
         "та скільки є сил, можливостей бореться за кожну спокійну хвилину. Духовну чи фізичну. Свою або чужу.</p>",
       images: [
-        "/icons/performances/sheswar1.png",
-        "/icons/performances/sheswar2.png",
-        "/icons/performances/sheswar3.png",
+        "/icons/performances/sheswar1.webp",
+        "/icons/performances/sheswar2.webp",
+        "/icons/performances/sheswar3.webp",
       ],
       composition: [
         {
@@ -324,6 +414,7 @@ export const TestArr = [
       "перфоконцертом – історія пригод і пошуків свого нового місця через втрату попереднього життя.\n" +
       "\n",
     type: "вистава–концерт",
+    isBuy: false,
     date: "11.06",
     imgUrl: "/icons/poster/img3.webp",
     link: "kill-pupin",
@@ -350,9 +441,9 @@ export const TestArr = [
         "<p>Це симбіоз аудіального театру з музичним перфоконцертом – історія пригод і пошуків \n" +
         "свого нового місця через втрату попереднього життя.</p>",
       images: [
-        "/icons/performances/warmeet1.png",
-        "/icons/performances/warmeet2.png",
-        "/icons/performances/warmeet3.png",
+        "/icons/performances/warmeet1.webp",
+        "/icons/performances/warmeet2.webp",
+        "/icons/performances/warmeet3.webp",
       ],
       composition: [
         {
@@ -388,6 +479,7 @@ export const TestArr = [
       "у русі, слові, світлині чи музиці. Перформанс-надія на те, що кожного дня ми стаємо \n" +
       "на крок ближче до перемоги.",
     type: "Перформативна вистава",
+    isBuy: false,
     date: "23.07",
     imgUrl: "/icons/poster/img6.webp",
     link: "first-day",
@@ -408,9 +500,9 @@ export const TestArr = [
         "<p>Але на цій перфомативній виставі давайте спробуємо видихнути хоча б часточку того лютневого, безжально спертого в душах, повітря.</p>" +
         "<p> Ця вистава - це наші переосмислення, взаєморозуміння та підтримка, дивлячись на все це. Це наш спільний видих.</p>",
       images: [
-        "/icons/performances/firstday1.png",
-        "/icons/performances/firstday2.png",
-        "/icons/performances/firstday3.png",
+        "/icons/performances/firstday1.webp",
+        "/icons/performances/firstday2.webp",
+        "/icons/performances/firstday3.webp",
       ],
       composition: [
         {
@@ -465,6 +557,7 @@ export interface PerformanceType {
   title: string;
   description: string;
   type: string;
+  isBuy: boolean;
   date: string;
   imgUrl: string;
   link: string;

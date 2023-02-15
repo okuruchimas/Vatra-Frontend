@@ -33,6 +33,7 @@ const TheaterPoster = ({ performances }: PerformanceProps) => {
             performanceColor={performance.performanceColor}
             mobileColor={performance.mobileColor}
             performancesLength={performances.length}
+            isBuy={performance.isBuy}
             index={index}
           />
         ))}
@@ -58,15 +59,12 @@ const Wrap = styled.section`
 `;
 const Description = styled.span`
   font-family: "namu-1750";
-  font-size: 3.2vh;
+  font-size: 3vh;
   line-height: 4.6vh;
   color: #a7a5a5;
-  width: 55vw;
-  padding: 4vh 14vw 0 0;
+  width: 50vw;
+  padding: 4vh 12vw 0 0;
   margin-left: auto;
-  @media (max-width: 1600px) {
-    width: 54vw;
-  }
 
   @media (max-width: 960px) {
     width: 94vw;

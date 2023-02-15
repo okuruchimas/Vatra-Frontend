@@ -39,7 +39,7 @@ const Name = styled.span`
   color: #eeeeee;
   font-size: 8vh;
   padding-bottom: 1vh;
-  width: 50%;
+  width: max-content;
   @media (max-width: 960px) {
     font-size: 2em;
   }
@@ -58,6 +58,7 @@ const SuperPower = styled(Prop)`
   text-transform: uppercase;
   width: max-content;
   padding: 1vh 2vw;
+  font-size: 12px;
   @media (max-width: 960px) {
     margin: 0;
     font-size: 1.2vh;

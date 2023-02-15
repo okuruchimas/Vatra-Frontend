@@ -8,6 +8,8 @@ type Props = {
   type: string;
   date: string;
   left: number;
+  isBuy: boolean;
+
   title?: string;
   isDesktop?: boolean;
   link?: string;
@@ -18,6 +20,7 @@ const PerformanceImg = ({
   imgUrl,
   type,
   date,
+  isBuy,
   left,
   title,
   isDesktop,
@@ -31,7 +34,7 @@ const PerformanceImg = ({
         <>
           <Img src={imgUrl} left={left} />
           <Type left={left}>{type}</Type>
-          <DateText left={left}>{date}</DateText>
+          {isBuy && <DateText left={left}>{date}</DateText>}
         </>
       ) : (
         <MobileWrap>
@@ -85,13 +88,13 @@ const Img = styled.img<{ left: number }>`
   margin-left: ${({ left }) => (left ? "auto" : "none")};
 `;
 
-export const DateText = styled.span<{ left: number }>`
+const DateText = styled.span<{ left: number }>`
   position: absolute;
-  right: ${({ left }) => (left ? "-4vw" : "auto")};
-  left: ${({ left }) => (left ? "auto" : "-4vw")};
+  right: ${({ left }) => (left ? "1vh" : "auto")};
+  left: ${({ left }) => (left ? "auto" : "1vh")};
   bottom: -11vh;
   font-family: "namu-1750";
-  font-size: 20vw;
+  font-size: 12vw;
   text-transform: uppercase;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;

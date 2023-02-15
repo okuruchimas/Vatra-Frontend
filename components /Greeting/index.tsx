@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import VideoPreview from "./VideoPreview";
+import MainPreview from "./MainPreview";
 import { BlackGradient } from "../layout/BlackGradients";
 import { Link } from "react-scroll";
 import DonateButton from "../layout/DonateButton";
@@ -34,7 +34,7 @@ const Greeting = () => {
         </ButtonsWrap>
       </BuySection>
 
-      <VideoPreview />
+      <MainPreview />
 
       <Info>
         <BlackGradient
@@ -238,7 +238,8 @@ const ArrowDown = styled.img`
     }
   }
 `;
-const ArrowSmall = styled(ArrowDown)`
+
+export const ArrowSmall = styled(ArrowDown)`
   height: 6vh;
   position: relative;
   top: 1vh;

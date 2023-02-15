@@ -2,14 +2,16 @@ import styled from "@emotion/styled";
 import Button from "../../layout/Button";
 import { useRouter } from "next/router";
 import useWindowDimensions from "../../../hooks/useWindowDimensions";
+import { ArrowSmall } from "../../Greeting";
 
 type Props = {
   title: string;
   description: string;
   link: string;
+  isBuy: boolean;
 };
 
-const PerformanceInfo = ({ title, description, link }: Props) => {
+const PerformanceInfo = ({ title, description, link, isBuy }: Props) => {
   const { push } = useRouter();
   const { isDesktop } = useWindowDimensions();
 
@@ -18,9 +20,9 @@ const PerformanceInfo = ({ title, description, link }: Props) => {
       <Title>{title}</Title>
       <Description>{description}</Description>
       <BuyWrap>
-        <Button text={isDesktop ? "купити квитки" : "купити"} />
+        {isBuy && <Button text={isDesktop ? "купити квитки" : "купити"} />}
         <Details onClick={() => push(link)}>
-          <Dot src="/icons/arrows/redDot.svg" />
+          <ArrowSmall src="/icons/arrows/arrowDownSmall.svg" />
           Дізнатись більше
         </Details>
       </BuyWrap>
@@ -33,8 +35,8 @@ export default PerformanceInfo;
 const Wrap = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  padding: 10vh 4vw 0;
+  justify-content: center;
+  padding: 0 4vw;
   width: 42vw;
 `;
 
@@ -47,7 +49,7 @@ export const Title = styled.span`
 
 const Description = styled.span`
   font-family: "namu-1750";
-  font-size: 2.4vh;
+  font-size: 2.2vh;
   text-align: center;
   padding: 0 2vw;
   color: #b5b5b5;
@@ -64,6 +66,7 @@ const BuyWrap = styled.div`
 
 export const Details = styled.span<{ isCentered?: boolean }>`
   font-family: "namu-1400";
+  color: #b11212;
   margin-left: 2.4vw;
   font-size: 2vh;
   background: inherit;

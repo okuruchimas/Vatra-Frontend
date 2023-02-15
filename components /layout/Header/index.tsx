@@ -149,7 +149,7 @@ const ItemList = styled(Link)<{ isLast?: boolean }>`
   color: #b0b0b0;
   font-family: "namu-pro";
   font-weight: 400; 
-  font-size: 2vh;
+  font-size: 1.8vh;
   margin: 0 1.6vw;
   cursor: pointer;
 

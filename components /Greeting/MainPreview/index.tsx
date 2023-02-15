@@ -3,20 +3,21 @@ import { fadeInUp } from "react-animations";
 import { keyframes } from "@emotion/react";
 const fadeInUpAnimation = keyframes`${fadeInUp}`;
 
-const VideoPreview = () => {
+const MainPreview = () => {
   return (
     <Wrap>
-      <Video autoPlay playsInline controls loop muted>
-        <source
-          src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"
-          type="video/mp4"
-        />
-      </Video>
+      <Img src="/icons/logo/preview.webp" />
+      {/*<Video autoPlay playsInline controls loop muted>*/}
+      {/*  <source*/}
+      {/*    src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"*/}
+      {/*    type="video/mp4"*/}
+      {/*  />*/}
+      {/*</Video>*/}
     </Wrap>
   );
 };
 
-export default VideoPreview;
+export default MainPreview;
 
 const Wrap = styled.div`
   display: flex;
@@ -33,7 +34,20 @@ const Wrap = styled.div`
     aspect-ratio: 350/313;
   }
 `;
+
 const Video = styled.video`
+  width: 88vw;
+  height: auto;
+  border-radius: 30px;
+  outline: none;
+  @media (max-width: 960px) {
+    object-fit: cover;
+    width: 80vw;
+    aspect-ratio: 302/265;
+  }
+`;
+
+const Img = styled.img`
   width: 88vw;
   height: auto;
   border-radius: 30px;

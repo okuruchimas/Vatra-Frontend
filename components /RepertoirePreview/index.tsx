@@ -13,6 +13,7 @@ interface Info {
   date: string;
   imgUrl: string;
   dates?: number[];
+  isBuy: boolean;
   videoLink?: string;
   remarks: string[];
 }
@@ -41,14 +42,14 @@ const RepertoirePreview = (info: Info) => {
       <Image alt="Preview" src={info.imgUrl} />
 
       <BottomWrap>
-        {info.dates && info.dates.length && (
+        {info.isBuy && info.dates && info.dates.length && (
           <DateWrap>
             {isDesktop && <DateText>дати показу</DateText>}
             <Dates>
               {info.dates.map((date, index) => (
                 <React.Fragment key={date}>
                   <Date> {date}</Date>
-                  {isDesktop && <Line />}
+                  {isDesktop && index + 1 !== info?.dates?.length && <Line />}
                 </React.Fragment>
               ))}
             </Dates>
@@ -62,7 +63,7 @@ const RepertoirePreview = (info: Info) => {
         )}
 
         {info.remarks.length > 0 && (
-          <RemarksWrap>
+          <RemarksWrap isBuy={info.isBuy}>
             {info.remarks.map((item, i) => (
               <Remark key={i}>{item}</Remark>
             ))}
@@ -123,14 +124,13 @@ const Close = styled.div`
   width: 8vh;
   right: 0;
   top: 4vh;
-  opacity: 0.65;
   background: #2a2a2a;
   border-radius: 10px;
   z-index: 1;
   cursor: pointer;
 
   &:hover {
-    opacity: 0.4;
+    opacity: 0.8;
   }
 
   @media (max-width: 960px) {
@@ -144,18 +144,14 @@ const Close = styled.div`
 `;
 
 const CloseIcon = styled.img`
-  height: 5vh;
-  width: 5vh;
+  height: 4vh;
+  width: 4vh;
   z-index: 2;
-  @media (max-width: 960px) {
-    height: 4vh;
-    width: 4vh;
-  }
 `;
 
 const BottomWrap = styled.div`
   position: absolute;
-  bottom: 6vh;
+  bottom: 16vh;
   display: flex;
   flex-direction: row;
 
@@ -225,8 +221,9 @@ const Date = styled.span`
   }
 `;
 
-const RemarksWrap = styled.ul`
-  margin-left: 2vw;
+const RemarksWrap = styled.ul<{ isBuy: boolean }>`
+  margin-left: ${({ isBuy }) => (isBuy ? "2vw" : "0")};
+  padding: ${({ isBuy }) => (isBuy ? "revert" : "0")};
   @media (max-width: 960px) {
     animation: 1.6s ${fadeInLAn};
     padding: 0;
@@ -235,7 +232,7 @@ const RemarksWrap = styled.ul`
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 10vh;
+    top: ${({ isBuy }) => (isBuy ? "10vh" : "16vh")};
   }
 `;
 const Remark = styled.li`
@@ -297,7 +294,7 @@ const TitleWrap = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
-  bottom: 20vh;
+  bottom: 28vh;
   z-index: 10;
   width: 72vw;
   @media (max-width: 960px) {

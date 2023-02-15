@@ -48,9 +48,9 @@ const Wrap = styled.div`
 const Name = styled.span<{ isLast: boolean }>`
   position: absolute;
   width: max-content;
-  bottom: 2vh;
+  bottom: 3.6vh;
   font-family: "murmure";
-  font-size: 3.6vh;
+  font-size: 4.4vh;
   color: #ffffff;
   padding-left: 2vw;
 
@@ -72,10 +72,10 @@ const Row = styled.div`
 `;
 export const SuperPower = styled.span`
   font-family: "namu-pro";
-  font-size: 2vh;
+  font-size: 16px;
   color: #b11212;
-  padding: 8px 12px 12px;
-  border-radius: 24px;
+  padding: 8px 24px 12px;
+  border-radius: 38px;
   border: 1px solid #b11212;
   margin: 16px 8px;
 `;
