@@ -559,7 +559,7 @@ export interface PerformanceType {
   link: string;
   largeDescription?: LargeDescription;
 }
-interface MobileColor {
+export interface MobileColor {
   color: string;
   opacity: number;
 }

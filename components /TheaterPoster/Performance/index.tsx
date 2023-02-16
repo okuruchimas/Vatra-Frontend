@@ -2,12 +2,22 @@ import styled from "@emotion/styled";
 import PerformanceInfo from "./PerormanceInfo";
 import PerformanceImg from "./PerformanceImg";
 import useWindowDimensions from "../../../hooks/useWindowDimensions";
-import { PerformanceType } from "../performances";
+import { LargeDescription, MobileColor } from "../performances";
 
-interface Props extends PerformanceType {
+interface Props {
   left: number;
   index?: number;
   performancesLength: number;
+  performanceColor: string;
+  mobileColor: MobileColor;
+  title: string;
+  description: string;
+  type: string;
+  buyLink?: string;
+  date: string;
+  imgUrl: string;
+  link: string;
+  largeDescription?: LargeDescription;
 }
 
 function hexToRgb(hex: string, opacity = 0.1) {
