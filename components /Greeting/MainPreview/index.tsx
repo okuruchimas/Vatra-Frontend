@@ -1,18 +1,19 @@
 import styled from "@emotion/styled";
 import { fadeInUp } from "react-animations";
 import { keyframes } from "@emotion/react";
+import useWindowDimensions from "../../../hooks/useWindowDimensions";
 const fadeInUpAnimation = keyframes`${fadeInUp}`;
 
 const MainPreview = () => {
+  const { isDesktop } = useWindowDimensions();
+
   return (
     <Wrap>
-      <Img src="/icons/logo/preview.webp" />
-      {/*<Video autoPlay playsInline controls loop muted>*/}
-      {/*  <source*/}
-      {/*    src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"*/}
-      {/*    type="video/mp4"*/}
-      {/*  />*/}
-      {/*</Video>*/}
+      <Img
+        src={
+          isDesktop ? "/icons/logo/preview.webp" : "/icons/logo/previewMob.webp"
+        }
+      />
     </Wrap>
   );
 };
