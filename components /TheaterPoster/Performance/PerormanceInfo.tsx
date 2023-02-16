@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import Button from "../../layout/Button";
 import { useRouter } from "next/router";
-import useWindowDimensions from "../../../hooks/useWindowDimensions";
 import { ArrowSmall } from "../../Greeting";
 
 type Props = {
@@ -67,7 +66,7 @@ export const Details = styled.span<{ isCentered?: boolean }>`
   font-family: "namu-1400";
   color: #b11212;
   margin-left: 2.4vw;
-  font-size: 2vh;
+  font-size: 2.2vh;
   background: inherit;
   text-transform: uppercase;
   border-radius: 24px;

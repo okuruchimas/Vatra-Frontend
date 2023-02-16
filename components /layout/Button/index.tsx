@@ -17,7 +17,7 @@ export default Button;
 
 const Link = styled.a`
   text-decoration: none;
-  width: min-content;
+  width: max-content;
 `;
 
 const Wrap = styled.div`
@@ -26,10 +26,9 @@ const Wrap = styled.div`
   align-items: center;
   min-width: max-content;
   font-family: "namu-1400";
-  width: 12vw;
   height: 5vh;
   padding: 0 3vw;
-  font-size: 2vh;
+  font-size: 2.2vh;
   text-transform: uppercase;
   cursor: pointer;
 
