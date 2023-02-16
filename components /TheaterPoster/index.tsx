@@ -33,7 +33,7 @@ const TheaterPoster = ({ performances }: PerformanceProps) => {
             performanceColor={performance.performanceColor}
             mobileColor={performance.mobileColor}
             performancesLength={performances.length}
-            isBuy={performance.isBuy}
+            buyLink={performance.buyLink}
             index={index}
           />
         ))}

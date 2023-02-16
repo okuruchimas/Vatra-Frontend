@@ -4,7 +4,11 @@ const JoinUs = () => {
   return (
     <Wrap id="contacts">
       <Title>Долучайся до культурного фронту</Title>
-      <ArrowWrap>
+      <ArrowWrap
+        target="_blank"
+        rel="noreferrer"
+        href="https://ticketclub.com.ua/event/5875/?session=14500"
+      >
         <ArrowDown src="/icons/arrows/arrowDown.svg" />
         <Circle />
         <BuyText>Придбати квиток</BuyText>
@@ -33,11 +37,12 @@ const Title = styled.span`
     width: 84vw;
   }
 `;
-const ArrowWrap = styled.div`
+const ArrowWrap = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+  text-decoration: none;
   padding: 4vh 0 0;
   @media (max-width: 960px) {
     padding: 8vh 0 0;

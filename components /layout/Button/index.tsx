@@ -2,13 +2,23 @@ import styled from "@emotion/styled";
 
 type Props = {
   text: string;
+  buyLink: string;
 };
 
-const Button = ({ text }: Props) => {
-  return <Wrap>{text}</Wrap>;
+const Button = ({ text, buyLink }: Props) => {
+  return (
+    <Link target="_blank" rel="noreferrer" href={buyLink}>
+      <Wrap>{text}</Wrap>
+    </Link>
+  );
 };
 
 export default Button;
+
+const Link = styled.a`
+  text-decoration: none;
+  width: min-content;
+`;
 
 const Wrap = styled.div`
   display: flex;
@@ -22,15 +32,16 @@ const Wrap = styled.div`
   font-size: 2vh;
   text-transform: uppercase;
   cursor: pointer;
-  border: 1px solid #fff;
-  color: #b11212;
-  background: inherit;
+
+  background: #b11212;
+  color: #fff;
+  border: 1px solid #b11212;
   border-radius: 60px;
 
   &:hover {
-    background: #b11212;
-    color: #fff;
-    border: 1px solid #b11212;
+    border: 1px solid #fff;
+    color: #b11212;
+    background: #fff;
   }
 
   @media (max-width: 960px) {

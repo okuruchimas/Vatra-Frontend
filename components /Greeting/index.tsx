@@ -128,7 +128,7 @@ const Info = styled.div`
   padding: 18vh 0 6vh;
   @media (max-width: 960px) {
     flex-direction: column;
-    padding: 12vh 0 8vh;
+    padding: 12vh 0 4vh;
   }
 `;
 
@@ -178,8 +178,8 @@ const Description = styled.span`
   padding-top: 100px;
   text-align: center;
   @media (max-width: 960px) {
-    font-size: 2vh;
-    padding-top: 24px;
+    font-size: 18px;
+    padding-top: 2vh;
     text-align: left;
     line-height: 136%;
   }

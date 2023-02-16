@@ -6,16 +6,17 @@ import useWindowDimensions from "../../hooks/useWindowDimensions";
 import { useRouter } from "next/router";
 import { keyframes } from "@emotion/react";
 import { fadeIn, fadeInLeft, fadeInRight } from "react-animations";
+import Button from "../layout/Button";
 
 interface Info {
   title: string;
   type: string;
   date: string;
   imgUrl: string;
-  dates?: number[];
-  isBuy: boolean;
+  buyLink?: string;
   videoLink?: string;
   remarks: string[];
+  rate: string;
 }
 
 const fadeInAn = keyframes`${fadeIn}`;
@@ -28,7 +29,7 @@ const RepertoirePreview = (info: Info) => {
 
   return (
     <Wrap>
-      <Rate>16+</Rate>
+      <Rate>{info.rate}</Rate>
 
       <Close onClick={() => back()}>
         <CloseIcon src={"/icons/close/close.svg"} />
@@ -42,19 +43,7 @@ const RepertoirePreview = (info: Info) => {
       <Image alt="Preview" src={info.imgUrl} />
 
       <BottomWrap>
-        {info.isBuy && info.dates && info.dates.length && (
-          <DateWrap>
-            {isDesktop && <DateText>дати показу</DateText>}
-            <Dates>
-              {info.dates.map((date, index) => (
-                <React.Fragment key={date}>
-                  <Date> {date}</Date>
-                  {isDesktop && index + 1 !== info?.dates?.length && <Line />}
-                </React.Fragment>
-              ))}
-            </Dates>
-          </DateWrap>
-        )}
+        {info.buyLink && <Button buyLink={info.buyLink} text="купити квитки" />}
         {!isDesktop && info.videoLink && (
           <ButtonWrap>
             <ButtonIcon src="/icons/close/play.svg" />
@@ -63,7 +52,7 @@ const RepertoirePreview = (info: Info) => {
         )}
 
         {info.remarks.length > 0 && (
-          <RemarksWrap isBuy={info.isBuy}>
+          <RemarksWrap buyLink={info.buyLink}>
             {info.remarks.map((item, i) => (
               <Remark key={i}>{item}</Remark>
             ))}
@@ -154,85 +143,32 @@ const BottomWrap = styled.div`
   bottom: 16vh;
   display: flex;
   flex-direction: row;
+  align-items: center;
 
   @media (max-width: 960px) {
+    align-items: inherit;
     width: 100%;
     flex-direction: column;
     bottom: initial;
     top: 67vh;
+    animation: 1.5s ${fadeInLAn};
   }
 `;
 
-const DateWrap = styled.div`
-  height: 8vh;
-  width: max-content;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  border-radius: 15px;
-  padding: 1vh;
-  background: rgba(217, 217, 217, 0.1);
+const RemarksWrap = styled.ul<{ buyLink?: string }>`
+  margin-left: ${({ buyLink }) => (buyLink ? "2vw" : "0")};
+  padding: ${({ buyLink }) => (buyLink ? "revert" : "0")};
   @media (max-width: 960px) {
-    animation: 1.5s ${fadeInRAn};
-    height: auto;
-    padding: 1.2vh;
-    background: rgba(217, 217, 217, 0.2);
-  }
-`;
-
-const DateText = styled.span`
-  background: transparent;
-  text-transform: uppercase;
-  border-radius: 10px;
-  font-family: "namu-1750";
-  font-size: 2vh;
-  padding: 0 1vw;
-`;
-
-const Dates = styled.div`
-  height: 6vh;
-  padding: 0 2vw;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background: rgba(103, 103, 103, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 15px;
-  font-family: "namu-1750";
-  font-size: 2vh;
-
-  @media (max-width: 960px) {
-    height: auto;
-    font-size: 1em;
-    padding: 1.4vh 4vw;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-  }
-`;
-
-const Line = styled.div`
-  width: 1px;
-  height: 28px;
-  border: 1px solid #fff;
-  margin: 0 1vw;
-`;
-const Date = styled.span`
-  @media (max-width: 960px) {
-    margin: 0 2vw;
-  }
-`;
-
-const RemarksWrap = styled.ul<{ isBuy: boolean }>`
-  margin-left: ${({ isBuy }) => (isBuy ? "2vw" : "0")};
-  padding: ${({ isBuy }) => (isBuy ? "revert" : "0")};
-  @media (max-width: 960px) {
-    animation: 1.6s ${fadeInLAn};
     padding: 0;
     margin-left: 0;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: ${({ isBuy }) => (isBuy ? "10vh" : "16vh")};
+    text-align: center;
+    width: 80vw;
+    left: 10vw;
+    top: ${({ buyLink }) => (buyLink ? "12vh" : "16vh")};
   }
 `;
 const Remark = styled.li`

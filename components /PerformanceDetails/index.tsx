@@ -26,16 +26,18 @@ const PerformanceDetail = ({
   return (
     <Wrap>
       <RedTitle text="опис  вистави" />
-      <TitleFragment mt={isDesktop ? 2 : 1} text={bigTitle1} />
+      <TitleFragment fs={6} mt={isDesktop ? 2 : 1} text={bigTitle1} />
       {bigTitle2 && (
-        <TitleFragment mt={isDesktop ? 0 : -2} text={bigTitle2} last />
+        <TitleFragment fs={6} mt={isDesktop ? 0 : -2} text={bigTitle2} last />
       )}
+      {!isDesktop && <PerformancePhotos images={images} />}
+
       <InfoWrap>
         <DescriptionWrap>
           <DescriptionTitle>{parse(smallTitle)}</DescriptionTitle>
           <Description>{parse(description)}</Description>
         </DescriptionWrap>
-        <PerformancePhotos images={images} />
+        {isDesktop && <PerformancePhotos images={images} />}
       </InfoWrap>
     </Wrap>
   );
@@ -62,7 +64,7 @@ const InfoWrap = styled.div`
   flex-direction: row;
   margin-top: 28vh;
   @media (max-width: 960px) {
-    margin-top: 7vh;
+    margin-top: 0;
     flex-direction: column;
   }
 `;

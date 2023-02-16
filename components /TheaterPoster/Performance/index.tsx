@@ -51,7 +51,7 @@ const Performance = (props: Props) => {
           date={props.date}
           imgUrl={props.imgUrl}
           type={props.type}
-          isBuy={props.isBuy}
+          buyLink={props.buyLink}
           isDesktop={isDesktop}
         />
       ) : props.left ? (
@@ -60,14 +60,14 @@ const Performance = (props: Props) => {
             title={props.title}
             description={props.description}
             link={props.link}
-            isBuy={props.isBuy}
+            buyLink={props.buyLink}
           />
           <PerformanceImg
             left={props.left}
             date={props.date}
             imgUrl={props.imgUrl}
             type={props.type}
-            isBuy={props.isBuy}
+            buyLink={props.buyLink}
             isDesktop={isDesktop}
           />
         </>
@@ -79,14 +79,14 @@ const Performance = (props: Props) => {
             date={props.date}
             imgUrl={props.imgUrl}
             type={props.type}
-            isBuy={props.isBuy}
+            buyLink={props.buyLink}
             title={props.title}
           />
           <PerformanceInfo
             title={props.title}
             description={props.description}
             link={props.link}
-            isBuy={props.isBuy}
+            buyLink={props.buyLink}
           />
         </>
       )}

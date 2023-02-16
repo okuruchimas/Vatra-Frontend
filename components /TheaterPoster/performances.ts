@@ -5,14 +5,15 @@ export const TestArr = [
       color: "#414040",
       opacity: 0.67,
     },
+    rate: "6+",
     title: "Всередині моєї кімнати",
     description:
       "Ця вистава — про пам‘ять і відновлення зв‘язків між минулим і теперішнім.\n" +
       "Ця вистава — про повернення додому, \n" +
       "про його пошуки: зовні та всередині.\n" +
       "Ця вистава — про мою кімнату.",
-    type: "Вистава театру анімації",
-    isBuy: true,
+    type: "перфомативно-містична вистава",
+    buyLink: "https://ticketclub.com.ua/event/5875/?session=14500",
     date: "20.02",
     imgUrl: "/icons/poster/img0.webp",
     link: "inside-my-room",
@@ -22,9 +23,8 @@ export const TestArr = [
         "У виставі лунає жива музика",
         "Вистава створена за фінансової підтримки Goethe-Institut",
       ],
-      dates: [20.02, 21.02],
       bigTitle1: "Той самий",
-      bigTitle2: "довгоочікувний момент",
+      bigTitle2: "довгоочікувaний момент",
       smallTitle:
         "Ми хочемо вірити,<br/>що зможемо це<br/>витримати й залишитиcя<br/>cамими cобою.",
       description:
@@ -71,7 +71,7 @@ export const TestArr = [
         },
         {
           name: "Антон Репях",
-          abilities: ["звукоТехнік"],
+          abilities: ["світлотехнік"],
         },
         {
           name: "Пабло Бучман",
@@ -91,6 +91,7 @@ export const TestArr = [
       color: "#2F2F2F",
       opacity: 0.67,
     },
+    rate: "16+",
     title: "Лютий",
     description:
       "«ЛЮТИЙ» — це простір, де вивільняється внутрішня боротьба не тільки словами, \n" +
@@ -99,7 +100,6 @@ export const TestArr = [
       "зі своїми почуттями. Це спільний пошук власної ідентичності в контексті війни, що \n" +
       "є нашою реальністю нині.",
     type: "Перформативна вистава",
-    isBuy: false,
     date: "12.04",
     imgUrl: "/icons/poster/img1.webp",
     link: "february",
@@ -109,7 +109,6 @@ export const TestArr = [
         "У виставі лунає жива музика",
         "Використовується обсценна лексика",
       ],
-      dates: [11.12, 12.11, 12.12, 9.2, 10.1],
       bigTitle1: "Лютий завжди був",
       bigTitle2: "холодним...",
       smallTitle:
@@ -187,20 +186,19 @@ export const TestArr = [
       color: "#414040",
       opacity: 0.67,
     },
+    rate: "16+",
     title: "Леся і Андрій зустрічаються у Львові",
     description:
       "Це історія двох дітей – Лесі та Андрія, котрі під час війни опинилися у Львові, який прихистив \n" +
       "їх від снарядів, що розриваються у їхніх рідних містах.\n" +
       "Познайомившись, вони розпочинають свої пригоди та сміливо допомагають країні боротися зі злом.",
     type: "вистава театру анімації",
-    isBuy: false,
     date: "22.08",
     imgUrl: "/icons/poster/img2.webp",
     link: "meting",
     largeDescription: {
       imgUrl: "/icons/poster/bigImg2.webp",
       videoRemarks: ["У виставі лунає жива музика"],
-      dates: [11.12, 12.11, 12.12, 9.2, 10.1],
       bigTitle1: "Чому Леся так",
       bigTitle2: "швидко їде?",
       smallTitle:
@@ -254,11 +252,11 @@ export const TestArr = [
       color: "#ffffff",
       opacity: 0.15,
     },
+    rate: "16+",
     title: "Херсон Незламний",
     description:
       "Події розгортаються ніби в партизанському штабі, де оповідачі_ка ведуть дію, використовуючи історії людей, які жили_вуть у Херсонській області. Обшуки, знущання, вбивства, викрадення, зґвалтування, сльози на очах і в серці — це реалії нині, які щоденно кояться армією рф.",
     type: "Вистава–блуканина",
-    isBuy: false,
     date: "04.22",
     imgUrl: "/icons/poster/img4.webp",
     link: "unbreakable-kherson",
@@ -268,7 +266,6 @@ export const TestArr = [
         "У виставі лунає жива музика",
         "Використовується обсценна лексика",
       ],
-      dates: [11.12, 12.11, 12.12, 9.2, 10.1],
       bigTitle1: "Ситуація складна...",
       bigTitle2: "",
       smallTitle: "Кінцева точка – cвобода!",
@@ -328,6 +325,7 @@ export const TestArr = [
       color: "#CB6565",
       opacity: 0.16,
     },
+    rate: "16+",
     title: "Вона Війна",
     description:
       "Яким є жіночий досвід війни? Досвід кожної \n" +
@@ -336,14 +334,12 @@ export const TestArr = [
       "та скільки є сил, можливостей бореться \n" +
       "за кожну спокійну хвилину.",
     type: "Постдокументальна вистава",
-    isBuy: false,
     date: "05.09",
     imgUrl: "/icons/poster/img5.webp",
     link: "she-is-war",
     largeDescription: {
       imgUrl: "/icons/poster/bigImg5.webp",
       videoRemarks: [],
-      dates: [11.12, 12.11, 12.12, 9.2, 10.1],
       bigTitle1: "Яким є жіночий",
       bigTitle2: "досвід війни?",
       smallTitle:
@@ -405,7 +401,7 @@ export const TestArr = [
       color: "#414040",
       opacity: 0.67,
     },
-
+    rate: "16+",
     title: "Як я познайомився з війною і майже вбив путіна",
     description:
       "\n" +
@@ -414,7 +410,6 @@ export const TestArr = [
       "перфоконцертом – історія пригод і пошуків свого нового місця через втрату попереднього життя.\n" +
       "\n",
     type: "вистава–концерт",
-    isBuy: false,
     date: "11.06",
     imgUrl: "/icons/poster/img3.webp",
     link: "kill-pupin",
@@ -473,13 +468,13 @@ export const TestArr = [
       color: "#2F2F2F",
       opacity: 0.67,
     },
+    rate: "16+",
     title: "Перший День Війни",
     description:
       "Перформанс-рефлексія, створений у перші дні становлення театру “Варта”. Перформанс-оповідання історій кожного та кожної із нас \n" +
       "у русі, слові, світлині чи музиці. Перформанс-надія на те, що кожного дня ми стаємо \n" +
       "на крок ближче до перемоги.",
     type: "Перформативна вистава",
-    isBuy: false,
     date: "23.07",
     imgUrl: "/icons/poster/img6.webp",
     link: "first-day",
@@ -554,10 +549,11 @@ export interface PerformanceProps {
 export interface PerformanceType {
   performanceColor: string;
   mobileColor: MobileColor;
+  rate: string;
   title: string;
   description: string;
   type: string;
-  isBuy: boolean;
+  buyLink?: string;
   date: string;
   imgUrl: string;
   link: string;
@@ -571,7 +567,6 @@ interface MobileColor {
 export interface LargeDescription {
   imgUrl: string;
   videoRemarks: string[];
-  dates?: number[];
   videoLink?: string;
   bigTitle1: string;
   bigTitle2?: string;

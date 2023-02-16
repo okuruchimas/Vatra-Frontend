@@ -8,19 +8,18 @@ type Props = {
   title: string;
   description: string;
   link: string;
-  isBuy: boolean;
+  buyLink?: string;
 };
 
-const PerformanceInfo = ({ title, description, link, isBuy }: Props) => {
+const PerformanceInfo = ({ title, description, link, buyLink }: Props) => {
   const { push } = useRouter();
-  const { isDesktop } = useWindowDimensions();
 
   return (
     <Wrap>
       <Title>{title}</Title>
       <Description>{description}</Description>
       <BuyWrap>
-        {isBuy && <Button text={isDesktop ? "купити квитки" : "купити"} />}
+        {buyLink && <Button buyLink={buyLink} text="купити квитки" />}
         <Details onClick={() => push(link)}>
           <ArrowSmall src="/icons/arrows/arrowDownSmall.svg" />
           Дізнатись більше

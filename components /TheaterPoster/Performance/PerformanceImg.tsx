@@ -8,7 +8,7 @@ type Props = {
   type: string;
   date: string;
   left: number;
-  isBuy: boolean;
+  buyLink?: string;
 
   title?: string;
   isDesktop?: boolean;
@@ -20,7 +20,7 @@ const PerformanceImg = ({
   imgUrl,
   type,
   date,
-  isBuy,
+  buyLink,
   left,
   title,
   isDesktop,
@@ -34,7 +34,7 @@ const PerformanceImg = ({
         <>
           <Img src={imgUrl} left={left} />
           <Type left={left}>{type}</Type>
-          {isBuy && <DateText left={left}>{date}</DateText>}
+          {buyLink && <DateText left={left}>{date}</DateText>}
         </>
       ) : (
         <MobileWrap>

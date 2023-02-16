@@ -5,11 +5,12 @@ type Props = {
   pl?: number;
   last?: boolean;
   mt?: number;
+  fs?: number;
 };
 
-const TitleFragment = ({ pl, mt, last, text }: Props) => {
+const TitleFragment = ({ fs, pl, mt, last, text }: Props) => {
   return (
-    <Wrap pl={pl} mt={mt} last={last}>
+    <Wrap fs={fs} pl={pl} mt={mt} last={last}>
       {text}
     </Wrap>
   );
@@ -17,10 +18,11 @@ const TitleFragment = ({ pl, mt, last, text }: Props) => {
 
 export default TitleFragment;
 
-export const Wrap = styled.span<{
+const Wrap = styled.span<{
   pl?: number;
   last?: boolean;
   mt?: number;
+  fs?: number;
 }>`
   padding-left: ${({ pl }) => (pl ? `${pl}vw` : "initial")};
   font-family: "murmure";
@@ -32,7 +34,7 @@ export const Wrap = styled.span<{
   margin-top: ${({ mt }) => (mt ? `${mt}vh` : "initial")};
 
   @media (max-width: 960px) {
-    line-height: initial;
-    font-size: 7.6vh;
+    line-height: 8vh;
+    font-size: ${({ fs }) => (fs ? `${fs}vh` : "7.6vh")};
   }
 `;
