@@ -76,7 +76,7 @@ const DescriptionWrap = styled.div`
 
 const DescriptionTitle = styled.span`
   text-transform: uppercase;
-  font-family: "namu-1400";
+  font-family: "namu-1600";
   font-size: 4.4vh;
   color: #fff;
   @media (max-width: 960px) {
