@@ -17,6 +17,7 @@ import { Slides, Slide } from "../components /PhotoSlider/slides";
 import { AboutUsSlide, AboutUsSlides } from "../components /AboutUs/slider";
 import Footer from "../components /layout/Footer";
 import StickyContainer from "../components /layout/StickyContainer";
+import Seo from "../components /Seo";
 
 interface HomeProps {
   performances: PerformanceType[];
@@ -28,6 +29,12 @@ interface HomeProps {
 const Home = ({ performances, ourTeam, slides, aboutUsSlides }: HomeProps) => {
   return (
     <Wrap id="/">
+      <Seo
+        title="Theatre Varta"
+        titleMeta="Театр “Варта” на Сторожі Української Культури, м. Львів."
+        description="Купити квитки на виставу,  Український театр у місті Львів, вул. Городоцька, 36. +380990000000"
+        imgLink="/icons/logo/previewMob.webp"
+      />
       <StickyContainer>
         <Header />
       </StickyContainer>

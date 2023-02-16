@@ -7,12 +7,19 @@ import {
 } from "../../components /TheaterPoster/performances";
 import Footer from "../../components /layout/Footer";
 import PerformanceTeam from "../../components /PerformanceTeam";
+import Seo from "../../components /Seo";
 
 const Repertoire = ({ repertoire }: { repertoire: PerformanceType }) => {
   if (!repertoire?.largeDescription) return null;
 
   return (
     <Wrap>
+      <Seo
+        title={repertoire.title}
+        titleMeta={repertoire.title}
+        description={repertoire.description}
+        imgLink={repertoire.imgUrl}
+      />
       <RepertoirePreview
         rate={repertoire.rate}
         title={repertoire.title}

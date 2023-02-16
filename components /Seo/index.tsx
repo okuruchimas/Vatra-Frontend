@@ -1,17 +1,20 @@
 import Head from "next/head";
 
-const Seo = () => {
+interface Props {
+  title: string;
+  titleMeta: string;
+  description: string;
+  imgLink: string;
+}
+
+const Seo = ({ title, titleMeta, description, imgLink }: Props) => {
   return (
     <Head>
-      <title>Theatre Varta</title>
-      <meta
-        name="title"
-        content="Театр “Варта” на Сторожі Української Культури, м. Львів."
-      />
-      <meta
-        name="description"
-        content="Купити квитки на виставу,  Український театр у місті Львів, вул. Городоцька, 36. +380990000000"
-      />
+      <title>{title}</title>
+      <meta name="description" content={description} key="desc" />
+      <meta property="og:title" content={titleMeta} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={imgLink} />
       <link rel="icon" href="/icons/favicon.svg" />
     </Head>
   );

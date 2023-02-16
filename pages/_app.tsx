@@ -96,7 +96,6 @@ const App = ({ Component, pageProps }: AppProps) => {
           }
         `}
       />
-      <Seo />
       <Component {...pageProps} />
     </Wrap>
   );
