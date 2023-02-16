@@ -30,6 +30,7 @@ const Home = ({ performances, ourTeam, slides, aboutUsSlides }: HomeProps) => {
   return (
     <Wrap id="/">
       <Seo
+        url="https://theatrevarta.com"
         title="Theatre Varta"
         titleMeta="Театр “Варта” на Сторожі Української Культури, м. Львів."
         description="Купити квитки на виставу,  Український театр у місті Львів, вул. Городоцька, 36. +380990000000"

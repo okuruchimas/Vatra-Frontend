@@ -15,6 +15,7 @@ const Repertoire = ({ repertoire }: { repertoire: PerformanceType }) => {
   return (
     <Wrap>
       <Seo
+        url={`https://theatrevarta.com/${repertoire.link}`}
         title={repertoire.title}
         titleMeta={repertoire.title}
         description={repertoire.description}
