@@ -414,7 +414,6 @@ export const TestArr = [
     imgUrl: "/icons/poster/img3.webp",
     link: "kill-pupin",
     largeDescription: {
-      videoLink: "hjhjg",
       imgUrl: "/icons/poster/bigImg3.webp",
       videoRemarks: [
         "У виставі лунає жива музика",
@@ -481,7 +480,8 @@ export const TestArr = [
     largeDescription: {
       imgUrl: "/icons/poster/bigImg6.webp",
       videoRemarks: ["Присутня обсценна лексика"],
-      videoLink: "hjhjg",
+      videoLink:
+        "https://www.dramox.com.ua/teatry/254-teatr-varta/419-pershij-den-vijni",
       bigTitle1: "Закарбувався в нас",
       bigTitle2: "назавжди...",
       smallTitle: "напружено затамувався <br/> подих наш тоді <br/> назавжди.",

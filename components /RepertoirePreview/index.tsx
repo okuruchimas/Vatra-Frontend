@@ -45,7 +45,7 @@ const RepertoirePreview = (info: Info) => {
       <BottomWrap>
         {info.buyLink && <Button buyLink={info.buyLink} text="купити квитки" />}
         {!isDesktop && info.videoLink && (
-          <ButtonWrap>
+          <ButtonWrap target="_blank" rel="noreferrer" href={info.videoLink}>
             <ButtonIcon src="/icons/close/play.svg" />
             <ButtonText>Дивитись запис</ButtonText>
           </ButtonWrap>
@@ -61,7 +61,7 @@ const RepertoirePreview = (info: Info) => {
       </BottomWrap>
 
       {isDesktop && info.videoLink && (
-        <ButtonWrap>
+        <ButtonWrap target="_blank" rel="noreferrer" href={info.videoLink}>
           <ButtonIcon src="/icons/close/play.svg" />
           <ButtonText>Дивитись запис</ButtonText>
         </ButtonWrap>
@@ -183,7 +183,7 @@ const Remark = styled.li`
     }
   }
 `;
-const ButtonWrap = styled.div`
+const ButtonWrap = styled.a`
   height: 8vh;
   position: absolute;
   display: flex;
@@ -194,6 +194,11 @@ const ButtonWrap = styled.div`
   border-radius: 10px;
   padding: 1vh;
   background: rgba(217, 217, 217, 0.1);
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    opacity: 0.8;
+  }
   @media (max-width: 960px) {
     animation: 1.5s ${fadeInRAn};
     position: initial;
