@@ -12,7 +12,7 @@ const DonateButton = ({}: Props) => {
   return (
     <Wrap>
       <Button>Donate</Button>
-      {isDesktop && <Lang>EN</Lang>}
+      {isDesktop && <Lang>UA</Lang>}
     </Wrap>
   );
 };

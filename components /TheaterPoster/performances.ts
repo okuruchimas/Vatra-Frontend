@@ -13,8 +13,8 @@ export const TestArr = [
       "про його пошуки: зовні та всередині.\n" +
       "Ця вистава — про мою кімнату.",
     type: "перфомативно-містична вистава",
-    buyLink: "https://ticketclub.com.ua/event/5875/?session=14500",
-    date: "20.02",
+    buyLink: "https://ticketclub.com.ua/event/5875/",
+    date: "19.03",
     imgUrl: "/icons/poster/img0.webp",
     link: "inside-my-room",
     largeDescription: {
@@ -91,7 +91,7 @@ export const TestArr = [
       color: "#2F2F2F",
       opacity: 0.67,
     },
-    rate: "16+",
+    rate: "14+",
     title: "Лютий",
     description:
       "«ЛЮТИЙ» — це простір, де вивільняється внутрішня боротьба не тільки словами, \n" +
@@ -100,7 +100,8 @@ export const TestArr = [
       "зі своїми почуттями. Це спільний пошук власної ідентичності в контексті війни, що \n" +
       "є нашою реальністю нині.",
     type: "Перформативна вистава",
-    date: "12.04",
+    buyLink: "https://ticketclub.com.ua/event/5853/",
+    date: "15.04",
     imgUrl: "/icons/poster/img1.webp",
     link: "february",
     largeDescription: {
