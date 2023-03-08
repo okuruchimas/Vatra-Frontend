@@ -101,7 +101,7 @@ export const TestArr = [
       "є нашою реальністю нині.",
     type: "Перформативна вистава",
     buyLink: "https://ticketclub.com.ua/event/5853/",
-    date: "15.04",
+    date: "15.03",
     imgUrl: "/icons/poster/img1.webp",
     link: "february",
     largeDescription: {
