@@ -11,7 +11,7 @@ const MainPreview = () => {
     <Wrap>
       <Img
         src={
-          isDesktop ? "/icons/logo/test.gif" : "/icons/logo/previewMob.webp"
+          isDesktop ? "/icons/logo/preview.gif" : "/icons/logo/previewMob.gif"
         }
       />
     </Wrap>
