@@ -16,7 +16,7 @@ const Greeting = () => {
 
   return (
     <Wrap>
-      <Preview src="/icons/logo/varta.svg" />
+      <Preview src="/icons/logo/varta.webp" />
       <BuySection>
         <LeftText>
           На сторожі Української культури. <br />
@@ -77,18 +77,20 @@ const Wrap = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 8vh;
   padding: 28vh 4vw 0;
   width: 100vw;
 
   @media (max-width: 960px) {
-    padding: 32vh 4vw 2vh;
+    padding: 26vh 4vw 2vh;
   }
 `;
 
 export const Preview = styled.img`
   width: 88vw;
+  animation: 1s ${fadeInDownAn};
+
   @media (max-width: 960px) {
-    animation: 1s ${fadeInDownAn};
   }
 `;
 const BuySection = styled.div`
@@ -109,8 +111,9 @@ const LeftText = styled.span`
   font-weight: 300;
   font-size: 2vh;
   color: #b5b5b5;
+  animation: 1s ${fadeInUpAn};
+
   @media (max-width: 960px) {
-    animation: 1s ${fadeInUpAn};
     font-family: "namu-1400";
     padding-bottom: 8vh;
     margin-bottom: 20vh;
@@ -191,6 +194,7 @@ const ButtonsWrap = styled.div`
   @media (max-width: 960px) {
     width: 100%;
   }
+  animation: 1s ${fadeInRightAn};
 `;
 
 const Button = styled(Link)`
@@ -207,7 +211,6 @@ const Button = styled(Link)`
     opacity: 0.8;
   }
   @media (max-width: 960px) {
-    animation: 1s ${fadeInRightAn};
     font-size: 1em;
     text-transform: none;
     width: max-content;

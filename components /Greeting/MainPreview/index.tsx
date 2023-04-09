@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { fadeInUp } from "react-animations";
 import { keyframes } from "@emotion/react";
+import Image from "next/image";
 import useWindowDimensions from "../../../hooks/useWindowDimensions";
 const fadeInUpAnimation = keyframes`${fadeInUp}`;
 
@@ -9,11 +10,15 @@ const MainPreview = () => {
 
   return (
     <Wrap>
-      <Img
-        src={
-          isDesktop ? "/icons/logo/preview.gif" : "/icons/logo/previewMob.gif"
-        }
-      />
+      <ImgWrap>
+        <Img
+          src={
+            isDesktop ? "/icons/logo/preview.gif" : "/icons/logo/previewMob.gif"
+          }
+          layout="fill"
+          priority
+        />
+      </ImgWrap>
     </Wrap>
   );
 };
@@ -36,26 +41,18 @@ const Wrap = styled.div`
   }
 `;
 
-const Video = styled.video`
+const ImgWrap = styled.div`
+  position: relative;
   width: 88vw;
-  height: auto;
-  border-radius: 30px;
-  outline: none;
+  aspect-ratio: 1690/887;
   @media (max-width: 960px) {
-    object-fit: cover;
     width: 80vw;
     aspect-ratio: 302/265;
   }
 `;
 
-const Img = styled.img`
-  width: 88vw;
-  height: auto;
+const Img = styled(Image)`
   border-radius: 30px;
   outline: none;
-  @media (max-width: 960px) {
-    object-fit: cover;
-    width: 80vw;
-    aspect-ratio: 302/265;
-  }
+  object-fit: cover;
 `;

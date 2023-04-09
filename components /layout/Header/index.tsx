@@ -5,6 +5,11 @@ import { useRouter } from "next/router";
 import DonateButton from "../DonateButton";
 import useWindowDimensions from "../../../hooks/useWindowDimensions";
 import { Global, css } from "@emotion/react";
+import { fadeInDown, fadeInLeft } from "react-animations";
+import { keyframes } from "@emotion/react";
+
+const fadeInD = keyframes`${fadeInDown}`;
+const fadeInL = keyframes`${fadeInLeft}`;
 
 const arrMenu: { text: string; to: string }[] = [
   { text: "Афіша", to: "poster" },
@@ -101,6 +106,7 @@ const Wrap = styled.div`
 const LogoVatra = styled.img`
   width: 8vw;
   cursor: pointer;
+  animation: 1s ${fadeInL};
 
   @media (max-width: 960px) {
     display: block;
@@ -127,6 +133,7 @@ const Navbar = styled.div<{ isNavbar: boolean }>`
   flex-direction: row;
   align-items: center;
   margin-right: -4vw;
+  animation: 1s ${fadeInD};
 
   @media (max-width: 960px) {
     display: ${({ isNavbar }) => (isNavbar ? "flex" : "none")};

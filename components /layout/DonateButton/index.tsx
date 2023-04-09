@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import styled from "@emotion/styled";
 import useWindowDimensions from "../../../hooks/useWindowDimensions";
-import { fadeInLeft } from "react-animations";
+import { fadeInLeft, fadeInRight } from "react-animations";
 import { keyframes } from "@emotion/react";
 
 interface Props {}
@@ -19,15 +19,13 @@ const DonateButton = ({}: Props) => {
 
 export default DonateButton;
 
-const test3 = keyframes`${fadeInLeft}`;
+const fadeInR = keyframes`${fadeInRight}`;
 
 const Wrap = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  @media (max-width: 960px) {
-    animation: 1s ${test3};
-  }
+  animation: 1s ${fadeInR};
 `;
 
 const Button = styled.button`
